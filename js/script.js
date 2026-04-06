@@ -190,5 +190,6 @@ document.querySelectorAll('.portfolio__card, .about__stat, .contact__item').forE
 });
 
 // ===== Console Welcome Message =====
-console.log('%c Welcome to Syahrul Ahkam Portfolio! 🎨', 'font-size: 20px; font-weight: bold; color: #9ACD32;');
-console.log('%c Made with ❤ and lots of coffee', 'font-size: 14px; color: #666;');
+// Ganti baris paling bawah di js/script.js kamu menjadi:
+console.log('%c Welcome to Firman Christian Purba Portfolio!', 'font-size: 20px; font-weight: bold; color: #9ACD32;');
+console.log('%c Information Systems Student at JIU', 'font-size: 14px; color: #666;');
