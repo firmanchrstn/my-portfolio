@@ -454,7 +454,7 @@ textarea {
 }
 
 .portfolio__card-btn {
-    padding: 0.50rem 1rem;
+    padding: 1rem 2rem;
     background: var(--primary);
     border-radius: var(--radius);
     display: flex;
@@ -589,121 +589,121 @@ textarea {
     font-size: 0.9rem;
 }
 
-/* ===== Contact ===== */
-.contact {
-    background: var(--bg-secondary);
-}
-
-.contact__container {
+/* CONTACT PROFESSIONAL STYLING */
+.contact__content {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 4rem 0;
 }
 
-.contact__title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
+.contact__text .section__title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin: 1.5rem 0;
 }
 
-.contact__data {
+.contact__methods {
+    margin-top: 3rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+}
+
+.method__item {
+    display: flex;
+    align-items: center;
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
-.contact__item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.contact__icon {
-    font-size: 1.25rem;
-}
-
-.contact__label {
-    display: block;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-.contact__value {
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.contact__social-links {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 1rem;
-}
-
-.contact__social-link {
-    width: 40px;
-    height: 40px;
-    background: var(--bg-card);
-    border-radius: 50%;
+.method__icon {
+    width: 54px;
+    height: 54px;
+    background: var(--bg-light);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+    color: var(--primary-study);
+    font-size: 1.5rem;
+}
+
+.method__item h4 {
     font-size: 0.85rem;
-    color: var(--text-secondary);
-    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
 }
 
-.contact__social-link:hover {
-    background: var(--primary);
-    color: #1a1a1a;
+/* THE BOX FORM */
+.contact__box {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 32px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.contact__form {
-    background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-}
-
-.contact__form-group--half {
+.form__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.contact__input-group {
-    margin-bottom: 1rem;
+.form__group {
+    margin-bottom: 1.5rem;
 }
 
-.contact__input-group label {
+.form__group label {
     display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
 }
 
-.contact__input-group input,
-.contact__input-group textarea {
+.form__input {
     width: 100%;
-    padding: 0.875rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius);
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    transition: var(--transition);
+    padding: 1.1rem 1.5rem;
+    border-radius: 14px;
+    border: 1.5px solid #F1F5F9;
+    background: #F8FAFC;
+    color: var(--text-main);
+    transition: all 0.3s ease;
 }
 
-.contact__input-group input:focus,
-.contact__input-group textarea:focus {
+.form__input:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: var(--primary-study);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(154, 205, 50, 0.1);
 }
 
-.contact__input-group textarea {
-    resize: vertical;
-    min-height: 120px;
+.form__textarea {
+    height: 140px;
+    resize: none;
+}
+
+.btn--wide {
+    width: 100%;
+    justify-content: center;
+    padding: 1.2rem;
+    font-weight: 700;
+    border-radius: 14px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact__content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .form__row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== Footer ===== */
@@ -847,17 +847,36 @@ textarea {
         width: 100%;
     }
 
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .portfolio__filters {
+    .portfolio__card-btn {
+        background: white;
+        /* Warna background tombol */
+        border: none;
+        padding: 0.8rem 1.2rem;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 0.25rem;
+        transition: transform 0.3s ease, background-color 0.3s ease;
     }
-    .hero__scroll {
-        margin-top: 3rem;
+
+    .portfolio__card-btn p {
+        margin: 0;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--text-main);
+    }
+
+    .portfolio__card-btn span {
+        font-size: 1.5rem;
+        color: var(--primary-study);
+    }
+
+    .portfolio__card-btn:hover {
+        transform: scale(1.1);
+        background-color: #f0f0f0;
     }
 }
 
@@ -868,9 +887,12 @@ textarea {
 }
 
 .impact-list li {
-    display: flex; /* Membuat nomor dan teks sejajar ke samping */
-    align-items: flex-start; /* Menjaga nomor tetap di atas jika teks sangat panjang */
-    gap: 1.5rem; /* Jarak antara nomor dan teks */
+    display: flex;
+    /* Membuat nomor dan teks sejajar ke samping */
+    align-items: flex-start;
+    /* Menjaga nomor tetap di atas jika teks sangat panjang */
+    gap: 1.5rem;
+    /* Jarak antara nomor dan teks */
     padding: 1.5rem 0;
     border-bottom: 1px solid #f0f0f0;
 }
@@ -879,11 +901,13 @@ textarea {
     font-weight: 700;
     color: var(--primary-study);
     font-size: 1.2rem;
-    min-width: 30px; /* Memastikan lebar nomor konsisten agar teks di kanannya sejajar vertikal */
+    min-width: 30px;
+    /* Memastikan lebar nomor konsisten agar teks di kanannya sejajar vertikal */
 }
 
 .impact-content strong {
-    display: block; /* Membuat judul di atas deskripsi */
+    display: block;
+    /* Membuat judul di atas deskripsi */
     font-size: 1.1rem;
     margin-bottom: 0.25rem;
     color: var(--text-primary);

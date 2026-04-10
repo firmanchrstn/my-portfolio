@@ -50,7 +50,7 @@
                         <h1 class="hero__name">Firman Christian Purba</h1>
                         <p class="hero__title">Information Systems Student & Front-End Developer</p>
                         <p class="hero__description">Mahasiswa semester 6 di Jakarta International University yang
-                            berfokus pada Front-End Development (Next.js), Mobile Apps (Flutter), dan UI/UX Design.</p>
+                            berfokus pada Front-End Development, Mobile Apps (Flutter), dan UI/UX Design.</p>
                         <div class="hero__buttons">
                             <a href="#portfolio" class="btn btn--primary">View Portofolio</a>
                             <a href="#contact" class="btn btn--outline">Kontak Saya</a>
@@ -82,14 +82,12 @@
                 <div class="portfolio__grid">
                     <article class="portfolio__card" data-category="uiux">
                         <div class="portfolio__card-image">
-                            <img src="asset/Thumbnail - IG.jpg"
-                                alt="Mobile JKN">
+                            <img src="asset/prototype-figma-mobileJKN/Thumbnail - IG.jpg" alt="Mobile JKN">
                             <div class="portfolio__card-overlay">
-                                <a href="mobile-jkn.html" target="_blank" class="portfolio__card-btn"
-                                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                                <button class="portfolio__card-btn" onclick="window.open('mobile-jkn.html', '_blank')">
                                     <span class="material-symbols-rounded">visibility</span>
                                     <p>view</p>
-                                </a>
+                                </button>
                             </div>
                         </div>
                         <div class="portfolio__card-content">
@@ -166,34 +164,60 @@
 
         <section class="contact section" id="contact">
             <div class="container">
-                <div class="contact__container">
-                    <div class="contact__info">
-                        <h3 class="contact__title">Get in touch</h3>
-                        <div class="contact__data">
-                            <div class="contact__item"><span class="contact__icon material-symbols-rounded">place</span>
-                                <div><span class="contact__label">Location</span>
-                                    <p class="contact__value">Jakarta/Bekasi, Indonesia</p>
+                <div class="contact__content">
+                    <div class="contact__text">
+                        <span class="section__subtitle">Contact Me</span>
+                        <h2 class="section__title">Mari Berdiskusi Proyek <br> Anda Selanjutnya</h2>
+                        <p class="section__description">
+                            Saya selalu terbuka untuk peluang kolaborasi atau sekadar bertukar pikiran mengenai UI/UX
+                            dan Web Development.
+                        </p>
+
+                        <div class="contact__methods">
+                            <div class="method__item">
+                                <div class="method__icon">
+                                    <span class="material-symbols-rounded">alternate_email</span>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>firmanchristianp@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="method__item">
+                                <div class="method__icon">
+                                    <span class="material-symbols-rounded">chat_bubble</span>
+                                </div>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <p>Firman Christian Purba</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="contact__social">
-                            <h4>Find me on GitHub</h4>
-                            <div class="contact__social-links">
-                                <a href="https://github.com/firmanchrstn" target="_blank" rel="noopener noreferrer"
-                                    class="contact__social-link">Gh</a>
-                            </div>
-                        </div>
                     </div>
-                    <form class="contact__form" id="contact-form">
-                        <h3 class="contact__title">Send Me a Message</h3>
-                        <div class="contact__input-group"><label for="name">Name *</label><input type="text" id="name"
-                                name="name" placeholder="Full name" required></div>
-                        <div class="contact__input-group"><label for="message">Message *</label><textarea id="message"
-                                name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full"><span
-                                class="material-symbols-rounded">send</span> Send Message</button>
-                    </form>
+
+                    <div class="contact__box">
+                        <form action="" class="contact__form">
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label>Nama Lengkap</label>
+                                    <input type="text" placeholder="e.g. John Doe" class="form__input">
+                                </div>
+                                <div class="form__group">
+                                    <label>Alamat Email</label>
+                                    <input type="email" placeholder="e.g. john@email.com" class="form__input">
+                                </div>
+                            </div>
+                            <div class="form__group">
+                                <label>Pesan</label>
+                                <textarea placeholder="Ceritakan singkat proyek atau keperluan Anda..."
+                                    class="form__input form__textarea"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--wide">
+                                Kirim Pesan
+                                <span class="material-symbols-rounded">arrow_right_alt</span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
