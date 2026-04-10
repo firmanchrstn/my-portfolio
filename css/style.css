@@ -445,6 +445,8 @@ textarea {
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
+    text-decoration: none;
+    color: white;
 }
 
 .portfolio__card:hover .portfolio__card-overlay {
@@ -857,4 +859,39 @@ textarea {
     .hero__scroll {
         margin-top: 3rem;
     }
+}
+
+.impact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.impact-list li {
+    display: flex; /* Membuat nomor dan teks sejajar ke samping */
+    align-items: flex-start; /* Menjaga nomor tetap di atas jika teks sangat panjang */
+    gap: 1.5rem; /* Jarak antara nomor dan teks */
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.impact-number {
+    font-weight: 700;
+    color: var(--primary-study);
+    font-size: 1.2rem;
+    min-width: 30px; /* Memastikan lebar nomor konsisten agar teks di kanannya sejajar vertikal */
+}
+
+.impact-content strong {
+    display: block; /* Membuat judul di atas deskripsi */
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+}
+
+.impact-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
