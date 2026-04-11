@@ -625,7 +625,8 @@ textarea {
     grid-template-columns: 1fr 1.2fr;
     gap: 5rem;
     align-items: center;
-    padding: 4rem 0;
+    margin-top: -80px;
+    padding-top: 0;
 }
 
 .contact__text .section__title {
@@ -641,29 +642,47 @@ textarea {
     gap: 2rem;
 }
 
+.about__content {
+    display: grid;
+    /* Pastikan kembali ke 2 kolom: satu untuk foto, satu untuk teks */
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    /* Sesuaikan jarak antar kolom */
+    align-items: center;
+
+    /* Tetap gunakan margin-top negatif untuk menaikkan posisi */
+    margin-top: -60px;
+}
+
+/* Biar di HP gak berantakan, buat jadi 1 kolom lagi */
+@media (max-width: 768px) {
+    .about__content {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        gap: 2rem;
+    }
+}
+
 .method__item {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-.method__icon {
-    width: 54px;
-    height: 54px;
-    background: var(--bg-light);
-    border-radius: 16px;
+.method__icon i {
+    font-size: 1.8rem;
+    /* Ukuran logo */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-study);
-    font-size: 1.5rem;
 }
 
-.method__item h4 {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
+/* Efek hover agar lebih interaktif */
+.method__item:hover .method__icon {
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 /* THE BOX FORM */
