@@ -11,12 +11,23 @@
 </head>
 
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo" style="display: flex; align-items: center; gap: 0.5rem;">
-                <span class="material-symbols-rounded">arrow_back</span> Kembali
-            </a>
-            <a href="https://github.com/firmanchrstn" target="_blank" class="btn btn--outline">GitHub Profile</a>
+    <header class="header" id="header">
+        <nav class="nav container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" class="nav__logo" style="font-weight: 700; font-size: 1.5rem; color: var(--text-main); text-decoration: none;">Portofolio</a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list" style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Beranda</a></li>
+                    <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portofolio</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <i class="material-symbols-rounded theme-toggle" id="theme-toggle" style="cursor: pointer; font-size: 1.5rem; color: var(--text-main);">light_mode</i>
+                <a href="asset/CV.pdf" target="_blank" class="btn btn--primary" style="padding: 0.6rem 1.5rem; border-radius: 12px;">View CV</a>
+            </div>
         </nav>
     </header>
 
@@ -58,6 +69,8 @@
 
             <section class="section-study">
                 <h2>Visual Interface Solution</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">* Klik pada gambar desain untuk memperbesar.</p>
+                
                 <div class="design-gallery">
                     <article class="gallery-item">
                         <div class="img-wrapper"><img src="asset/prototype-figma-mobileJKN/Home.png" alt="Dashboard"></div>
@@ -283,20 +296,36 @@
                 <p style="margin-bottom: 3rem; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
                     Lihat bagaimana solusi desain ini bekerja secara nyata. Klik tombol di bawah untuk membuka High-Fidelity Prototype langsung di Figma.
                 </p>
-                <a href="https://www.figma.com/proto/RFgyepcmQbwohMHgf7fjpD/Mobile-JKN-Redesign?node-id=45-1364&..." target="_blank" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 16px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 91, 255, 0.2);">
+                <a href="https://www.figma.com/proto/RFgyepcmQbwohMHgf7fjpD/Mobile-JKN-Redesign?node-id=45-1364&p=f&viewport=319%2C81%2C0.06&t=DUFabksQzt6VHSEf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=271%3A5933&show-proto-sidebar=1" target="_blank" class="btn btn--primary" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 16px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 91, 255, 0.2);">
                     <span class="material-symbols-rounded">open_in_new</span>
                     Buka Prototipe Figma
                 </a>
             </section>
+
+            <section class="section-study cta-study">
+                <div class="cta-study__content">
+                    <h2 style="padding-left: 0;">Punya Visi yang Sama?</h2>
+                    <p>Mari berkolaborasi untuk menciptakan pengalaman digital yang berdampak nyata bagi pengguna dan bisnis Anda.</p>
+                    <a href="index.html#contact" class="btn" style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); color: var(--primary-study); padding: 1rem 2rem; border-radius: 12px; font-weight: 700; transition: transform 0.3s ease;">
+                        Mulai Kolaborasi <span class="material-symbols-rounded">arrow_forward</span>
+                    </a>
+                </div>
+            </section>
         </div>
     </main>
 
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox__close" id="lightbox-close">&times;</span>
+        <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+    </div>
+
     <footer class="footer">
         <div class="container">
-            <p class="footer__text">©2026 Firman Christian Purba. Portfolio Case Study.</p>
+            <p class="footer__text">©2025 Firman Christian Purba. Portfolio Case Study.</p>
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
     <script src="js/gallery-slider.js"></script>
 </body>
 

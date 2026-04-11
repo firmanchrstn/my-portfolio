@@ -9,7 +9,6 @@ const navLinks = document.querySelectorAll('.nav__link');
 const themeToggle = document.getElementById('theme-toggle');
 const portfolioFilters = document.querySelectorAll('.portfolio__filter');
 const portfolioCards = document.querySelectorAll('.portfolio__card');
-const contactForm = document.getElementById('contact-form');
 
 // ===== 1. Mobile Menu =====
 if (navToggle) {

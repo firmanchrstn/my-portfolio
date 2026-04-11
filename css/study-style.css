@@ -193,3 +193,140 @@
     box-shadow: 0 15px 30px rgba(45, 91, 255, 0.3);
     background-color: #888888;
 }
+
+.img-wrapper img {
+    cursor: zoom-in;
+    transition: transform 0.4s ease;
+}
+
+.img-wrapper img:hover {
+    transform: scale(1.05); /* Sedikit membesar memberi tahu bisa diklik */
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95); /* Warna gelap kebiruan elegan */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.lightbox__img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox__img {
+    transform: scale(1);
+}
+
+.lightbox__close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox__close:hover {
+    color: var(--primary-study); /* Tombol close jadi hijau saat disorot */
+}
+
+/* ================= CALL TO ACTION (CTA) ================= */
+.cta-study {
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.cta-study__content {
+    background: var(--primary-study); /* Warna hijau andalanmu */
+    padding: 4rem 3rem;
+    border-radius: 32px;
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 20px 40px rgba(154, 205, 50, 0.2);
+}
+
+.cta-study__content h2 {
+    color: var(--white) !important;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-study__content h2::before {
+    display: none; /* Hilangkan garis vertikal dekorasi H2 khusus di CTA ini */
+}
+
+.cta-study__content p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* ================= DARK MODE UNTUK STUDY CASE ================= */
+[data-theme="dark"] {
+    /* Menimpa variabel khusus study-style.css ke warna gelap */
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --bg-light: #0F172A; /* Background abu-abu kebiruan gelap (elegan) */
+    --white: #1E293B; /* Warna dasar untuk kotak/card di mode gelap */
+}
+
+/* Memperbaiki Gradasi Latar Belakang (Hero Section) */
+[data-theme="dark"] .hero-study {
+    background: linear-gradient(180deg, #0F172A 0%, #0B1120 100%);
+}
+
+/* Memperbaiki Garis Pembatas Overview */
+[data-theme="dark"] .study-overview {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Memperbaiki Kotak Gambar Galeri agar tidak menyala putih */
+[data-theme="dark"] .img-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Menyesuaikan bayangan pada Card agar menyatu dengan background gelap */
+[data-theme="dark"] .gallery-item {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Memperbaiki Tombol di dalam CTA Bawah agar tetap terlihat profesional */
+[data-theme="dark"] .cta-study__content .btn {
+    background: #1E293B !important; /* Warna card gelap */
+    color: var(--primary-study) !important;
+}
+
+[data-theme="dark"] .cta-study__content .btn:hover {
+    background: #2A3B52 !important;
+}
+
+/* Memastikan tulisan pada label tetap enak dibaca */
+[data-theme="dark"] .study-label {
+    background: rgba(154, 205, 50, 0.15);
+    color: var(--primary-study);
+}

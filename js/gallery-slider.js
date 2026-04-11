@@ -50,3 +50,47 @@ function autoScroll() {
 
 // Jalankan auto scroll setiap 3 detik
 setInterval(autoScroll, 3000);
+
+/* ... (Kode autoScroll kamu yang lama tetap biarkan di atas) ... */
+
+// ================= LIGHTBOX LOGIC =================
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.getElementById('lightbox-close');
+const galleryImages = document.querySelectorAll('.img-wrapper img');
+
+if (lightbox && lightboxImg) {
+    // Buka Lightbox saat gambar di dalam galeri diklik
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src; // Ambil source gambar yang diklik
+            lightbox.classList.add('active'); // Tampilkan modal
+            document.body.style.overflow = 'hidden'; // Kunci scroll halaman web di belakangnya
+        });
+    });
+
+    // Fungsi untuk menutup Lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Buka kunci scroll
+    }
+
+    // Tutup saat tombol (X) diklik
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+
+    // Tutup saat area luar gambar (background gelap) diklik
+    lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+            closeLightbox();
+        }
+    });
+
+    // UX Tambahan: Tutup menggunakan tombol 'Escape' di keyboard
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
