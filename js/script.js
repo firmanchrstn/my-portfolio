@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // --- 1. Theme Management (Dark/Light Mode) ---
     const themeToggle = document.getElementById('theme-toggle');
     
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (savedTheme) {
             document.documentElement.setAttribute('data-theme', savedTheme);
         } else {
-            // Check system preference
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
         }
@@ -30,59 +29,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 2. Navigation Menu (Mobile) ---
+    // --- 2. Navigation & Header Effect ---
     const navMenu = document.getElementById('nav-menu');
     const navToggle = document.getElementById('nav-toggle');
     const navClose = document.getElementById('nav-close');
     const navLinks = document.querySelectorAll('.nav__link');
-
-    if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
-    if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
-    navLinks.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('show-menu')));
-
-    // --- 3. Header Scroll Effect & Active Link Observer ---
     const header = document.getElementById('header');
     const sections = document.querySelectorAll('section[id]');
+
+    // Mobile Menu
+    if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+    if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
     
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu) navMenu.classList.remove('show-menu');
+        });
+    });
+
+    // Scroll Events: Header Shadow & Active Link
     window.addEventListener('scroll', () => {
-        // Header Shadow
-        if (window.scrollY > 50) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
+        // Shadow Header
+        if (header) {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        }
 
         // Active Link Highlighting
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            // 100 is offset tolerance for the header
-            if (scrollY >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
+        let scrollY = window.pageYOffset;
+        sections.forEach(current => {
+            const sectionHeight = current.offsetHeight;
+            const sectionTop = current.offsetTop - 100;
+            const sectionId = current.getAttribute('id');
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                document.querySelector('.nav__menu a[href*=' + sectionId + ']')?.classList.add('active');
+            } else {
+                document.querySelector('.nav__menu a[href*=' + sectionId + ']')?.classList.remove('active');
             }
         });
     });
 
-    // --- 4. Portfolio Filtering ---
+    // --- 3. Portfolio Filtering ---
     const filters = document.querySelectorAll('.portfolio__filter');
     const cards = document.querySelectorAll('.portfolio__card');
 
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
-            // Remove active class from all
             filters.forEach(f => f.classList.remove('active'));
             filter.classList.add('active');
 
             const target = filter.getAttribute('data-filter');
 
             cards.forEach(card => {
+                card.style.transition = 'all 0.3s ease';
                 if (target === 'all' || card.getAttribute('data-category') === target) {
                     card.style.display = 'block';
-                    // Small timeout to allow display:block to apply before animating opacity
                     setTimeout(() => {
                         card.style.opacity = '1';
                         card.style.transform = 'scale(1)';
@@ -96,25 +97,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 5. Intersection Observer (Scroll Reveal Animations) ---
-    // This replaces CSS transitions on load and makes the site feel alive
+    // --- 4. Intersection Observer (Modern Reveal Animation) ---
+    // Cara ini jauh lebih ringan daripada window.addEventListener('scroll')
     const revealElements = document.querySelectorAll('.reveal');
-    
+
     const revealOptions = {
-        threshold: 0.15, // Trigger when 15% visible
+        threshold: 0.15,
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    const revealOnScroll = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target); // Only animate once
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Animasi hanya jalan sekali
+            }
         });
     }, revealOptions);
 
     revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // Console signature
     console.log('%c Portfolio upgraded successfully.', 'color: #9ACD32; font-weight: bold; font-size: 14px;');
 });
