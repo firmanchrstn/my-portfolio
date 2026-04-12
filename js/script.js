@@ -1,156 +1,120 @@
-/* ==================== SCRIPT UTAMA - FIRMAN PORTFOLIO ==================== */
+/**
+ * FIRMAN PORTFOLIO SCRIPT
+ * Architecture: Modular, ES6+, Performance Optimized
+ */
 
-// ===== DOM Elements =====
-const header = document.getElementById('header');
-const navMenu = document.getElementById('nav-menu');
-const navToggle = document.getElementById('nav-toggle');
-const navClose = document.getElementById('nav-close');
-const navLinks = document.querySelectorAll('.nav__link');
-const themeToggle = document.getElementById('theme-toggle');
-const portfolioFilters = document.querySelectorAll('.portfolio__filter');
-const portfolioCards = document.querySelectorAll('.portfolio__card');
-
-// ===== 1. Mobile Menu =====
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show');
-    });
-}
-
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-    });
-}
-
-// Close menu when clicking on nav links
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-    });
-});
-
-// ===== 2. Smooth Scroll with Negative Offset (Biar Konten Naik) =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-
-        if (targetElement) {
-            const headerHeight = header ? header.offsetHeight : 0;
-
-            // GUNAKAN OFFSET NEGATIF agar konten naik lebih tinggi dari batas navbar
-            // Ganti -100 menjadi angka yang lebih besar jika kurang naik (misal -150)
-            const offset = 0;
-
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight + offset;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// ===== 3. Active Navigation Link (Ganti Warna Teks Navbar) =====
-const sections = document.querySelectorAll('section[id]');
-
-function scrollActive() {
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        // Berikan toleransi offset agar warna berubah sebelum section menyentuh navbar
-        const sectionTop = section.offsetTop - 200;
-        const sectionId = section.getAttribute('id');
-
-        // Cari link yang href-nya sesuai ID
-        const navLink = document.querySelector(`.nav__link[href*="#${sectionId}"]`);
-
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLink.classList.add('active'); // Harus sama dengan nama class di CSS
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Theme Management (Dark/Light Mode) ---
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    const getCurrentTheme = () => document.documentElement.getAttribute('data-theme');
+    const setSavedTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
         } else {
-            navLink.classList.remove('active');
+            // Check system preference
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
         }
-    });
-}
-window.addEventListener('scroll', scrollActive);
+    };
 
-// ===== 4. Header Scroll Effect (Shadow on Scroll) =====
-window.addEventListener('scroll', () => {
-    if (header) {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    setSavedTheme();
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const newTheme = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
     }
-});
 
-// ===== 5. Theme Toggle (Dark/Light Mode) =====
-function getPreferredTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) return savedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
+    // --- 2. Navigation Menu (Mobile) ---
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navClose = document.getElementById('nav-close');
+    const navLinks = document.querySelectorAll('.nav__link');
 
-function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-}
+    if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+    if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
+    navLinks.forEach(link => link.addEventListener('click', () => navMenu.classList.remove('show-menu')));
 
-if (themeToggle) {
-    setTheme(getPreferredTheme());
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
-}
+    // --- 3. Header Scroll Effect & Active Link Observer ---
+    const header = document.getElementById('header');
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+        // Header Shadow
+        if (window.scrollY > 50) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
 
-// ===== 6. Portfolio Filter =====
-portfolioFilters.forEach(filter => {
-    filter.addEventListener('click', () => {
-        portfolioFilters.forEach(f => f.classList.remove('active'));
-        filter.classList.add('active');
+        // Active Link Highlighting
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            // 100 is offset tolerance for the header
+            if (scrollY >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
 
-        const category = filter.getAttribute('data-filter');
-
-        portfolioCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'block';
-                card.style.animation = 'fadeIn 0.5s ease forwards';
-            } else {
-                card.style.display = 'none';
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
             }
         });
     });
-});
 
-// ===== 7. Scroll Reveal Animation =====
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
+    // --- 4. Portfolio Filtering ---
+    const filters = document.querySelectorAll('.portfolio__filter');
+    const cards = document.querySelectorAll('.portfolio__card');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
+    filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Remove active class from all
+            filters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+
+            const target = filter.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                if (target === 'all' || card.getAttribute('data-category') === target) {
+                    card.style.display = 'block';
+                    // Small timeout to allow display:block to apply before animating opacity
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        });
     });
-}, observerOptions);
 
-document.querySelectorAll('.portfolio__card, .about__stat, .contact__box').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+    // --- 5. Intersection Observer (Scroll Reveal Animations) ---
+    // This replaces CSS transitions on load and makes the site feel alive
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOptions = {
+        threshold: 0.15, // Trigger when 15% visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Only animate once
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => revealOnScroll.observe(el));
+
+    // Console signature
+    console.log('%c Portfolio upgraded successfully.', 'color: #9ACD32; font-weight: bold; font-size: 14px;');
 });
-
-// ===== Console Welcome Message =====
-console.log('%c Welcome to Firman Christian Purba Portfolio!', 'font-size: 20px; font-weight: bold; color: #9ACD32;');

@@ -1,118 +1,120 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfolio Firman Christian Purba - Information Systems Student & Front-End Developer">
-    <title>Firman Christian Purba | Portfolio</title>
+    <meta name="description" content="Firman Christian Purba - Information Systems Student & Front-End Developer">
+    <title>Firman Christian Purba | Frontend Developer</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Portofolio</a>
+            <a href="#home" class="nav__logo">Firman.</a>
+            
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="#home" class="nav__link active">Beranda</a></li>
-                    <li><a href="#portfolio" class="nav__link">Portofolio</a></li>
+                    <li><a href="#home" class="nav__link active">Home</a></li>
+                    <li><a href="#portfolio" class="nav__link">Work</a></li>
                     <li><a href="#about" class="nav__link">About</a></li>
-                    <li><a href="#contact" class="nav__link">Kontak</a></li>
+                    <li><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
-                        class="material-symbols-rounded">close</span></button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
             </div>
+
             <div class="nav__actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <span class="sun-icon material-symbols-rounded">light_mode</span>
-                    <span class="moon-icon material-symbols-rounded" style="color: #f2f2f2;">dark_mode</span>
+                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
                 </button>
-                <a href="#contact" class="btn btn--primary">View CV</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
-                        class="material-symbols-rounded">menu</span></button>
+                <a href="#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="material-symbols-rounded">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main class="main">
         <section class="hero section" id="home">
-            <div class="hero__container container">
-                <div class="hero__content">
-                    <div class="hero__data">
-                        <span class="hero__greeting">Hello, I'm</span>
-                        <h1 class="hero__name">Firman Christian Purba</h1>
-                        <p class="hero__title">Information Systems Student & Front-End Developer</p>
-                        <p class="hero__description">Mahasiswa semester 6 di Jakarta International University yang
-                            berfokus pada Front-End Development, Mobile Apps (Flutter), dan UI/UX Design.</p>
-                        <div class="hero__buttons">
-                            <a href="#portfolio" class="btn btn--primary">View Portofolio</a>
-                            <a href="#contact" class="btn btn--outline">Kontak Saya</a>
-                        </div>
-                    </div>
-                    <div class="hero__image">
-                        <div class="hero__image-wrapper">
-                            <div class="hero__image-bg"></div>
-                            <img src="asset/pp.jpeg" alt="Firman Christian Purba" class="hero__img">
-                        </div>
+            <div class="hero__bg-blob"></div>
+            <div class="container hero__container">
+                <div class="hero__content reveal">
+                    <span class="badge">Available for Work</span>
+                    <h1 class="hero__name">Building Digital <br> <span class="text-accent">Experiences.</span></h1>
+                    <p class="hero__description">
+                        Information Systems student & Front-End Developer based in Jakarta. I bridge the gap between design and engineering to build scalable, beautiful applications.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#portfolio" class="btn btn--primary">View Projects <span class="material-symbols-rounded">arrow_forward</span></a>
+                        <a href="asset/CV.pdf" target="_blank" class="btn btn--outline">Download CV</a>
                     </div>
                 </div>
-                <div class="hero__scroll"><span>Scroll to explore</span><span
-                        class="material-symbols-rounded">arrow_downward</span></div>
+                <div class="hero__image reveal" style="transition-delay: 200ms;">
+                    <div class="hero__image-wrapper">
+                        <img src="asset/pp.jpeg" alt="Firman Christian Purba" class="hero__img">
+                        <div class="hero__image-backdrop"></div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="portfolio section" id="portfolio">
             <div class="container">
-                <span class="section__subtitle">— My Works</span>
-                <h2 class="section__title">Portofolio</h2>
-                <p class="section__description">Daftar proyek pengembangan aplikasi web, mobile, dan desain UI/UX yang
-                    telah saya kerjakan.</p>
-                <div class="portfolio__filters">
-                    <button class="portfolio__filter active" data-filter="all">All Project</button>
-                    <button class="portfolio__filter" data-filter="uiux">UI/UX Design</button>
-                    <button class="portfolio__filter" data-filter="web">Web & Mobile</button>
+                <div class="section__header reveal">
+                    <span class="section__subtitle">Selected Works</span>
+                    <h2 class="section__title">Featured Projects</h2>
                 </div>
+                
+                <div class="portfolio__filters reveal">
+                    <button class="portfolio__filter active" data-filter="all">All</button>
+                    <button class="portfolio__filter" data-filter="uiux">UI/UX Design</button>
+                    <button class="portfolio__filter" data-filter="web">Development</button>
+                </div>
+
                 <div class="portfolio__grid">
-                    <article class="portfolio__card" data-category="uiux">
+                    <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
-                            <img src="asset/prototype-figma-mobileJKN/Thumbnail - IG.jpg" alt="Mobile JKN">
+                            <img src="asset/prototype-figma-mobileJKN/Thumbnail - IG.jpg" alt="Mobile JKN Redesign">
                             <div class="portfolio__card-overlay">
-                                <button class="portfolio__card-btn" onclick="window.open('mobile-jkn.html', '_blank')">
-                                    <span class="material-symbols-rounded">visibility</span>
-                                    <p>view</p>
-                                </button>
+                                <a href="mobile-jkn.html" class="portfolio__card-btn">View Case Study</a>
                             </div>
                         </div>
                         <div class="portfolio__card-content">
-                            <span class="portfolio__card-category">UI/UX Design</span>
-                            <h3 class="portfolio__card-title">Redesign Mobile JKN</h3>
-                            <p class="portfolio__card-desc">Modernisasi visual hierarchy dan performa aplikasi Mobile
-                                JKN di Figma.</p>
+                            <div class="portfolio__card-tags">
+                                <span>UI/UX</span>
+                                <span>Figma</span>
+                            </div>
+                            <h3 class="portfolio__card-title">Mobile JKN Redesign</h3>
+                            <p class="portfolio__card-desc">Modernizing the visual hierarchy and user experience of Indonesia's national healthcare app.</p>
                         </div>
                     </article>
 
-                    <article class="portfolio__card" data-category="web">
-                        <div class="portfolio__card-image"><img
-                                src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?w=400&h=300&fit=crop"
-                                alt="Vigenère Cipher">
-                            <div class="portfolio__card-overlay"><button class="portfolio__card-btn"><span
-                                        class="material-symbols-rounded">visibility</span>
-                                    <p>view</p>
-                                </button></div>
+                    <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
+                        <div class="portfolio__card-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop" alt="Vigenère Cipher">
+                            <div class="portfolio__card-overlay">
+                                <a href="#" class="portfolio__card-btn">View Code</a>
+                            </div>
                         </div>
-                        <div class="portfolio__card-content"><span class="portfolio__card-category">Security Project
-                                (Python)</span>
-                            <h3 class="portfolio__card-title">Vigenère Cipher App</h3>
-                            <p class="portfolio__card-desc">Aplikasi enkripsi teks untuk tugas Web and Application
-                                Security.</p>
+                        <div class="portfolio__card-content">
+                            <div class="portfolio__card-tags">
+                                <span>Python</span>
+                                <span>Security</span>
+                            </div>
+                            <h3 class="portfolio__card-title">Vigenère Cipher Engine</h3>
+                            <p class="portfolio__card-desc">A cryptographic text encryption application developed for Web and Application Security coursework.</p>
                         </div>
                     </article>
                 </div>
@@ -120,106 +122,87 @@
         </section>
 
         <section class="about section" id="about">
-            <div class="container">
-                <div class="about__container">
-                    <div class="about__content">
-                        <h2 class="section__title section__title--left">About Me</h2>
-                        <p class="about__description">Saya adalah mahasiswa <strong>Sistem Informasi</strong> di Jakarta
-                            International University yang memiliki minat tinggi dalam menjembatani kebutuhan bisnis
-                            dengan solusi teknologi yang estetik dan fungsional.</p>
-                        <div class="about__tools">
-                            <h3 class="about__subtitle">Tech Stack</h3>
-                            <div class="about__tools-list">
-                                <div class="about__tool" title="Flutter">Fl</div>
-                                <div class="about__tool" title="Figma">Fg</div>
-                            </div>
-                            <div class="about__competencies">
-                                <h3 class="about__subtitle">Core Competencies</h3>
-                                <div class="about__competencies-grid">
-                                    <ul class="about__competencies-list">
-                                        <li>Next.js & React</li>
-                                        <li>Mobile Development (Flutter)</li>
-                                        <li>UI/UX Prototyping</li>
-                                    </ul>
-                                    <ul class="about__competencies-list">
-                                        <li>Management Info Systems</li>
-                                        <li>Web Security</li>
-                                        <li>Python Programming</li>
-                                    </ul>
-                                </div>
+            <div class="container about__container">
+                <div class="about__content reveal">
+                    <span class="section__subtitle">About Me</span>
+                    <h2 class="section__title">Engineering with a Designer's Eye.</h2>
+                    <p class="about__description">
+                        Currently in my 6th semester at Jakarta International University, I specialize in creating intuitive interfaces and robust front-end architectures. My approach combines technical precision with deep empathy for the end-user.
+                    </p>
+                    
+                    <div class="about__grid">
+                        <div class="about__stack">
+                            <h3>Core Stack</h3>
+                            <div class="stack__list">
+                                <span class="stack__item">Next.js / React</span>
+                                <span class="stack__item">Flutter</span>
+                                <span class="stack__item">TypeScript</span>
+                                <span class="stack__item">Tailwind CSS</span>
                             </div>
                         </div>
-                        <div class="about__stats">
-                            <div class="about__stat"><span class="about__stat-number">6</span><span
-                                    class="about__stat-label">Semester</span></div>
-                            <div class="about__stat"><span class="about__stat-number">10+</span><span
-                                    class="about__stat-label">Projects</span></div>
-                            <div class="about__stat"><span class="about__stat-number">4+</span><span
-                                    class="about__stat-label">Tech Stack</span></div>
-                            <div class="about__stat"><span class="about__stat-number">JIU</span><span
-                                    class="about__stat-label">University</span></div>
+                        <div class="about__stack">
+                            <h3>Design & Tools</h3>
+                            <div class="stack__list">
+                                <span class="stack__item">Figma</span>
+                                <span class="stack__item">Git / GitHub</span>
+                                <span class="stack__item">UI Prototyping</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
+                <div class="about__stats reveal" style="transition-delay: 200ms;">
+                    <div class="stat__card">
+                        <span class="stat__number">6th</span>
+                        <span class="stat__label">Semester (JIU)</span>
+                    </div>
+                    <div class="stat__card">
+                        <span class="stat__number">10+</span>
+                        <span class="stat__label">Projects Built</span>
+                    </div>
+                    <div class="stat__card">
+                        <span class="stat__number">100%</span>
+                        <span class="stat__label">Commitment</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="contact section" id="contact">
-            <div class="container">
-                <div class="contact__content">
-                    <div class="contact__text">
-                        <span class="section__subtitle">Contact Me</span>
-                        <h2 class="section__title">Mari Berdiskusi Proyek <br> Anda Selanjutnya</h2>
-                        <p class="section__description">
-                            Saya selalu terbuka untuk peluang kolaborasi atau sekadar bertukar pikiran mengenai UI/UX
-                            dan Web Development.
-                        </p>
+            <div class="container contact__container">
+                <div class="contact__info reveal">
+                    <span class="section__subtitle">Get In Touch</span>
+                    <h2 class="section__title">Let's build something <span class="text-accent">together.</span></h2>
+                    <p class="contact__desc">Currently open for freelance opportunities, internships, and collaborative projects. Feel free to reach out.</p>
+                    
+                    <div class="contact__socials">
+                        <a href="mailto:firmanchristianp@gmail.com" class="social__link">
+                            <i class="fa-solid fa-envelope"></i> firmanchristianp@gmail.com
+                        </a>
+                        <a href="https://linkedin.com/in/firman-christian" target="_blank" class="social__link">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                        <a href="https://github.com/firmanchrstn" target="_blank" class="social__link">
+                            <i class="fa-brands fa-github"></i> GitHub Profile
+                        </a>
+                    </div>
+                </div>
 
-                        <div class="contact__methods">
-                            <div class="method__item">
-                                <div class="method__icon">
-                                    <i class="fa-brands fa-google" style="color: #DB4437;"></i>
-                                </div>
-                                <div>
-                                    <h4>Email</h4>
-                                    <p>firmanchristian@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="method__item">
-                                <div class="method__icon">
-                                    <i class="fa-brands fa-linkedin-in" style="color: #0077B5;"></i>
-                                </div>
-                                <div>
-                                    <h4>LinkedIn</h4>
-                                    <p>Firman Christian Purba</p>
-                                </div>
-                            </div>
+                <div class="contact__form-wrapper reveal" style="transition-delay: 200ms;">
+                    <form class="contact__form" id="contact-form">
+                        <div class="form__group">
+                            <input type="text" id="name" class="form__input" placeholder="Your Name" required>
                         </div>
-                    </div>
-
-                    <div class="contact__box">
-                        <form action="" class="contact__form">
-                            <div class="form__row">
-                                <div class="form__group">
-                                    <label>Nama Lengkap</label>
-                                    <input type="text" placeholder="e.g. John Doe" class="form__input">
-                                </div>
-                                <div class="form__group">
-                                    <label>Alamat Email</label>
-                                    <input type="email" placeholder="e.g. john@email.com" class="form__input">
-                                </div>
-                            </div>
-                            <div class="form__group">
-                                <label>Pesan</label>
-                                <textarea placeholder="Ceritakan singkat proyek atau keperluan Anda..."
-                                    class="form__input form__textarea"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn--primary btn--wide">
-                                Kirim Pesan
-                                <span class="material-symbols-rounded">arrow_right_alt</span>
-                            </button>
-                        </form>
-                    </div>
+                        <div class="form__group">
+                            <input type="email" id="email" class="form__input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form__group">
+                            <textarea id="message" class="form__input form__textarea" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">
+                            Send Message <span class="material-symbols-rounded">send</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -227,11 +210,13 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="footer__text">©2025 Firman Christian Purba. Built with passion and coffee.</p>
+            <div class="footer__content">
+                <a href="#home" class="footer__logo">Firman.</a>
+                <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
     <script src="js/script.js"></script>
-
 </body>
-
 </html>
