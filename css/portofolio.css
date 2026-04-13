@@ -8,9 +8,10 @@
 }
 
 .study-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    padding-top: 4rem;     /* Jarak atas */
+    padding-bottom: 4rem;  /* Jarak bawah sebelum pindah ke section lain */
+    max-width: 800px;      /* Membatasi lebar teks agar mata tidak lelah membaca */
+    margin: 0 auto;        /* Mengetengahkan seluruh blok teks */
 }
 
 .hero-study {
@@ -70,6 +71,26 @@
 
 .section-study {
     margin-bottom: var(--section-spacing);
+}
+
+/* Mengatur jarak antar paragraf penjelasan */
+.section-study p {
+    margin-bottom: 1.5rem; /* Jarak antar baris penjelasan */
+    line-height: 1.8;      /* Memberikan ruang antar baris teks agar lebih lega */
+    color: var(--text-muted);
+}
+
+/* Jika kamu menggunakan list (poin-poin) */
+.section-study ul li {
+    margin-bottom: 1rem;   /* Jarak antar poin list */
+    padding-left: 0.5rem;
+}
+
+.section-study h3 {
+    margin-top: 2.5rem;    /* Jarak dari paragraf sebelumnya ke judul baru */
+    margin-bottom: 1rem;   /* Jarak dari judul ke penjelasannya */
+    color: var(--text-main);
+    font-weight: 600;
 }
 
 .section-study h2 {
