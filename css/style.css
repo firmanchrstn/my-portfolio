@@ -1,28 +1,28 @@
 /* ==========================================================================
    Design System & Variables
    ========================================================================== */
-   :root {
+:root {
     /* Brand Colors */
     --color-primary: #9ACD32;
     --color-primary-hover: #86B32B;
-    
+
     /* Light Theme (SaaS Slate) */
     --bg-base: #FFFFFF;
     --bg-surface: #F8FAFC;
     --bg-elevated: #FFFFFF;
-    
+
     --text-heading: #0F172A;
     --text-body: #334155;
     --text-muted: #64748B;
-    
+
     --border-color: #E2E8F0;
-    
+
     /* Layout */
     --header-height: 80px;
     --radius-md: 12px;
     --radius-lg: 24px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
@@ -34,16 +34,17 @@
     --bg-base: #0B1120;
     --bg-surface: #0F172A;
     --bg-elevated: #1E293B;
-    
+
     --text-heading: #F8FAFC;
     --text-body: #CBD5E1;
     --text-muted: #94A3B8;
-    
+
     --border-color: #334155;
-    
+
     --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.3);
     --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.5);
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -52,7 +53,8 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 0; /* REPLACES JS OFFSET HACKS */
+    scroll-padding-top: 0;
+    /* REPLACES JS OFFSET HACKS */
 }
 
 body {
@@ -64,9 +66,20 @@ body {
     overflow-x: hidden;
 }
 
-ul { list-style: none; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; height: auto; display: block; }
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 .container {
     max-width: 1200px;
@@ -79,10 +92,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Typography Helpers */
-h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
-.text-accent { color: var(--color-primary); }
+h1,
+h2,
+h3 {
+    color: var(--text-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
 
-.section__header { margin-bottom: 3rem; }
+.text-accent {
+    color: var(--color-primary);
+}
+
+.section__header {
+    margin-bottom: 3rem;
+}
+
 .section__subtitle {
     display: inline-block;
     color: var(--color-primary);
@@ -92,7 +117,10 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
 }
-.section__title { font-size: clamp(2rem, 4vw, 3rem); }
+
+.section__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
 
 /* ==========================================================================
    Components: Buttons & Badges
@@ -132,7 +160,9 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     border-color: var(--text-heading);
 }
 
-.btn--full { width: 100%; }
+.btn--full {
+    width: 100%;
+}
 
 .badge {
     display: inline-block;
@@ -192,7 +222,8 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: color 0.2s;
 }
 
-.nav__link:hover, .nav__link.active {
+.nav__link:hover,
+.nav__link.active {
     color: var(--text-heading);
 }
 
@@ -212,10 +243,16 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     align-items: center;
 }
 
-[data-theme="dark"] .sun-icon { display: none; }
-[data-theme="light"] .moon-icon { display: none; }
+[data-theme="dark"] .sun-icon {
+    display: none;
+}
 
-.nav__toggle, .nav__close {
+[data-theme="light"] .moon-icon {
+    display: none;
+}
+
+.nav__toggle,
+.nav__close {
     display: none;
     background: none;
     border: none;
@@ -293,7 +330,9 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
 /* ==========================================================================
    Layout: Portfolio Section
    ========================================================================== */
-.portfolio { background-color: var(--bg-surface); }
+.portfolio {
+    background-color: var(--bg-surface);
+}
 
 .portfolio__filters {
     display: flex;
@@ -313,7 +352,8 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: var(--transition);
 }
 
-.portfolio__filter.active, .portfolio__filter:hover {
+.portfolio__filter.active,
+.portfolio__filter:hover {
     background: var(--text-heading);
     color: var(--bg-base);
     border-color: var(--text-heading);
@@ -366,7 +406,9 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: opacity 0.3s ease;
 }
 
-.portfolio__card:hover .portfolio__card-overlay { opacity: 1; }
+.portfolio__card:hover .portfolio__card-overlay {
+    opacity: 1;
+}
 
 .portfolio__card-btn {
     background: var(--bg-base);
@@ -378,9 +420,13 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: all 0.3s ease;
 }
 
-.portfolio__card:hover .portfolio__card-btn { transform: translateY(0); }
+.portfolio__card:hover .portfolio__card-btn {
+    transform: translateY(0);
+}
 
-.portfolio__card-content { padding: 2rem; }
+.portfolio__card-content {
+    padding: 2rem;
+}
 
 .portfolio__card-tags {
     display: flex;
@@ -406,16 +452,24 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     gap: 4rem;
 }
 
-.about__description { margin-bottom: 2.5rem; font-size: 1.125rem; }
+.about__description {
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+}
 
 .about__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    /* TAMBAHKAN INI JIKA MASIH KURANG JAUH */
+    margin-top: 1rem; 
 }
 
-.about__stack h3 { margin-bottom: 1rem; font-size: 1.125rem; }
-
+.about__stack h3 {
+    margin-bottom: 1.5rem; /* Jarak antara judul kecil dengan ikonnya */
+    font-size: 1.125rem;
+    color: var(--text-main);
+}
 .stack__list {
     display: flex;
     flex-wrap: wrap;
@@ -454,12 +508,17 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     margin-bottom: 0.5rem;
 }
 
-.stat__label { color: var(--text-muted); font-weight: 500; }
+.stat__label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
 
 /* ==========================================================================
    Layout: Contact & Footer
    ========================================================================== */
-.contact { background-color: var(--bg-surface); }
+.contact {
+    background-color: var(--bg-surface);
+}
 
 .contact__container {
     display: grid;
@@ -467,7 +526,10 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     gap: 4rem;
 }
 
-.contact__desc { margin: 1.5rem 0 3rem; font-size: 1.125rem; }
+.contact__desc {
+    margin: 1.5rem 0 3rem;
+    font-size: 1.125rem;
+}
 
 .contact__socials {
     display: flex;
@@ -484,8 +546,14 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: color 0.2s;
 }
 
-.social__link:hover { color: var(--color-primary); }
-.social__link i { font-size: 1.5rem; width: 30px; }
+.social__link:hover {
+    color: var(--color-primary);
+}
+
+.social__link i {
+    font-size: 1.5rem;
+    width: 30px;
+}
 
 .contact__form-wrapper {
     background: var(--bg-elevated);
@@ -495,7 +563,9 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     box-shadow: var(--shadow-md);
 }
 
-.form__group { margin-bottom: 1.5rem; }
+.form__group {
+    margin-bottom: 1.5rem;
+}
 
 .form__input {
     width: 100%;
@@ -515,7 +585,10 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     box-shadow: 0 0 0 4px rgba(154, 205, 50, 0.1);
 }
 
-.form__textarea { height: 150px; resize: none; }
+.form__textarea {
+    height: 150px;
+    resize: none;
+}
 
 .footer {
     padding: 2rem 0;
@@ -528,8 +601,16 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     align-items: center;
 }
 
-.footer__logo { font-weight: 800; font-size: 1.25rem; color: var(--text-heading); }
-.footer__text { color: var(--text-muted); font-size: 0.875rem; }
+.footer__logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--text-heading);
+}
+
+.footer__text {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
 
 /* ==========================================================================
    Animations & Utilities
@@ -549,25 +630,47 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
    Responsive Design
    ========================================================================== */
 @media screen and (max-width: 992px) {
-    .hero__container, .about__container, .contact__container {
+
+    .hero__container,
+    .about__container,
+    .contact__container {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
-    .hero__content { order: 2; text-align: center; }
-    .hero__image { order: 1; max-width: 400px; margin: 0 auto; }
-    .hero__buttons { justify-content: center; }
-    .hero__bg-blob { display: none; }
-    
+
+    .hero__content {
+        order: 2;
+        text-align: center;
+    }
+
+    .hero__image {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .hero__buttons {
+        justify-content: center;
+    }
+
+    .hero__bg-blob {
+        display: none;
+    }
+
     .about__stats {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .hidden-mobile { display: none; }
-    .nav__toggle { display: block; }
-    
+    .hidden-mobile {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
     .nav__menu {
         position: fixed;
         top: 0;
@@ -582,10 +685,21 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
         flex-direction: column;
         align-items: center;
     }
-    
-    .nav__menu.show-menu { right: 0; }
-    .nav__list { flex-direction: column; align-items: center; gap: 2rem; }
-    .nav__link { font-size: 1.5rem; }
+
+    .nav__menu.show-menu {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .nav__link {
+        font-size: 1.5rem;
+    }
+
     .nav__close {
         display: block;
         position: absolute;
@@ -593,16 +707,23 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
         right: 1.5rem;
         font-size: 2rem;
     }
-    
-    .about__stats { grid-template-columns: 1fr; }
-    .footer__content { flex-direction: column; gap: 1rem; text-align: center; }
+
+    .about__stats {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
 
 /* ================= EXPERIENCE & TIMELINE ================= */
 .experience__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 5rem; /* Tambah dari 5rem ke 6rem */
     align-items: start;
 }
 
@@ -629,12 +750,30 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     border: 3px solid var(--bg-base);
 }
 
-.timeline__title { font-size: 1.25rem; margin-bottom: 0.25rem; }
-.timeline__date { font-size: 0.875rem; color: var(--primary); font-weight: 600; display: block; margin-bottom: 0.75rem; }
-.timeline__text { color: var(--text-muted); font-size: 0.95rem; }
+.timeline__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline__date {
+    font-size: 0.875rem;
+    color: var(--primary);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.timeline__text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
 
 /* ================= BENTO TECH STACK ================= */
-.stack__title { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
+.stack__title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
 .bento__grid {
     display: grid;
@@ -654,13 +793,19 @@ h1, h2, h3 { color: var(--text-heading); font-weight: 700; line-height: 1.2; }
     transition: 0.3s;
 }
 
-.bento__item i { font-size: 2.5rem; }
-.bento__item span { font-weight: 600; font-size: 0.9rem; }
+.bento__item i {
+    font-size: 2.5rem;
+}
+
+.bento__item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
 
 .bento__item:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Responsive */
