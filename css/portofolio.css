@@ -54,10 +54,18 @@
 }
 
 .main-showcase {
-    width: 100%;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-    margin: 2rem 0 6rem;
+    /* Mengatur lebar foto */
+    width: 100%;           /* Foto akan mengikuti lebar container-nya */
+    max-width: 500px;      /* Batas maksimal lebar foto (sesuaikan keinginan) */
+    
+    /* Mengatur tinggi foto */
+    height: 500px;          /* Tinggi otomatis agar foto tidak gepeng/distorsi */
+    
+    /* Tambahan agar tampilan lebih premium */
+    display: block;
+    margin: 0 auto;        /* Membuat foto otomatis ke tengah */
+    border-radius: 20px;   /* Membuat sudut foto tumpul (opsional) */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Memberi bayangan halus */
 }
 
 .section-study {
@@ -329,22 +337,4 @@
 [data-theme="dark"] .study-label {
     background: rgba(154, 205, 50, 0.15);
     color: var(--primary-study);
-}
-
-.study-list {
-    margin-top: 1.5rem;
-    padding-left: 1.2rem; /* Memberi ruang untuk bullet */
-    list-style-type: disc; /* Memastikan bullet muncul */
-}
-
-.study-list li {
-    margin-bottom: 1rem; /* Jarak antar poin */
-    line-height: 1.6;
-    color: var(--text-main);
-}
-
-.study-list li strong {
-    color: var(--primary-study); /* Memberi warna pada judul poin */
-    display: inline-block;
-    margin-bottom: 0.2rem;
 }
