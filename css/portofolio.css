@@ -330,3 +330,21 @@
     background: rgba(154, 205, 50, 0.15);
     color: var(--primary-study);
 }
+
+.study-list {
+    margin-top: 1.5rem;
+    padding-left: 1.2rem; /* Memberi ruang untuk bullet */
+    list-style-type: disc; /* Memastikan bullet muncul */
+}
+
+.study-list li {
+    margin-bottom: 1rem; /* Jarak antar poin */
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+.study-list li strong {
+    color: var(--primary-study); /* Memberi warna pada judul poin */
+    display: inline-block;
+    margin-bottom: 0.2rem;
+}

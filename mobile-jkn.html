@@ -6,31 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Study: Redesign Mobile JKN | Firman Christian Purba</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/study-style.css">
+    <link rel="stylesheet" href="css/portofolio.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
     <header class="header" id="header">
-        <nav class="nav container" style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" class="nav__logo"
-                style="font-weight: 700; font-size: 1.5rem; color: var(--text-main); text-decoration: none;">Portofolio</a>
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">UIUX</a>
 
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list" style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Beranda</a></li>
-                    <li class="nav__item"><a href="index.html#portfolio" class="nav__link">Portofolio</a></li>
-                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="index.html#contact" class="nav__link">Kontak</a></li>
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Home</a></li>
+                    <li><a href="index.html#portfolio" class="nav__link">Work</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
             </div>
 
-            <div style="display: flex; align-items: center; gap: 1.5rem;">
-                <i class="material-symbols-rounded theme-toggle" id="theme-toggle"
-                    style="cursor: pointer; font-size: 1.5rem; color: var(--text-main);">light_mode</i>
-                <a href="asset/CV.pdf" target="_blank" class="btn btn--primary"
-                    style="padding: 0.6rem 1.5rem; border-radius: 12px;">View CV</a>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+                </button>
+
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="material-symbols-rounded">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
@@ -80,70 +88,66 @@
                 <h2>The Challenge (Problem Statement)</h2>
                 <p>Public service applications often suffer from "Information Overload." Through my analysis, I
                     identified three core pain points:</p>
-                <p>1. Cognitive Overload: Dense administrative data regarding registration, rights, and obligations made
-                    it
-                    difficult for users to find relevant information during urgent situations.
-
-                    2. Perceived Performance Friction: A cluttered and unorganized layout created a perception of a
-                    "heavy"
-                    and slow application, increasing user anxiety.
-
-                    3. Weak Information Hierarchy: Critical data points, such as digital membership status and ID
-                    numbers,
-                    were often buried under secondary information.</p>
+                <ul class="study-list">
+                    <li><strong>Cognitive Overload:</strong> Dense administrative data regarding registration, rights,
+                        and obligations made it difficult for users to find relevant information during urgent
+                        situations.</li>
+                    <li><strong>Perceived Performance Friction:</strong> A cluttered and unorganized layout created a
+                        perception of a "heavy" and slow application, increasing user anxiety.</li>
+                    <li><strong>Weak Information Hierarchy:</strong> Critical data points, such as digital membership
+                        status and ID numbers, were often buried under secondary information.</li>
+                </ul>
             </section>
 
             <section class="section-study">
                 <h2>The Solution (Design Strategy)</h2>
                 <p>My approach focused on Simplification through Systemic Logic. I implemented several key UX
                     strategies:</p>
-                <p>Modular Information Architecture: I restructured the linear data into a Card-Based UI. This allows
-                    1. users to scan essential information (like billing or facility locations) much more efficiently.
-
-                    2. Progressive Disclosure: By utilizing Tabs and Accordions, I ensured that technical details are
-                    only
-                    visible when needed. This keeps the interface clean and approachable for non-technical users.
-
-                    3. Visual Trust & Identity: The Digital Participant Card was redesigned with high-contrast visual
-                    cues
-                    for the "Active" status, ensuring instant verification at healthcare facilities.
-
-                    4. Empowering Self-Service: I optimized the FAQ and Service Channels to boost User Autonomy,
-                    reducing
-                    the burden on physical help centers.</p>
+                <ul class="study-list">
+                    <li><strong>Modular Information Architecture:</strong> I restructured the linear data into a
+                        Card-Based UI. This allows users to scan essential information much more efficiently.</li>
+                    <li><strong>Progressive Disclosure:</strong> By utilizing Tabs and Accordions, I ensured that
+                        technical details are only visible when needed.</li>
+                    <li><strong>Visual Trust & Identity:</strong> The Digital Participant Card was redesigned with
+                        high-contrast visual cues for instant verification.</li>
+                    <li><strong>Empowering Self-Service:</strong> I optimized the FAQ and Service Channels to boost User
+                        Autonomy.</li>
+                </ul>
             </section>
 
 
             <section class="section-study">
                 <h2>Design Process (Methodology)</h2>
-                <p>My approach focused on Simplification through Systemic Logic. I implemented several key UX
-                    strategies:</p>
-                <p>Empathize: Analyzing user pain points in navigating public service bureaucracy.
-
-                    Define: Mapping out the Information Architecture (IA) to identify data bottlenecks.
-
-                    Ideate: Sketching modular layouts that prioritize speed and reliability.
-
-                    Prototype: Developing high-fidelity designs in Figma, focusing on a clean, modern medical aesthetic.
-                </p>
+                <p>I followed a structured design thinking process to ensure the solution meets both user needs and
+                    business goals:</p>
+                <ul class="study-list">
+                    <li><strong>Empathize:</strong> Analyzing user pain points in navigating public service bureaucracy.
+                    </li>
+                    <li><strong>Define:</strong> Mapping out the Information Architecture (IA) to identify data
+                        bottlenecks.</li>
+                    <li><strong>Ideate:</strong> Sketching modular layouts that prioritize speed and reliability.</li>
+                    <li><strong>Prototype:</strong> Developing high-fidelity designs in Figma with a clean medical
+                        aesthetic.</li>
+                </ul>
             </section>
-
 
             <section class="section-study">
                 <h2>Key Features Highlights</h2>
-                <p>1. Unified Dashboard: A personalized greeting with a high-priority "Get in Line" (Queue) action
-                    button.
-
-                    2. Smart Filter Articles: Categorized health news to improve user engagement and education.
-
-                    3. Simplified Permissions: Transparent onboarding for location access to ensure a seamless
-                    "Check-in"
-                    experience at clinics.</p>
+                <ul class="study-list">
+                    <li><strong>Unified Dashboard:</strong> A personalized greeting with a high-priority "Get in Line"
+                        (Queue) action
+                        button.
+                    </li>
+                    <li><strong>Smart Filter Articles:</strong>Categorized health news to improve user engagement and
+                        education.</li>
+                    <li><strong>Ideate:</strong> Sketching modular layouts that prioritize speed and reliability.</li>
+                    <li><strong>Simplified Permissions:</strong>Transparent onboarding for location access to ensure a
+                        seamless "Check-in" experience at clinics.</li>
+                </ul>
             </section>
 
-
             <section class="section-study">
-                <h2>Conclusion & Takeaway</h2>
+                <h2>Conclusion</h2>
                 <p>This project demonstrates that digital transformation in public services is not just about
                     aesthetics—it is about Information Resilience. By applying UI/UX principles to complex Information
                     Systems, we can build a more inclusive and reliable healthcare ecosystem for all citizens.</p>
@@ -151,8 +155,8 @@
 
             <section class="section-study">
                 <h2>Visual Interface Solution</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">* Klik pada gambar desain
-                    untuk memperbesar.</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Click on the design image
+                    to enlarge it.</p>
 
                 <div class="design-gallery">
                     <article class="gallery-item">
@@ -424,28 +428,28 @@
 
             <section class="section-study"
                 style="text-align: center; background: var(--bg-light); padding: 5rem 2rem; border-radius: 32px; border: 1px solid rgba(45, 91, 255, 0.1);">
-                <h2 style="padding-left: 0; margin-bottom: 1rem; font-size: 2.5rem;">Coba Prototipe Interaktif</h2>
+                <h2 style="padding-left: 0; margin-bottom: 1rem; font-size: 2.5rem;">Try Interactive Prototype</h2>
                 <p
                     style="margin-bottom: 3rem; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Lihat bagaimana solusi desain ini bekerja secara nyata. Klik tombol di bawah untuk membuka
-                    High-Fidelity Prototype langsung di Figma.
+                    See how this design solution works in real-time. Click the button below to open the High-Fidelity
+                    Prototype directly in Figma.
                 </p>
                 <a href="https://www.figma.com/proto/RFgyepcmQbwohMHgf7fjpD/Mobile-JKN-Redesign?node-id=45-1364&p=f&viewport=319%2C81%2C0.06&t=DUFabksQzt6VHSEf-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=271%3A5933&show-proto-sidebar=1"
                     target="_blank" class="btn btn--primary"
                     style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 1.2rem 2.5rem; font-size: 1.1rem; border-radius: 16px; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(45, 91, 255, 0.2);">
                     <span class="material-symbols-rounded">open_in_new</span>
-                    Buka Prototipe Figma
+                    Open Figma Prototype
                 </a>
             </section>
 
             <section class="section-study cta-study">
                 <div class="cta-study__content">
-                    <h2 style="padding-left: 0;">Punya Visi yang Sama?</h2>
-                    <p>Mari berkolaborasi untuk menciptakan pengalaman digital yang berdampak nyata bagi pengguna dan
-                        bisnis Anda.</p>
+                    <h2 style="padding-left: 0;">Do You Share the Same Vision?</h2>
+                    <p>Let’s collaborate to create digital experiences that make a real difference for your users and
+                        your business.</p>
                     <a href="index.html#contact" class="btn"
                         style="margin-top: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; background: var(--white); color: var(--primary-study); padding: 1rem 2rem; border-radius: 12px; font-weight: 700; transition: transform 0.3s ease;">
-                        Mulai Kolaborasi <span class="material-symbols-rounded">arrow_forward</span>
+                        Start Collaboration <span class="material-symbols-rounded">arrow_forward</span>
                     </a>
                 </div>
             </section>
