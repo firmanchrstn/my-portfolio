@@ -534,3 +534,35 @@
         margin-right: auto;
     }
 }
+
+.research-link {
+    display: inline-flex;
+    align-items: center;
+    /* Menyeimbangkan ikon dan teks di tengah secara vertikal */
+    gap: 8px;
+    /* Jarak antara ikon dan teks */
+    color: var(--primary-study);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 12px;
+    margin-left: -12px;
+    /* Menyeimbangkan padding agar teks tetap sejajar dengan judul di atasnya */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    /* Mencegah teks turun ke baris baru */
+}
+
+.research-link span.material-symbols-rounded {
+    font-size: 20px;
+    /* Ukuran ikon yang lebih pas */
+}
+
+/* Efek interaktif saat di-hover */
+.research-link:hover {
+    background-color: rgba(154, 205, 50, 0.1);
+    /* Background tipis saat hover */
+    color: var(--primary-study-hover);
+    transform: translateY(-2px);
+    /* Sedikit naik ke atas */
+}
