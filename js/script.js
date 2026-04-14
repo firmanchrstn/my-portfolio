@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Theme Management (Dark/Light Mode) ---
     const themeToggle = document.getElementById('theme-toggle');
-    
+
     const getCurrentTheme = () => document.documentElement.getAttribute('data-theme');
     const setSavedTheme = () => {
         const savedTheme = localStorage.getItem('theme');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu
     if (navToggle) navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
     if (navClose) navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu) navMenu.classList.remove('show-menu');
@@ -70,30 +70,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 3. Portfolio Filtering ---
+    // Ganti bagian Portfolio Filtering di js/script.js dengan ini:
+
     const filters = document.querySelectorAll('.portfolio__filter');
     const cards = document.querySelectorAll('.portfolio__card');
+    const grid = document.querySelector('.portfolio__grid');
 
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
+            // 1. Ubah UI Button
             filters.forEach(f => f.classList.remove('active'));
             filter.classList.add('active');
 
             const target = filter.getAttribute('data-filter');
 
+            // 2. Mulai Animasi: Fade Out semua kartu
             cards.forEach(card => {
-                card.style.transition = 'all 0.3s ease';
-                if (target === 'all' || card.getAttribute('data-category') === target) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+            });
+
+            // 3. Tunggu sebentar (saat kartu sudah transparan), lalu ganti display
+            setTimeout(() => {
+                cards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+
+                    if (target === 'all' || category === target) {
+                        card.style.display = 'flex';
+                        // Trigger reflow agar animasi fade in berjalan
+                        card.offsetHeight;
                         card.style.opacity = '1';
                         card.style.transform = 'scale(1)';
-                    }, 10);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.95)';
-                    setTimeout(() => card.style.display = 'none', 300);
-                }
-            });
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }, 300); // 300ms sesuai durasi transition di CSS
         });
     });
 
@@ -118,4 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealOnScroll.observe(el));
 
     console.log('%c Portfolio upgraded successfully.', 'color: #9ACD32; font-weight: bold; font-size: 14px;');
+});
+
+// Di dalam filter.addEventListener('click', ...)
+cards.forEach(card => {
+    if (target === 'all' || card.getAttribute('data-category') === target) {
+        card.style.display = 'block';
+        card.style.animation = 'fadeInUp 0.5s ease forwards'; // Tambahkan baris ini
+    } else {
+        card.style.display = 'none';
+    }
 });

@@ -359,10 +359,60 @@ h3 {
     border-color: var(--text-heading);
 }
 
+/* Update pada css/style.css */
+
 .portfolio__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    /* Memberikan tinggi minimal agar layout tidak kaget saat kartu hilang */
+    min-height: 450px; 
+}
+
+/* Responsif: Tablet (2 kolom) */
+@media screen and (max-width: 1024px) {
+    .portfolio__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsif: HP (1 kolom) */
+@media screen and (max-width: 768px) {
+    .portfolio__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Update di css/style.css */
+
+.portfolio__card {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    /* JANGAN gunakan 'all', gunakan properti spesifik */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.4s ease, 
+                opacity 0.4s ease;
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Tambahkan class khusus untuk animasi filtering agar lebih smooth */
+.portfolio__card.filtering {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+/* Agar konten di dalam kartu (teks & tombol) sejajar meskipun deskripsinya beda panjang */
+.portfolio__card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .portfolio__card {
@@ -462,14 +512,16 @@ h3 {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     /* TAMBAHKAN INI JIKA MASIH KURANG JAUH */
-    margin-top: 1rem; 
+    margin-top: 1rem;
 }
 
 .about__stack h3 {
-    margin-bottom: 1.5rem; /* Jarak antara judul kecil dengan ikonnya */
+    margin-bottom: 1.5rem;
+    /* Jarak antara judul kecil dengan ikonnya */
     font-size: 1.125rem;
     color: var(--text-main);
 }
+
 .stack__list {
     display: flex;
     flex-wrap: wrap;
@@ -723,7 +775,8 @@ h3 {
 .experience__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem; /* Tambah dari 5rem ke 6rem */
+    gap: 5rem;
+    /* Tambah dari 5rem ke 6rem */
     align-items: start;
 }
 
@@ -814,4 +867,31 @@ h3 {
         grid-template-columns: 1fr;
         gap: 4rem;
     }
+}
+
+/* Menambahkan gradasi overlay saat hover agar teks tombol lebih terbaca */
+.portfolio__card-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.portfolio__card:hover .portfolio__card-image::after {
+    opacity: 1;
+}
+
+/* Membuat tombol 'View Case Study' terasa lebih interaktif */
+.portfolio__card-btn {
+    z-index: 10;
+    border: 1px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.portfolio__card-btn:hover {
+    background: var(--color-primary);
+    color: #000;
 }
