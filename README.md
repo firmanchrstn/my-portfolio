@@ -42,7 +42,7 @@ For professional inquiries or collaboration, please refer to the contact section
 
 * **LinkedIn:** firmanchrstn
 * **GitHub:** firmanchrstn
-* **Email:** Available upon request via the contact form.
+* **Email:** firmanchristianp@gmail.com
 
 ---
 Copyright © 2026 Firman Christian Purba. All rights reserved.
