@@ -40,9 +40,9 @@ This portfolio is automatically deployed via GitHub Actions. Any changes pushed 
 
 For professional inquiries or collaboration, please refer to the contact section within the live website or reach out via:
 
-* **LinkedIn:** firmanchrstn
-* **GitHub:** firmanchrstn
-* **Email:** firmanchristianp@gmail.com
+* **LinkedIn:** <https://www.linkedin.com/in/firmanchristianpurba/>
+* **GitHub:** <https://github.com/firmanchrstn>
+* **Email:** <firmanchristianp@gmail.com>
 
 ---
 Copyright © 2026 Firman Christian Purba. All rights reserved.
