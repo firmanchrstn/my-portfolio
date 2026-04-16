@@ -90,6 +90,7 @@
                 <div class="portfolio__filters reveal">
                     <button class="portfolio__filter active" data-filter="all">All</button>
                     <button class="portfolio__filter" data-filter="uiux">UI/UX Design</button>
+                    <button class="portfolio__filter" data-filter="Editing">Editing</button>
                     <button class="portfolio__filter" data-filter="Python">Python</button>
                     <button class="portfolio__filter" data-filter="Flutter">Flutter</button>
                     <button class="portfolio__filter" data-filter="web">Web</button>
@@ -99,7 +100,8 @@
 
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
-                            <img src="asset/prototype-figma-mobileJKN/Thumbnail - IG.jpg" alt="Mobile JKN Redesign">
+                            <img src="asset/prototype-figma-mobileJKN/Thumbnail - Mobile JKN - Home.png"
+                                alt="Mobile JKN Redesign">
                             <div class="portfolio__card-overlay">
                                 <a href="mobile-jkn.html" class="portfolio__card-btn">View Case Study</a>
                             </div>
@@ -135,6 +137,60 @@
                         </div>
                     </article>
 
+
+                    <article class="portfolio__card reveal" data-category="Editing">
+                        <div class="portfolio__card-image">
+                            <img src="asset/poster/Poster1.png" alt="DOMIN8 Team Identity">
+                            <div class="portfolio__card-overlay">
+                                <a href="poster1.html" class="portfolio__card-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-content">
+                            <div class="portfolio__card-tags">
+                                <span>Canva</span>
+                                <span>Branding</span>
+                            </div>
+                            <h3 class="portfolio__card-title">DOMIN8: Brand Identity</h3>
+                            <p class="portfolio__card-desc">Creating a dynamic visual identity for the group using
+                                grunge typography</p>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card reveal" data-category="Editing">
+                        <div class="portfolio__card-image">
+                            <img src="asset/poster/Poster2.png" alt="DOMIN8 Campaign Assets">
+                            <div class="portfolio__card-overlay">
+                                <a href="poster2.html" class="portfolio__card-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-content">
+                            <div class="portfolio__card-tags">
+                                <span>Canva</span>
+                                <span>Creative Marketing</span>
+                            </div>
+                            <h3 class="portfolio__card-title">Micro-Inspirations Asset</h3>
+                            <p class="portfolio__card-desc">Exploring scrapbook design for campus motivational materials
+                                through a collection of humanistic, interactive posters and stickers.</p>
+                        </div>
+                    </article>
+
+                    <article class="portfolio__card reveal" data-category="Editing">
+                        <div class="portfolio__card-image">
+                            <img src="asset/poster/Poster3.png" alt="DOMIN8 Social Impact">
+                            <div class="portfolio__card-overlay">
+                                <a href="poster3.html" class="portfolio__card-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-content">
+                            <div class="portfolio__card-tags">
+                                <span>Canva</span>
+                            </div>
+                            <h3 class="portfolio__card-title">Small Notes, Big Impact</h3>
+                            <p class="portfolio__card-desc">Documenting social actions with a cinematic approach reminiscent of
+                                movie posters to highlight stories of everyday heroism.</p>
+                        </div>
+                    </article>
+
                     <article class="portfolio__card reveal" data-category="Python" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/viginere/Thumbnail - Viginere.jpg" alt="Vigenère Cipher">
@@ -154,7 +210,7 @@
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="Web" style="transition-delay: 100ms;">
+                    <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Tere Bistro Bar">
                             <div class="portfolio__card-overlay">
@@ -175,7 +231,7 @@
                     </article>
 
 
-                    <article class="portfolio__card reveal" data-category="Web" style="transition-delay: 100ms;">
+                    <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Puri Restaurant Cafe">
                             <div class="portfolio__card-overlay">
@@ -195,7 +251,7 @@
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="UI/UX" style="transition-delay: 100ms;">
+                    <article class="portfolio__card reveal" data-category="Flutter" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Vigenère Cipher">
                             <div class="portfolio__card-overlay">
@@ -334,7 +390,8 @@
                         <a href="mailto:firmanchristianp@gmail.com" class="social__link">
                             <i class="fa-solid fa-envelope"></i> firmanchristianp@gmail.com
                         </a>
-                        <a href="https://www.linkedin.com/in/firmanchristianpurba/" target="_blank" class="social__link">
+                        <a href="https://www.linkedin.com/in/firmanchristianpurba/" target="_blank"
+                            class="social__link">
                             <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
                         </a>
                         <a href="https://github.com/firmanchrstn" target="_blank" class="social__link">
@@ -342,17 +399,19 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="contact__form-wrapper reveal" style="transition-delay: 200ms;">
-                    <form class="contact__form" id="contact-form">
+                    <form class="contact__form" id="contact-form" action="https://formspree.io/f/[YOUR_FORM_ID]"
+                        method="POST">
                         <div class="form__group">
-                            <input type="text" id="name" class="form__input" placeholder="Your Name" required>
+                            <input type="text" name="name" id="name" class="form__input" placeholder="Your Name"
+                                required>
                         </div>
                         <div class="form__group">
-                            <input type="email" id="email" class="form__input" placeholder="Your Email" required>
+                            <input type="email" name="email" id="email" class="form__input" placeholder="Your Email"
+                                required>
                         </div>
                         <div class="form__group">
-                            <textarea id="message" class="form__input form__textarea"
+                            <textarea name="message" id="message" class="form__input form__textarea"
                                 placeholder="Tell me about your project..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full">
