@@ -445,6 +445,43 @@ h3 {
     transform: scale(1.05);
 }
 
+/* Label Status On Progress */
+.status-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #f39c12;
+    /* Warna orange/kuning untuk progres */
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+/* Animasi berkedip halus (opsional) agar terlihat benar-benar aktif */
+@keyframes pulse-status {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-badge {
+    animation: pulse-status 2s infinite ease-in-out;
+}
+
 .portfolio__card-overlay {
     position: absolute;
     inset: 0;
@@ -902,7 +939,8 @@ h3 {
     border: 1px solid var(--color-primary);
     background: transparent;
     color: var(--color-primary);
-    padding: 0.8rem 1.5rem; /* Atas-Bawah 0.8rem, Kiri-Kanan 1.5rem */
+    padding: 0.8rem 1.5rem;
+    /* Atas-Bawah 0.8rem, Kiri-Kanan 1.5rem */
     border-radius: var(--radius-md);
 }
 
