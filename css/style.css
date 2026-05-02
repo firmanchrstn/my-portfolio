@@ -1,6 +1,7 @@
 /* ==========================================================================
    Design System & Variables
    ========================================================================== */
+   
 :root {
     /* Brand Colors */
     --color-primary: #9ACD32;
@@ -54,7 +55,6 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 0;
-    /* REPLACES JS OFFSET HACKS */
 }
 
 body {
@@ -91,10 +91,7 @@ img {
     padding: 8rem 0;
 }
 
-/* Typography Helpers */
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     color: var(--text-heading);
     font-weight: 700;
     line-height: 1.2;
@@ -125,6 +122,7 @@ h3 {
 /* ==========================================================================
    Components: Buttons & Badges
    ========================================================================== */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -178,6 +176,7 @@ h3 {
 /* ==========================================================================
    Layout: Header
    ========================================================================== */
+
 .header {
     position: fixed;
     top: 0;
@@ -263,6 +262,7 @@ h3 {
 /* ==========================================================================
    Layout: Hero Section
    ========================================================================== */
+
 .hero {
     position: relative;
     padding-top: calc(var(--header-height) + 4rem);
@@ -330,6 +330,7 @@ h3 {
 /* ==========================================================================
    Layout: Portfolio Section
    ========================================================================== */
+
 .portfolio {
     background-color: var(--bg-surface);
 }
@@ -359,38 +360,30 @@ h3 {
     border-color: var(--text-heading);
 }
 
-/* Update pada css/style.css */
-
 .portfolio__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    /* Memberikan tinggi minimal agar layout tidak kaget saat kartu hilang */
     min-height: 450px;
 }
 
-/* Responsif: Tablet (2 kolom) */
 @media screen and (max-width: 1024px) {
     .portfolio__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Responsif: HP (1 kolom) */
 @media screen and (max-width: 768px) {
     .portfolio__grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* Update di css/style.css */
-
 .portfolio__card {
     background: var(--bg-elevated);
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--border-color);
-    /* JANGAN gunakan 'all', gunakan properti spesifik */
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.4s ease,
         opacity 0.4s ease;
@@ -403,13 +396,11 @@ h3 {
     opacity: 1;
 }
 
-/* Tambahkan class khusus untuk animasi filtering agar lebih smooth */
 .portfolio__card.filtering {
     opacity: 0;
     transform: scale(0.9);
 }
 
-/* Agar konten di dalam kartu (teks & tombol) sejajar meskipun deskripsinya beda panjang */
 .portfolio__card-content {
     padding: 2rem;
     flex-grow: 1;
@@ -448,13 +439,11 @@ h3 {
     transform: scale(1.05);
 }
 
-/* Label Status On Progress */
 .status-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
     background-color: #f39c12;
-    /* Warna orange/kuning untuk progres */
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 50px;
@@ -466,7 +455,6 @@ h3 {
     letter-spacing: 1px;
 }
 
-/* Animasi berkedip halus (opsional) agar terlihat benar-benar aktif */
 @keyframes pulse-status {
     0% {
         opacity: 1;
@@ -496,7 +484,6 @@ h3 {
     transition: opacity 0.3s ease;
     display: flex;
     gap: 1rem;
-    /* Tambahkan atau perbesar nilai gap ini */
     justify-content: center;
     align-items: center;
 }
@@ -519,22 +506,18 @@ h3 {
     transform: translateY(0);
 }
 
-/* Update di css/style.css */
 .portfolio__card-content {
     padding: 2rem;
-    /* Memastikan ada ruang di dalam kotak teks */
 }
 
 .portfolio__card-tags {
     margin-bottom: 1.25rem;
-    /* Memberikan jarak lebih antara tag dan judul */
     display: flex;
     gap: 0.75rem;
 }
 
 .portfolio__card-title {
     margin-bottom: 1rem;
-    /* Memberikan jarak antara judul dan deskripsi */
 }
 
 .portfolio__card-tags span {
@@ -564,13 +547,11 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    /* TAMBAHKAN INI JIKA MASIH KURANG JAUH */
     margin-top: 1rem;
 }
 
 .about__stack h3 {
     margin-bottom: 1.5rem;
-    /* Jarak antara judul kecil dengan ikonnya */
     font-size: 1.125rem;
     color: var(--text-main);
 }
@@ -829,7 +810,6 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
-    /* Tambah dari 5rem ke 6rem */
     align-items: start;
 }
 
@@ -924,7 +904,6 @@ h3 {
 
 .portfolio__card {
     transition: transform 0.4s ease, opacity 0.4s ease;
-    /* Pastikan elemen yang disembunyikan tidak memakan ruang saat transisi */
     backface-visibility: hidden;
 }
 
@@ -949,11 +928,28 @@ h3 {
     background: transparent;
     color: var(--color-primary);
     padding: 0.8rem 1.5rem;
-    /* Atas-Bawah 0.8rem, Kiri-Kanan 1.5rem */
     border-radius: var(--radius-md);
 }
 
 .portfolio__card-btn:hover {
     background: var(--color-primary);
     color: #000;
+}
+
+/* Styling untuk list mata kuliah di bagian Resume */
+.timeline__list {
+    margin-top: 0.85rem;
+    padding-left: 1.25rem;
+    color: var(--text-color, #64748B);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.timeline__list li {
+    margin-bottom: 0.5rem;
+}
+
+.timeline__list strong {
+    color: var(--title-color, #0F172A);
+    font-weight: 600;
 }

@@ -9,22 +9,15 @@
 
 .study-container {
     padding-top: 4rem;
-    /* Jarak atas */
     padding-bottom: 4rem;
-    /* Jarak bawah sebelum pindah ke section lain */
     max-width: 800px;
-    /* Membatasi lebar teks agar mata tidak lelah membaca */
     margin: 0 auto;
-    /* Mengetengahkan seluruh blok teks */
 }
 
-/* Update di css/portofolio.css */
 .hero-study {
-    /* Ubah dari 10rem menjadi 4rem atau 5rem */
     padding: 0rem 0 0rem;
     background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
     text-align: left;
-    /* Sesuaikan dengan layout baru yang ke kiri */
 }
 
 .study-label {
@@ -54,10 +47,8 @@
     padding-top: 2rem;
 }
 
-/* Styling untuk list di halaman Case Study */
 .study-list {
     list-style: none;
-    /* Kita hapus default dulu untuk kustomisasi */
     padding-left: 1.5rem;
     margin: 1.5rem 0;
 }
@@ -68,25 +59,19 @@
     line-height: 1.6;
     color: var(--text-body);
     padding-left: 1rem;
-    /* Ruang untuk bullet point kustom */
 }
 
-/* Membuat Bullet Point berwarna Hijau (Primary) */
 .study-list li::before {
     content: "•";
-    /* Karakter bullet */
     color: var(--primary-study);
-    /* Menggunakan variabel hijau Anda */
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1.5rem;
     font-size: 1.5rem;
-    /* Ukuran bullet point */
     vertical-align: middle;
 }
 
-/* Mengubah teks Bold (strong) menjadi Hijau */
 .study-list li strong {
     color: var(--primary-study);
     font-weight: 700;
@@ -100,70 +85,47 @@
 }
 
 .main-showcase {
-    /* Mengunci ukuran menjadi kotak (1:1) */
     width: 100%;
     max-width: 450px;
-    /* Ukuran lebar maksimal yang ideal untuk desktop */
     aspect-ratio: 1 / 1;
-    /* Ini adalah cara modern untuk membuat kotak sempurna */
-
-    /* Mengatur agar gambar tidak gepeng */
     object-fit: cover;
-    /* Gambar akan terpotong rapi memenuhi kotak, bukan ditarik */
     object-position: center;
-    /* Memastikan fokus gambar tetap di tengah */
-
-    /* Styling tambahan agar lebih premium */
     display: block;
     margin: 0 auto;
     border-radius: 24px;
-    /* Sudut yang lebih halus (lg radius) */
     box-shadow: var(--shadow-hover);
-    /* Gunakan variabel shadow yang sudah ada agar konsisten */
-
-    /* Efek halus saat muncul */
     transition: transform 0.5s ease;
 }
 
 @media screen and (max-width: 768px) {
     .main-showcase {
         max-width: 320px;
-        /* Lebih kecil untuk layar HP */
         margin-top: 2rem;
-        /* Memberi jarak dengan teks di atasnya saat layout bertumpuk */
     }
 }
 
 .main-showcase:hover {
     transform: scale(1.02);
-    /* Sedikit zoom saat hover untuk interaktivitas */
 }
 
 .section-study {
     margin-bottom: var(--section-spacing);
 }
 
-/* Mengatur jarak antar paragraf penjelasan */
 .section-study p {
     margin-bottom: 1.5rem;
-    /* Jarak antar baris penjelasan */
     line-height: 1.8;
-    /* Memberikan ruang antar baris teks agar lebih lega */
     color: var(--text-muted);
 }
 
-/* Jika kamu menggunakan list (poin-poin) */
 .section-study ul li {
     margin-bottom: 1rem;
-    /* Jarak antar poin list */
     padding-left: 0.5rem;
 }
 
 .section-study h3 {
     margin-top: 2.5rem;
-    /* Jarak dari paragraf sebelumnya ke judul baru */
     margin-bottom: 1rem;
-    /* Jarak dari judul ke penjelasannya */
     color: var(--text-main);
     font-weight: 600;
 }
@@ -188,7 +150,6 @@
     border-radius: 2px;
 }
 
-/* GALLERY STYLE */
 .design-gallery {
     display: flex;
     gap: 1.5rem;
@@ -305,7 +266,6 @@
 
 .img-wrapper img:hover {
     transform: scale(1.05);
-    /* Sedikit membesar memberi tahu bisa diklik */
 }
 
 .lightbox {
@@ -315,7 +275,6 @@
     width: 100%;
     height: 100%;
     background-color: rgba(15, 23, 42, 0.95);
-    /* Warna gelap kebiruan elegan */
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -357,7 +316,6 @@
 
 .lightbox__close:hover {
     color: var(--primary-study);
-    /* Tombol close jadi hijau saat disorot */
 }
 
 /* ================= CALL TO ACTION (CTA) ================= */
@@ -368,7 +326,6 @@
 
 .cta-study__content {
     background: var(--primary-study);
-    /* Warna hijau andalanmu */
     padding: 4rem 3rem;
     border-radius: 32px;
     text-align: center;
@@ -384,7 +341,6 @@
 
 .cta-study__content h2::before {
     display: none;
-    /* Hilangkan garis vertikal dekorasi H2 khusus di CTA ini */
 }
 
 .cta-study__content p {
@@ -396,40 +352,31 @@
 
 /* ================= DARK MODE UNTUK STUDY CASE ================= */
 [data-theme="dark"] {
-    /* Menimpa variabel khusus study-style.css ke warna gelap */
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --bg-light: #0F172A;
-    /* Background abu-abu kebiruan gelap (elegan) */
     --white: #1E293B;
-    /* Warna dasar untuk kotak/card di mode gelap */
 }
 
-/* Memperbaiki Gradasi Latar Belakang (Hero Section) */
 [data-theme="dark"] .hero-study {
     background: linear-gradient(180deg, #0F172A 0%, #0B1120 100%);
 }
 
-/* Memperbaiki Garis Pembatas Overview */
 [data-theme="dark"] .study-overview {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Memperbaiki Kotak Gambar Galeri agar tidak menyala putih */
 [data-theme="dark"] .img-wrapper {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Menyesuaikan bayangan pada Card agar menyatu dengan background gelap */
 [data-theme="dark"] .gallery-item {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Memperbaiki Tombol di dalam CTA Bawah agar tetap terlihat profesional */
 [data-theme="dark"] .cta-study__content .btn {
     background: #1E293B !important;
-    /* Warna card gelap */
     color: var(--primary-study) !important;
 }
 
@@ -437,22 +384,18 @@
     background: #2A3B52 !important;
 }
 
-/* Memastikan tulisan pada label tetap enak dibaca */
 [data-theme="dark"] .study-label {
     background: rgba(154, 205, 50, 0.15);
     color: var(--primary-study);
 }
 
-/* Styling khusus untuk halaman detail agar lebih profesional */
 .details__hero {
     padding: 100px 0 60px;
-    /* Memberikan jarak dari header tapi tidak terlalu jauh ke bawah */
     background: var(--bg-surface);
 }
 
 .details__breadcrumb {
     margin-bottom: 0rem;
-    /* Memberikan ruang antara navigasi dan judul */
     font-size: 0.875rem;
     color: var(--text-muted);
 }
@@ -460,7 +403,6 @@
 .details__grid {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    /* Teks lebih lebar sedikit dari gambar */
     gap: 4rem;
     align-items: center;
 }
@@ -487,7 +429,6 @@
     max-width: 500px;
 }
 
-/* Merapikan Meta Data agar tidak berserakan */
 .details__meta {
     display: flex;
     gap: 3rem;
@@ -516,7 +457,6 @@
     transition: transform 0.5s ease;
 }
 
-/* Responsif untuk HP agar gap hilang */
 @media screen and (max-width: 992px) {
     .details__grid {
         grid-template-columns: 1fr;
@@ -538,31 +478,23 @@
 .research-link {
     display: inline-flex;
     align-items: center;
-    /* Menyeimbangkan ikon dan teks di tengah secara vertikal */
     gap: 8px;
-    /* Jarak antara ikon dan teks */
     color: var(--primary-study);
     font-weight: 600;
     text-decoration: none;
     padding: 6px 12px;
     margin-left: -12px;
-    /* Menyeimbangkan padding agar teks tetap sejajar dengan judul di atasnya */
     border-radius: 6px;
     transition: all 0.3s ease;
     white-space: nowrap;
-    /* Mencegah teks turun ke baris baru */
 }
 
 .research-link span.material-symbols-rounded {
     font-size: 20px;
-    /* Ukuran ikon yang lebih pas */
 }
 
-/* Efek interaktif saat di-hover */
 .research-link:hover {
     background-color: rgba(154, 205, 50, 0.1);
-    /* Background tipis saat hover */
     color: var(--primary-study-hover);
     transform: translateY(-2px);
-    /* Sedikit naik ke atas */
 }

@@ -1,10 +1,9 @@
 const gallery = document.querySelector('.design-gallery');
 const dotsContainer = document.getElementById('gallery-dots');
 const cards = document.querySelectorAll('.gallery-item');
-const cardWidth = 324; // Lebar card 300px + gap 24px
+const cardWidth = 324;
 let isMouseOver = false;
 
-// 1. Buat dots secara dinamis berdasarkan jumlah card yang ada di HTML
 if (dotsContainer) {
     cards.forEach((_, i) => {
         const dot = document.createElement('span');
@@ -19,7 +18,6 @@ if (dotsContainer) {
 
 const dots = document.querySelectorAll('.dot');
 
-// 2. Fungsi untuk update dot aktif berdasarkan posisi scroll
 function updateDots() {
     const scrollPosition = gallery.scrollLeft;
     const index = Math.round(scrollPosition / cardWidth);
@@ -29,17 +27,13 @@ function updateDots() {
     });
 }
 
-// Event Listeners
 gallery.addEventListener('scroll', updateDots);
 gallery.addEventListener('mouseover', () => isMouseOver = true);
 gallery.addEventListener('mouseout', () => isMouseOver = false);
 
-// 3. Fungsi Auto Scroll Loop
 function autoScroll() {
     if (!isMouseOver) {
         const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
-
-        // Jika sudah di ujung, balik ke awal, jika belum geser satu card
         if (gallery.scrollLeft >= maxScrollLeft - 1) {
             gallery.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
@@ -48,10 +42,8 @@ function autoScroll() {
     }
 }
 
-// Jalankan auto scroll setiap 3 detik
 setInterval(autoScroll, 3000);
 
-/* ... (Kode autoScroll kamu yang lama tetap biarkan di atas) ... */
 
 // ================= LIGHTBOX LOGIC =================
 const lightbox = document.getElementById('lightbox');
@@ -63,16 +55,16 @@ if (lightbox && lightboxImg) {
     // Buka Lightbox saat gambar di dalam galeri diklik
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
-            lightboxImg.src = img.src; // Ambil source gambar yang diklik
-            lightbox.classList.add('active'); // Tampilkan modal
-            document.body.style.overflow = 'hidden'; // Kunci scroll halaman web di belakangnya
+            lightboxImg.src = img.src; 
+            lightbox.classList.add('active'); 
+            document.body.style.overflow = 'hidden'; 
         });
     });
 
     // Fungsi untuk menutup Lightbox
     function closeLightbox() {
         lightbox.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Buka kunci scroll
+        document.body.style.overflow = 'auto'; 
     }
 
     // Tutup saat tombol (X) diklik
