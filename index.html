@@ -87,18 +87,51 @@
                     </p>
                 </div>
 
+                <!-- FILTER BUTTONS -->
                 <div class="portfolio__filters reveal">
                     <button class="portfolio__filter active" data-filter="all">All</button>
                     <button class="portfolio__filter" data-filter="uiux">UI/UX Design</button>
-                    <button class="portfolio__filter" data-filter="Editing">Editing</button>
-                    <button class="portfolio__filter" data-filter="Python">Python</button>
-                    <button class="portfolio__filter" data-filter="Flutter">Flutter</button>
+                    <button class="portfolio__filter" data-filter="editing">Editing</button>
+                    <button class="portfolio__filter" data-filter="python">Python</button>
+                    <button class="portfolio__filter" data-filter="flutter">Flutter</button>
                     <button class="portfolio__filter" data-filter="web">Web</button>
                 </div>
 
+                <!-- GRID UTAMA: Pembungkus untuk semua kartu -->
                 <div class="portfolio__grid">
 
-                    <div class="portfolio__card reveal">
+                    <!-- 1. Student Information Portal -->
+                    <article class="portfolio__card reveal" data-category="web">
+                        <div class="portfolio__card-image">
+                            <img src="asset/jiu-studentinformationportal/JIUgedung.webp"
+                                alt="Student Information Portal">
+                            <span class="status-badge">On Progress</span>
+
+                            <div class="portfolio__card-overlay">
+                                <a href="https://github.com/firmanchrstn/jiu-studentinformationportal.git"
+                                    target="_blank" class="portfolio__card-btn">View Code</a>
+                                <a href="404.html" class="portfolio__card-btn">View Details</a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-content">
+                            <div class="portfolio__card-tags">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Firebase</span>
+                            </div>
+                            <h3 class="portfolio__card-title">Student Information Portal</h3>
+                            <p class="portfolio__card-description">
+                                Creating a centralized platform for students to access academic resources,
+                                schedules, and support services, enhancing the overall student experience at Jakarta
+                                International
+                                University.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- 2. inDrive App Redesign -->
+                    <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
                             <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.png" alt="inDrive Redesign">
                             <span class="status-badge">On Progress</span>
@@ -119,8 +152,9 @@
                                 experience.
                             </p>
                         </div>
-                    </div>
+                    </article>
 
+                    <!-- 3. Mobile JKN Redesign -->
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
                             <img src="asset/prototype-figma-mobileJKN/Thumbnail - Mobile JKN - Home.png"
@@ -140,6 +174,7 @@
                         </div>
                     </article>
 
+                    <!-- 4. MIA 2025 ft. LinkAja -->
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
                             <img src="asset/prototype-figma-linkaja/MIA-logo.jpg" alt="LinkAja Competition ">
@@ -155,13 +190,12 @@
                             </div>
                             <h3 class="portfolio__card-title">MIA 2025 ft. LinkAja</h3>
                             <p class="portfolio__card-desc">Participating in the LinkAja <strong>design
-                                    competition</strong> to create an
-                                innovative mobile payment solution.</p>
+                                    competition</strong> to create an innovative mobile payment solution.</p>
                         </div>
                     </article>
 
-
-                    <article class="portfolio__card reveal" data-category="Editing">
+                    <!-- 5. DOMIN8: Brand Identity -->
+                    <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
                             <img src="asset/poster/Poster1.png" alt="DOMIN8 Team Identity">
                             <div class="portfolio__card-overlay">
@@ -179,7 +213,8 @@
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="Editing">
+                    <!-- 6. Micro-Inspirations Asset -->
+                    <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
                             <img src="asset/poster/Poster2.png" alt="DOMIN8 Campaign Assets">
                             <div class="portfolio__card-overlay">
@@ -192,12 +227,13 @@
                                 <span>Creative Marketing</span>
                             </div>
                             <h3 class="portfolio__card-title">Micro-Inspirations Asset</h3>
-                            <p class="portfolio__card-desc">Exploring scrapbook design for campus motivational materials
-                                through a collection of humanistic, interactive posters and stickers.</p>
+                            <p class="portfolio__card-desc">Exploring scrapbook design for campus motivational
+                                materials through a collection of humanistic, interactive posters and stickers.</p>
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="Editing">
+                    <!-- 7. Small Notes, Big Impact -->
+                    <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
                             <img src="asset/poster/Poster3.png" alt="DOMIN8 Social Impact">
                             <div class="portfolio__card-overlay">
@@ -210,12 +246,12 @@
                             </div>
                             <h3 class="portfolio__card-title">Small Notes, Big Impact</h3>
                             <p class="portfolio__card-desc">Documenting social actions with a cinematic approach
-                                reminiscent of
-                                movie posters to highlight stories of everyday heroism.</p>
+                                reminiscent of movie posters to highlight stories of everyday heroism.</p>
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="Python" style="transition-delay: 100ms;">
+                    <!-- 8. Vigenère Cipher Engine -->
+                    <article class="portfolio__card reveal" data-category="python" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/viginere/Thumbnail - Viginere.jpg" alt="Vigenère Cipher">
                             <div class="portfolio__card-overlay">
@@ -229,11 +265,12 @@
                                 <span>Security</span>
                             </div>
                             <h3 class="portfolio__card-title">Vigenère Cipher Engine</h3>
-                            <p class="portfolio__card-desc">A cryptographic text encryption application developed for
-                                Web and Application Security coursework.</p>
+                            <p class="portfolio__card-desc">A cryptographic text encryption application developed
+                                for Web and Application Security coursework.</p>
                         </div>
                     </article>
 
+                    <!-- 9. Tere Bistro Bar -->
                     <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Tere Bistro Bar">
@@ -254,7 +291,7 @@
                         </div>
                     </article>
 
-
+                    <!-- 10. Puri Restaurant Cafe -->
                     <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Puri Restaurant Cafe">
@@ -275,12 +312,12 @@
                         </div>
                     </article>
 
-                    <article class="portfolio__card reveal" data-category="Flutter" style="transition-delay: 100ms;">
+                    <!-- 11. Wisata Indonesia -->
+                    <article class="portfolio__card reveal" data-category="flutter" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
                             <img src="asset/ComingSoon.jpg" alt="Vigenère Cipher">
                             <div class="portfolio__card-overlay">
-                                <a href="404.html"
-                                    class="portfolio__card-btn">View Code</a>
+                                <a href="404.html" class="portfolio__card-btn">View Code</a>
                                 <a href="404.html" class="portfolio__card-btn">View Details</a>
                             </div>
                         </div>

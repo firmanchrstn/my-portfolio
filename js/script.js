@@ -69,45 +69,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- 3. Portfolio Filtering ---
-    // Ganti bagian Portfolio Filtering di js/script.js dengan ini:
+    // --- 3. Portfolio Filtering (FINAL & OPTIMIZED) ---
+    const filterButtons = document.querySelectorAll('.portfolio__filter');
+    const projectCards = document.querySelectorAll('.portfolio__card');
 
-    const filters = document.querySelectorAll('.portfolio__filter');
-    const cards = document.querySelectorAll('.portfolio__card');
-    const grid = document.querySelector('.portfolio__grid');
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 1. Update status tombol aktif
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-    filters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            // 1. Ubah UI Button
-            filters.forEach(f => f.classList.remove('active'));
-            filter.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
 
-            const target = filter.getAttribute('data-filter');
+                // 2. Eksekusi filter pada setiap kartu
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
 
-            // 2. Mulai Animasi: Fade Out semua kartu
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.95)';
-            });
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        // Munculkan elemen ke dalam grid terlebih dahulu
+                        card.style.display = 'block';
 
-            // 3. Tunggu sebentar (saat kartu sudah transparan), lalu ganti display
-            setTimeout(() => {
-                cards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-
-                    if (target === 'all' || category === target) {
-                        card.style.display = 'flex';
-                        // Trigger reflow agar animasi fade in berjalan
-                        card.offsetHeight;
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
+                        // Gunakan sedikit jeda agar animasi CSS terbaca oleh browser
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
                     } else {
-                        card.style.display = 'none';
+                        // Hilangkan elemen secara visual terlebih dahulu
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+
+                        // Setelah animasi selesai (400ms), hapus dari susunan grid
+                        setTimeout(() => {
+                            // Pengecekan ekstra agar tidak terjadi glitch jika user klik sangat cepat
+                            if (button.classList.contains('active')) {
+                                card.style.display = 'none';
+                            }
+                        }, 400);
                     }
                 });
-            }, 300); // 300ms sesuai durasi transition di CSS
+            });
         });
-    });
+    }
 
     // --- 4. Intersection Observer (Modern Reveal Animation) ---
     // Cara ini jauh lebih ringan daripada window.addEventListener('scroll')
@@ -130,14 +134,4 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealOnScroll.observe(el));
 
     console.log('%c Portfolio upgraded successfully.', 'color: #9ACD32; font-weight: bold; font-size: 14px;');
-});
-
-// Di dalam filter.addEventListener('click', ...)
-cards.forEach(card => {
-    if (target === 'all' || card.getAttribute('data-category') === target) {
-        card.style.display = 'block';
-        card.style.animation = 'fadeInUp 0.5s ease forwards'; // Tambahkan baris ini
-    } else {
-        card.style.display = 'none';
-    }
 });

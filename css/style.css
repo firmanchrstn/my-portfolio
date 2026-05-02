@@ -398,6 +398,9 @@ h3 {
     display: flex;
     flex-direction: column;
     height: 100%;
+    will-change: opacity, transform;
+    transform: scale(2);
+    opacity: 1;
 }
 
 /* Tambahkan class khusus untuk animasi filtering agar lebih smooth */
@@ -917,6 +920,12 @@ h3 {
         grid-template-columns: 1fr;
         gap: 4rem;
     }
+}
+
+.portfolio__card {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    /* Pastikan elemen yang disembunyikan tidak memakan ruang saat transisi */
+    backface-visibility: hidden;
 }
 
 /* Menambahkan gradasi overlay saat hover agar teks tombol lebih terbaca */
