@@ -1,6 +1,7 @@
 /* ==========================================================================
    GLOBAL DESIGN SYSTEM (Optimized Architecture)
    ========================================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -363,6 +364,13 @@ h4 {
     padding-top: 100px;
 }
 
+.hero__description {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    max-width: 540px;
+}
+
 .hero__bg-blob {
     position: absolute;
     top: 50%;
@@ -397,7 +405,7 @@ h4 {
 
 .hero__name {
     font-size: clamp(3rem, 6vw, 5.5rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .portfolio__filters {
@@ -701,5 +709,435 @@ h4 {
     .footer__content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+.section__header {
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section__subtitle {
+    margin-bottom: 1rem;
+}
+
+.section__title {
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    letter-spacing: -0.05em;
+}
+
+.section__desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-accent {
+    background: linear-gradient(135deg, var(--brand-primary), #65a30d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- About Me Section Refinement --- */
+
+.about__description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-body);
+    max-width: 600px;
+}
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.about__stack h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-heading);
+    font-weight: 700;
+}
+
+.stack__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.stack__item {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-pill);
+    color: var(--text-body);
+    transition: var(--transition-fast);
+}
+
+.stack__item:hover {
+    border-color: var(--brand-primary);
+    color: var(--text-heading);
+    transform: translateY(-2px);
+}
+
+/* --- Stats Cards (Right Side) --- */
+
+.about__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat__card {
+    background: var(--bg-surface);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.stat__card:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+    transform: translateX(10px);
+    /* Efek geser halus */
+}
+
+.stat__number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-heading);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+}
+
+.stat__label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Responsif untuk Tablet/Mobile */
+@media screen and (max-width: 992px) {
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about__stats {
+        flex-direction: row;
+        /* Berjejer ke samping di mobile */
+        justify-content: center;
+        margin-top: 4rem;
+    }
+
+    .stat__card {
+        padding: 1.5rem;
+        flex: 1;
+    }
+
+    .stat__card:hover {
+        transform: translateY(-10px);
+    }
+}
+
+/* ==========================================================================
+   EXPERIENCE & TECH STACK (Resume Section)
+   ========================================================================== */
+
+/* --- Container Layout --- */
+.experience__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(4rem, 8vw, 6rem);
+    align-items: start;
+}
+
+/* --- Timeline (Education/Resume) --- */
+.timeline {
+    border-left: 2px solid var(--border-subtle);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.timeline__item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline__dot {
+    position: absolute;
+    left: calc(-2rem - 7px);
+    /* Disesuaikan agar pas di tengah garis border */
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background: var(--bg-surface);
+    border: 2px solid var(--brand-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg-base);
+    transition: var(--transition-fast);
+}
+
+.timeline__item:hover .timeline__dot {
+    background: var(--brand-primary);
+    transform: scale(1.2);
+}
+
+.timeline__date {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.timeline__title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-heading);
+}
+
+.timeline__text {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.timeline__list {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.timeline__list li {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    position: relative;
+    padding-left: 1.25rem;
+    line-height: 1.6;
+}
+
+.timeline__list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--brand-primary);
+    font-weight: 700;
+}
+
+.timeline__list strong {
+    color: var(--text-heading);
+}
+
+/* --- Tech Stack (Bento Grid) --- */
+.stack__title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    letter-spacing: -0.04em;
+}
+
+.bento__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+}
+
+.bento__item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    transition: var(--transition-smooth);
+    text-align: center;
+    will-change: transform;
+}
+
+.bento__item i {
+    font-size: 2.5rem;
+    /* Kita gunakan warna muted agar seragam, lalu saat di-hover baru menyala */
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bento__item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    letter-spacing: 0.02em;
+}
+
+/* Hover Effect Bento Item */
+.bento__item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-strong);
+}
+
+/* Membuat Icon Menyala sesuai Brand Primary Color saat dihover */
+.bento__item:hover i {
+    color: var(--brand-primary);
+    transform: scale(1.1);
+}
+
+/* --- Responsive Adjustments --- */
+@media screen and (max-width: 992px) {
+    .experience__container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}
+
+/* ==========================================================================
+   CONTACT SECTION & FORMS
+   ========================================================================== */
+
+/* Layout Utama */
+.contact__container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(3rem, 8vw, 6rem);
+    align-items: center;
+}
+
+.contact__desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+/* Social Links bergaya Card/Pill */
+.contact__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+    width: fit-content;
+}
+
+.social__link i {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    transition: var(--transition-fast);
+}
+
+.social__link:hover {
+    border-color: var(--brand-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.social__link:hover i {
+    color: var(--brand-primary);
+}
+
+/* Form Wrapper Premium */
+.contact__form-wrapper {
+    background: var(--bg-surface);
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-md);
+}
+
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Membuat Input Bersebelahan */
+.form__group--double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+/* Styling Input Modern */
+.form__input {
+    width: 100%;
+    padding: 1.15rem 1.5rem;
+    background: var(--bg-base);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--text-heading);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition-fast);
+}
+
+.form__input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Efek Glow Saat Form Diketik */
+.form__input:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 4px var(--brand-glow);
+    background: var(--bg-surface);
+}
+
+.form__textarea {
+    height: 180px;
+    resize: vertical;
+}
+
+/* --- Responsive Adjustments --- */
+@media screen and (max-width: 992px) {
+    .contact__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form__group--double {
+        grid-template-columns: 1fr;
+        /* Form kembali memanjang ke bawah di HP */
+    }
+
+    .social__link {
+        width: 100%;
+        /* Tombol sosmed penuh ke samping di HP */
     }
 }
