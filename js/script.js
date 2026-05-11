@@ -135,3 +135,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('%c Portfolio upgraded successfully.', 'color: #9ACD32; font-weight: bold; font-size: 14px;');
 });
+
+// Tambahkan di dalam document.addEventListener('DOMContentLoaded', () => { ... })
+
+const detailScreen = document.getElementById('detail-screen');
+const openDetailBtns = document.querySelectorAll('.open-detail');
+const closeDetailBtn = document.querySelector('.close-detail');
+
+if (detailScreen && openDetailBtns.length > 0) {
+    openDetailBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+
+            // Logic: Anda bisa mengisi konten berbeda berdasarkan 'target'
+            // Untuk saat ini kita fokus ke transisi "Screen Baru"
+            detailScreen.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Stop scroll di background
+        });
+    });
+
+    closeDetailBtn.addEventListener('click', () => {
+        detailScreen.classList.remove('active');
+        document.body.style.overflow = ''; // Aktifkan kembali scroll
+    });
+}
