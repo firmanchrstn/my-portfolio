@@ -643,10 +643,136 @@ h4 {
         order: 2;
     }
 
+    /* ==========================================================================
+   PREMIUM HERO IMAGE SHOWCASE
+   ========================================================================== */
+
     .hero__image {
-        order: 1;
-        max-width: 500px;
-        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .hero__image-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        /* Ukuran proporsional */
+        aspect-ratio: 4/5;
+        /* Membuat foto sedikit meninggi/portrait yang elegan */
+        border-radius: 2rem;
+        /* Animasi melayang halus */
+        animation: floatImage 6s ease-in-out infinite;
+    }
+
+    /* Gambar Profil Utama */
+    .hero__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Memastikan foto tidak gepeng */
+        border-radius: 2rem;
+        border: 1px solid var(--border-subtle);
+        background: var(--bg-surface);
+        box-shadow: var(--shadow-hover);
+        position: relative;
+        z-index: 2;
+        transition: var(--transition-smooth);
+    }
+
+    /* Efek Cahaya (Glow) di Latar Belakang */
+    .hero__image-backdrop {
+        position: absolute;
+        inset: -15px;
+        /* Lebih besar dari gambar aslinya */
+        /* Gradien modern menyesuaikan brand primary */
+        background: linear-gradient(135deg, var(--brand-primary), #4ade80, #09090b);
+        filter: blur(35px);
+        opacity: 0.3;
+        /* Transparansi standar */
+        border-radius: 2rem;
+        z-index: -1;
+        transition: opacity 0.5s ease;
+        will-change: opacity;
+    }
+
+    /* Interaksi saat gambar di-hover */
+    .hero__image-wrapper:hover .hero__image-backdrop {
+        opacity: 0.6;
+        /* Cahaya makin terang */
+    }
+
+    /* Komponen Badge Melayang (Glassmorphism) */
+    .hero__floating-badge {
+        position: absolute;
+        bottom: 3rem;
+        left: -2.5rem;
+        /* Sengaja dibuat keluar jalur agar dinamis */
+        background: var(--bg-glass);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 0.8rem 1.5rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-md);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        z-index: 3;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--text-heading);
+        animation: floatBadge 5s ease-in-out infinite reverse;
+    }
+
+    .hero__floating-badge i {
+        color: var(--brand-primary);
+        font-size: 1.1rem;
+    }
+
+    /* --- Keyframes Animations --- */
+    @keyframes floatImage {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes floatBadge {
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-8px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .hero__image-wrapper {
+            max-width: 300px;
+            margin-top: 2rem;
+        }
+
+        .hero__floating-badge {
+            left: -1rem;
+            bottom: 2rem;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+        }
     }
 
     .hero__buttons {
