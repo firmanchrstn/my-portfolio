@@ -1,210 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster Design | Firman Christian</title>
+    <title>DOMIN8 Brand Identity | Firman Christian</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portofolio.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-    <style>
-        :root {
-            --primary: #9ACD32;
-            --text-main: #0F172A;
-            --text-muted: #64748B;
-            --bg-soft: #F8FAFC;
-        }
-
-        .poster-page {
-            padding-top: 120px;
-            padding-bottom: 100px;
-            background-color: #fff;
-        }
-
-        .poster-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .poster-category {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .poster-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        /* Container Poster yang Sangat Bersih */
-        .poster-hero {
-            background-color: var(--bg-soft);
-            padding: 4rem 2rem;
-            border-radius: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .poster-wrapper {
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            border-radius: 8px;
-            overflow: hidden;
-            line-height: 0;
-            max-width: 900px;
-            transition: transform 0.5s ease;
-        }
-
-        .poster-wrapper:hover {
-            transform: scale(1.01);
-        }
-
-        .poster-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Info Grid */
-        .poster-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .info-sidebar {
-            display: grid;
-            gap: 2.5rem;
-            padding: 2rem;
-            background: var(--bg-soft);
-            border-radius: 24px;
-        }
-
-        .info-item h4 {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-item p {
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .info-description h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .info-description p {
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .back-btn {
-            margin-top: 5rem;
-            text-align: center;
-        }
-
-        /* Dark Mode */
-        [data-theme="dark"] .poster-page {
-            background-color: #0F172A;
-        }
-
-        [data-theme="dark"] .poster-hero,
-        [data-theme="dark"] .info-sidebar {
-            background-color: rgba(255, 255, 255, 0.03);
-        }
-
-        [data-theme="dark"] .poster-title {
-            color: #fff;
-        }
-
-        @media (max-width: 992px) {
-            .poster-info-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .poster-hero {
-                padding: 2rem 1rem;
-                border-radius: 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-
-    <main class="poster-page container">
-        <div class="poster-header">
-            <span class="poster-category">Visual Identity</span>
-            <h1 class="poster-title">The Identity & Team</h1>
-        </div>
-
-        <div class="poster-hero">
-            <div class="poster-wrapper">
-                <img src="asset/poster/Poster1.png" alt="Artwork">
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav__logo">Firman.</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
+                    <li><a href="../index.html#about" class="nav__link">About</a></li>
+                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                </ul>
+                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
+                        class="material-symbols-rounded">close</span></button>
             </div>
-        </div>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+                </button>
+                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
+                        class="material-symbols-rounded">menu_open</span></button>
+            </div>
+        </nav>
+    </header>
 
-        <div class="poster-info-grid">
-            <div class="info-sidebar">
-                <div class="info-item">
-                    <h4>Tools Used</h4>
-                    <p>Canva</p>
+    <main class="main">
+        <header class="project-detail__header container">
+            <span class="section__subtitle reveal">BRANDING & VISUAL DESIGN</span>
+            <h1 class="large-title reveal">DOMIN8 Identity</h1>
+
+            <div class="details__meta reveal">
+                <div class="meta__item"><small>Role</small>
+                    <p>Graphic Designer</p>
                 </div>
-                <div class="info-item">
-                    <h4>Date</h4>
-                    <p>2025</p>
+                <div class="meta__item"><small>Type</small>
+                    <p>Creative Campaign</p>
+                </div>
+                <div class="meta__item"><small>Tools</small>
+                    <p>Canva, Photoshop</p>
                 </div>
             </div>
+        </header>
 
-            <div class="info-description">
-                <h3>Concept & Strategy</h3>
-                <p>
-                    The results from the editing process started with the creation of visual identity for my group at
-                    Jakarta International University using photo profile design of my group named DOMIN8. The poster was
-                    created to introduce the visual identity. This concept includes the elements of street photography
-                    combined with grunge typography to convey a dynamic sense of youth movement.
-                </p>
-                <p style="margin-top: 1rem;">
-                    The application of the layering concept in team visuals is designed to create visually striking
-                    dimensions that effectively convey.
-                </p>
+        <section class="container">
+            <div class="summary__grid">
+                <div class="summary__card reveal">
+                    <div>
+                        <h4>01. Background</h4>
+                        <h3>The Context</h3>
+                        <p>Creating a strong, dynamic visual identity for the DOMIN8 campus group to establish a bold
+                            and assertive presence.</p>
+                    </div>
+                    <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
+                            class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                    <div>
+                        <h4>02. Concept</h4>
+                        <h3>Art Direction</h3>
+                        <p>Utilizing a raw, grunge typography aesthetic combined with high-contrast elements to break
+                            away from traditional corporate designs.</p>
+                    </div>
+                    <div class="btn-text open-detail" data-target="concept" tabindex="0">Read More <i
+                            class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                    <div>
+                        <h4>03. Execution</h4>
+                        <h3>Delivery</h3>
+                        <p>Designing cohesive assets across digital and print media, ensuring the brand identity remains
+                            consistent and impactful.</p>
+                    </div>
+                    <div class="btn-text open-detail" data-target="execution" tabindex="0">Read More <i
+                            class="fa-solid fa-arrow-right"></i></div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="back-btn">
-            <a href="javascript:history.back()" class="btn btn--outline">
-                <span class="material-symbols-rounded">arrow_back</span>
-                Back to Portfolio
-            </a>
-        </div>
+        <article class="study-container">
+            <section class="section-study">
+                <h2 class="mb-1 text-center">Visual Assets</h2>
+                <p class="text-accent mb-4 d-flex align-center justify-center gap-2" style="font-size: 0.95rem;">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Click any poster to view in high resolution.
+                </p>
+
+                <div class="design-gallery">
+                    <figure class="gallery-item">
+                        <div class="img-wrapper"><img src="../asset/poster/Poster1.png" alt="Main Poster"
+                                loading="lazy"></div>
+                        <figcaption class="gallery-label">
+                            <h3>Main Identity Poster</h3>
+                            <p>The primary design representing the aggressive and dynamic character of the DOMIN8 team.
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+        </article>
     </main>
 
-    <script>
-        // Memastikan tema gelap/terang tetap sinkron
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-    </script>
+    <div class="modal-backdrop" id="study-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-content" id="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-data" style="display: none;" aria-hidden="true">
+        <div data-id="background">
+            <span class="modal-tag">01. Background</span>
+            <h2 class="modal-title">Context & Background</h2>
+            <div class="modal-body">
+                <p>This project aimed to create a strong, dynamic visual identity for the <strong>DOMIN8</strong> campus
+                    group. The primary requirement was to establish a bold, assertive, and memorable presence within the
+                    academic environment.</p>
+                <p>As the visual designer, my challenge was to translate the concept of "Domination" into graphical
+                    assets that could be applied seamlessly across various media, including digital platforms (social
+                    media) and physical print (posters and banners).</p>
+            </div>
+        </div>
+
+        <div data-id="concept">
+            <span class="modal-tag">02. Concept</span>
+            <h2 class="modal-title">Art Direction</h2>
+            <div class="modal-body">
+                <p>After researching the target audience (university students), I decided to steer clear of rigid,
+                    traditional corporate designs. Instead, I employed the following approaches:</p>
+                <ul>
+                    <li><strong>Grunge Typography:</strong> Utilizing rough, textured typography to convey a rebellious
+                        and highly energetic feel.</li>
+                    <li><strong>High-Contrast Colors:</strong> Pairing deep monochromatic tones with sharp accent colors
+                        to immediately grab the viewer's attention.</li>
+                    <li><strong>Layering Elements:</strong> Incorporating digital scrapbook-style texture overlays to
+                        add depth and dimension to the poster.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-id="execution">
+            <span class="modal-tag">03. Execution</span>
+            <h2 class="modal-title">Delivery & Output</h2>
+            <div class="modal-body">
+                <p>All assets were designed cohesively. Utilizing tools such as Canva and Photoshop allowed me to
+                    arrange the composition and visual hierarchy with high precision.</p>
+                <p>The final output is not just a single static poster, but a comprehensive set of visual guidelines
+                    that the team can adapt for future campaigns, ensuring DOMIN8's brand identity remains consistent
+                    and impactful across all publications.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
+        <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+    </div>
+
+    <footer class="footer">
+        <div class="container footer__content">
+            <a href="../index.html" class="footer__logo">Firman.</a>
+            <p class="footer__text">©2026 Firman Christian Purba.</p>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

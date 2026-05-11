@@ -1,210 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" class="scroll-smooth">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Poster Design | Firman Christian</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/portofolio.css">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-    <style>
-        :root {
-            --primary: #9ACD32;
-            --text-main: #0F172A;
-            --text-muted: #64748B;
-            --bg-soft: #F8FAFC;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        .poster-page {
-            padding-top: 120px;
-            padding-bottom: 100px;
-            background-color: #fff;
-        }
-
-        .poster-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
-        }
-
-        .poster-category {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .poster-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: var(--text-main);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        /* Container Poster yang Sangat Bersih */
-        .poster-hero {
-            background-color: var(--bg-soft);
-            padding: 4rem 2rem;
-            border-radius: 32px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 5rem;
-        }
-
-        .poster-wrapper {
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            border-radius: 8px;
-            overflow: hidden;
-            line-height: 0;
-            max-width: 900px;
-            transition: transform 0.5s ease;
-        }
-
-        .poster-wrapper:hover {
-            transform: scale(1.01);
-        }
-
-        .poster-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Info Grid */
-        .poster-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .info-sidebar {
-            display: grid;
-            gap: 2.5rem;
-            padding: 2rem;
-            background: var(--bg-soft);
-            border-radius: 24px;
-        }
-
-        .info-item h4 {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-item p {
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .info-description h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .info-description p {
-            color: var(--text-muted);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .back-btn {
-            margin-top: 5rem;
-            text-align: center;
-        }
-
-        /* Dark Mode */
-        [data-theme="dark"] .poster-page {
-            background-color: #0F172A;
-        }
-
-        [data-theme="dark"] .poster-hero,
-        [data-theme="dark"] .info-sidebar {
-            background-color: rgba(255, 255, 255, 0.03);
-        }
-
-        [data-theme="dark"] .poster-title {
-            color: #fff;
-        }
-
-        @media (max-width: 992px) {
-            .poster-info-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .poster-hero {
-                padding: 2rem 1rem;
-                border-radius: 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <main class="poster-page container">
-        <div class="poster-header">
-            <span class="poster-category">Visual Identity</span>
-            <h1 class="poster-title">The Identity & Team</h1>
-        </div>
+    <header class="header" id="header">
 
-        <div class="poster-hero">
-            <div class="poster-wrapper">
-                <img src="asset/poster/Poster3.png" alt="Artwork">
+        <nav class="nav container">
+
+            <a href="../index.html" class="nav__logo">Firman.</a>
+
+            <div class="nav__menu" id="nav-menu">
+
+                <ul class="nav__list">
+
+                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
+
+                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
+
+                    <li><a href="../index.html#about" class="nav__link">About</a></li>
+
+                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+
+                </ul>
+
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+
+                    <span class="material-symbols-rounded">close</span>
+
+                </button>
+
             </div>
-        </div>
 
-        <div class="poster-info-grid">
-            <div class="info-sidebar">
-                <div class="info-item">
-                    <h4>Tools Used</h4>
+            <div class="nav__actions">
+
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+
+                    <span class="sun-icon material-symbols-rounded">light_mode</span>
+
+                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+
+                </button>
+
+                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+
+                    <span class="material-symbols-rounded">menu_open</span>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="main">
+
+        <header class="project-detail__header container">
+
+            <span class="section__subtitle reveal">VISUAL STORYTELLING & CAMPAIGN</span>
+
+            <h1 class="large-title reveal">Poster Design</h1>
+
+            <div class="details__meta reveal">
+
+                <div class="meta__item">
+                    <small>Role</small>
+                    <p>Graphic Designer</p>
+                </div>
+
+                <div class="meta__item">
+                    <small>Type</small>
+                    <p>Creative Poster</p>
+                </div>
+
+                <div class="meta__item">
+                    <small>Tools</small>
                     <p>Canva</p>
                 </div>
-                <div class="info-item">
-                    <h4>Date</h4>
-                    <p>2025</p>
+
+            </div>
+
+        </header>
+
+        <section class="container">
+
+            <div class="summary__grid">
+
+                <div class="summary__card reveal">
+
+                    <div>
+
+                        <h4>01. Background</h4>
+
+                        <h3>The Context</h3>
+
+                        <p>Creating a visually engaging campaign poster focused on promoting empathy and positive social
+                            interaction.</p>
+
+                    </div>
+
+                    <div class="btn-text open-detail" data-target="background" tabindex="0">
+
+                        Read More <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
                 </div>
+
+                <div class="summary__card reveal" style="transition-delay: 100ms;">
+
+                    <div>
+
+                        <h4>02. Concept</h4>
+
+                        <h3>Creative Direction</h3>
+
+                        <p>Applying cinematic movie-poster aesthetics and emotional storytelling to strengthen audience
+                            engagement.</p>
+
+                    </div>
+
+                    <div class="btn-text open-detail" data-target="concept" tabindex="0">
+
+                        Read More <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="summary__card reveal" style="transition-delay: 200ms;">
+
+                    <div>
+
+                        <h4>03. Execution</h4>
+
+                        <h3>Visual Delivery</h3>
+
+                        <p>Combining expressive composition, typography, and layered visuals to create a memorable
+                            campaign experience.</p>
+
+                    </div>
+
+                    <div class="btn-text open-detail" data-target="execution" tabindex="0">
+
+                        Read More <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="info-description">
-                <h3>Concept & Strategy</h3>
-                <p>
-                    This poster design showcases the most tangible application of “Small Notes, Big Impact,” which seeks
-                    to use design to promote positive social behavior. Drawing direct inspiration from the aesthetics of
-                    movie posters, this poster narratively depicts the interactive engagement between team members and
-                    the university’s surrounding community, involving people such as online ride-hailing passengers and
-                    support staff.
-                </p>
-                <p style="margin-top: 1rem;">
-                    This design aims to highlight his heroic story through this simple act of kindness.
-                </p>
-            </div>
-        </div>
+        </section>
 
-        <div class="back-btn">
-            <a href="javascript:history.back()" class="btn btn--outline">
-                <span class="material-symbols-rounded">arrow_back</span>
-                Back to Portfolio
-            </a>
-        </div>
+        <article class="study-container">
+
+            <section class="section-study">
+
+                <h2 class="mb-1 text-center">Visual Assets</h2>
+
+                <p class="text-accent mb-4 d-flex align-center justify-center gap-2" style="font-size: 0.95rem;">
+
+                    <i class="fa-solid fa-magnifying-glass-plus"></i> Click the poster to view in high resolution.
+
+                </p>
+
+                <div class="design-gallery">
+
+                    <figure class="gallery-item">
+
+                        <div class="img-wrapper">
+
+                            <img src="../asset/poster/Poster3.png" alt="Poster Design" loading="lazy">
+
+                        </div>
+
+                        <figcaption class="gallery-label">
+
+                            <h3>Social Awareness Campaign</h3>
+
+                            <p>A cinematic-inspired visual poster designed to encourage empathy and positive social
+                                behavior within the campus community.</p>
+
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </section>
+
+        </article>
+
     </main>
 
-    <script>
-        // Memastikan tema gelap/terang tetap sinkron
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-    </script>
+    <div class="modal-backdrop" id="study-modal">
+
+        <div class="modal-card">
+
+            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="modal-content" id="modal-content"></div>
+
+        </div>
+
+    </div>
+
+    <div id="modal-data" style="display: none;" aria-hidden="true">
+
+        <div data-id="background">
+
+            <span class="modal-tag">01. Background</span>
+
+            <h2 class="modal-title">Context & Background</h2>
+
+            <div class="modal-body">
+
+                <p>This project was designed as part of a social awareness campaign intended to encourage empathy,
+                    kindness, and positive interaction within the university environment.</p>
+
+                <p>The objective was to transform a simple act of kindness into a visually compelling narrative capable
+                    of emotionally engaging viewers.</p>
+
+            </div>
+
+        </div>
+
+        <div data-id="concept">
+
+            <span class="modal-tag">02. Concept</span>
+
+            <h2 class="modal-title">Creative Direction</h2>
+
+            <div class="modal-body">
+
+                <p>The visual direction was heavily inspired by cinematic movie-poster aesthetics, combining emotional
+                    storytelling with dramatic composition techniques.</p>
+
+                <ul>
+
+                    <li><strong>Cinematic Layout:</strong> Applying movie-poster inspired framing and visual hierarchy.
+                    </li>
+
+                    <li><strong>Emotional Storytelling:</strong> Highlighting meaningful social interaction through
+                        expressive visuals.</li>
+
+                    <li><strong>Layered Composition:</strong> Combining typography, imagery, and depth effects for
+                        stronger narrative impact.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div data-id="execution">
+
+            <span class="modal-tag">03. Execution</span>
+
+            <h2 class="modal-title">Delivery & Output</h2>
+
+            <div class="modal-body">
+
+                <p>The poster was designed digitally using Canva with a strong focus on cinematic presentation,
+                    emotional resonance, and visual clarity.</p>
+
+                <p>The final result successfully communicates a heroic and inspirational atmosphere while maintaining a
+                    modern and visually engaging campaign style.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="lightbox" id="lightbox">
+
+        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
+
+        <img src="" alt="Zoomed Poster" class="lightbox__img" id="lightbox-img">
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="container footer__content">
+
+            <a href="../index.html" class="footer__logo">Firman.</a>
+
+            <p class="footer__text">©2026 Firman Christian Purba.</p>
+
+        </div>
+
+    </footer>
+
+    <script src="../js/script.js"></script>
+
 </body>
 
 </html>

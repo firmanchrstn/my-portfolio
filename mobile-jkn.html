@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study: Redesign Mobile JKN | Firman Christian Purba</title>
+    <title>Mobile JKN Redesign | Firman Christian</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/portofolio.css">
@@ -18,7 +18,6 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="../index.html" class="nav__logo">Firman.</a>
-
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="../index.html#home" class="nav__link">Home</a></li>
@@ -26,51 +25,34 @@
                     <li><a href="../index.html#about" class="nav__link">About</a></li>
                     <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu">
-                    <span class="material-symbols-rounded">close</span>
-                </button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
+                        class="material-symbols-rounded">close</span></button>
             </div>
-
             <div class="nav__actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="sun-icon material-symbols-rounded">light_mode</span>
-                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
-                </button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span
+                        class="sun-icon material-symbols-rounded">light_mode</span><span
+                        class="moon-icon material-symbols-rounded">dark_mode</span></button>
                 <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-                    <span class="material-symbols-rounded">menu_open</span>
-                </button>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
+                        class="material-symbols-rounded">menu_open</span></button>
             </div>
         </nav>
     </header>
 
     <main class="main">
-
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">UI/UX Redesign</span>
             <h1 class="large-title reveal">Mobile JKN</h1>
 
-            <div class="details__meta reveal"
-                style="margin: 3rem auto 0; justify-content: center; text-align: center; border-top: none;">
-                <div class="meta__item">
-                    <small>Role</small>
-                    <p>UI/UX Designer</p>
-                </div>
-                <div class="meta__item">
-                    <small>Duration</small>
+            <div class="details__meta reveal">
+                <div class="meta__item"><small>Duration</small>
                     <p>3 Weeks</p>
                 </div>
-                <div class="meta__item">
-                    <small>Tools</small>
-                    <p>Figma</p>
-                </div>
             </div>
-
         </header>
 
         <section class="container">
             <div class="summary__grid">
-
                 <div class="summary__card reveal">
                     <div>
                         <h4>01. Background</h4>
@@ -78,7 +60,7 @@
                         <p>Redesigning Indonesia's national health app to bridge the digital gap for millions of users
                             facing complex bureaucracy.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="background">Read Full Story <i
+                    <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
@@ -89,7 +71,7 @@
                         <p>Information overload and complex navigation patterns causing friction and cognitive overload
                             in urgent health situations.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="problem">Read Full Story <i
+                    <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
@@ -100,84 +82,162 @@
                         <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
                             administrative access.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="solution">Read Full Story <i
+                    <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
                 </div>
-
             </div>
         </section>
 
-        <div class="study-container">
+        <article class="study-container">
             <section class="section-study">
-                <h2>Design Showcase</h2>
-                <p
-                    style="color: var(--brand-primary); font-size: 0.9rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 8px;">
+                <h2 class="mb-1">Design Showcase</h2>
+                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
                     <i class="fa-solid fa-circle-info"></i> Click on the design image to enlarge it.
                 </p>
 
                 <div class="design-gallery">
-                    <article class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/prototype-figma-mobileJKN/Home.png" alt="Dashboard">
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Camera Permission.png" alt="Camera Permission"
+                                loading="lazy">
                         </div>
-                        <div class="gallery-label">
-                            <h3>Main Dashboard</h3>
-                            <p>Restrukturisasi tata letak beranda untuk memprioritaskan akses cepat ke fitur layanan
-                                kesehatan utama.</p>
-                        </div>
-                    </article>
+                        <figcaption class="gallery-label">
+                            <h3>Camera Permission</h3>
+                            <p>Designed a permission onboarding flow to improve transparency and explain camera access
+                                functionality clearly.</p>
+                        </figcaption>
+                    </figure>
 
-                    <article class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/prototype-figma-mobileJKN/Card.png" alt="Queue">
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Card.png" alt="Digital Participant Card"
+                                loading="lazy">
                         </div>
-                        <div class="gallery-label">
-                            <h3>Digital Card</h3>
-                            <p>Visualisasi kartu peserta digital dengan informasi kepesertaan yang lebih jelas dan mudah
-                                dibaca.</p>
-                        </div>
-                    </article>
+                        <figcaption class="gallery-label">
+                            <h3>Digital Participant Card</h3>
+                            <p>Redesigned the digital membership card with stronger visual hierarchy for faster identity
+                                verification.</p>
+                        </figcaption>
+                    </figure>
 
-                    <article class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/prototype-figma-mobileJKN/Profile.png"
-                                alt="Profile"></div>
-                        <div class="gallery-label">
-                            <h3>User Profile</h3>
-                            <p>Optimasi halaman profil untuk manajemen data pribadi dan riwayat kepesertaan yang lebih
-                                intuitif.</p>
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/FAQ.png" alt="FAQ Center" loading="lazy">
                         </div>
-                    </article>
+                        <figcaption class="gallery-label">
+                            <h3>FAQ Center</h3>
+                            <p>Optimized the FAQ structure to support self-service behavior and reduce user confusion.
+                            </p>
+                        </figcaption>
+                    </figure>
 
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Home.png" alt="Home Dashboard" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Home Dashboard</h3>
+                            <p>Restructured the homepage layout to prioritize quick access to essential healthcare
+                                services.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Loading Screen 1.png" alt="Loading Screen 01"
+                                loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Loading Screen 01</h3>
+                            <p>Created a cleaner loading experience to improve perceived application performance and
+                                responsiveness.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Loading Screen 2.png" alt="Loading Screen 02"
+                                loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Loading Screen 02</h3>
+                            <p>Enhanced loading state consistency with minimal visual distractions and smoother
+                                transitions.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Loading Screen 3.png" alt="Loading Screen 03"
+                                loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Loading Screen 03</h3>
+                            <p>Designed a lightweight loading interface to reduce user anxiety during waiting states.
+                            </p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Location Permission.png"
+                                alt="Location Permission" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Location Permission</h3>
+                            <p>Improved permission communication to make location access requests feel more secure and
+                                understandable.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Menu - JKN Program Information - Contribution [1].png"
+                                alt="Contribution Information" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Contribution Information</h3>
+                            <p>Simplified contribution details using modular content sections for easier information
+                                scanning.</p>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-item">
+                        <div class="img-wrapper">
+                            <img src="../asset/prototype-figma-mobileJKN/Menu - JKN Program Information - Guide.png"
+                                alt="Program Guide" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Program Guide</h3>
+                            <p>Organized healthcare guidance content into a more structured and accessible reading flow.
+                            </p>
+                        </figcaption>
+                    </figure>
                 </div>
             </section>
 
-            <section class="section-study"
-                style="text-align: center; background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 style="margin-bottom: 1rem; font-size: 2.5rem;">Try Interactive Prototype</h2>
-                <p
-                    style="margin-bottom: 3rem; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
-                    See how this design solution works in real-time. Click the button below to open the High-Fidelity
-                    Prototype directly in Figma.
-                </p>
-                <a href="https://www.figma.com/proto/RFgyepcmQbwohMHgf7fjpD/Mobile-JKN-Redesign" target="_blank"
+            <section class="section-study text-center"
+                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
+                <h2 class="mb-2">Try Interactive Prototype</h2>
+                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
+                    below to open the High-Fidelity Prototype directly in Figma.</p>
+                <a href="https://www.figma.com/proto/..." target="_blank" rel="noopener noreferrer"
                     class="btn btn--primary">
                     <span class="material-symbols-rounded">open_in_new</span> Open Figma Prototype
                 </a>
             </section>
-        </div>
+        </article>
     </main>
 
     <div class="modal-backdrop" id="study-modal">
         <div class="modal-card">
-            <button class="modal-close" id="modal-close" aria-label="Close Modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-
-            <div class="modal-content" id="modal-content">
-            </div>
+            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
+                    class="fa-solid fa-xmark"></i></button>
+            <div class="modal-content" id="modal-content"></div>
         </div>
     </div>
 
-    <div id="modal-data" style="display: none;">
-
+    <div id="modal-data" style="display: none;" aria-hidden="true">
         <div data-id="background">
             <span class="modal-tag">01. Background</span>
             <h2 class="modal-title">Context & Background</h2>
@@ -191,158 +251,55 @@
                     assistant.</p>
             </div>
         </div>
+    </div>
 
+    <div id="modal-data" style="display: none;" aria-hidden="true">
         <div data-id="problem">
             <span class="modal-tag">02. Challenge</span>
             <h2 class="modal-title">Problem Statement</h2>
             <div class="modal-body">
-                <p>Public service applications often suffer from "Information Overload." Through my analysis, I
-                    identified three core pain points:</p>
-                <ul>
-                    <li><strong>Cognitive Overload:</strong> Dense administrative data regarding registration, rights,
-                        and obligations made it difficult for users to find relevant information during urgent
-                        situations.</li>
-                    <li><strong>Perceived Performance Friction:</strong> A cluttered and unorganized layout created a
-                        perception of a "heavy" and slow application, increasing user anxiety.</li>
-                    <li><strong>Weak Information Hierarchy:</strong> Critical data points, such as digital membership
-                        status and ID numbers, were often buried under secondary information.</li>
-                </ul>
+                <p>Public service applications often suffer from “Information Overload,” where excessive and poorly
+                    structured information reduces usability and increases user frustration. Through my analysis, I
+                    identified three major pain points: first, <strong>cognitive overload</strong>, caused by dense
+                    administrative data regarding registration, rights, and obligations that made it difficult for users
+                    to quickly access relevant information during urgent situations; second, <strong>perceived
+                        performance friction</strong>, where cluttered and unorganized layouts created the impression of
+                    a heavy and slow application, ultimately increasing user anxiety; and third, <strong>weak
+                        information hierarchy</strong>, in which critical data such as digital membership status and ID
+                    numbers were buried beneath secondary information, reducing clarity and accessibility for users.</p>
+
             </div>
         </div>
+    </div>
 
+    <div id="modal-data" style="display: none;" aria-hidden="true">
         <div data-id="solution">
             <span class="modal-tag">03. Innovation</span>
-            <h2 class="modal-title">The Solution Strategy</h2>
+            <h2 class="modal-title">The Solution</h2>
             <div class="modal-body">
-                <p>My approach focused on Simplification through Systemic Logic. I implemented several key UX
-                    strategies:</p>
-                <ul>
-                    <li><strong>Modular Information Architecture:</strong> I restructured the linear data into a
-                        Card-Based UI. This allows users to scan essential information much more efficiently.</li>
-                    <li><strong>Progressive Disclosure:</strong> By utilizing Tabs and Accordions, I ensured that
-                        technical details are only visible when needed.</li>
-                    <li><strong>Visual Trust & Identity:</strong> The Digital Participant Card was redesigned with
-                        high-contrast visual cues for instant verification.</li>
-                    <li><strong>Empowering Self-Service:</strong> I optimized the FAQ and Service Channels to boost User
-                        Autonomy.</li>
-                </ul>
+                <p>My approach focused on simplifying the user experience through a more structured and efficient
+                    system. I redesigned the interface using a <strong>card-based information architecture</strong> to
+                    improve readability, applied <strong>progressive disclosure</strong> with tabs and accordions to
+                    reduce cognitive load, enhanced the <strong>Digital Participant Card</strong> with clearer visual
+                    hierarchy for faster verification, and optimized the <strong>FAQ and service channels</strong> to
+                    encourage user self-service and autonomy.</p>
             </div>
         </div>
-
     </div>
 
     <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close">&times;</span>
+        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
     </div>
 
     <footer class="footer">
         <div class="container footer__content">
             <a href="../index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba. Portfolio Case Study.</p>
+            <p class="footer__text">©2026 Firman Christian Purba.</p>
         </div>
     </footer>
 
     <script src="../js/script.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modalBackdrop = document.getElementById('study-modal');
-            const modalContentArea = document.getElementById('modal-content');
-            const closeModalBtn = document.getElementById('modal-close');
-            const openDetailBtns = document.querySelectorAll('.open-detail');
-
-            if (modalBackdrop && openDetailBtns.length > 0) {
-
-                // Saat tombol 'Read Full Story' diklik
-                openDetailBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const targetId = btn.getAttribute('data-target');
-                        const sourceData = document.querySelector(`[data-id="${targetId}"]`);
-
-                        if (sourceData) {
-                            // 1. Suntikkan konten dari Data Source ke dalam Card
-                            modalContentArea.innerHTML = sourceData.innerHTML;
-
-                            // 2. Munculkan Modal dengan animasi
-                            modalBackdrop.classList.add('active');
-                            document.body.style.overflow = 'hidden'; // Stop background scroll
-
-                            // 3. Reset scroll modal ke atas setiap kali dibuka
-                            document.querySelector('.modal-card').scrollTop = 0;
-                        }
-                    });
-                });
-
-                // Fungsi menutup Modal
-                const closeModal = () => {
-                    modalBackdrop.classList.remove('active');
-                    document.body.style.overflow = '';
-                };
-
-                // Tutup saat tombol X diklik
-                closeModalBtn.addEventListener('click', closeModal);
-
-                // Tutup saat area luar Card (backdrop) diklik
-                modalBackdrop.addEventListener('click', (e) => {
-                    if (e.target === modalBackdrop) closeModal();
-                });
-
-                // Tutup saat menekan tombol ESC di keyboard
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) closeModal();
-                });
-            }
-        });
-    </script>
-</body>
-
-</html>
-
-<div class="lightbox" id="lightbox">
-    <span class="lightbox__close" id="lightbox-close">&times;</span>
-    <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-</div>
-
-<footer class="footer">
-    <div class="container footer__content">
-        <a href="../index.html" class="footer__logo">Firman.</a>
-        <p class="footer__text">©2026 Firman Christian Purba. Portfolio Case Study.</p>
-    </div>
-</footer>
-
-<script src="../js/script.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const detailScreen = document.getElementById('detail-screen');
-        const openDetailBtns = document.querySelectorAll('.open-detail');
-        const closeDetailBtn = document.querySelector('.close-detail');
-
-        if (detailScreen && openDetailBtns.length > 0) {
-            openDetailBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const targetId = btn.getAttribute('data-target');
-                    detailScreen.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-
-                    // Opsional: Scroll otomatis ke bagian yang di-klik saat overlay terbuka
-                    setTimeout(() => {
-                        const targetSection = document.getElementById(`section-${targetId}`);
-                        if (targetSection) {
-                            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    }, 300);
-                });
-            });
-
-            closeDetailBtn.addEventListener('click', () => {
-                detailScreen.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        }
-    });
-</script>
 </body>
 
 </html>
