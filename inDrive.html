@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile JKN Redesign | Firman Christian</title>
+    <title>inDrive Redesign | Firman Christian</title>
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
@@ -42,11 +42,19 @@
     <main class="main">
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">UI/UX Redesign</span>
-            <h1 class="large-title reveal">Mobile JKN</h1>
+            <h1 class="large-title reveal">inDrive</h1>
 
             <div class="details__meta reveal">
-                <div class="meta__item"><small>Duration</small>
-                    <p>3 Weeks</p>
+                <div class="meta__item">
+                    <small>Project Document</small>
+                    <a href="https://docs.google.com/document/d/1Nh4Oj_eKDkf087LAhXCFnVO8E9RBKrF-Kdi806mgNJo/edit?usp=sharing"
+                        target="_blank"
+                        style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-heading); font-weight: 600; margin-top: 4px; transition: color 0.3s ease;">
+                        <span class="material-symbols-rounded"
+                            style="color: var(--color-primary); font-size: 1.2rem;">description</span>
+                        <span onmouseover="this.style.color='var(--color-primary)'"
+                            onmouseout="this.style.color='var(--text-heading)'">View PRD (Google Docs)</span>
+                    </a>
                 </div>
             </div>
         </header>
@@ -57,8 +65,8 @@
                     <div>
                         <h4>01. Background</h4>
                         <h3>Context</h3>
-                        <p>Redesigning Indonesia's national health app to bridge the digital gap for millions of users
-                            facing complex bureaucracy.</p>
+                        <p>Evolving inDrive's unique peer-to-peer (P2P) fare negotiation model from a manual bidding
+                            tool into an intelligent, data-driven mobility marketplace.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
@@ -68,8 +76,8 @@
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Problem Statement</h3>
-                        <p>Information overload and complex navigation patterns causing friction and cognitive overload
-                            in urgent health situations.</p>
+                        <p>Resolving severe design debt including GPS drift, TalkBack exclusion, and dangerous cognitive
+                            overload in the driver's dashboard.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
@@ -79,8 +87,8 @@
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>The Solution</h3>
-                        <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
-                            administrative access.</p>
+                        <p>Integrating GenAI RAG for smart pricing, a Mixed Integer Programming (MIP) engine for
+                            matching, and a seamless auto-deduct payment system.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
@@ -97,12 +105,12 @@
 
                 <div class="design-gallery">
                     <figure class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/prototype-figma-mobileJKN/Home.png" alt="Dashboard"
+                        <div class="img-wrapper"><img src="../asset/prototype-figma-inDrive/Home.png" alt="Dashboard"
                                 loading="lazy"></div>
                         <figcaption class="gallery-label">
-                            <h3>Main Dashboard</h3>
-                            <p>Restrukturisasi tata letak beranda untuk memprioritaskan akses cepat ke fitur layanan
-                                kesehatan utama.</p>
+                            <h3>Main Dashboard & Payment Selection</h3>
+                            <p>Desain baru yang memprioritaskan pemilihan metode pembayaran sebelum bidding
+                                (Pre-Authorization) untuk mempercepat matching dan negosiasi.</p>
                         </figcaption>
                     </figure>
                 </div>
@@ -130,13 +138,69 @@
     </div>
 
     <div id="modal-data" style="display: none;" aria-hidden="true">
+
         <div data-id="background">
             <span class="modal-tag">01. Background</span>
             <h2 class="modal-title">Context & Background</h2>
             <div class="modal-body">
-                <p>Mobile JKN serves as the digital backbone of Indonesia’s National Health Insurance...</p>
+                <p>inDrive operates in one of the world's most competitive mobility markets, distinguished by its
+                    <strong>Real-Time Deals (RTD)</strong> or peer-to-peer fare negotiation model. This model disrupts
+                    algorithmic surge pricing by returning price control to humans.</p>
+                <p>However, despite its strong user growth globally, the actual execution of the interface creates
+                    unnecessary friction. The platform currently acts merely as a raw mirror of the database,
+                    transferring the burden of filtering information directly to the users. This project aims to
+                    redesign the platform into an intelligent assistant that eliminates information asymmetry while
+                    preserving the core philosophy of fair, human-driven pricing.</p>
             </div>
         </div>
+
+        <div data-id="problem">
+            <span class="modal-tag">02. Challenge</span>
+            <h2 class="modal-title">Problem Statement</h2>
+            <div class="modal-body">
+                <p>Based on extensive UX research and user review analysis, the current application suffers from four
+                    critical failure domains:</p>
+                <ul style="margin-left: 20px; margin-bottom: 1rem; line-height: 1.6;">
+                    <li><strong>Accessibility Exclusion:</strong> The app fails WCAG 2.1 AA standards, rendering core
+                        interactions (like bidding and accepting orders) completely incompatible with screen readers
+                        like TalkBack, excluding users with visual impairments.</li>
+                    <li><strong>Unsafe Driver UI (Cognitive Overload):</strong> The driver dashboard mixes ride-hailing
+                        and courier orders in a single, chaotic queue. Drivers are forced to evaluate conflicting task
+                        types under time pressure while driving.</li>
+                    <li><strong>GPS Location Drift:</strong> High triangulation inaccuracies cause pickup pins to shift
+                        randomly, leading to mismatched pickup points, driver frustration, and an estimated 18-22%
+                        cancellation rate.</li>
+                    <li><strong>Negotiation Friction:</strong> Manual numeric fare entry creates guesswork, dragging the
+                        average bidding time to 87 seconds due to a lack of contextual price anchoring.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-id="solution">
+            <span class="modal-tag">03. Innovation</span>
+            <h2 class="modal-title">The Solution & Architecture</h2>
+            <div class="modal-body">
+                <p>The redesign strategy introduces a Next-Gen Platform architecture (PRD v1.1) focusing on
+                    <strong>Operational UX</strong> and intelligent backend integration:</p>
+                <ul style="margin-left: 20px; margin-bottom: 1rem; line-height: 1.6;">
+                    <li><strong>Dynamic Bidding Slider & GenAI RAG:</strong> Replacing manual typing with an interactive
+                        color-coded slider. A Retrieval-Augmented Generation (RAG) layer fetches real-time data (fuel
+                        price, weather, traffic) to provide fair price anchoring.</li>
+                    <li><strong>Modular Driver Dashboard:</strong> A tab-based navigation separating <em>City Rides</em>
+                        from <em>Courier</em> services. It includes a radius control slider and a <em>Floating Compact
+                            Earnings Card</em> to drastically reduce cognitive load.</li>
+                    <li><strong>Seamless Payment & Pre-Authorization:</strong> Integrating E-Wallet auto-deduct
+                        capabilities prior to bidding. A pre-authorization system protects drivers from unpaid trips
+                        while avoiding forced cash collections.</li>
+                    <li><strong>MIP Optimization Engine:</strong> Behind the scenes, a Mixed Integer Programming (MIP)
+                        engine balances customer wait time, driver distance, and fare deviation to recommend the best
+                        possible match instantly.</li>
+                </ul>
+                <p><em>This comprehensive overhaul is projected to reduce cancellation rates, increase GMV, and provide
+                        a 100% WCAG-compliant experience.</em></p>
+            </div>
+        </div>
+
     </div>
 
     <div class="lightbox" id="lightbox">
