@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image" href="asset/pp.webp">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -68,8 +69,8 @@
                     <div class="hero__image-wrapper">
                         <div class="hero__image-backdrop"></div>
 
-                        <img src="./asset/pp.jpeg" alt="Firman Christian Purba" class="hero__img">
-
+                        <img src="asset/pp.jpeg" alt="Firman Christian Purba" class="hero__img" width="400" height="500"
+                            fetchpriority="high" decoding="sync">
                         <div class="hero__floating-badge">
                             <i class="fa-solid fa-code"></i>
                             <span>Frontend & UI/UX</span>
@@ -130,9 +131,8 @@
                     <article class="portfolio__card reveal" data-category="web">
                         <div class="portfolio__card-image">
                             <img src="asset/jiu-studentinformationportal/JIUgedung.webp"
-                                alt="Student Information Portal">
-                            <span class="status-badge">On Progress</span>
-
+                                alt="Student Information Portal" width="800" height="500" loading="lazy"
+                                decoding="async"> <span class="status-badge">On Progress</span>
                             <div class="portfolio__card-overlay">
                                 <a href="https://github.com/firmanchrstn/jiu-studentinformationportal.git"
                                     target="_blank" class="portfolio__card-btn">View Code</a>
@@ -158,8 +158,9 @@
                     <!-- inDrive App Redesign -->
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
-                            <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.png" alt="inDrive Redesign">
-                            <span class="status-badge">On Progress</span>
+                            <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.png" alt="inDrive Redesign"
+                                width="800" height="500" loading="lazy" decoding="async"> <span class="status-badge">On
+                                Progress</span>
 
                             <div class="portfolio__card-overlay">
                                 <a href="inDrive.html" class="portfolio__card-btn">View Case Study</a>
@@ -183,7 +184,7 @@
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
                             <img src="asset/prototype-figma-mobileJKN/Thumbnail - Mobile JKN - Home.png"
-                                alt="Mobile JKN Redesign">
+                                alt="Mobile JKN Redesign" width="800" height="500" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="mobile-jkn.html" class="portfolio__card-btn">View Case Study</a>
                             </div>
@@ -202,7 +203,8 @@
                     <!-- MIA 2025 ft. LinkAja -->
                     <article class="portfolio__card reveal" data-category="uiux">
                         <div class="portfolio__card-image">
-                            <img src="asset/prototype-figma-linkaja/MIA-logo.jpg" alt="LinkAja Competition ">
+                            <img src="asset/prototype-figma-linkaja/MIA-logo.jpg" alt="MIA 2025 ft. LinkAja" width="800"
+                                height="500" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="linkaja-competition.html" class="portfolio__card-btn">View Case Study</a>
                             </div>
@@ -222,7 +224,8 @@
                     <!-- DOMIN8: Brand Identity -->
                     <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
-                            <img src="asset/poster/Poster1.png" alt="DOMIN8 Team Identity">
+                            <img src="asset/poster/Poster1.png" alt="DOMIN8 Brand Identity" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="poster1.html" class="portfolio__card-btn">View Details</a>
                             </div>
@@ -241,7 +244,8 @@
                     <!-- Micro-Inspirations Asset -->
                     <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
-                            <img src="asset/poster/Poster2.png" alt="DOMIN8 Campaign Assets">
+                            <img src="asset/poster/Poster2.png" alt="DOMIN8 Campaign Assets" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="poster2.html" class="portfolio__card-btn">View Details</a>
                             </div>
@@ -260,7 +264,8 @@
                     <!-- Small Notes, Big Impact -->
                     <article class="portfolio__card reveal" data-category="editing">
                         <div class="portfolio__card-image">
-                            <img src="asset/poster/Poster3.png" alt="DOMIN8 Social Impact">
+                            <img src="asset/poster/Poster3.png" alt="DOMIN8 Social Impact" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="poster3.html" class="portfolio__card-btn">View Details</a>
                             </div>
@@ -278,7 +283,8 @@
                     <!-- Vigenère Cipher Engine -->
                     <article class="portfolio__card reveal" data-category="python" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
-                            <img src="asset/viginere/Thumbnail - Viginere.jpg" alt="Vigenère Cipher">
+                            <img src="asset/viginere/Thumbnail - Viginere.jpg" alt="Vigenère Cipher" width="800"
+                                height="500" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="https://github.com/firmanchrstn/Project_Vigenere.git"
                                     class="portfolio__card-btn">View Code</a>
@@ -298,7 +304,8 @@
                     <!-- Tere Bistro Bar -->
                     <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
-                            <img src="asset/ComingSoon.jpg" alt="Tere Bistro Bar">
+                            <img src="asset/ComingSoon.jpg" alt="Tere Bistro Bar" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="404.html" class="portfolio__card-btn">View Code</a>
                                 <a href="404.html" class="portfolio__card-btn">View Details</a>
@@ -319,7 +326,8 @@
                     <!-- Puri Restaurant Cafe -->
                     <article class="portfolio__card reveal" data-category="web" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
-                            <img src="asset/ComingSoon.jpg" alt="Puri Restaurant Cafe">
+                            <img src="asset/ComingSoon.jpg" alt="Puri Restaurant Cafe" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="404.html" class="portfolio__card-btn">View Code</a>
                                 <a href="404.html" class="portfolio__card-btn">View Details</a>
@@ -340,7 +348,8 @@
                     <!-- Wisata Indonesia -->
                     <article class="portfolio__card reveal" data-category="flutter" style="transition-delay: 100ms;">
                         <div class="portfolio__card-image">
-                            <img src="asset/ComingSoon.jpg" alt="Vigenère Cipher">
+                            <img src="asset/ComingSoon.jpg" alt="Vigenère Cipher" width="800" height="500"
+                                loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
                                 <a href="404.html" class="portfolio__card-btn">View Code</a>
                                 <a href="404.html" class="portfolio__card-btn">View Details</a>

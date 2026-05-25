@@ -6,6 +6,8 @@
 
 :root {
     /* Colors */
+    --color-primary: #9ACD32;
+    --color-primary-text: #5A7A1B;
     --brand-primary: #9ACD32;
     --brand-glow: rgba(154, 205, 50, 0.25);
 
@@ -51,6 +53,7 @@
     --border-strong: rgba(255, 255, 255, 0.15);
     --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.4);
     --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.6);
+    --color-primary-text: #9ACD32;
 }
 
 /* ==========================================================================
@@ -118,6 +121,7 @@ h4 {
     background: linear-gradient(135deg, var(--brand-primary), #65a30d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: var(--color-primary-text);
 }
 
 /* ==========================================================================
@@ -187,7 +191,7 @@ h4 {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-pill);
     background: var(--bg-surface);
-    color: var(--text-heading);
+    color: var(--color-primary-text);
 }
 
 .section__title {
@@ -1266,4 +1270,12 @@ h4 {
         width: 100%;
         /* Tombol sosmed penuh ke samping di HP */
     }
+}
+
+.portfolio__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: var(--border-color);
+    transition: transform 0.5s ease;
 }
