@@ -412,22 +412,31 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+/* ==========================================================================
+   Layout: Portfolio Section (SaaS Premium Refinement)
+   ========================================================================== */
+
+.portfolio {
+    background-color: var(--bg-surface);
+}
+
 .portfolio__filters {
     display: flex;
     gap: 0.75rem;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     flex-wrap: wrap;
 }
 
 .portfolio__filter {
     padding: 0.6rem 1.5rem;
-    background: transparent;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-pill);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition-fast);
+    background: var(--bg-base);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
     color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .portfolio__filter.active,
@@ -437,125 +446,152 @@ h4 {
     border-color: var(--text-heading);
 }
 
+/* Grid Layout dengan CSS Grid yang Fleksibel */
 .portfolio__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2.5rem;
 }
 
+/* Desain Kartu Proyek */
 .portfolio__card {
-    background: var(--bg-surface);
+    background: var(--bg-elevated);
     border-radius: var(--radius-lg);
-    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    transition: var(--transition-smooth);
-    will-change: transform;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease;
+    will-change: transform, box-shadow;
 }
 
+/* Efek Hover Premium pada Kartu */
 .portfolio__card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-hover);
-    border-color: var(--border-strong);
+    border-color: var(--border-strong, rgba(0, 0, 0, 0.15));
 }
 
+[data-theme="dark"] .portfolio__card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Wadah Gambar */
 .portfolio__card-image {
     position: relative;
     aspect-ratio: 16/10;
+    /* Rasio potret landscape yang seimbang */
     overflow: hidden;
-    border-bottom: 1px solid var(--border-subtle);
+    background-color: var(--border-color);
+    /* Berfungsi sebagai skeleton loader */
 }
 
 .portfolio__card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio__card:hover .portfolio__card-image img {
-    transform: scale(1.05);
+    transform: scale(1.04);
+    /* Efek zoom halus ala Apple */
 }
 
-.status-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    color: #fff;
-    padding: 0.4rem 1rem;
-    border-radius: var(--radius-pill);
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    z-index: 10;
-}
-
+/* Overlay Interaktif Minimalis */
 .portfolio__card-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(15, 23, 42, 0.4);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
     opacity: 0;
-    transition: var(--transition-smooth);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 5;
 }
 
 .portfolio__card:hover .portfolio__card-overlay {
     opacity: 1;
 }
 
+/* Tombol di Atas Gambar */
 .portfolio__card-btn {
-    background: #fff;
-    color: #000;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--radius-pill);
+    background: var(--bg-base);
+    color: var(--text-heading);
+    padding: 0.7rem 1.3rem;
+    border-radius: var(--radius-md);
     font-weight: 600;
-    font-size: 0.85rem;
-    transform: translateY(15px);
-    transition: var(--transition-smooth);
-}
-
-.portfolio__card-btn:hover {
-    background: var(--brand-primary);
+    font-size: 0.875rem;
+    border: 1px solid var(--border-color);
+    transform: translateY(12px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s;
 }
 
 .portfolio__card:hover .portfolio__card-btn {
     transform: translateY(0);
 }
 
+.portfolio__card-btn:hover {
+    background-color: var(--text-heading);
+    color: var(--bg-base);
+    border-color: var(--text-heading);
+}
+
+/* Area Konten Teks */
 .portfolio__card-content {
-    padding: 2rem;
+    padding: 2.25rem 2rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
+/* Pil Kategori / Tags */
 .portfolio__card-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
 }
 
 .portfolio__card-tags span {
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.25rem 0.75rem;
-    background: var(--bg-base);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-pill);
+    padding: 0.3rem 0.8rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-pill, 9999px);
+    color: var(--text-muted);
+    transition: var(--transition);
 }
 
+.portfolio__card:hover .portfolio__card-tags span {
+    border-color: var(--color-primary);
+    color: var(--text-heading);
+}
+
+/* Judul Proyek */
 .portfolio__card-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+    color: var(--text-heading);
+}
+
+/* Deskripsi Proyek */
+.portfolio__card-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0;
 }
 
 /* Bento Grids (About) */
@@ -784,61 +820,66 @@ h4 {
     }
 }
 
+/* ==========================================================================
+   RESPONSIVITAS MOBILE: PORTFOLIO SECTION (SaaS Premium)
+   ========================================================================== */
+
+/* --- Tablet & Mobile Landscape (max-width: 768px) --- */
 @media screen and (max-width: 768px) {
-    .header {
-        width: 95%;
-        top: 1rem;
+    .portfolio__grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        gap: 1.5rem;
     }
 
-    .hidden-mobile {
+    .portfolio__card-content {
+        padding: 1.5rem;
+    }
+
+    .portfolio__card-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .portfolio__card-description {
+        font-size: 0.875rem;
+    }
+}
+
+/* --- Mobile Portrait (max-width: 480px) --- */
+@media screen and (max-width: 480px) {
+
+    /* 1. Filter Kategori (Pills) yang Bisa Di-Swipe ke Samping */
+    .portfolio__filters {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .portfolio__filters::-webkit-scrollbar {
         display: none;
     }
 
-    .nav__toggle {
-        display: block;
+    .portfolio__filter {
+        white-space: nowrap;
+        font-size: 0.85rem;
+        padding: 0.5rem 1.25rem;
     }
 
-    .nav__menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background: var(--bg-glass);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        padding: 6rem 2rem;
-        transition: var(--transition-smooth);
-        z-index: var(--z-modal);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    /* 2. Optimasi Interaksi Touch Screen (Tanpa Mouse Hover) */
+    @media (hover: none) {
 
-    .nav__menu.show-menu {
-        right: 0;
-    }
+        .portfolio__card-overlay {
+            transition: opacity 0.2s ease;
+        }
 
-    .nav__list {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .nav__link {
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
-
-    .nav__close {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-    }
-
-    .footer__content {
-        flex-direction: column;
-        text-align: center;
+        .portfolio__card-btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+        }
     }
 }
 
