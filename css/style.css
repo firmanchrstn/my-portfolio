@@ -821,40 +821,42 @@ h4 {
 }
 
 /* ==========================================================================
-   RESPONSIVITAS MOBILE: PORTFOLIO SECTION (SaaS Premium)
+   MOBILE RESPONSIVE FIXES (PORTFOLIO)
    ========================================================================== */
 
 /* --- Tablet & Mobile Landscape (max-width: 768px) --- */
 @media screen and (max-width: 768px) {
     .portfolio__grid {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+        /* Mengubah layout menjadi 1 kolom penuh agar tidak jebol ke samping */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
     .portfolio__card-content {
         padding: 1.5rem;
+        /* Mengurangi ruang kosong agar pas di layar kecil */
     }
 
     .portfolio__card-title {
         font-size: 1.15rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .portfolio__card-description {
-        font-size: 0.875rem;
     }
 }
 
 /* --- Mobile Portrait (max-width: 480px) --- */
 @media screen and (max-width: 480px) {
 
-    /* 1. Filter Kategori (Pills) yang Bisa Di-Swipe ke Samping */
+    /* 1. Filter Kategori: Mengubah tumpukan menjadi Scroll Horizontal (Swipe) */
     .portfolio__filters {
         flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        justify-content: flex-start;
+
+        /* Dukungan scroll halus di iOS */
         -webkit-overflow-scrolling: touch;
 
+        /* Menyembunyikan scrollbar bawaan agar terlihat seperti aplikasi native */
         scrollbar-width: none;
         -ms-overflow-style: none;
     }
@@ -865,21 +867,21 @@ h4 {
 
     .portfolio__filter {
         white-space: nowrap;
+        /* Mencegah teks turun ke baris baru */
         font-size: 0.85rem;
         padding: 0.5rem 1.25rem;
     }
+}
 
-    /* 2. Optimasi Interaksi Touch Screen (Tanpa Mouse Hover) */
-    @media (hover: none) {
+/* Optimasi interaksi tombol pada perangkat sentuh (Touch Devices) */
+@media (hover: none) {
+    .portfolio__card-overlay {
+        transition: opacity 0.2s ease;
+    }
 
-        .portfolio__card-overlay {
-            transition: opacity 0.2s ease;
-        }
-
-        .portfolio__card-btn {
-            padding: 0.8rem 1.5rem;
-            font-size: 0.9rem;
-        }
+    .portfolio__card-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
