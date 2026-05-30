@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile JKN Redesign | Firman Christian</title>
+    <title>Terre Bistro & Bar Web Design | Portfolio</title>
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
@@ -15,9 +15,10 @@
 </head>
 
 <body>
+    <!-- HEADER & NAVIGATION -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="../index.html" class="nav__logo">Firman.</a>
+            <a href="../index.html" class="nav__logo">Portfolio.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="../index.html#home" class="nav__link">Home</a></li>
@@ -25,62 +26,79 @@
                     <li><a href="../index.html#about" class="nav__link">About</a></li>
                     <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
-                        class="material-symbols-rounded">close</span></button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
             </div>
             <div class="nav__actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span
-                        class="sun-icon material-symbols-rounded">light_mode</span><span
-                        class="moon-icon material-symbols-rounded">dark_mode</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+                </button>
                 <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
-                        class="material-symbols-rounded">menu_open</span></button>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="material-symbols-rounded">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
 
     <main class="main">
+        <!-- PROJECT HEADER -->
         <header class="project-detail__header container">
-            <span class="section__subtitle reveal">UI/UX Redesign</span>
-            <h1 class="large-title reveal">Mobile JKN</h1>
+            <span class="section__subtitle reveal">Web Development & UI/UX</span>
+            <h1 class="large-title reveal">Terre Bistro & Bar</h1>
 
             <div class="details__meta reveal">
-                <div class="meta__item"><small>Duration</small>
-                    <p>3 Weeks</p>
+                <div class="meta__item">
+                    <small>Role</small>
+                    <p>Frontend Developer</p>
+                </div>
+                <div class="meta__item">
+                    <small>Duration</small>
+                    <p>2 Weeks</p>
+                </div>
+                <div class="meta__item">
+                    <small>Tech Stack</small>
+                    <p>HTML, CSS, GSAP, Lenis</p>
                 </div>
             </div>
         </header>
 
+        <!-- PROJECT SUMMARY CARDS -->
         <section class="container">
             <div class="summary__grid">
+                <!-- Card 1: Background -->
                 <div class="summary__card reveal">
                     <div>
                         <h4>01. Background</h4>
-                        <h3>Context</h3>
-                        <p>Redesigning Indonesia's national health app to bridge the digital gap for millions of users
-                            facing complex bureaucracy.</p>
+                        <h3>Project Context</h3>
+                        <p>Terre Bistro & Bar is a premium restaurant in Cikarang needing an exclusive digital identity
+                            to boost table reservations and brand awareness.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
+                <!-- Card 2: Challenge -->
                 <div class="summary__card reveal" style="transition-delay: 100ms;">
                     <div>
                         <h4>02. Challenge</h4>
-                        <h3>Problem Statement</h3>
-                        <p>Information overload and complex navigation patterns causing friction and cognitive overload
-                            in urgent health situations.</p>
+                        <h3>Core Problem</h3>
+                        <p>Presenting extensive menu information and complete facilities without making the website
+                            interface feel rigid, boring, or cluttered.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
                 </div>
 
+                <!-- Card 3: Solution -->
                 <div class="summary__card reveal" style="transition-delay: 200ms;">
                     <div>
                         <h4>03. Innovation</h4>
-                        <h3>The Solution</h3>
-                        <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
-                            administrative access.</p>
+                        <h3>Design Solution</h3>
+                        <p>Crafting a "Cinematic Luxury" experience using buttery-smooth scroll animations, full-screen
+                            navigation, and a modern Bento Grid layout.</p>
                     </div>
                     <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
                             class="fa-solid fa-arrow-right"></i></div>
@@ -88,39 +106,57 @@
             </div>
         </section>
 
+        <!-- DESIGN SHOWCASE -->
         <article class="study-container">
             <section class="section-study">
                 <h2 class="mb-1">Design Showcase</h2>
                 <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i> Click on the design image to enlarge it.
+                    <i class="fa-solid fa-circle-info"></i> Click on the image to enlarge it.
                 </p>
 
                 <div class="design-gallery">
-                    <figure class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/prototype-figma-mobileJKN/Home.png" alt="Dashboard"
-                                loading="lazy"></div>
+                    <!-- Showcase 1: Hero Section -->
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+                                alt="Hero Section Terre Bistro" loading="lazy">
+                        </div>
                         <figcaption class="gallery-label">
-                            <h3>Main Dashboard</h3>
-                            <p>Restrukturisasi tata letak beranda untuk memprioritaskan akses cepat ke fitur layanan
-                                kesehatan utama.</p>
+                            <h3>Cinematic Hero Section</h3>
+                            <p>An immersive initial view featuring a subtle film grain noise texture and elegant text
+                                animations to provide an instant luxurious feel.</p>
+                        </figcaption>
+                    </figure>
+
+                    <!-- Showcase 2: Bento Grid -->
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+                                alt="Amenities Bento Grid" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Bento Grid Layout</h3>
+                            <p>Presenting complex facility information (such as parking areas, VIP rooms, and halal
+                                options) into a neat, structured, and highly readable grid system.</p>
                         </figcaption>
                     </figure>
                 </div>
             </section>
 
+            <!-- CALL TO ACTION: LIVE DEMO -->
             <section class="section-study text-center"
                 style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 class="mb-2">Try Interactive Prototype</h2>
-                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
-                    below to open the High-Fidelity Prototype directly in Figma.</p>
-                <a href="https://www.figma.com/proto/..." target="_blank" rel="noopener noreferrer"
-                    class="btn btn--primary">
-                    <span class="material-symbols-rounded">open_in_new</span> Open Figma Prototype
+                <h2 class="mb-2">View Live Website</h2>
+                <p class="text-muted max-w-md mb-4" style="margin-left: auto; margin-right: auto;">Experience the
+                    buttery-smooth scrolling and dynamic menu interactions firsthand on the final live website.</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                    <span class="material-symbols-rounded">open_in_new</span> Visit Live Demo
                 </a>
             </section>
         </article>
     </main>
 
+    <!-- MODAL COMPONENT -->
     <div class="modal-backdrop" id="study-modal">
         <div class="modal-card">
             <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
@@ -129,25 +165,67 @@
         </div>
     </div>
 
+    <!-- HIDDEN MODAL DATA -->
     <div id="modal-data" style="display: none;" aria-hidden="true">
+        <!-- Data Modal 1 -->
         <div data-id="background">
             <span class="modal-tag">01. Background</span>
-            <h2 class="modal-title">Context & Background</h2>
+            <h2 class="modal-title">Context & Project Goals</h2>
             <div class="modal-body">
-                <p>Mobile JKN serves as the digital backbone of Indonesia’s National Health Insurance...</p>
+                <p><strong>Terre Bistro & Bar</strong> is a favorite culinary destination in the Jababeka area,
+                    Cikarang. They offer a unique blend of Western dishes (like premium Steaks) and Indonesian culinary
+                    heritage (such as Soto Betawi).</p>
+                <p>The main goal of this project was to translate the restaurant's physical cozy, romantic, and elegant
+                    atmosphere into a digital form. The website was designed to attract new customers, simplify menu
+                    access, and facilitate seamless table reservations (including VIP rooms).</p>
+            </div>
+        </div>
+
+        <!-- Data Modal 2 -->
+        <div data-id="problem">
+            <span class="modal-tag">02. Challenge</span>
+            <h2 class="modal-title">Overcoming Information Complexity</h2>
+            <div class="modal-body">
+                <p>In the hospitality industry, potential customers require a vast amount of information before
+                    visiting: Is there a parking lot? Is it kids-friendly? Are there smoking areas or private rooms?</p>
+                <p><strong>The challenge was:</strong> Presenting all this data, along with customer reviews and an
+                    extensive menu list, without making the website interface look like a cluttered brochure. The
+                    website had to maintain the sophisticated presentation of a luxury brand.</p>
+            </div>
+        </div>
+
+        <!-- Data Modal 3 -->
+        <div data-id="solution">
+            <span class="modal-tag">03. Innovation</span>
+            <h2 class="modal-title">Technical & Design Execution</h2>
+            <div class="modal-body">
+                <p>To create a memorable and premium experience (Cinematic Luxury), I implemented several advanced
+                    frontend techniques:</p>
+                <ul>
+                    <li><strong>Lenis Smooth Scroll:</strong> Provides a buttery-smooth page movement effect,
+                        eliminating the laggy feel of standard browser scrolling.</li>
+                    <li><strong>GSAP ScrollTrigger:</strong> Utilized to create parallax animations on background images
+                        and an engaging horizontal scroll storytelling effect.</li>
+                    <li><strong>Bento Grid System:</strong> All facility information is summarized into a uniform, neat,
+                        and highly responsive CSS Grid architecture across all devices.</li>
+                    <li><strong>Interactive Menu:</strong> The full-screen background dynamically changes to match the
+                        specific menu item currently being hovered over by the user.</li>
+                </ul>
             </div>
         </div>
     </div>
 
+    <!-- LIGHTBOX FOR IMAGES -->
     <div class="lightbox" id="lightbox">
         <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
     </div>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer__content">
-            <a href="../index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <a href="../index.html" class="footer__logo">Portfolio.</a>
+            <p class="footer__text">©2026 Crafted with Passion.</p>
         </div>
     </footer>
 
