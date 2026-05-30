@@ -121,6 +121,7 @@ h4 {
 .text-accent {
     background: linear-gradient(135deg, var(--brand-primary), #65a30d);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--color-primary-text);
 }
