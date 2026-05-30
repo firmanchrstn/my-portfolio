@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GLOBAL DESIGN SYSTEM (Optimized Architecture)
+   GLOBAL DESIGN SYSTEM (Fluid & Optimized Architecture)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -89,6 +89,7 @@ ul {
 }
 
 img {
+    width: 100%;
     max-width: 100%;
     height: auto;
     display: block;
@@ -125,34 +126,34 @@ h4 {
 }
 
 /* ==========================================================================
-   UTILITY CLASSES (Dry Principle)
+   UTILITY CLASSES
    ========================================================================== */
 .text-center {
     text-align: center;
 }
 
 .mb-1 {
-    margin-bottom: 0.5rem;
+    margin-bottom: clamp(0.25rem, 2vw, 0.5rem);
 }
 
 .mb-2 {
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 3vw, 1rem);
 }
 
 .mb-3 {
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 4vw, 1.5rem);
 }
 
 .mb-4 {
-    margin-bottom: 2rem;
+    margin-bottom: clamp(1.5rem, 5vw, 2rem);
 }
 
 .mt-2 {
-    margin-top: 1rem;
+    margin-top: clamp(0.75rem, 3vw, 1rem);
 }
 
 .mt-4 {
-    margin-top: 2rem;
+    margin-top: clamp(1.5rem, 5vw, 2rem);
 }
 
 .d-flex {
@@ -172,6 +173,7 @@ h4 {
 }
 
 .max-w-md {
+    width: 100%;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -182,12 +184,12 @@ h4 {
    ========================================================================== */
 .section__subtitle {
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 2vw, 0.75rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     padding: 0.4rem 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-pill);
     background: var(--bg-surface);
@@ -195,14 +197,16 @@ h4 {
 }
 
 .section__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Fluid Sizing */
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .section__desc {
-    font-size: clamp(1.1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    /* Fluid Sizing */
     max-width: 600px;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(2rem, 6vw, 3rem);
 }
 
 /* Buttons */
@@ -211,10 +215,10 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem 2rem;
+    padding: clamp(0.7rem, 2vw, 0.8rem) clamp(1.5rem, 4vw, 2rem);
     border-radius: var(--radius-pill);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     cursor: pointer;
     transition: var(--transition-fast);
     border: 1px solid transparent;
@@ -256,8 +260,8 @@ h4 {
     top: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 900px;
+    width: clamp(90%, 95vw, 900px);
+    /* Fluid Width */
     height: 64px;
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
@@ -273,11 +277,11 @@ h4 {
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 1.5rem;
+    padding: 0 clamp(1rem, 3vw, 1.5rem);
 }
 
 .nav__logo {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 3vw, 1.25rem);
     font-weight: 800;
     letter-spacing: -0.05em;
     color: var(--text-heading);
@@ -285,7 +289,7 @@ h4 {
 
 .nav__list {
     display: flex;
-    gap: 2.5rem;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .nav__link {
@@ -302,7 +306,7 @@ h4 {
 
 .nav__actions {
     display: flex;
-    gap: 1.5rem;
+    gap: clamp(0.8rem, 2vw, 1.5rem);
     align-items: center;
 }
 
@@ -339,7 +343,7 @@ h4 {
 
 /* Footer */
 .footer {
-    padding: 3rem 0;
+    padding: clamp(2rem, 5vw, 3rem) 0;
     border-top: 1px solid var(--border-subtle);
     background: var(--bg-base);
 }
@@ -359,7 +363,9 @@ h4 {
     letter-spacing: -0.05em;
 }
 
-/* Portfolio Index Base */
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -368,10 +374,24 @@ h4 {
     padding-top: 100px;
 }
 
+.hero__container {
+    display: grid;
+    /* Auto-fit Intrinsic Grid: Side-by-side di desktop, menumpuk otomatis di mobile */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+}
+
+.hero__name {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    margin-bottom: 0.5rem;
+}
+
 .hero__description {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
     color: var(--text-muted);
-    margin-bottom: 1rem;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    width: 100%;
     max-width: 540px;
 }
 
@@ -380,14 +400,13 @@ h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vw;
+    width: clamp(300px, 50vw, 800px);
+    height: clamp(300px, 50vw, 800px);
     background: radial-gradient(circle, var(--brand-glow) 0%, transparent 70%);
     filter: blur(100px);
     z-index: -1;
     animation: pulse 8s alternate infinite;
     will-change: transform;
-    /* Optimasi render */
 }
 
 @keyframes pulse {
@@ -400,41 +419,139 @@ h4 {
     }
 }
 
-.hero__container {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(3rem, 6vw, 6rem);
+/* Premium Hero Image Showcase */
+.hero__image {
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
-.hero__name {
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    margin-bottom: 0.5rem;
+.hero__image-wrapper {
+    position: relative;
+    width: 100%;
+    /* Clamp width membesar-mengecil mulus, tak perlu media query */
+    max-width: clamp(280px, 40vw, 380px);
+    aspect-ratio: 4/5;
+    border-radius: 2rem;
+    animation: floatImage 6s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-hover);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-smooth);
+}
+
+.hero__image-backdrop {
+    position: absolute;
+    inset: -15px;
+    background: linear-gradient(135deg, var(--brand-primary), #4ade80, #09090b);
+    filter: blur(35px);
+    opacity: 0.3;
+    border-radius: 2rem;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    will-change: opacity;
+}
+
+.hero__image-wrapper:hover .hero__image-backdrop {
+    opacity: 0.6;
+}
+
+.hero__floating-badge {
+    position: absolute;
+    bottom: clamp(1.5rem, 5vw, 3rem);
+    left: clamp(-1rem, -3vw, -2.5rem);
+    background: var(--bg-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 3;
+    font-weight: 700;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
+    color: var(--text-heading);
+    animation: floatBadge 5s ease-in-out infinite reverse;
+}
+
+.hero__floating-badge i {
+    color: var(--brand-primary);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+@keyframes floatImage {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatBadge {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 /* ==========================================================================
-   Layout: Portfolio Section (SaaS Premium Refinement)
+   PORTFOLIO SECTION
    ========================================================================== */
-
 .portfolio {
     background-color: var(--bg-surface);
 }
 
 .portfolio__filters {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 3.5rem;
-    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 0.75rem);
+    margin-bottom: clamp(2rem, 6vw, 3.5rem);
+    /* Auto swipe di mobile, auto wrap di desktop tanpa media query layout */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.portfolio__filters::-webkit-scrollbar {
+    display: none;
 }
 
 .portfolio__filter {
-    padding: 0.6rem 1.5rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: clamp(0.5rem, 2vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
     background: var(--bg-base);
     border: 1px solid var(--border-color);
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     color: var(--text-muted);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -446,14 +563,13 @@ h4 {
     border-color: var(--text-heading);
 }
 
-/* Grid Layout dengan CSS Grid yang Fleksibel */
+/* Fluid Grid: Menggunakan minmax() dipadu min() mencegah overflow di layar super kecil */
 .portfolio__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-/* Desain Kartu Proyek */
 .portfolio__card {
     background: var(--bg-elevated);
     border-radius: var(--radius-lg);
@@ -463,13 +579,10 @@ h4 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-        border-color 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
     will-change: transform, box-shadow;
 }
 
-/* Efek Hover Premium pada Kartu */
 .portfolio__card:hover {
     transform: translateY(-6px);
     box-shadow: var(--shadow-hover);
@@ -480,29 +593,25 @@ h4 {
     border-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Wadah Gambar */
 .portfolio__card-image {
     position: relative;
     aspect-ratio: 16/10;
-    /* Rasio potret landscape yang seimbang */
     overflow: hidden;
     background-color: var(--border-color);
-    /* Berfungsi sebagai skeleton loader */
 }
 
 .portfolio__card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-color: var(--border-color);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .portfolio__card:hover .portfolio__card-image img {
     transform: scale(1.04);
-    /* Efek zoom halus ala Apple */
 }
 
-/* Overlay Interaktif Minimalis */
 .portfolio__card-overlay {
     position: absolute;
     inset: 0;
@@ -522,14 +631,13 @@ h4 {
     opacity: 1;
 }
 
-/* Tombol di Atas Gambar */
 .portfolio__card-btn {
     background: var(--bg-base);
     color: var(--text-heading);
-    padding: 0.7rem 1.3rem;
+    padding: clamp(0.7rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.5rem);
     border-radius: var(--radius-md);
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: clamp(0.85rem, 2vw, 0.875rem);
     border: 1px solid var(--border-color);
     transform: translateY(12px);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s;
@@ -545,29 +653,27 @@ h4 {
     border-color: var(--text-heading);
 }
 
-/* Area Konten Teks */
 .portfolio__card-content {
-    padding: 2.25rem 2rem;
+    padding: clamp(1.5rem, 4vw, 2.25rem) clamp(1.5rem, 4vw, 2rem);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Pil Kategori / Tags */
 .portfolio__card-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: clamp(1rem, 3vw, 1.25rem);
 }
 
 .portfolio__card-tags span {
-    font-size: 0.75rem;
+    font-size: clamp(0.7rem, 2vw, 0.75rem);
     font-weight: 600;
     padding: 0.3rem 0.8rem;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
-    border-radius: var(--radius-pill, 9999px);
+    border-radius: var(--radius-pill);
     color: var(--text-muted);
     transition: var(--transition);
 }
@@ -577,366 +683,49 @@ h4 {
     color: var(--text-heading);
 }
 
-/* Judul Proyek */
 .portfolio__card-title {
-    font-size: 1.35rem;
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
     font-weight: 700;
     letter-spacing: -0.03em;
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
     color: var(--text-heading);
 }
 
-/* Deskripsi Proyek */
 .portfolio__card-description {
-    font-size: 0.95rem;
+    font-size: clamp(0.875rem, 2vw, 0.95rem);
     line-height: 1.6;
     color: var(--text-muted);
     margin: 0;
 }
 
-/* Bento Grids (About) */
+/* ==========================================================================
+   ABOUT & BENTO GRID SECTION
+   ========================================================================== */
+.about__description {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--text-body);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Fluid Grid: 2 kolom otomatis menjadi 1 di layar kecil */
 .about__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
     gap: clamp(3rem, 6vw, 6rem);
     align-items: center;
 }
 
-.bento__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.bento__item {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    padding: 2rem 1rem;
-    border-radius: var(--radius-md);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    transition: var(--transition-fast);
-}
-
-.bento__item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--border-strong);
-}
-
-.bento__item i {
-    font-size: 2.5rem;
-    color: var(--text-heading);
-}
-
-/* Forms */
-.form__input {
-    width: 100%;
-    padding: 1.25rem;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    color: var(--text-heading);
-    font-family: inherit;
-    font-size: 1rem;
-    transition: var(--transition-fast);
-    margin-bottom: 1.5rem;
-}
-
-.form__input:focus {
-    outline: none;
-    border-color: var(--text-heading);
-    box-shadow: 0 0 0 3px var(--brand-glow);
-}
-
-.form__textarea {
-    height: 150px;
-    resize: none;
-}
-
-/* Animations */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media screen and (max-width: 992px) {
-
-    .hero__container,
-    .about__container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero__content {
-        order: 2;
-    }
-
-    /* ==========================================================================
-   PREMIUM HERO IMAGE SHOWCASE
-   ========================================================================== */
-
-    .hero__image {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-    }
-
-    .hero__image-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 380px;
-        /* Ukuran proporsional */
-        aspect-ratio: 4/5;
-        /* Membuat foto sedikit meninggi/portrait yang elegan */
-        border-radius: 2rem;
-        /* Animasi melayang halus */
-        animation: floatImage 6s ease-in-out infinite;
-    }
-
-    /* Gambar Profil Utama */
-    .hero__img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Memastikan foto tidak gepeng */
-        border-radius: 2rem;
-        border: 1px solid var(--border-subtle);
-        background: var(--bg-surface);
-        box-shadow: var(--shadow-hover);
-        position: relative;
-        z-index: 2;
-        transition: var(--transition-smooth);
-    }
-
-    /* Efek Cahaya (Glow) di Latar Belakang */
-    .hero__image-backdrop {
-        position: absolute;
-        inset: -15px;
-        /* Lebih besar dari gambar aslinya */
-        /* Gradien modern menyesuaikan brand primary */
-        background: linear-gradient(135deg, var(--brand-primary), #4ade80, #09090b);
-        filter: blur(35px);
-        opacity: 0.3;
-        /* Transparansi standar */
-        border-radius: 2rem;
-        z-index: -1;
-        transition: opacity 0.5s ease;
-        will-change: opacity;
-    }
-
-    /* Interaksi saat gambar di-hover */
-    .hero__image-wrapper:hover .hero__image-backdrop {
-        opacity: 0.6;
-        /* Cahaya makin terang */
-    }
-
-    /* Komponen Badge Melayang (Glassmorphism) */
-    .hero__floating-badge {
-        position: absolute;
-        bottom: 3rem;
-        left: -2.5rem;
-        /* Sengaja dibuat keluar jalur agar dinamis */
-        background: var(--bg-glass);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 0.8rem 1.5rem;
-        border-radius: var(--radius-pill);
-        border: 1px solid var(--border-subtle);
-        box-shadow: var(--shadow-md);
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        z-index: 3;
-        font-weight: 700;
-        font-size: 0.85rem;
-        color: var(--text-heading);
-        animation: floatBadge 5s ease-in-out infinite reverse;
-    }
-
-    .hero__floating-badge i {
-        color: var(--brand-primary);
-        font-size: 1.1rem;
-    }
-
-    /* --- Keyframes Animations --- */
-    @keyframes floatImage {
-        0% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-15px);
-        }
-
-        100% {
-            transform: translateY(0px);
-        }
-    }
-
-    @keyframes floatBadge {
-        0% {
-            transform: translateY(0px);
-        }
-
-        50% {
-            transform: translateY(-8px);
-        }
-
-        100% {
-            transform: translateY(0px);
-        }
-    }
-
-    @media screen and (max-width: 992px) {
-        .hero__image-wrapper {
-            max-width: 300px;
-            margin-top: 2rem;
-        }
-
-        .hero__floating-badge {
-            left: -1rem;
-            bottom: 2rem;
-            padding: 0.6rem 1.2rem;
-            font-size: 0.8rem;
-        }
-    }
-
-    .hero__buttons {
-        justify-content: center;
-    }
-}
-
-/* ==========================================================================
-   MOBILE RESPONSIVE FIXES (PORTFOLIO)
-   ========================================================================== */
-
-/* --- Tablet & Mobile Landscape (max-width: 768px) --- */
-@media screen and (max-width: 768px) {
-    .portfolio__grid {
-        /* Mengubah layout menjadi 1 kolom penuh agar tidak jebol ke samping */
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .portfolio__card-content {
-        padding: 1.5rem;
-        /* Mengurangi ruang kosong agar pas di layar kecil */
-    }
-
-    .portfolio__card-title {
-        font-size: 1.15rem;
-    }
-}
-
-/* --- Mobile Portrait (max-width: 480px) --- */
-@media screen and (max-width: 480px) {
-
-    /* 1. Filter Kategori: Mengubah tumpukan menjadi Scroll Horizontal (Swipe) */
-    .portfolio__filters {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding-bottom: 1rem;
-        margin-bottom: 2rem;
-        justify-content: flex-start;
-
-        /* Dukungan scroll halus di iOS */
-        -webkit-overflow-scrolling: touch;
-
-        /* Menyembunyikan scrollbar bawaan agar terlihat seperti aplikasi native */
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-
-    .portfolio__filters::-webkit-scrollbar {
-        display: none;
-    }
-
-    .portfolio__filter {
-        white-space: nowrap;
-        /* Mencegah teks turun ke baris baru */
-        font-size: 0.85rem;
-        padding: 0.5rem 1.25rem;
-    }
-}
-
-/* Optimasi interaksi tombol pada perangkat sentuh (Touch Devices) */
-@media (hover: none) {
-    .portfolio__card-overlay {
-        transition: opacity 0.2s ease;
-    }
-
-    .portfolio__card-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-    }
-}
-
-.section__header {
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.section__subtitle {
-    margin-bottom: 1rem;
-}
-
-.section__title {
-    margin-bottom: 1.25rem;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    letter-spacing: -0.05em;
-}
-
-.section__desc {
-    color: var(--text-muted);
-    line-height: 1.6;
-    font-size: 1.1rem;
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.text-accent {
-    background: linear-gradient(135deg, var(--brand-primary), #65a30d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-/* --- About Me Section Refinement --- */
-
-.about__description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-body);
-    max-width: 600px;
-}
-
 .about__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: clamp(2rem, 5vw, 3rem);
 }
 
 .about__stack h3 {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--text-heading);
@@ -950,7 +739,7 @@ h4 {
 }
 
 .stack__item {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 2vw, 0.85rem);
     font-weight: 600;
     padding: 0.5rem 1rem;
     background: var(--bg-surface);
@@ -966,17 +755,15 @@ h4 {
     transform: translateY(-2px);
 }
 
-/* --- Stats Cards (Right Side) --- */
-
 .about__stats {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    gap: clamp(1rem, 3vw, 1.5rem);
 }
 
 .stat__card {
     background: var(--bg-surface);
-    padding: 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-subtle);
     text-align: center;
@@ -986,13 +773,12 @@ h4 {
 .stat__card:hover {
     border-color: var(--border-strong);
     box-shadow: var(--shadow-md);
-    transform: translateX(10px);
-    /* Efek geser halus */
+    transform: translateY(-5px);
 }
 
 .stat__number {
     display: block;
-    font-size: 3rem;
+    font-size: clamp(2.5rem, 6vw, 3rem);
     font-weight: 800;
     color: var(--text-heading);
     line-height: 1;
@@ -1001,51 +787,24 @@ h4 {
 }
 
 .stat__label {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 2vw, 0.9rem);
     color: var(--text-muted);
     font-weight: 500;
 }
 
-/* Responsif untuk Tablet/Mobile */
-@media screen and (max-width: 992px) {
-    .about__grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .about__stats {
-        flex-direction: row;
-        /* Berjejer ke samping di mobile */
-        justify-content: center;
-        margin-top: 4rem;
-    }
-
-    .stat__card {
-        padding: 1.5rem;
-        flex: 1;
-    }
-
-    .stat__card:hover {
-        transform: translateY(-10px);
-    }
-}
-
 /* ==========================================================================
-   EXPERIENCE & TECH STACK (Resume Section)
+   EXPERIENCE SECTION
    ========================================================================== */
-
-/* --- Container Layout --- */
 .experience__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(4rem, 8vw, 6rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: clamp(3rem, 8vw, 6rem);
     align-items: start;
 }
 
-/* --- Timeline (Education/Resume) --- */
 .timeline {
     border-left: 2px solid var(--border-subtle);
-    padding-left: 2rem;
+    padding-left: clamp(1.5rem, 4vw, 2rem);
     position: relative;
 }
 
@@ -1060,8 +819,8 @@ h4 {
 
 .timeline__dot {
     position: absolute;
-    left: calc(-2rem - 7px);
-    /* Disesuaikan agar pas di tengah garis border */
+    /* Penyesuaian responsif menggunakan calc terhadap border */
+    left: calc(clamp(-1.5rem, -4vw, -2rem) - 7px);
     top: 5px;
     width: 12px;
     height: 12px;
@@ -1079,7 +838,7 @@ h4 {
 
 .timeline__date {
     display: block;
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
     font-weight: 700;
     color: var(--brand-primary);
     letter-spacing: 0.1em;
@@ -1088,13 +847,13 @@ h4 {
 }
 
 .timeline__title {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
     color: var(--text-heading);
 }
 
 .timeline__text {
-    font-size: 1.05rem;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
     color: var(--text-muted);
     line-height: 1.6;
 }
@@ -1107,7 +866,7 @@ h4 {
 }
 
 .timeline__list li {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
     color: var(--text-body);
     position: relative;
     padding-left: 1.25rem;
@@ -1122,26 +881,24 @@ h4 {
     font-weight: 700;
 }
 
-.timeline__list strong {
-    color: var(--text-heading);
-}
-
-/* --- Tech Stack (Bento Grid) --- */
+/* Bento Grid Tech Stack */
 .stack__title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     letter-spacing: -0.04em;
 }
 
 .bento__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 1rem;
+    /* Auto-fit Bento: 130px minimum yang aman */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 130px), 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+    margin-top: clamp(1.5rem, 4vw, 2rem);
 }
 
 .bento__item {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    padding: 2rem 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2rem) 1.5rem;
     border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
@@ -1154,59 +911,45 @@ h4 {
 }
 
 .bento__item i {
-    font-size: 2.5rem;
-    /* Kita gunakan warna muted agar seragam, lalu saat di-hover baru menyala */
+    font-size: clamp(2rem, 5vw, 2.5rem);
     color: var(--text-muted);
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .bento__item span {
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
     font-weight: 600;
     color: var(--text-heading);
     letter-spacing: 0.02em;
 }
 
-/* Hover Effect Bento Item */
 .bento__item:hover {
     transform: translateY(-8px);
     box-shadow: var(--shadow-md);
     border-color: var(--border-strong);
 }
 
-/* Membuat Icon Menyala sesuai Brand Primary Color saat dihover */
 .bento__item:hover i {
     color: var(--brand-primary);
     transform: scale(1.1);
 }
 
-/* --- Responsive Adjustments --- */
-@media screen and (max-width: 992px) {
-    .experience__container {
-        grid-template-columns: 1fr;
-        gap: 4rem;
-    }
-}
-
 /* ==========================================================================
-   CONTACT SECTION & FORMS
+   CONTACT SECTION
    ========================================================================== */
-
-/* Layout Utama */
 .contact__container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: clamp(3rem, 8vw, 6rem);
     align-items: center;
 }
 
 .contact__desc {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--text-muted);
     line-height: 1.8;
 }
 
-/* Social Links bergaya Card/Pill */
 .contact__socials {
     display: flex;
     flex-direction: column;
@@ -1217,19 +960,20 @@ h4 {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 1.5rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.2rem, 3vw, 1.5rem);
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     color: var(--text-heading);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
     transition: var(--transition-fast);
-    width: fit-content;
+    /* Tidak fix width, mengisi space jika di mobile */
+    width: min(100%, fit-content);
 }
 
 .social__link i {
-    font-size: 1.25rem;
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: var(--text-muted);
     transition: var(--transition-fast);
 }
@@ -1244,7 +988,6 @@ h4 {
     color: var(--brand-primary);
 }
 
-/* Form Wrapper Premium */
 .contact__form-wrapper {
     background: var(--bg-surface);
     padding: clamp(2rem, 5vw, 3.5rem);
@@ -1256,26 +999,25 @@ h4 {
 .contact__form {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: clamp(1rem, 3vw, 1.25rem);
 }
 
-/* Membuat Input Bersebelahan */
 .form__group--double {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    /* Auto-fit input ganda */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: clamp(1rem, 3vw, 1.25rem);
 }
 
-/* Styling Input Modern */
 .form__input {
     width: 100%;
-    padding: 1.15rem 1.5rem;
+    padding: clamp(1rem, 2vw, 1.15rem) clamp(1.2rem, 3vw, 1.5rem);
     background: var(--bg-base);
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-md);
     color: var(--text-heading);
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
     transition: var(--transition-fast);
 }
 
@@ -1283,7 +1025,6 @@ h4 {
     color: var(--text-muted);
 }
 
-/* Efek Glow Saat Form Diketik */
 .form__input:focus {
     outline: none;
     border-color: var(--brand-primary);
@@ -1292,33 +1033,104 @@ h4 {
 }
 
 .form__textarea {
-    height: 180px;
+    height: clamp(120px, 20vw, 180px);
     resize: vertical;
 }
 
-/* --- Responsive Adjustments --- */
-@media screen and (max-width: 992px) {
-    .contact__container {
-        grid-template-columns: 1fr;
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   INTERACTIVE MEDIA QUERIES (Sengaja Disisakan untuk UI/UX Fungsional)
+   ========================================================================== */
+
+/* Menu Hamburger (Fungsional Navigasi Mobile) */
+@media screen and (max-width: 768px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .nav__toggle {
+        display: block;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-glass);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        padding: 6rem 2rem;
+        transition: var(--transition-smooth);
+        z-index: var(--z-modal);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__menu.show-menu {
+        right: 0;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .nav__link {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .nav__close {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .form__group--double {
-        grid-template-columns: 1fr;
-        /* Form kembali memanjang ke bawah di HP */
+/* Perilaku Touch Khusus HP (Mencegah Bug Hover pada Layar Sentuh) */
+@media (hover: none) {
+    .portfolio__card-overlay {
+        transition: opacity 0.2s ease;
+    }
+
+    .portfolio__card-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Auto layout agar gambar hero dan form input menyesuaikan di layar HP */
+    .hero__container,
+    .about__container {
+        text-align: center;
+    }
+
+    .hero__content {
+        order: 2;
+    }
+
+    .hero__buttons {
+        justify-content: center;
     }
 
     .social__link {
         width: 100%;
-        /* Tombol sosmed penuh ke samping di HP */
     }
-}
-
-.portfolio__card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: var(--border-color);
-    transition: transform 0.5s ease;
 }
