@@ -1,293 +1,200 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile JKN Redesign | Firman Christian</title>
+
+    <title>Mobile JKN Redesign | Firman Christian Purba</title>
+    <meta name="description"
+        content="Redesigning Indonesia's national health app to bridge the digital gap through better Information Architecture.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo">Firman.</a>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
 
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="index.html#home" class="nav__link">Home</a></li>
-                    <li><a href="index.html#portfolio" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
                     <li><a href="index.html#about" class="nav__link">About</a></li>
                     <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-
                 <button class="nav__close" id="nav-close" aria-label="Close menu">
-                    <span class="material-symbols-rounded">close</span>
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
                 </button>
             </div>
-
             <div class="nav__actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="sun-icon material-symbols-rounded">light_mode</span>
-                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
-
-                <a href="index.html#contact" class="btn btn--primary hidden-mobile">
-                    Let's Talk
-                </a>
-
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
                 <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-                    <span class="material-symbols-rounded">menu_open</span>
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">UI/UX Redesign</span>
             <h1 class="large-title reveal">Mobile JKN</h1>
-
             <div class="details__meta reveal">
                 <div class="meta__item">
                     <small>Project Document</small>
                     <a href="./asset/prototype-figma-mobileJKN/PRD-MobileJKNredesign.pdf" target="_blank"
-                        style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-heading); font-weight: 600; margin-top: 4px; transition: color 0.3s ease;">
-                        <span class="material-symbols-rounded"
-                            style="color: var(--color-primary); font-size: 1.2rem;">description</span>
-                        <span onmouseover="this.style.color='var(--color-primary)'"
-                            onmouseout="this.style.color='var(--text-heading)'">View PRD (PDF)</span>
+                        rel="noopener noreferrer">
+                        <span class="material-symbols-rounded" aria-hidden="true">description</span> View PRD (PDF)
                     </a>
                 </div>
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
-
                 <div class="summary__card reveal">
                     <div>
                         <h4>01. Background</h4>
                         <h3>Context</h3>
-                        <p>
-                            Redesigning Indonesia's national health app to bridge the digital gap for millions of users
-                            facing complex bureaucracy.
-                        </p>
+                        <p>Redesigning Indonesia's national health app to bridge the digital gap for millions of users
+                            facing complex bureaucracy.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="background" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="background"
+                        aria-label="Read more about the background">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 100ms;">
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Problem Statement</h3>
-                        <p>
-                            Information overload and complex navigation patterns causing friction and cognitive overload
-                            in urgent health situations.
-                        </p>
+                        <p>Information overload and complex navigation patterns causing friction and cognitive overload
+                            in urgent health situations.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="problem" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="problem"
+                        aria-label="Read more about the challenge">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 200ms;">
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>The Solution</h3>
-                        <p>
-                            A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
-                            administrative access.
-                        </p>
+                        <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
+                            administrative access.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="solution" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="solution"
+                        aria-label="Read more about the solution">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
-
             </div>
         </section>
 
         <article class="study-container">
-
-            <section class="section-study">
+            <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
-
-                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i>
-                    Click on the design image to enlarge it.
+                <p class="text-accent mb-3 d-flex align-center gap-2">
+                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the design image to enlarge it.
                 </p>
 
                 <div class="design-gallery">
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
-                            <img src="asset/prototype-figma-mobileJKN/Camera Permission.png" alt="Camera Permission"
-                                loading="lazy">
+                    <figure class="gallery-item reveal">
+                        <!-- Width and Height attributes guarantee NO CLS Layout shifting -->
+                        <div class="img-wrapper" role="button" tabindex="0"
+                            aria-label="View enlarged image of Home Dashboard">
+                            <img src="asset/prototype-figma-mobileJKN/Home.png" alt="Home Dashboard interface"
+                                width="800" height="600" loading="lazy">
                         </div>
-
-                        <figcaption class="gallery-label">
-                            <h3>Camera Permission</h3>
-                            <p>
-                                Designed a permission onboarding flow to improve transparency and explain camera access
-                                functionality clearly.
-                            </p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
-                            <img src="asset/prototype-figma-mobileJKN/Card.png" alt="Digital Participant Card"
-                                loading="lazy">
-                        </div>
-
-                        <figcaption class="gallery-label">
-                            <h3>Digital Participant Card</h3>
-                            <p>
-                                Redesigned the digital membership card with stronger visual hierarchy for faster
-                                identity verification.
-                            </p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
-                            <img src="asset/prototype-figma-mobileJKN/FAQ.png" alt="FAQ Center" loading="lazy">
-                        </div>
-
-                        <figcaption class="gallery-label">
-                            <h3>FAQ Center</h3>
-                            <p>
-                                Optimized the FAQ structure to support self-service behavior and reduce user confusion.
-                            </p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
-                            <img src="asset/prototype-figma-mobileJKN/Home.png" alt="Home Dashboard" loading="lazy">
-                        </div>
-
                         <figcaption class="gallery-label">
                             <h3>Home Dashboard</h3>
-                            <p>
-                                Restructured the homepage layout to prioritize quick access to essential healthcare
-                                services.
-                            </p>
+                            <p>Restructured the homepage layout to prioritize quick access to essential healthcare
+                                services.</p>
                         </figcaption>
                     </figure>
-
                 </div>
             </section>
-
-            <section class="section-study text-center"
-                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-
-                <h2 class="mb-2">Try Interactive Prototype</h2>
-
-                <p class="text-muted max-w-md mb-4">
-                    See how this design solution works in real-time. Click the button below to open the
-                    High-Fidelity Prototype directly in Figma.
-                </p>
-
-                <a href="https://www.figma.com/proto/RFgyepcmQbwohMHgf7fjpD/Mobile-JKN-Redesign?node-id=45-1364&p=f&viewport=319%2C81%2C0.06&t=Ao78qpYHH2YriOd6-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=271%3A5933&show-proto-sidebar=1"
-                    target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-
-                    <span class="material-symbols-rounded">open_in_new</span>
-                    Open Figma Prototype
-                </a>
-            </section>
-
         </article>
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
-        <div class="modal-card">
+    <!-- =======================================================
+         HTML5 DATA TEMPLATES (Replaces duplicate ID structure)
+         ======================================================= -->
+    <template id="tpl-background">
+        <span class="modal-tag">01. Background</span>
+        <h2 class="modal-title">Context & Background</h2>
+        <div class="modal-body">
+            <p>Mobile JKN serves as the digital backbone of Indonesia’s National Health Insurance (BPJS Kesehatan),
+                catering to over 200 million users.</p>
+        </div>
+    </template>
 
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal">
-                <i class="fa-solid fa-xmark"></i>
+    <template id="tpl-problem">
+        <span class="modal-tag">02. Challenge</span>
+        <h2 class="modal-title">Problem Statement</h2>
+        <div class="modal-body">
+            <p>The application suffered from information overload, cluttered navigation, and weak visual hierarchy,
+                making it difficult for users to quickly access essential healthcare information during urgent
+                situations.</p>
+        </div>
+    </template>
+
+    <template id="tpl-solution">
+        <span class="modal-tag">03. Innovation</span>
+        <h2 class="modal-title">The Solution</h2>
+        <div class="modal-body">
+            <p>I implemented a card-based information structure, progressive disclosure system, clearer participant card
+                hierarchy, and simplified service navigation to improve readability and usability.</p>
+        </div>
+    </template>
+
+    <!-- =======================================================
+         NATIVE HTML5 DIALOGS
+         ======================================================= -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-
-            <div class="modal-content" id="modal-content"></div>
-        </div>
-    </div>
-
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-
-        <div data-id="background">
-            <span class="modal-tag">01. Background</span>
-
-            <h2 class="modal-title">Context & Background</h2>
-
-            <div class="modal-body">
-                <p>
-                    Mobile JKN serves as the digital backbone of Indonesia’s National Health Insurance
-                    (BPJS Kesehatan), catering to over 200 million users.
-                </p>
-
-                <p>
-                    This redesign project focused on transforming a bureaucratic healthcare platform into a cleaner,
-                    more accessible, and user-centered digital experience.
-                </p>
+            <div class="modal-content" id="modal-content">
+                <!-- Content injected via JS Template -->
             </div>
         </div>
+    </dialog>
 
-        <div data-id="problem">
-            <span class="modal-tag">02. Challenge</span>
-
-            <h2 class="modal-title">Problem Statement</h2>
-
-            <div class="modal-body">
-                <p>
-                    The application suffered from information overload, cluttered navigation, and weak visual hierarchy,
-                    making it difficult for users to quickly access essential healthcare information during urgent
-                    situations.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="solution">
-            <span class="modal-tag">03. Innovation</span>
-
-            <h2 class="modal-title">The Solution</h2>
-
-            <div class="modal-body">
-                <p>
-                    I implemented a card-based information structure, progressive disclosure system, clearer participant
-                    card hierarchy, and simplified service navigation to improve readability and usability.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">
-            &times;
-        </span>
-
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-    </div>
+    </dialog>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
             <a href="index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

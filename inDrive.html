@@ -1,221 +1,227 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>inDrive Redesign | Firman Christian</title>
+
+    <!-- Ganti meta description sesuai dengan proyek inDrive Anda -->
+    <title>inDrive Redesign / Case Study | Firman Christian Purba</title>
+    <meta name="description" content="Case study on redesigning and improving the inDrive application user experience.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="../index.html" class="nav__logo">Firman.</a>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
-                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
-                    <li><a href="../index.html#about" class="nav__link">About</a></li>
-                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
-                        class="material-symbols-rounded">close</span></button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
+                </button>
             </div>
             <div class="nav__actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span
-                        class="sun-icon material-symbols-rounded">light_mode</span><span
-                        class="moon-icon material-symbols-rounded">dark_mode</span></button>
-                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
-                        class="material-symbols-rounded">menu_open</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
+                </button>
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
-            <span class="section__subtitle reveal">UI/UX Redesign</span>
+            <span class="section__subtitle reveal">UI/UX Case Study</span>
             <h1 class="large-title reveal">inDrive</h1>
-
             <div class="details__meta reveal">
                 <div class="meta__item">
                     <small>Project Document</small>
-                    <a href="./asset/prototype-figma-inDrive/PRD-inDrive.pdf" target="_blank"
-                        style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-heading); font-weight: 600; margin-top: 4px; transition: color 0.3s ease;">
-                        <span class="material-symbols-rounded"
-                            style="color: var(--color-primary); font-size: 1.2rem;">description</span>
-                        <span onmouseover="this.style.color='var(--color-primary)'"
-                            onmouseout="this.style.color='var(--text-heading)'">View PRD (PDF)</span>
+                    <!-- Sesuaikan Link PDF inDrive Anda di sini -->
+                    <a href="./asset/prototype-figma-indrive/PRD-inDrive.pdf" target="_blank" rel="noopener noreferrer">
+                        <span class="material-symbols-rounded" aria-hidden="true">description</span> View PRD (PDF)
                     </a>
                 </div>
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
+
                 <div class="summary__card reveal">
                     <div>
                         <h4>01. Background</h4>
                         <h3>Context</h3>
-                        <p>Evolving inDrive's unique peer-to-peer (P2P) fare negotiation model from a manual bidding
-                            tool into an intelligent, data-driven mobility marketplace.</p>
+                        <!-- Masukkan teks singkat Background di sini -->
+                        <p>A brief overview of the inDrive case study context, explaining the core motivation behind the
+                            project.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="background"
+                        aria-label="Read more about the background">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 100ms;">
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Problem Statement</h3>
-                        <p>Resolving severe design debt including GPS drift, TalkBack exclusion, and dangerous cognitive
-                            overload in the driver's dashboard.</p>
+                        <!-- Masukkan teks singkat Challenge di sini -->
+                        <p>Identifying the primary user experience friction points and interface challenges within the
+                            existing application.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="problem"
+                        aria-label="Read more about the challenge">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 200ms;">
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>The Solution</h3>
-                        <p>Integrating GenAI RAG for smart pricing, a Mixed Integer Programming (MIP) engine for
-                            matching, and a seamless auto-deduct payment system.</p>
+                        <!-- Masukkan teks singkat Solution di sini -->
+                        <p>A strategic redesign focusing on clearer visual hierarchy, streamlined booking flows, and
+                            enhanced trust signals.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="solution"
+                        aria-label="Read more about the solution">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </section>
 
         <article class="study-container">
-            <section class="section-study">
+            <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i> Click on the design image to enlarge it.
+                <p class="text-accent mb-3 d-flex align-center gap-2">
+                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the design image to enlarge it.
                 </p>
 
                 <div class="design-gallery">
-                    <figure class="gallery-item">
-                        <div class="img-wrapper"><img src="../asset/ComingSoon.jpg" alt="Dashboard" loading="lazy">
+                    <!-- GAMBAR 1 -->
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
+                            <!-- Ubah URL src gambar inDrive Anda di sini. Atribut width & height 400x800 cocok untuk tampilan Mobile (9:16) -->
+                            <img src="asset/prototype-figma-indrive/Screen1.png" alt="inDrive Interface 1" width="400"
+                                height="800" loading="lazy">
                         </div>
                         <figcaption class="gallery-label">
-                            <h3>Coming soon</h3>
-                            <p>...</p>
+                            <h3>Main Interface</h3>
+                            <p>Streamlined layout for faster navigation and clearer user intent.</p>
+                        </figcaption>
+                    </figure>
+
+                    <!-- GAMBAR 2 (Opsional, copy paste blok <figure> jika gambar Anda lebih dari satu) -->
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
+                            <img src="asset/prototype-figma-indrive/Screen2.png" alt="inDrive Interface 2" width="400"
+                                height="800" loading="lazy">
+                        </div>
+                        <figcaption class="gallery-label">
+                            <h3>Booking Flow</h3>
+                            <p>Optimized interaction patterns for a frictionless ride-hailing experience.</p>
                         </figcaption>
                     </figure>
                 </div>
             </section>
 
-            <section class="section-study text-center"
+            <!-- Ganti href dengan link Figma prototype inDrive Anda -->
+            <section class="section-study text-center reveal"
                 style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
                 <h2 class="mb-2">Try Interactive Prototype</h2>
                 <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
                     below to open the High-Fidelity Prototype directly in Figma.</p>
                 <a href="https://www.figma.com/proto/..." target="_blank" rel="noopener noreferrer"
                     class="btn btn--primary">
-                    <span class="material-symbols-rounded">open_in_new</span> Open Figma Prototype
+                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
                 </a>
             </section>
         </article>
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
-                    class="fa-solid fa-xmark"></i></button>
-            <div class="modal-content" id="modal-content"></div>
+    <!-- =======================================================
+         HTML5 DATA TEMPLATES (KONTEN MODAL / POP-UP)
+         Masukkan teks lengkap studi kasus Anda di dalam <p>
+         ======================================================= -->
+    <template id="tpl-background">
+        <span class="modal-tag">01. Background</span>
+        <h2 class="modal-title">Context & Background</h2>
+        <div class="modal-body">
+            <p>Masukkan teks latar belakang (background) proyek inDrive Anda secara lengkap di sini. Penjelasan mengenai
+                apa aplikasi ini dan mengapa proyek ini dibuat.</p>
         </div>
-    </div>
+    </template>
 
-    <div id="modal-data" style="display: none;" aria-hidden="true">
+    <template id="tpl-problem">
+        <span class="modal-tag">02. Challenge</span>
+        <h2 class="modal-title">Problem Statement</h2>
+        <div class="modal-body">
+            <p>Masukkan deskripsi lengkap mengenai masalah (challenge) yang Anda temukan pada desain inDrive lama di
+                sini.</p>
+        </div>
+    </template>
 
-        <div data-id="background">
-            <span class="modal-tag">01. Background</span>
-            <h2 class="modal-title">Context & Background</h2>
-            <div class="modal-body">
-                <p>inDrive operates in one of the world's most competitive mobility markets, distinguished by its
-                    <strong>Real-Time Deals (RTD)</strong> or peer-to-peer fare negotiation model. This model disrupts
-                    algorithmic surge pricing by returning price control to humans.
-                </p>
-                <p>However, despite its strong user growth globally, the actual execution of the interface creates
-                    unnecessary friction. The platform currently acts merely as a raw mirror of the database,
-                    transferring the burden of filtering information directly to the users. This project aims to
-                    redesign the platform into an intelligent assistant that eliminates information asymmetry while
-                    preserving the core philosophy of fair, human-driven pricing.</p>
+    <template id="tpl-solution">
+        <span class="modal-tag">03. Innovation</span>
+        <h2 class="modal-title">The Solution</h2>
+        <div class="modal-body">
+            <p>Masukkan penjelasan rinci mengenai solusi desain, perbaikan alur pengguna, dan keputusan UI/UX yang Anda
+                terapkan pada proyek ini.</p>
+        </div>
+    </template>
+
+    <!-- =======================================================
+         NATIVE HTML5 DIALOGS (TIDAK PERLU DIUBAH)
+         ======================================================= -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="modal-content" id="modal-content">
+                <!-- Content injected via JS Template -->
             </div>
         </div>
+    </dialog>
 
-        <div data-id="problem">
-            <span class="modal-tag">02. Challenge</span>
-            <h2 class="modal-title">Problem Statement</h2>
-            <div class="modal-body">
-                <p>Based on extensive UX research and user review analysis, the current application suffers from four
-                    critical failure domains:</p>
-                <ul style="margin-left: 20px; margin-bottom: 1rem; line-height: 1.6;">
-                    <li><strong>Accessibility Exclusion:</strong> The app fails WCAG 2.1 AA standards, rendering core
-                        interactions (like bidding and accepting orders) completely incompatible with screen readers
-                        like TalkBack, excluding users with visual impairments.</li>
-                    <li><strong>Unsafe Driver UI (Cognitive Overload):</strong> The driver dashboard mixes ride-hailing
-                        and courier orders in a single, chaotic queue. Drivers are forced to evaluate conflicting task
-                        types under time pressure while driving.</li>
-                    <li><strong>GPS Location Drift:</strong> High triangulation inaccuracies cause pickup pins to shift
-                        randomly, leading to mismatched pickup points, driver frustration, and an estimated 18-22%
-                        cancellation rate.</li>
-                    <li><strong>Negotiation Friction:</strong> Manual numeric fare entry creates guesswork, dragging the
-                        average bidding time to 87 seconds due to a lack of contextual price anchoring.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div data-id="solution">
-            <span class="modal-tag">03. Innovation</span>
-            <h2 class="modal-title">The Solution & Architecture</h2>
-            <div class="modal-body">
-                <p>The redesign strategy introduces a Next-Gen Platform architecture (PRD v1.1) focusing on
-                    <strong>Operational UX</strong> and intelligent backend integration:
-                </p>
-                <ul style="margin-left: 20px; margin-bottom: 1rem; line-height: 1.6;">
-                    <li><strong>Dynamic Bidding Slider & GenAI RAG:</strong> Replacing manual typing with an interactive
-                        color-coded slider. A Retrieval-Augmented Generation (RAG) layer fetches real-time data (fuel
-                        price, weather, traffic) to provide fair price anchoring.</li>
-                    <li><strong>Modular Driver Dashboard:</strong> A tab-based navigation separating <em>City Rides</em>
-                        from <em>Courier</em> services. It includes a radius control slider and a <em>Floating Compact
-                            Earnings Card</em> to drastically reduce cognitive load.</li>
-                    <li><strong>Seamless Payment & Pre-Authorization:</strong> Integrating E-Wallet auto-deduct
-                        capabilities prior to bidding. A pre-authorization system protects drivers from unpaid trips
-                        while avoiding forced cash collections.</li>
-                    <li><strong>MIP Optimization Engine:</strong> Behind the scenes, a Mixed Integer Programming (MIP)
-                        engine balances customer wait time, driver distance, and fare deviation to recommend the best
-                        possible match instantly.</li>
-                </ul>
-                <p><em>This comprehensive overhaul is projected to reduce cancellation rates, increase GMV, and provide
-                        a 100% WCAG-compliant experience.</em></p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-    </div>
+    </dialog>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="../index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <a href="index.html" class="footer__logo">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

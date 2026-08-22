@@ -1,63 +1,76 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Puri Resto & Cafe Website | Firman Christian</title>
+    <meta name="description"
+        content="Front-End Web Development for Puri Resto & Cafe, featuring a digital menu and direct booking access.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="../index.html" class="nav__logo">Firman.</a>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
-                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
-                    <li><a href="../index.html#about" class="nav__link">About</a></li>
-                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
-                        class="material-symbols-rounded">close</span></button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
+                </button>
             </div>
             <div class="nav__actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span
-                        class="sun-icon material-symbols-rounded">light_mode</span><span
-                        class="moon-icon material-symbols-rounded">dark_mode</span></button>
-                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
-                        class="material-symbols-rounded">menu_open</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
+                </button>
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">Front-End Web Development</span>
             <h1 class="large-title reveal">Puri Resto & Cafe</h1>
-
             <div class="details__meta reveal">
-                <div class="meta__item"><small>Role</small>
+                <div class="meta__item">
+                    <small>Role</small>
                     <p>Web Developer</p>
                 </div>
-                <div class="meta__item"><small>Duration</small>
+                <div class="meta__item">
+                    <small>Duration</small>
                     <p>1 Week</p>
                 </div>
-                <div class="meta__item"><small>Tech Stack</small>
+                <div class="meta__item">
+                    <small>Tech Stack</small>
                     <p>HTML, CSS, JS</p>
                 </div>
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
                 <div class="summary__card reveal">
                     <div>
@@ -66,8 +79,10 @@
                         <p>Building a digital identity for Puri Resto & Cafe, a cozy culinary spot in Central Cikarang,
                             to make it more accessible to customers.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="background"
+                        aria-label="Read more about project context">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 100ms;">
@@ -77,8 +92,9 @@
                         <p>The restaurant lacked an official website, making it difficult for potential customers to
                             view the menu, explore the ambiance, and make online reservations.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 200ms;">
@@ -88,24 +104,27 @@
                         <p>A responsive landing page featuring an earthy design, digital menu integration, and direct
                             booking access via WhatsApp.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="solution"
+                        aria-label="Read more about the solution">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </section>
 
         <article class="study-container">
-            <section class="section-study">
+            <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i> Click on the design image to enlarge it.
+                <p class="text-accent mb-3 d-flex align-center gap-2">
+                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the design image to enlarge it.
                 </p>
 
                 <div class="design-gallery">
-                    <figure class="gallery-item">
-                        <div class="img-wrapper"><img
-                                src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop"
-                                alt="Puri Resto Hero Section" loading="lazy"></div>
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
+                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop"
+                                alt="Puri Resto Hero Section" width="800" height="533" loading="lazy">
+                        </div>
                         <figcaption class="gallery-label">
                             <h3>Modern & Cozy Interface</h3>
                             <p>Utilizing a Coffee Brown and Sage Green color palette to highlight the cafe's warm and
@@ -115,82 +134,86 @@
                 </div>
             </section>
 
-            <section class="section-study text-center"
+            <section class="section-study text-center reveal"
                 style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
                 <h2 class="mb-2">View Live Website</h2>
-                <p class="text-muted max-w-md mb-4" style="margin: 0 auto 2rem auto;">Check out the live coded result of
-                    the deployed Puri Resto & Cafe landing page.</p>
+                <p class="text-muted max-w-md mb-4">Check out the live coded result of the deployed Puri Resto & Cafe
+                    landing page.</p>
                 <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                    <span class="material-symbols-rounded">language</span> Open Live Demo
+                    <span class="material-symbols-rounded" aria-hidden="true">language</span> Open Live Demo
                 </a>
             </section>
         </article>
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
-                    class="fa-solid fa-xmark"></i></button>
+    <!-- HTML5 Templates -->
+    <template id="tpl-background">
+        <span class="modal-tag">01. Background</span>
+        <h2 class="modal-title">Context & Background</h2>
+        <div class="modal-body">
+            <p>Puri Resto & Cafe is a favorite culinary destination in Central Cikarang, offering rooftop vibes and live
+                music. Although they have excellent offline reviews, they lacked an adequate digital presence beyond
+                Google Maps.</p>
+            <p>This project was initiated to provide a professional online identity to help them reach a broader
+                audience.</p>
+        </div>
+    </template>
+
+    <template id="tpl-problem">
+        <span class="modal-tag">02. Challenge</span>
+        <h2 class="modal-title">Problem Statement</h2>
+        <div class="modal-body">
+            <p>The absence of an official website made it difficult for potential customers to:</p>
+            <ul>
+                <li>Discover popular menu catalogs and their prices.</li>
+                <li>Visualize the restaurant's ambiance before visiting.</li>
+                <li>Make practical table reservations without manually searching for contact numbers.</li>
+            </ul>
+        </div>
+    </template>
+
+    <template id="tpl-solution">
+        <span class="modal-tag">03. Innovation</span>
+        <h2 class="modal-title">The Solution</h2>
+        <div class="modal-body">
+            <p>The proposed solution is a <strong>Landing Page Website</strong> developed using HTML, CSS, and Vanilla
+                JavaScript. The key features of this website include:</p>
+            <ul>
+                <li><strong>Digital Menu Box:</strong> A Call-to-Action (CTA) integration leading to vmenu.id so
+                    visitors can easily view the updated digital menu.</li>
+                <li><strong>Scroll Reveal Animation:</strong> Providing a premium user experience (UX) as the user
+                    scrolls through the page.</li>
+                <li><strong>Direct WhatsApp Booking:</strong> A reservation button that directly links to the restaurant
+                    admin's WhatsApp, streamlining the booking process.</li>
+            </ul>
+        </div>
+    </template>
+
+    <!-- Native Dialogs -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
             <div class="modal-content" id="modal-content"></div>
         </div>
-    </div>
+    </dialog>
 
-    <!-- Hidden Data for Modals -->
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="background">
-            <span class="modal-tag">01. Background</span>
-            <h2 class="modal-title">Context & Background</h2>
-            <div class="modal-body">
-                <p>Puri Resto & Cafe is a favorite culinary destination in Central Cikarang, offering rooftop vibes and
-                    live music. Although they have excellent offline reviews, they lacked an adequate digital presence
-                    beyond Google Maps.</p>
-                <p>This project was initiated to provide a professional online identity to help them reach a broader
-                    audience.</p>
-            </div>
-        </div>
-        <div data-id="problem">
-            <span class="modal-tag">02. Challenge</span>
-            <h2 class="modal-title">Problem Statement</h2>
-            <div class="modal-body">
-                <p>The absence of an official website made it difficult for potential customers to:</p>
-                <ul>
-                    <li>Discover popular menu catalogs and their prices.</li>
-                    <li>Visualize the restaurant's ambiance before visiting.</li>
-                    <li>Make practical table reservations without manually searching for contact numbers.</li>
-                </ul>
-            </div>
-        </div>
-        <div data-id="solution">
-            <span class="modal-tag">03. Innovation</span>
-            <h2 class="modal-title">The Solution</h2>
-            <div class="modal-body">
-                <p>The proposed solution is a <strong>Landing Page Website</strong> developed using HTML, CSS, and
-                    Vanilla JavaScript. The key features of this website include:</p>
-                <ul>
-                    <li><strong>Digital Menu Box:</strong> A Call-to-Action (CTA) integration leading to vmenu.id so
-                        visitors can easily view the updated digital menu.</li>
-                    <li><strong>Scroll Reveal Animation:</strong> Providing a premium user experience (UX) as the user
-                        scrolls through the page.</li>
-                    <li><strong>Direct WhatsApp Booking:</strong> A reservation button that directly links to the
-                        restaurant admin's WhatsApp, streamlining the booking process.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-    </div>
+    </dialog>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="../index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <a href="index.html" class="footer__logo">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

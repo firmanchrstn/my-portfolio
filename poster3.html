@@ -1,326 +1,206 @@
 <!DOCTYPE html>
-
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="dark">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Awareness Poster | Firman Christian</title>
+    <meta name="description"
+        content="Cinematic-inspired visual poster designed to encourage empathy and positive social behavior.">
 
-    <title>Poster Design | Firman Christian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portofolio.css">
-
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
 
-    <header class="header" id="header">
-
-        <nav class="nav container">
-
-            <a href="../index.html" class="nav__logo">Firman.</a>
-
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
-
                 <ul class="nav__list">
-
-                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
-
-                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
-
-                    <li><a href="../index.html#about" class="nav__link">About</a></li>
-
-                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
-
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-
                 <button class="nav__close" id="nav-close" aria-label="Close menu">
-
-                    <span class="material-symbols-rounded">close</span>
-
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
                 </button>
-
             </div>
-
             <div class="nav__actions">
-
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-
-                    <span class="sun-icon material-symbols-rounded">light_mode</span>
-
-                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
-
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
-
-                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
                 <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-
-                    <span class="material-symbols-rounded">menu_open</span>
-
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
-
             </div>
-
         </nav>
-
     </header>
 
-    <main class="main">
-
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
-
             <span class="section__subtitle reveal">VISUAL STORYTELLING & CAMPAIGN</span>
-
             <h1 class="large-title reveal">Poster Design</h1>
-
             <div class="details__meta reveal">
-
                 <div class="meta__item">
                     <small>Role</small>
                     <p>Graphic Designer</p>
                 </div>
-
                 <div class="meta__item">
                     <small>Type</small>
                     <p>Creative Poster</p>
                 </div>
-
                 <div class="meta__item">
                     <small>Tools</small>
                     <p>Canva</p>
                 </div>
-
             </div>
-
         </header>
 
-        <section class="container">
-
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
-
                 <div class="summary__card reveal">
-
                     <div>
-
                         <h4>01. Background</h4>
-
                         <h3>The Context</h3>
-
                         <p>Creating a visually engaging campaign poster focused on promoting empathy and positive social
                             interaction.</p>
-
                     </div>
-
-                    <div class="btn-text open-detail" data-target="background" tabindex="0">
-
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-
-                    </div>
-
+                    <button class="btn-text open-detail" data-target="background"
+                        aria-label="Read more about the context">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 100ms;">
-
                     <div>
-
                         <h4>02. Concept</h4>
-
                         <h3>Creative Direction</h3>
-
                         <p>Applying cinematic movie-poster aesthetics and emotional storytelling to strengthen audience
                             engagement.</p>
-
                     </div>
-
-                    <div class="btn-text open-detail" data-target="concept" tabindex="0">
-
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-
-                    </div>
-
+                    <button class="btn-text open-detail" data-target="concept"
+                        aria-label="Read more about creative direction">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal" style="transition-delay: 200ms;">
-
                     <div>
-
                         <h4>03. Execution</h4>
-
                         <h3>Visual Delivery</h3>
-
                         <p>Combining expressive composition, typography, and layered visuals to create a memorable
                             campaign experience.</p>
-
                     </div>
-
-                    <div class="btn-text open-detail" data-target="execution" tabindex="0">
-
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-
-                    </div>
-
+                    <button class="btn-text open-detail" data-target="execution" aria-label="Read more about execution">
+                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
                 </div>
-
             </div>
-
         </section>
 
         <article class="study-container">
-
-            <section class="section-study">
-
+            <section class="section-study" aria-label="Visual Assets">
                 <h2 class="mb-1 text-center">Visual Assets</h2>
-
                 <p class="text-accent mb-4 d-flex align-center justify-center gap-2" style="font-size: 0.95rem;">
-
-                    <i class="fa-solid fa-magnifying-glass-plus"></i> Click the poster to view in high resolution.
-
+                    <i class="fa-solid fa-magnifying-glass-plus" aria-hidden="true"></i> Click the poster to view in
+                    high resolution.
                 </p>
 
                 <div class="design-gallery">
-
-                    <figure class="gallery-item">
-
-                        <div class="img-wrapper">
-
-                            <img src="../asset/poster/Poster3.png" alt="Poster Design" loading="lazy">
-
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged poster">
+                            <img src="../asset/poster/Poster3.png" alt="Social Awareness Cinematic Poster" width="800"
+                                height="1131" loading="lazy">
                         </div>
-
                         <figcaption class="gallery-label">
-
                             <h3>Social Awareness Campaign</h3>
-
                             <p>A cinematic-inspired visual poster designed to encourage empathy and positive social
                                 behavior within the campus community.</p>
-
                         </figcaption>
-
                     </figure>
-
                 </div>
-
             </section>
-
         </article>
-
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
+    <!-- Templates untuk Konten Dialog -->
+    <template id="tpl-background">
+        <span class="modal-tag">01. Background</span>
+        <h2 class="modal-title">Context & Background</h2>
+        <div class="modal-body">
+            <p>This project was designed as part of a social awareness campaign intended to encourage empathy, kindness,
+                and positive interaction within the university environment.</p>
+            <p>The objective was to transform a simple act of kindness into a visually compelling narrative capable of
+                emotionally engaging viewers.</p>
+        </div>
+    </template>
 
-        <div class="modal-card">
+    <template id="tpl-concept">
+        <span class="modal-tag">02. Concept</span>
+        <h2 class="modal-title">Creative Direction</h2>
+        <div class="modal-body">
+            <p>The visual direction was heavily inspired by cinematic movie-poster aesthetics, combining emotional
+                storytelling with dramatic composition techniques.</p>
+            <ul>
+                <li><strong>Cinematic Layout:</strong> Applying movie-poster inspired framing and visual hierarchy.</li>
+                <li><strong>Emotional Storytelling:</strong> Highlighting meaningful social interaction through
+                    expressive visuals.</li>
+                <li><strong>Layered Composition:</strong> Combining typography, imagery, and depth effects for stronger
+                    narrative impact.</li>
+            </ul>
+        </div>
+    </template>
 
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal">
+    <template id="tpl-execution">
+        <span class="modal-tag">03. Execution</span>
+        <h2 class="modal-title">Delivery & Output</h2>
+        <div class="modal-body">
+            <p>The poster was designed digitally using Canva with a strong focus on cinematic presentation, emotional
+                resonance, and visual clarity.</p>
+            <p>The final result successfully communicates a heroic and inspirational atmosphere while maintaining a
+                modern and visually engaging campaign style.</p>
+        </div>
+    </template>
 
-                <i class="fa-solid fa-xmark"></i>
-
+    <!-- Dialog Native HTML5 -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-
             <div class="modal-content" id="modal-content"></div>
-
         </div>
+    </dialog>
 
-    </div>
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+    </dialog>
 
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-
-        <div data-id="background">
-
-            <span class="modal-tag">01. Background</span>
-
-            <h2 class="modal-title">Context & Background</h2>
-
-            <div class="modal-body">
-
-                <p>This project was designed as part of a social awareness campaign intended to encourage empathy,
-                    kindness, and positive interaction within the university environment.</p>
-
-                <p>The objective was to transform a simple act of kindness into a visually compelling narrative capable
-                    of emotionally engaging viewers.</p>
-
-            </div>
-
-        </div>
-
-        <div data-id="concept">
-
-            <span class="modal-tag">02. Concept</span>
-
-            <h2 class="modal-title">Creative Direction</h2>
-
-            <div class="modal-body">
-
-                <p>The visual direction was heavily inspired by cinematic movie-poster aesthetics, combining emotional
-                    storytelling with dramatic composition techniques.</p>
-
-                <ul>
-
-                    <li><strong>Cinematic Layout:</strong> Applying movie-poster inspired framing and visual hierarchy.
-                    </li>
-
-                    <li><strong>Emotional Storytelling:</strong> Highlighting meaningful social interaction through
-                        expressive visuals.</li>
-
-                    <li><strong>Layered Composition:</strong> Combining typography, imagery, and depth effects for
-                        stronger narrative impact.</li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div data-id="execution">
-
-            <span class="modal-tag">03. Execution</span>
-
-            <h2 class="modal-title">Delivery & Output</h2>
-
-            <div class="modal-body">
-
-                <p>The poster was designed digitally using Canva with a strong focus on cinematic presentation,
-                    emotional resonance, and visual clarity.</p>
-
-                <p>The final result successfully communicates a heroic and inspirational atmosphere while maintaining a
-                    modern and visually engaging campaign style.</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="lightbox" id="lightbox">
-
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
-
-        <img src="" alt="Zoomed Poster" class="lightbox__img" id="lightbox-img">
-
-    </div>
-
-    <footer class="footer">
-
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-
-            <a href="../index.html" class="footer__logo">Firman.</a>
-
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
-
+            <a href="index.html" class="footer__logo">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
         </div>
-
     </footer>
 
-    <script src="../js/script.js"></script>
-
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

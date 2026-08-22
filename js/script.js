@@ -1,248 +1,178 @@
 /**
- * GLOBAL PORTFOLIO SYSTEM
- * Architecture: Modular (IIFE), Event Delegation, Scroll Optimized
+ * PORTFOLIO SYSTEM ARCHITECTURE
+ * Modular (IIFE), Event Delegation, Native Dialog API
  */
-
 (() => {
     'use strict';
-
-    // --- UTILITIES ---
-    // Optimasi performa untuk event scroll/resize
-    const throttle = (func, limit) => {
-        let inThrottle;
-        return function () {
-            const args = arguments;
-            const context = this;
-            if (!inThrottle) {
-                func.apply(context, args);
-                inThrottle = true;
-                setTimeout(() => inThrottle = false, limit);
-            }
-        };
-    };
 
     // --- 1. THEME MODULE ---
     const initTheme = () => {
         const themeToggle = document.getElementById('theme-toggle');
-        if (!themeToggle) return;
+        const docEl = document.documentElement;
 
-        const setSavedTheme = () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                document.documentElement.setAttribute('data-theme', savedTheme);
-            } else {
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-            }
+        const applyTheme = (theme) => {
+            docEl.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
         };
 
-        setSavedTheme();
+        const savedTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
 
-        themeToggle.addEventListener('click', () => {
-            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const newTheme = docEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+        }
     };
 
-    // --- 2. NAVIGATION MODULE ---
-    const initNavigation = () => {
+    // --- 2. NAVIGATION & SCROLLSPY MODULE ---
+    const initNav = () => {
         const navMenu = document.getElementById('nav-menu');
         const navToggle = document.getElementById('nav-toggle');
         const navClose = document.getElementById('nav-close');
-        const body = document.body;
+        const navLinks = document.querySelectorAll('.nav__link');
 
-        const toggleMenu = (show) => {
+        // Fitur 1: Mobile Menu Toggle
+        const toggleMenu = (isOpen) => {
             if (!navMenu) return;
-            if (show) {
+            if (isOpen) {
                 navMenu.classList.add('show-menu');
-                body.style.overflow = 'hidden';
+                if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden'; // Kunci scroll layar belakang
             } else {
                 navMenu.classList.remove('show-menu');
-                body.style.overflow = '';
+                if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
         };
 
         if (navToggle) navToggle.addEventListener('click', () => toggleMenu(true));
         if (navClose) navClose.addEventListener('click', () => toggleMenu(false));
 
-        // Menutup menu saat link diklik (Event Delegation)
+        // Tutup menu mobile otomatis saat link diklik
         if (navMenu) {
             navMenu.addEventListener('click', (e) => {
                 if (e.target.closest('.nav__link')) toggleMenu(false);
             });
         }
 
-        // Active Routing & Scrollspy (Dioptimalkan dengan Throttling)
-        const isWorkPage = window.location.pathname.includes('/work/');
+        // Fitur 2: ScrollSpy Teroptimasi (Indikator Aktif Saat Scroll)
+        const sections = document.querySelectorAll('section[id]');
+        if (sections.length > 0) {
+            // Observer akan mendeteksi saat section berada di tengah layar
+            const scrollSpyOptions = {
+                root: null,
+                rootMargin: '-40% 0px -60% 0px',
+                threshold: 0
+            };
 
-        if (isWorkPage) {
-            const workLink = document.querySelector('.nav__menu a[href*="#portfolio"]');
-            if (workLink) workLink.classList.add('active');
-        } else {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollSpy = throttle(() => {
-                let scrollY = window.scrollY;
-                sections.forEach(current => {
-                    const sectionHeight = current.offsetHeight;
-                    const sectionTop = current.offsetTop - 150;
-                    const sectionId = current.getAttribute('id');
-                    const navLink = document.querySelector(`.nav__menu a[href*="#${sectionId}"]`);
+            const scrollSpyObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const currentId = entry.target.getAttribute('id');
 
-                    if (navLink) {
-                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                            navLink.classList.add('active');
-                        } else {
-                            navLink.classList.remove('active');
-                        }
-                    }
-                });
-            }, 100); // Eksekusi maksimal tiap 100ms
-
-            window.addEventListener('scroll', scrollSpy, { passive: true });
-        }
-    };
-
-    // --- 3. PORTFOLIO FILTER MODULE ---
-    const initPortfolioFilter = () => {
-        const filterContainer = document.querySelector('.portfolio__filters');
-        const projectCards = document.querySelectorAll('.portfolio__card');
-
-        // Menggunakan Event Delegation pada container filter
-        if (filterContainer && projectCards.length > 0) {
-            filterContainer.addEventListener('click', (e) => {
-                const button = e.target.closest('.portfolio__filter');
-                if (!button) return;
-
-                // Update UI state
-                document.querySelectorAll('.portfolio__filter').forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    if (filterValue === 'all' || filterValue === cardCategory) {
-                        card.style.display = 'flex';
-                        requestAnimationFrame(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'scale(1) translateY(0)';
+                        // Hapus class active dari semua link
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            // Tambahkan class active ke link yang URL-nya cocok dengan ID section
+                            const href = link.getAttribute('href');
+                            if (href === `#${currentId}` || href === `index.html#${currentId}`) {
+                                link.classList.add('active');
+                            }
                         });
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'scale(0.95) translateY(10px)';
-                        setTimeout(() => {
-                            if (card.style.opacity === '0') card.style.display = 'none';
-                        }, 400);
                     }
                 });
-            });
+            }, scrollSpyOptions);
+
+            sections.forEach(section => scrollSpyObserver.observe(section));
         }
     };
 
-    // --- 4. LIGHTBOX & MODAL MODULE ---
-    const initUIInteractions = () => {
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const body = document.body;
+    // --- 3. NATIVE DIALOG (MODALS & LIGHTBOX) ---
+    const initDialogs = () => {
+        const studyModal = document.getElementById('study-modal');
+        const lightboxModal = document.getElementById('lightbox-modal');
 
-        if (lightbox && lightboxImg) {
-            const closeLightbox = () => {
-                lightbox.classList.remove('active');
-                body.style.overflow = '';
-            };
+        // Modal for Case Study Details via HTML5 <template>
+        if (studyModal) {
+            const contentArea = document.getElementById('modal-content');
+            const closeBtn = studyModal.querySelector('.native-modal__close');
 
-            // Event Delegation untuk semua gambar gallery
             document.body.addEventListener('click', (e) => {
-                const img = e.target.closest('.img-wrapper img, .details__main-img');
-                if (img) {
-                    lightboxImg.src = img.src;
-                    lightbox.classList.add('active');
-                    body.style.overflow = 'hidden';
-                }
-            });
+                const trigger = e.target.closest('.open-detail');
+                if (trigger) {
+                    const targetId = trigger.getAttribute('data-target');
+                    const template = document.getElementById(`tpl-${targetId}`);
 
-            lightbox.addEventListener('click', (e) => {
-                if (e.target.closest('#lightbox-close') || e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
-            });
-        }
-
-        // Modal Study (Work Pages)
-        const modalBackdrop = document.getElementById('study-modal');
-        const modalContentArea = document.getElementById('modal-content');
-
-        if (modalBackdrop && modalContentArea) {
-            const closeModal = () => {
-                modalBackdrop.classList.remove('active');
-                body.style.overflow = '';
-            };
-
-            // Event delegation untuk tombol "Read Full Story"
-            document.body.addEventListener('click', (e) => {
-                const btn = e.target.closest('.open-detail');
-                if (btn) {
-                    const targetId = btn.getAttribute('data-target');
-                    const sourceData = document.querySelector(`[data-id="${targetId}"]`);
-
-                    if (sourceData) {
-                        modalContentArea.innerHTML = sourceData.innerHTML;
-                        modalBackdrop.classList.add('active');
-                        body.style.overflow = 'hidden';
-
-                        const modalCard = document.querySelector('.modal-card');
-                        if (modalCard) modalCard.scrollTop = 0;
+                    if (template) {
+                        contentArea.innerHTML = ''; // Clean previous
+                        contentArea.appendChild(template.content.cloneNode(true));
+                        studyModal.showModal(); // Native API handles focus trap
+                        document.body.style.overflow = 'hidden';
+                        studyModal.querySelector('.native-modal__wrapper').scrollTop = 0;
                     }
                 }
             });
 
-            modalBackdrop.addEventListener('click', (e) => {
-                if (e.target.closest('#modal-close') || e.target === modalBackdrop) {
-                    closeModal();
+            const closeStudy = () => { studyModal.close(); document.body.style.overflow = ''; };
+            closeBtn.addEventListener('click', closeStudy);
+            studyModal.addEventListener('click', (e) => { if (e.target === studyModal) closeStudy(); });
+        }
+
+        // Image Lightbox Gallery
+        if (lightboxModal) {
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = lightboxModal.querySelector('.native-modal__close');
+
+            document.body.addEventListener('click', (e) => {
+                const imgWrap = e.target.closest('.img-wrapper');
+                if (imgWrap) {
+                    const img = imgWrap.querySelector('img');
+                    if (img) {
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt || "Zoomed image";
+                        lightboxModal.showModal();
+                        document.body.style.overflow = 'hidden';
+                    }
                 }
             });
 
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) closeModal();
-            });
+            const closeLightbox = () => { lightboxModal.close(); document.body.style.overflow = ''; };
+            closeBtn.addEventListener('click', closeLightbox);
+            lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
         }
     };
 
-    // --- 5. ANIMATION OBSERVER ---
+    // --- 4. SCROLL ANIMATION OBSERVER ---
     const initReveals = () => {
-        const revealElements = document.querySelectorAll('.reveal');
-        if (revealElements.length === 0) return;
+        const elements = document.querySelectorAll('.reveal');
+        if (!elements.length) return;
 
-        const revealOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+        // Respect Accessibility Preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            elements.forEach(el => el.classList.add('active'));
+            return;
+        }
 
-        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // Lepas observer setelah animasi selesai (Memory optimization)
+                    obs.unobserve(entry.target); // Perf boost
                 }
             });
-        }, revealOptions);
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-        revealElements.forEach(el => revealOnScroll.observe(el));
+        elements.forEach(el => observer.observe(el));
     };
 
-    // --- INITIALIZATION ---
+    // --- INIT ---
     document.addEventListener('DOMContentLoaded', () => {
         initTheme();
-        initNavigation();
-        initPortfolioFilter();
-        initUIInteractions();
+        initNav();
+        initDialogs();
         initReveals();
     });
-
 })();

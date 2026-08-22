@@ -1,36 +1,54 @@
-# Personal Portfolio - Firman Christian Purba
+# Personal Portfolio 2.0 - Firman Christian Purba
+
+![Lighthouse: 100/100/100/100 Target](https://img.shields.io/badge/Lighthouse-100%20Target-brightgreen.svg)
+![Tech Stack: Vanilla](https://img.shields.io/badge/Tech-Vanilla%20HTML%2FJS%2FCSS-blue.svg)
+![Status: Production](https://img.shields.io/badge/Status-Production-success.svg)
 
 ## Overview
 
-This repository contains the source code for my professional portfolio website. The project is designed to showcase my expertise in Information Systems, UI/UX Design, and Front-end Development. It serves as a comprehensive digital resume, highlighting academic projects, professional case studies, and technical competencies.
+This repository contains the source code for my professional portfolio website (v2.0). The project is engineered to showcase my expertise in bridging **Information Systems**, **UI/UX Design**, and **Front-End Engineering**.
 
-## Technical Stack
+It serves as a comprehensive digital ecosystem highlighting academic projects, professional case studies, and technical competencies, built with a strict focus on system architecture, user experience, and web performance.
 
-The website is built using standard web technologies to ensure high performance, accessibility, and clean code architecture:
+## Technical Architecture
 
-* **Markup:** HTML5 for semantic structure.
-* **Styling:** CSS3 utilizing Custom Properties (Variables) for consistent branding and responsive layouts.
-* **Scripting:** Vanilla JavaScript for interactive elements and gallery management.
+The website is completely custom-built from the ground up without heavy JavaScript frameworks, demonstrating a deep understanding of native web capabilities and Core Web Vitals optimization:
+
+* **Markup (HTML5):**
+  * Strict Semantic HTML for superior SEO and accessibility.
+  * Utilization of the native HTML5 `<dialog>` API for accessible, focus-trapped modals.
+  * Implementation of `<template>` tags for efficient, zero-duplication DOM rendering.
+* **Styling (CSS3):**
+  * Fluid typography and fluid layouts utilizing `clamp()`, `min()`, and `max()`.
+  * Modern CSS Grid (Auto-fit/Bento Grid patterns) and Flexbox architecture.
+  * Comprehensive CSS Custom Properties (Design Tokens) for theming and dark mode.
+* **Scripting (Vanilla JS):**
+  * Modular IIFE (Immediately Invoked Function Expression) architecture.
+  * High-performance `IntersectionObserver` for scroll-spy and scroll-reveal animations.
+  * Strict event delegation to minimize memory footprint.
 * **Deployment:** GitHub Pages for continuous integration and hosting.
+
+## Key Features & Engineering Highlights
+
+* **Core Web Vitals Optimized:** Explicit dimensions (`width`/`height`) and `loading="lazy"` attributes on media to strictly prevent Cumulative Layout Shift (CLS) and optimize Largest Contentful Paint (LCP).
+* **Accessibility-First (A11y):** Built with `prefers-reduced-motion` support, visible keyboard focus states, proper ARIA labeling, and native browser focus-trapping.
+* **Progressive Disclosure:** Case studies utilize a seamless modal/lightbox architecture to deliver deep project context without forcing page reloads.
+* **Technical SEO:** Fully structured `<head>` metadata, Open Graph integration, and semantic landmarks.
 
 ## Project Structure
 
-The project is organized with a clear separation of concerns to maintain scalability:
+The project is organized with a clear separation of concerns to maintain long-term scalability:
 
-* `/index.html`: The primary landing page and entry point.
-* `/mobile-jkn.html`: Detailed case study for the Mobile JKN redesign project.
-* `/linkaja-competition.html`: Case study for the digital finance redesign competition.
-* `/404.html`: Custom status page for projects currently under development.
-* `/css/`: Directory containing global styles and page-specific layouts.
-* `/js/`: Directory containing scripts for UI interactions and sliders.
-* `/asset/`: Centralized storage for project assets, documentation (PDFs), and media.
-
-## Key Features
-
-* **Responsive Design:** Optimized for a seamless user experience across mobile, tablet, and desktop devices.
-* **UI/UX Case Studies:** In-depth documentation of design processes, including problem statements and research outcomes.
-* **Interactive Design Showcase:** A custom-built gallery system for viewing high-fidelity prototypes.
-* **Direct Documentation Access:** Integrated links to research papers and professional credentials.
+* `/index.html`: The primary landing page and global entry point.
+* `/mobile-jkn.html`: UI/UX case study for the Mobile JKN redesign.
+* `/linkaja-competition.html`: UX Strategy case study for MIA 2025 ft. LinkAja.
+* `/rucas.html`: Web Design & E-Commerce concept for Rucas.co.
+* `/terebistrobar.html` & `/purirestocafe.html`: Front-End engineering showcases.
+* `/poster*.html`: Graphic design and creative campaign galleries.
+* `/css/style.css`: Global design tokens, layout system, and utilities.
+* `/css/portofolio.css`: Project-specific components and case study styling.
+* `/js/script.js`: Centralized interaction logic and modal state management.
+* `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
 
 ## Deployment
 
@@ -38,11 +56,12 @@ This portfolio is automatically deployed via GitHub Actions. Any changes pushed 
 
 ## Contact and Professional Links
 
-For professional inquiries or collaboration, please refer to the contact section within the live website or reach out via:
+I am currently open to new opportunities, collaborations, or simply a chat about design, technology, and systems. Feel free to reach out via:
 
+* **Email:** <firmanchristianp@gmail.com>
 * **LinkedIn:** <https://www.linkedin.com/in/firmanchristianpurba/>
 * **GitHub:** <https://github.com/firmanchrstn>
-* **Email:** <firmanchristianp@gmail.com>
 
 ---
+*Systematic Design. Flawless Code.*
 Copyright © 2026 Firman Christian Purba. All rights reserved.
