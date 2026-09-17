@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GLOBAL DESIGN SYSTEM 
+   GLOBAL DESIGN SYSTEM
    Fluid, Accessible, and CLS-Optimized
    ========================================================================== */
 
@@ -31,6 +31,7 @@
     --transition-fast: all 0.2s ease;
     --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 
+    --z-behind: 0;
     --z-base: 1;
     --z-header: 1000;
     --z-modal: 9999;
@@ -60,7 +61,10 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -74,8 +78,8 @@ body {
 }
 
 :focus-visible {
-    outline: 2px solid var(--brand-primary);
-    outline-offset: 4px;
+    outline: 2px solid var(--color-primary-text);
+    outline-offset: 3px;
 }
 
 .skip-to-content {
@@ -118,6 +122,50 @@ ul {
     list-style: none;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* --- NO-JS FALLBACKS (progressive enhancement) --- */
+.no-js .reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.no-js .nav__menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    backdrop-filter: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.no-js .nav__list {
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.no-js .nav__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.no-js .nav__toggle,
+.no-js .nav__close {
+    display: none;
+}
+
 /* --- FLUID UTILITIES --- */
 .container {
     width: 100%;
@@ -136,6 +184,10 @@ ul {
 
 .text-center {
     text-align: center;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .align-center {
@@ -170,6 +222,14 @@ ul {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.delay-1 {
+    transition-delay: 100ms;
+}
+
+.delay-2 {
+    transition-delay: 200ms;
 }
 
 h1,
@@ -219,6 +279,7 @@ h4 {
     border-radius: var(--radius-pill);
     font-weight: 600;
     font-size: 0.95rem;
+    min-height: 46px;
     transition: var(--transition-fast);
     border: 1px solid transparent;
 }
@@ -242,6 +303,17 @@ h4 {
 .btn--outline:hover {
     background: var(--bg-surface);
     transform: translateY(-2px);
+}
+
+.btn .material-symbols-rounded {
+    font-size: 1.2em;
+}
+
+/* Icon glyphs (Material Symbols + inline brand SVGs) */
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
 }
 
 /* --- NAVIGATION --- */
@@ -303,10 +375,17 @@ h4 {
 .theme-toggle {
     color: var(--text-muted);
     transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .theme-toggle:hover {
     color: var(--text-heading);
+    background: var(--bg-surface);
 }
 
 .nav__toggle,
@@ -314,6 +393,11 @@ h4 {
     display: none;
     color: var(--text-heading);
     font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 [data-theme="dark"] .sun-icon {
@@ -446,6 +530,9 @@ h4 {
     padding: 0.7rem 1.5rem;
     border-radius: var(--radius-md);
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .portfolio__card-content {
@@ -513,10 +600,10 @@ h4 {
 
 .footer__content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
+    text-align: center;
 }
 
 .footer__logo {
@@ -525,12 +612,35 @@ h4 {
     color: var(--text-heading);
 }
 
+.footer__text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.5rem;
+    margin-top: 1rem;
+}
+
+.footer__links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color var(--transition-fast);
+}
+
+.footer__links a:hover {
+    color: var(--color-primary-text);
+}
+
 /* ==========================================================================
    CONTACT SECTION
    ========================================================================== */
 .contact__container {
     display: grid;
-    /* Auto-fit akan membagi 2 kolom di desktop, dan bertumpuk di mobile */
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
     gap: clamp(3rem, 8vw, 6rem);
     align-items: start;
@@ -565,7 +675,8 @@ h4 {
     width: fit-content;
 }
 
-.social__link i {
+.social__link .material-symbols-rounded,
+.social__link .icon {
     font-size: 1.25rem;
     color: var(--text-muted);
     transition: var(--transition-fast);
@@ -577,8 +688,9 @@ h4 {
     box-shadow: var(--shadow-sm);
 }
 
-.social__link:hover i {
-    color: var(--brand-primary);
+.social__link:hover .material-symbols-rounded,
+.social__link:hover .icon {
+    color: var(--color-primary-text);
 }
 
 /* Premium Form Styling */
@@ -618,10 +730,9 @@ h4 {
     color: var(--text-muted);
 }
 
-/* Focus States (Glow Effect saat diklik) */
 .form__input:focus {
     outline: none;
-    border-color: var(--brand-primary);
+    border-color: var(--color-primary-text);
     box-shadow: 0 0 0 4px var(--brand-glow);
     background: var(--bg-surface);
 }
@@ -629,6 +740,13 @@ h4 {
 .form__textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+.form__status {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary-text);
 }
 
 /* --- ANIMATIONS & RESPONSIVE --- */
@@ -651,7 +769,7 @@ h4 {
 
     .nav__toggle,
     .nav__close {
-        display: block;
+        display: inline-flex;
     }
 
     .nav__menu {
@@ -703,6 +821,37 @@ h4 {
     .portfolio__card-btn {
         width: 100%;
         text-align: center;
+    }
+
+    .header {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero__buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero__buttons .btn {
+        width: 100%;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .form__group--double {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio__card-content {
+        padding: 1.5rem;
+    }
+
+    .nav__actions {
+        gap: 0.5rem;
     }
 }
 

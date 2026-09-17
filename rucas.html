@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="no-js scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,25 @@
     <title>Rucas.co | Firman Christian</title>
     <meta name="description"
         content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/rucas.html">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Firman Christian Purba — Portfolio">
+    <meta property="og:title" content="Rucas.co | Firman Christian">
+    <meta property="og:description"
+        content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/rucas.html">
+    <meta property="og:image" content="https://firmanchrstn.github.io/my-portfolio/asset/rucas/thumbnail.rucas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rucas.co | Firman Christian">
+    <meta name="twitter:description"
+        content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <meta name="twitter:image" content="https://firmanchrstn.github.io/my-portfolio/asset/rucas/thumbnail.rucas.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="asset/pp.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +33,36 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portofolio.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Rucas.co Digital Store",
+        "headline": "A conceptual e-commerce design prioritizing brand storytelling and a frictionless purchasing flow",
+        "description": "UI/UX design exploration for Rucas, a premium local streetwear brand with exclusive limited-drop collections.",
+        "url": "https://firmanchrstn.github.io/my-portfolio/rucas.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Firman Christian Purba",
+            "url": "https://firmanchrstn.github.io/my-portfolio/"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            document.documentElement.classList.remove('no-js');
+        })();
+    </script>
 </head>
 
 <body>
@@ -43,7 +88,8 @@
                     <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
                 <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-menu">
                     <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
             </div>
@@ -56,10 +102,12 @@
             <h1 class="large-title reveal">Rucas.co</h1>
             <div class="details__meta reveal">
                 <div class="meta__item">
-                    <small>Project Document</small>
-                    <a href="404.html" target="_blank" rel="noopener noreferrer">
-                        <span class="material-symbols-rounded" aria-hidden="true">description</span> View PRD (PDF)
-                    </a>
+                    <small>Type</small>
+                    <p>UI/UX Concept</p>
+                </div>
+                <div class="meta__item">
+                    <small>Tools</small>
+                    <p>Figma</p>
                 </div>
             </div>
         </header>
@@ -74,11 +122,11 @@
                             its exclusive, limited-drop collections.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="overview" aria-label="Read more about overview">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>The Challenge</h4>
                         <h3>The Challenge</h3>
@@ -87,11 +135,11 @@
                     </div>
                     <button class="btn-text open-detail" data-target="the-challenge"
                         aria-label="Read more about the challenge">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>The Outcome</h3>
@@ -100,7 +148,7 @@
                     </div>
                     <button class="btn-text open-detail" data-target="the-outcome"
                         aria-label="Read more about the outcome">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
@@ -113,11 +161,11 @@
                     </div>
                     <button class="btn-text open-detail" data-target="part1-1"
                         aria-label="Read more about brand identity">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>Frictionless Cart Interaction</h3>
@@ -126,11 +174,11 @@
                     </div>
                     <button class="btn-text open-detail" data-target="part1-2"
                         aria-label="Read more about cart interaction">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>Strategic Scarcity</h3>
@@ -139,7 +187,7 @@
                     </div>
                     <button class="btn-text open-detail" data-target="part1-3"
                         aria-label="Read more about strategic scarcity">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
             </div>
@@ -149,14 +197,15 @@
             <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
                 <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the design image to enlarge it.
+                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
+                    enlarge it.
                 </p>
 
                 <div class="design-gallery">
                     <figure class="gallery-item reveal">
                         <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/rucas/thumbnail.rucas.png" alt="Rucas UI Interface" width="800" height="600"
-                                loading="lazy">
+                                loading="lazy" decoding="async">
                         </div>
                     </figure>
                 </div>
@@ -243,7 +292,7 @@
     <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
         <div class="native-modal__wrapper">
             <button class="native-modal__close" aria-label="Close Modal">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                <span class="material-symbols-rounded" aria-hidden="true">close</span>
             </button>
             <div class="modal-content" id="modal-content"></div>
         </div>
@@ -251,15 +300,22 @@
 
     <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
         <button class="native-modal__close" aria-label="Close Image Viewer">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
     </dialog>
 
     <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="index.html" class="footer__logo">Firman.</a>
+            <a href="index.html" class="footer__logo" aria-label="Back to homepage">Firman.</a>
             <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            <nav class="footer__links" aria-label="Case studies">
+                <a href="index.html">Home</a>
+                <a href="index.html#work">All Work</a>
+                <a href="mobile-jkn.html">Mobile JKN</a>
+                <a href="linkaja-competition.html">LinkAja</a>
+                <a href="terebistrobar.html">Terre Bistro &amp; Bar</a>
+            </nav>
         </div>
     </footer>
 

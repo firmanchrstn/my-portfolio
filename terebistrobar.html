@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="no-js scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terre Bistro & Bar Web Design | Portfolio</title>
+    <title>Terre Bistro & Bar | Firman Christian</title>
     <meta name="description"
         content="Front-End Web Development case study for Terre Bistro & Bar using GSAP and Lenis for smooth scrolling.">
+    <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/terebistrobar.html">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Firman Christian Purba — Portfolio">
+    <meta property="og:title" content="Terre Bistro & Bar | Firman Christian">
+    <meta property="og:description"
+        content="Front-End Web Development case study for Terre Bistro & Bar using GSAP and Lenis for smooth scrolling.">
+    <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/terebistrobar.html">
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Terre Bistro & Bar | Firman Christian">
+    <meta name="twitter:description"
+        content="Front-End Web Development case study for Terre Bistro & Bar using GSAP and Lenis for smooth scrolling.">
+    <meta name="twitter:image"
+        content="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="asset/pp.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,10 +35,36 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portofolio.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Terre Bistro & Bar",
+        "headline": "Crafting a cinematic luxury web experience with smooth scroll animations",
+        "description": "Front-End web development case study for Terre Bistro & Bar using HTML, CSS, GSAP and Lenis.",
+        "url": "https://firmanchrstn.github.io/my-portfolio/terebistrobar.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Firman Christian Purba",
+            "url": "https://firmanchrstn.github.io/my-portfolio/"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            document.documentElement.classList.remove('no-js');
+        })();
+    </script>
 </head>
 
 <body>
@@ -43,7 +90,8 @@
                     <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
                 <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-menu">
                     <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
             </div>
@@ -81,11 +129,11 @@
                     </div>
                     <button class="btn-text open-detail" data-target="background"
                         aria-label="Read more about project context">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Core Problem</h3>
@@ -93,11 +141,11 @@
                             interface feel rigid, boring, or cluttered.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>Design Solution</h3>
@@ -106,7 +154,7 @@
                     </div>
                     <button class="btn-text open-detail" data-target="solution"
                         aria-label="Read more about the solution">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
             </div>
@@ -116,14 +164,16 @@
             <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
                 <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the image to enlarge it.
+                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the image to enlarge
+                    it.
                 </p>
 
                 <div class="design-gallery">
                     <figure class="gallery-item reveal">
                         <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
-                                alt="Hero Section Terre Bistro" width="800" height="533" loading="lazy">
+                                alt="Hero Section Terre Bistro" width="800" height="533" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Cinematic Hero Section</h3>
@@ -135,7 +185,7 @@
                     <figure class="gallery-item reveal">
                         <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
-                                alt="Amenities Bento Grid" width="800" height="533" loading="lazy">
+                                alt="Amenities Bento Grid" width="800" height="533" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Bento Grid Layout</h3>
@@ -144,16 +194,6 @@
                         </figcaption>
                     </figure>
                 </div>
-            </section>
-
-            <section class="section-study text-center reveal"
-                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 class="mb-2">View Live Website</h2>
-                <p class="text-muted max-w-md mb-4">Experience the buttery-smooth scrolling and dynamic menu
-                    interactions firsthand on the final live website.</p>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Visit Live Demo
-                </a>
             </section>
         </article>
     </main>
@@ -207,7 +247,7 @@
     <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
         <div class="native-modal__wrapper">
             <button class="native-modal__close" aria-label="Close Modal">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                <span class="material-symbols-rounded" aria-hidden="true">close</span>
             </button>
             <div class="modal-content" id="modal-content"></div>
         </div>
@@ -215,15 +255,22 @@
 
     <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
         <button class="native-modal__close" aria-label="Close Image Viewer">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
     </dialog>
 
     <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">&copy; 2026 Crafted with Passion.</p>
+            <a href="index.html" class="footer__logo" aria-label="Back to homepage">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            <nav class="footer__links" aria-label="Case studies">
+                <a href="index.html">Home</a>
+                <a href="index.html#work">All Work</a>
+                <a href="mobile-jkn.html">Mobile JKN</a>
+                <a href="linkaja-competition.html">LinkAja</a>
+                <a href="purirestocafe.html">Puri Resto &amp; Cafe</a>
+            </nav>
         </div>
     </footer>
 

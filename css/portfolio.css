@@ -48,11 +48,11 @@
 }
 
 .meta__item a:hover {
-    color: var(--brand-primary);
+    color: var(--color-primary-text);
 }
 
 .meta__item a span.material-symbols-rounded {
-    color: var(--brand-primary);
+    color: var(--color-primary-text);
     font-size: 1.2rem;
 }
 
@@ -77,16 +77,18 @@
     will-change: transform;
 }
 
-.summary__card:hover {
-    border-color: var(--brand-primary);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+@media (hover: hover) {
+    .summary__card:hover {
+        border-color: var(--brand-primary);
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+    }
 }
 
 .summary__card h4 {
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: var(--brand-primary);
+    color: var(--color-primary-text);
     margin-bottom: 1rem;
 }
 
@@ -116,17 +118,20 @@
     color: var(--text-heading);
     cursor: pointer;
     transition: var(--transition-fast);
+    background: none;
+    padding: 0;
 }
 
-.btn-text i {
+.btn-text .material-symbols-rounded {
+    font-size: 1.05rem;
     transition: transform 0.2s ease;
 }
 
 .btn-text:hover {
-    color: var(--brand-primary);
+    color: var(--color-primary-text);
 }
 
-.btn-text:hover i {
+.btn-text:hover .material-symbols-rounded {
     transform: translateX(5px);
 }
 
@@ -161,10 +166,16 @@
     transition: var(--transition-smooth);
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--border-strong);
+@media (hover: hover) {
+    .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        border-color: var(--border-strong);
+    }
+
+    .gallery-item:hover .img-wrapper img {
+        transform: scale(1.05);
+    }
 }
 
 .img-wrapper {
@@ -175,15 +186,16 @@
     cursor: zoom-in;
 }
 
+.img-wrapper:focus-visible {
+    outline: 2px solid var(--color-primary-text);
+    outline-offset: -3px;
+}
+
 .img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
-}
-
-.gallery-item:hover .img-wrapper img {
-    transform: scale(1.05);
 }
 
 .gallery-label {
@@ -263,7 +275,7 @@
 
 /* Modal Inner Content Typography */
 .modal-tag {
-    color: var(--brand-primary);
+    color: var(--color-primary-text);
     font-size: 0.8rem;
     font-weight: 800;
     letter-spacing: 0.15em;
@@ -283,4 +295,55 @@
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.25rem;
+}
+
+.modal-body ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.modal-body li {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+/* ------------------------------------------------------------------------ */
+/* Responsive refinements */
+/* ------------------------------------------------------------------------ */
+@media screen and (max-width: 768px) {
+    .gallery-item:hover {
+        transform: none;
+    }
+
+    .summary__grid {
+        margin-bottom: 3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .project-detail__header {
+        padding: 110px 0 40px;
+    }
+
+    .details__meta {
+        gap: 1.75rem;
+    }
+
+    .summary__card {
+        padding: 1.75rem;
+    }
+
+    .gallery-label {
+        padding: 1.25rem;
+    }
+
+    .native-modal__wrapper {
+        padding: 2rem;
+    }
+
+    .section-study {
+        margin-bottom: 4rem;
+    }
 }

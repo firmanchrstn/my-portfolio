@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" data-theme="dark">
+<html lang="en" class="no-js scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Ganti meta description sesuai dengan proyek inDrive Anda -->
-    <title>inDrive Redesign / Case Study | Firman Christian Purba</title>
-    <meta name="description" content="Case study on redesigning and improving the inDrive application user experience.">
+    <title>inDrive Redesign | Firman Christian Purba</title>
+    <meta name="description"
+        content="A UI/UX case study on redesigning and improving the inDrive application user experience.">
+    <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/inDrive.html">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Firman Christian Purba — Portfolio">
+    <meta property="og:title" content="inDrive Redesign | Firman Christian Purba">
+    <meta property="og:description"
+        content="A UI/UX case study on redesigning and improving the inDrive application user experience.">
+    <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/inDrive.html">
+    <meta property="og:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-inDrive/Thumbnail%20-%20inDrive.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="inDrive Redesign | Firman Christian Purba">
+    <meta name="twitter:description"
+        content="A UI/UX case study on redesigning and improving the inDrive application user experience.">
+    <meta name="twitter:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-inDrive/Thumbnail%20-%20inDrive.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="asset/pp.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +34,36 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portofolio.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "inDrive Redesign",
+        "headline": "Improving the inDrive application user experience",
+        "description": "A UI/UX case study exploring clearer visual hierarchy, streamlined booking flows, and enhanced trust signals for inDrive.",
+        "url": "https://firmanchrstn.github.io/my-portfolio/inDrive.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Firman Christian Purba",
+            "url": "https://firmanchrstn.github.io/my-portfolio/"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            document.documentElement.classList.remove('no-js');
+        })();
+    </script>
 </head>
 
 <body>
@@ -44,7 +89,8 @@
                     <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
                 <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-menu">
                     <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
             </div>
@@ -58,8 +104,7 @@
             <div class="details__meta reveal">
                 <div class="meta__item">
                     <small>Project Document</small>
-                    <!-- Sesuaikan Link PDF inDrive Anda di sini -->
-                    <a href="./asset/prototype-figma-indrive/PRD-inDrive.pdf" target="_blank" rel="noopener noreferrer">
+                    <a href="./asset/prototype-figma-inDrive/PRD-inDrive.pdf" target="_blank" rel="noopener noreferrer">
                         <span class="material-symbols-rounded" aria-hidden="true">description</span> View PRD (PDF)
                     </a>
                 </div>
@@ -73,41 +118,38 @@
                     <div>
                         <h4>01. Background</h4>
                         <h3>Context</h3>
-                        <!-- Masukkan teks singkat Background di sini -->
-                        <p>A brief overview of the inDrive case study context, explaining the core motivation behind the
-                            project.</p>
+                        <p>A UI/UX case study on improving the inDrive ride-hailing experience through clearer
+                            navigation and more intuitive user flows.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="background"
                         aria-label="Read more about the background">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Problem Statement</h3>
-                        <!-- Masukkan teks singkat Challenge di sini -->
                         <p>Identifying the primary user experience friction points and interface challenges within the
                             existing application.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="problem"
                         aria-label="Read more about the challenge">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>The Solution</h3>
-                        <!-- Masukkan teks singkat Solution di sini -->
                         <p>A strategic redesign focusing on clearer visual hierarchy, streamlined booking flows, and
                             enhanced trust signals.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="solution"
                         aria-label="Read more about the solution">
-                        Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
             </div>
@@ -117,61 +159,37 @@
             <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
                 <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <i class="fa-solid fa-circle-info" aria-hidden="true"></i> Click on the design image to enlarge it.
+                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
+                    enlarge it.
                 </p>
 
                 <div class="design-gallery">
-                    <!-- GAMBAR 1 -->
                     <figure class="gallery-item reveal">
                         <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <!-- Ubah URL src gambar inDrive Anda di sini. Atribut width & height 400x800 cocok untuk tampilan Mobile (9:16) -->
-                            <img src="asset/prototype-figma-indrive/Screen1.png" alt="inDrive Interface 1" width="400"
-                                height="800" loading="lazy">
+                            <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.png"
+                                alt="inDrive Redesign Interface Preview" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
-                            <h3>Main Interface</h3>
-                            <p>Streamlined layout for faster navigation and clearer user intent.</p>
-                        </figcaption>
-                    </figure>
-
-                    <!-- GAMBAR 2 (Opsional, copy paste blok <figure> jika gambar Anda lebih dari satu) -->
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-indrive/Screen2.png" alt="inDrive Interface 2" width="400"
-                                height="800" loading="lazy">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>Booking Flow</h3>
-                            <p>Optimized interaction patterns for a frictionless ride-hailing experience.</p>
+                            <h3>Interface Preview</h3>
+                            <p>Streamlined layout aimed at faster navigation and clearer user intent. Additional case
+                                study screenshots are being prepared.</p>
                         </figcaption>
                     </figure>
                 </div>
-            </section>
-
-            <!-- Ganti href dengan link Figma prototype inDrive Anda -->
-            <section class="section-study text-center reveal"
-                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 class="mb-2">Try Interactive Prototype</h2>
-                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
-                    below to open the High-Fidelity Prototype directly in Figma.</p>
-                <a href="https://www.figma.com/proto/..." target="_blank" rel="noopener noreferrer"
-                    class="btn btn--primary">
-                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
-                </a>
             </section>
         </article>
     </main>
 
     <!-- =======================================================
-         HTML5 DATA TEMPLATES (KONTEN MODAL / POP-UP)
-         Masukkan teks lengkap studi kasus Anda di dalam <p>
+         HTML5 DATA TEMPLATES (MODAL CONTENT)
          ======================================================= -->
     <template id="tpl-background">
         <span class="modal-tag">01. Background</span>
         <h2 class="modal-title">Context & Background</h2>
         <div class="modal-body">
-            <p>Masukkan teks latar belakang (background) proyek inDrive Anda secara lengkap di sini. Penjelasan mengenai
-                apa aplikasi ini dan mengapa proyek ini dibuat.</p>
+            <p>This case study explores how the inDrive ride-hailing application user experience can be improved through
+                clearer information architecture, more intuitive navigation, and a calmer visual hierarchy.</p>
         </div>
     </template>
 
@@ -179,8 +197,8 @@
         <span class="modal-tag">02. Challenge</span>
         <h2 class="modal-title">Problem Statement</h2>
         <div class="modal-body">
-            <p>Masukkan deskripsi lengkap mengenai masalah (challenge) yang Anda temukan pada desain inDrive lama di
-                sini.</p>
+            <p>The primary goal was identifying user experience friction points and interface challenges within the
+                existing application, then determining how each one could be addressed through a focused redesign.</p>
         </div>
     </template>
 
@@ -188,18 +206,18 @@
         <span class="modal-tag">03. Innovation</span>
         <h2 class="modal-title">The Solution</h2>
         <div class="modal-body">
-            <p>Masukkan penjelasan rinci mengenai solusi desain, perbaikan alur pengguna, dan keputusan UI/UX yang Anda
-                terapkan pada proyek ini.</p>
+            <p>The redesign focuses on clearer visual hierarchy, streamlined booking flows, and enhanced trust signals,
+                making essential ride-hailing actions easier to discover and complete.</p>
         </div>
     </template>
 
     <!-- =======================================================
-         NATIVE HTML5 DIALOGS (TIDAK PERLU DIUBAH)
+         NATIVE HTML5 DIALOGS
          ======================================================= -->
     <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
         <div class="native-modal__wrapper">
             <button class="native-modal__close" aria-label="Close Modal">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                <span class="material-symbols-rounded" aria-hidden="true">close</span>
             </button>
             <div class="modal-content" id="modal-content">
                 <!-- Content injected via JS Template -->
@@ -209,15 +227,22 @@
 
     <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
         <button class="native-modal__close" aria-label="Close Image Viewer">
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
         <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
     </dialog>
 
     <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="index.html" class="footer__logo">Firman.</a>
+            <a href="index.html" class="footer__logo" aria-label="Back to homepage">Firman.</a>
             <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            <nav class="footer__links" aria-label="Case studies">
+                <a href="index.html">Home</a>
+                <a href="index.html#work">All Work</a>
+                <a href="mobile-jkn.html">Mobile JKN</a>
+                <a href="linkaja-competition.html">LinkAja</a>
+                <a href="rucas.html">Rucas.co</a>
+            </nav>
         </div>
     </footer>
 
