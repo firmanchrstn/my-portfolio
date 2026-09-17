@@ -1,6 +1,6 @@
 # Personal Portfolio 2.0 - Firman Christian Purba
 
-![Lighthouse: 100/100/100/100 Target](https://img.shields.io/badge/Lighthouse-100%20Target-brightgreen.svg)
+![Performance: Core Web Vitals Focused](https://img.shields.io/badge/Performance-Core%20Web%20Vitals%20Optimized-blue.svg)
 ![Tech Stack: Vanilla](https://img.shields.io/badge/Tech-Vanilla%20HTML%2FJS%2FCSS-blue.svg)
 ![Status: Production](https://img.shields.io/badge/Status-Production-success.svg)
 
@@ -46,7 +46,7 @@ The project is organized with a clear separation of concerns to maintain long-te
 * `/terebistrobar.html` & `/purirestocafe.html`: Front-End engineering showcases.
 * `/poster*.html`: Graphic design and creative campaign galleries.
 * `/css/style.css`: Global design tokens, layout system, and utilities.
-* `/css/portofolio.css`: Project-specific components and case study styling.
+* `/css/portfolio.css`: Project-specific components and case study styling.
 * `/js/script.js`: Centralized interaction logic and modal state management.
 * `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
 

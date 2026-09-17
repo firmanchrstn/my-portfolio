@@ -13,7 +13,7 @@
 
     --text-heading: #09090b;
     --text-body: #52525b;
-    --text-muted: #a1a1aa;
+    --text-muted: #6f6f7a;
     --color-primary-text: #5A7A1B;
 
     --border-subtle: rgba(0, 0, 0, 0.08);
@@ -43,7 +43,7 @@
     --bg-glass: rgba(9, 9, 11, 0.85);
     --text-heading: #ffffff;
     --text-body: #a1a1aa;
-    --text-muted: #71717a;
+    --text-muted: #878792;
     --color-primary-text: #9ACD32;
     --border-subtle: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.15);
@@ -322,7 +322,7 @@ h4 {
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(90%, 95vw, 900px);
+    width: min(95vw, 900px);
     height: 64px;
     background: var(--bg-glass);
     backdrop-filter: blur(12px);
@@ -492,6 +492,11 @@ h4 {
     }
 
     .portfolio__card:hover .portfolio__card-overlay {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .portfolio__card:focus-within .portfolio__card-overlay {
         opacity: 1;
         pointer-events: all;
     }
