@@ -1,145 +1,195 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="no-js scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIA 2025 ft. LinkAja | Firman Christian Purba</title>
+    <title>MIA 2025 ft. LinkAja | Firman Christian</title>
+    <meta name="description" content="Case study: The rebirth of LinkAja through the MIA 2025 UXORA competition.">
+    <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/linkaja-competition.html">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Firman Christian Purba — Portfolio">
+    <meta property="og:title" content="MIA 2025 ft. LinkAja | Firman Christian">
+    <meta property="og:description"
+        content="Case study: The rebirth of LinkAja through the MIA 2025 UXORA competition.">
+    <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/linkaja-competition.html">
+    <meta property="og:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-linkaja/Splashscreen%201.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MIA 2025 ft. LinkAja | Firman Christian">
+    <meta name="twitter:description"
+        content="Case study: The rebirth of LinkAja through the MIA 2025 UXORA competition.">
+    <meta name="twitter:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-linkaja/Splashscreen%201.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="asset/pp.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portofolio.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "MIA 2025 ft. LinkAja",
+        "headline": "The rebirth of LinkAja through the MIA 2025 UXORA competition",
+        "description": "UX strategy case study introducing four pillars of innovation (TapAja, InvestasiAja, ChatAja, MainAja) for LinkAja.",
+        "url": "https://firmanchrstn.github.io/my-portfolio/linkaja-competition.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Firman Christian Purba",
+            "url": "https://firmanchrstn.github.io/my-portfolio/"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            document.documentElement.classList.remove('no-js');
+        })();
+    </script>
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="../index.html" class="nav__logo">Firman.</a>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="../index.html#home" class="nav__link">Home</a></li>
-                    <li><a href="../index.html#portfolio" class="nav__link active">Work</a></li>
-                    <li><a href="../index.html#about" class="nav__link">About</a></li>
-                    <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+                    <li><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#about" class="nav__link">About</a></li>
+                    <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-                <button class="nav__close" id="nav-close" aria-label="Close menu"><span
-                        class="material-symbols-rounded">close</span></button>
+                <button class="nav__close" id="nav-close" aria-label="Close menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
+                </button>
             </div>
             <div class="nav__actions">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span
-                        class="sun-icon material-symbols-rounded">light_mode</span><span
-                        class="moon-icon material-symbols-rounded">dark_mode</span></button>
-                <a href="../index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"><span
-                        class="material-symbols-rounded">menu_open</span></button>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
+                </button>
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">MIA 2025 Competition</span>
             <h1 class="large-title reveal">MIA 2025 ft. LinkAja</h1>
-
             <div class="details__meta reveal">
                 <div class="meta__item">
                     <small>Project Document</small>
                     <a href="./asset/prototype-figma-linkaja/UIA_FDSMIA_UXORA.pdf" target="_blank"
-                        style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-heading); font-weight: 600; margin-top: 4px; transition: color 0.3s ease;">
-                        <span class="material-symbols-rounded"
-                            style="color: var(--color-primary); font-size: 1.2rem;">description</span>
-                        <span onmouseover="this.style.color='var(--color-primary)'"
-                            onmouseout="this.style.color='var(--text-heading)'">View PRD (PDF)</span>
+                        rel="noopener noreferrer">
+                        <span class="material-symbols-rounded" aria-hidden="true">description</span> View PRD (PDF)
                     </a>
                 </div>
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
                 <div class="summary__card reveal">
                     <div>
                         <h4>Overview</h4>
                         <h3>Project Overview</h3>
                         <p>The rebirth of LinkAja was initially conceived as a competition project developed by our
-                            team, UXORA,
-                            through the Multimedia In Action (MIA) 2025 competition held by UPN ‘Veteran’ Jakarta. The
-                            competition commenced on 29 October 2025, allowing us to explore the world of UI/UX Design
-                            extensively.</p>
+                            team, UXORA, through the MIA 2025 competition.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="background" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="background" aria-label="Read more about overview">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>The Problem</h4>
                         <h3>Problem Statement</h3>
                         <p>Despite being a strategic collaboration of State-Owned Enterprises (BUMN), LinkAja faced
-                            significant
-                            user experience hurdles:</p>
+                            significant user experience hurdles.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="problem" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>The Solution</h4>
                         <h3>Four Pillars of Innovation</h3>
                         <p>We introduced four key features to increase both the pragmatic and hedonic value of the
-                            application:
-                        </p>
+                            application.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="solution" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="solution"
+                        aria-label="Read more about the solution">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal">
                     <div>
                         <h4>Key Takeaways</h4>
                         <h3>Key Takeaways</h3>
                         <p>This project highlighted the importance of balancing functionality with a "delightful" user
-                            experience. By simplifying the Information Architecture and introducing gamification, we
-                            aimed to
-                            turn a functional tool into an engaging financial ecosystem.</p>
+                            experience through simplified IA and gamification.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="takeaways" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="takeaways"
+                        aria-label="Read more about key takeaways">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>Design Focus</h4>
                         <h3>Disclaimer/Role Focus</h3>
-                        <p>While this project was a collaborative effort by UXORA, my primary focus and contribution in
-                            the
-                            prototyping phase centered on the ChatAja feature. To provide a clear and in-depth view of
-                            my design
-                            logic, this section will showcase the end-to-end user journey for the AI-powered assistant.
-                        </p>
+                        <p>My primary focus and contribution in the prototyping phase centered on the ChatAja feature,
+                            showcasing end-to-end user journeys for the AI-powered assistant.</p>
                     </div>
-                    <div class="btn-text open-detail" data-target="focus" tabindex="0">Read More <i
-                            class="fa-solid fa-arrow-right"></i></div>
+                    <button class="btn-text open-detail" data-target="focus" aria-label="Read more about role focus">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
             </div>
         </section>
 
         <article class="study-container">
-            <section class="section-study">
+            <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i> Click on the design image to enlarge it.
+                <p class="text-accent mb-3 d-flex align-center gap-2">
+                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
+                    enlarge it.
                 </p>
 
                 <div class="design-gallery">
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/Splashscreen 1.png"
-                                alt="Brand Identity & Security Intro" loading="lazy">
+                                alt="Brand Identity & Security Intro" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Brand Identity & Security Intro</h3>
@@ -148,10 +198,10 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/Splashscreen 2.png" alt="Real-Time Alert Engagement"
-                                loading="lazy">
+                                width="400" height="800" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Real-Time Alert Engagement</h3>
@@ -160,10 +210,11 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/Splashscreen 3.png"
-                                alt="Visual Onboarding Experience" loading="lazy">
+                                alt="Visual Onboarding Experience" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Visual Onboarding Experience</h3>
@@ -172,10 +223,10 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - Lobby.png" alt="ChatAja Main Dashboard"
-                                loading="lazy">
+                                width="400" height="800" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>ChatAja Main Dashboard</h3>
@@ -184,10 +235,10 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - Voice.png" alt="ChatAja Voice Mode"
-                                loading="lazy">
+                                width="400" height="800" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>ChatAja Voice Mode</h3>
@@ -196,10 +247,10 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - ChatAja.png" alt="ChatAja Main Chat"
-                                loading="lazy">
+                                width="400" height="800" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>ChatAja Main Chat</h3>
@@ -208,10 +259,11 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - FAQ (Home).png"
-                                alt="Intelligent Knowledge Hub" loading="lazy">
+                                alt="Intelligent Knowledge Hub" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Intelligent Knowledge Hub</h3>
@@ -220,10 +272,10 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat.png" alt="ChatAja Chat History"
-                                loading="lazy">
+                                width="400" height="800" loading="lazy" decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>ChatAja Chat History</h3>
@@ -232,10 +284,11 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 1.png"
-                                alt="Frictionless Authentication" loading="lazy">
+                                alt="Frictionless Authentication" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Frictionless Authentication</h3>
@@ -244,10 +297,11 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
                             <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 2.png"
-                                alt="Guided Registration Flow" loading="lazy">
+                                alt="Guided Registration Flow" width="400" height="800" loading="lazy"
+                                decoding="async">
                         </div>
                         <figcaption class="gallery-label">
                             <h3>Guided Registration Flow</h3>
@@ -258,107 +312,107 @@
                 </div>
             </section>
 
-            <section class="section-study text-center"
+            <section class="section-study text-center reveal"
                 style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
                 <h2 class="mb-2">Try Interactive Prototype</h2>
                 <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
                     below to open the High-Fidelity Prototype directly in Figma.</p>
-
                 <a href="https://www.figma.com/proto/owamxNCRrQu01uSa2cUEnX/MIA-2025-ChatAja?node-id=28-1690&p=f&viewport=238%2C36%2C0.06&t=XX8dujzac3F7tnWs-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=95%3A863&show-proto-sidebar=1"
                     target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                    <span class="material-symbols-rounded">open_in_new</span> Open Figma Prototype
+                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
                 </a>
             </section>
         </article>
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
-        <div class="modal-card">
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal"><i
-                    class="fa-solid fa-xmark"></i></button>
+    <!-- Dialog Content Templates -->
+    <template id="tpl-background">
+        <span class="modal-tag">Overview</span>
+        <h2 class="modal-title">Project Overview</h2>
+        <div class="modal-body">
+            <p>The rebirth of LinkAja was initially conceived as a competition project developed by our team, UXORA,
+                through the Multimedia In Action (MIA) 2025 competition held by UPN ‘Veteran’ Jakarta. The competition
+                commenced on 29 October 2025, allowing us to explore the world of UI/UX Design extensively.</p>
+        </div>
+    </template>
+
+    <template id="tpl-problem">
+        <span class="modal-tag">The Problem</span>
+        <h2 class="modal-title">Problem Statements</h2>
+        <div class="modal-body">
+            <p>Despite being a strategic collaboration between State-Owned Enterprises (BUMN), LinkAja faced major UX
+                challenges, including low user satisfaction ratings, poor novelty perception based on UEQ research,
+                cluttered and unintuitive interface design, and the lack of optimized essential features such as
+                biometric login and simplified phone number management.</p>
+        </div>
+    </template>
+
+    <template id="tpl-solution">
+        <span class="modal-tag">The Solution</span>
+        <h2 class="modal-title">Proposed Solution</h2>
+        <div class="modal-body">
+            <p>To enhance both pragmatic and hedonic value, we introduced four key features: <strong>TapAja</strong> for
+                seamless NFC-based payments, <strong>InvestasiAja</strong> to simplify access to digital
+                micro-investments, <strong>ChatAja</strong> as an AI-powered assistant for instant issue resolution, and
+                <strong>MainAja</strong> to improve user engagement through gamification and reward-based interactions.
+            </p>
+        </div>
+    </template>
+
+    <template id="tpl-takeaways">
+        <span class="modal-tag">Key Takeaways</span>
+        <h2 class="modal-title">Key Takeaways</h2>
+        <div class="modal-body">
+            <p>This project highlighted the importance of balancing functionality with a "delightful" user experience.
+                By simplifying the Information Architecture and introducing gamification, we aimed to turn a functional
+                tool into an engaging financial ecosystem.</p>
+        </div>
+    </template>
+
+    <template id="tpl-focus">
+        <span class="modal-tag">Design Focus</span>
+        <h2 class="modal-title">Disclaimer/Role Focus</h2>
+        <div class="modal-body">
+            <p>As part of the collaborative UXORA project, my primary contribution during the prototyping phase focused
+                on <strong>ChatAja</strong>, an AI-powered assistant designed to simplify access to financial services
+                through natural language interaction. The feature provides instant 24/7 support, helps users resolve
+                transaction and account-related issues efficiently, and delivers a clean chat-based interface aligned
+                with the minimalist “LinkAja Reborn” design system.</p>
+        </div>
+    </template>
+
+    <!-- Dialog Native HTML5 -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <span class="material-symbols-rounded" aria-hidden="true">close</span>
+            </button>
             <div class="modal-content" id="modal-content"></div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="background">
-            <span class="modal-tag">Overview</span>
-            <h2 class="modal-title">Project Overview</h2>
-            <div class="modal-body">
-                <p>The rebirth of LinkAja was initially conceived as a competition project developed by our team, UXORA,
-                    through the Multimedia In Action (MIA) 2025 competition held by UPN ‘Veteran’ Jakarta. The
-                    competition commenced on 29 October 2025, allowing us to explore the world of UI/UX Design
-                    extensively.</p>
-            </div>
-        </div>
-    </div>
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+    </dialog>
 
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="problem">
-            <span class="modal-tag">The Problem</span>
-            <h2 class="modal-title">Problem Statements</h2>
-            <div class="modal-body">
-                <p>Despite being a strategic collaboration between State-Owned Enterprises (BUMN), LinkAja faced major
-                    UX challenges, including low user satisfaction ratings, poor novelty perception based on UEQ
-                    research, cluttered and unintuitive interface design, and the lack of optimized essential features
-                    such as biometric login and simplified phone number management.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="solution">
-            <span class="modal-tag">The Solution</span>
-            <h2 class="modal-title">Proposed Solution</h2>
-            <div class="modal-body">
-                <p>To enhance both pragmatic and hedonic value, we introduced four key features: <strong>TapAja</strong>
-                    for seamless NFC-based payments, <strong>InvestasiAja</strong> to simplify access to digital
-                    micro-investments, <strong>ChatAja</strong> as an AI-powered assistant for instant issue resolution,
-                    and <strong>MainAja</strong> to improve user engagement through gamification and reward-based
-                    interactions.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="takeaways">
-            <span class="modal-tag">Key Takeaways</span>
-            <h2 class="modal-title">Key Takeaways</h2>
-            <div class="modal-body">
-                <p>This project highlighted the importance of balancing functionality with a "delightful" user
-                    experience. By simplifying the Information Architecture and introducing gamification, we aimed to
-                    turn a functional tool into an engaging financial ecosystem.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-data" style="display: none;" aria-hidden="true">
-        <div data-id="focus">
-            <span class="modal-tag">Design Focus</span>
-            <h2 class="modal-title">Disclaimer/Role Focus</h2>
-            <div class="modal-body">
-                <p>As part of the collaborative UXORA project, my primary contribution during the prototyping phase
-                    focused on <strong>ChatAja</strong>, an AI-powered assistant designed to simplify access to
-                    financial services through natural language interaction. The feature provides instant 24/7 support,
-                    helps users resolve transaction and account-related issues efficiently, and delivers a clean
-                    chat-based interface aligned with the minimalist “LinkAja Reborn” design system.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">&times;</span>
-        <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-    </div>
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="../index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <a href="index.html" class="footer__logo" aria-label="Back to homepage">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            <nav class="footer__links" aria-label="Case studies">
+                <a href="index.html">Home</a>
+                <a href="index.html#work">All Work</a>
+                <a href="mobile-jkn.html">Mobile JKN</a>
+                <a href="rucas.html">Rucas.co</a>
+                <a href="terebistrobar.html">Terre Bistro &amp; Bar</a>
+            </nav>
         </div>
     </footer>
 
-    <script src="../js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

@@ -1,426 +1,325 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="no-js scroll-smooth" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rucas.co | Firman Christian</title>
+    <meta name="description"
+        content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/rucas.html">
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Firman Christian Purba — Portfolio">
+    <meta property="og:title" content="Rucas.co | Firman Christian">
+    <meta property="og:description"
+        content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/rucas.html">
+    <meta property="og:image" content="https://firmanchrstn.github.io/my-portfolio/asset/rucas/thumbnail.rucas.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rucas.co | Firman Christian">
+    <meta name="twitter:description"
+        content="A conceptual UI/UX design exploration for Rucas, prioritizing brand storytelling and frictionless purchasing flow.">
+    <meta name="twitter:image" content="https://firmanchrstn.github.io/my-portfolio/asset/rucas/thumbnail.rucas.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="asset/pp.jpeg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
 
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portofolio.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
 
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Rucas.co Digital Store",
+        "headline": "A conceptual e-commerce design prioritizing brand storytelling and a frictionless purchasing flow",
+        "description": "UI/UX design exploration for Rucas, a premium local streetwear brand with exclusive limited-drop collections.",
+        "url": "https://firmanchrstn.github.io/my-portfolio/rucas.html",
+        "creator": {
+            "@type": "Person",
+            "name": "Firman Christian Purba",
+            "url": "https://firmanchrstn.github.io/my-portfolio/"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (t) document.documentElement.setAttribute('data-theme', t);
+            } catch (e) { }
+            document.documentElement.classList.remove('no-js');
+        })();
+    </script>
 </head>
 
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo">Firman.</a>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
 
+    <header class="header" id="header" role="banner">
+        <nav class="nav container" aria-label="Main Navigation">
+            <a href="index.html" class="nav__logo" aria-label="Home">Firman.</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li><a href="index.html#home" class="nav__link">Home</a></li>
-                    <li><a href="index.html#portfolio" class="nav__link active">Work</a></li>
+                    <li><a href="index.html#work" class="nav__link active">Work</a></li>
                     <li><a href="index.html#about" class="nav__link">About</a></li>
                     <li><a href="index.html#contact" class="nav__link">Contact</a></li>
                 </ul>
-
                 <button class="nav__close" id="nav-close" aria-label="Close menu">
-                    <span class="material-symbols-rounded">close</span>
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
                 </button>
             </div>
-
             <div class="nav__actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="sun-icon material-symbols-rounded">light_mode</span>
-                    <span class="moon-icon material-symbols-rounded">dark_mode</span>
+                    <span class="sun-icon material-symbols-rounded" aria-hidden="true">light_mode</span>
+                    <span class="moon-icon material-symbols-rounded" aria-hidden="true">dark_mode</span>
                 </button>
-
-                <a href="index.html#contact" class="btn btn--primary hidden-mobile">
-                    Let's Talk
-                </a>
-
-                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu">
-                    <span class="material-symbols-rounded">menu_open</span>
+                <a href="index.html#contact" class="btn btn--primary hidden-mobile">Let's Talk</a>
+                <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="nav-menu">
+                    <span class="material-symbols-rounded" aria-hidden="true">menu_open</span>
                 </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main id="main-content" class="main">
         <header class="project-detail__header container">
             <span class="section__subtitle reveal">Web Design</span>
-            <h1 class="large-title reveal">Rucas.co</h1>.
-            
+            <h1 class="large-title reveal">Rucas.co</h1>
             <div class="details__meta reveal">
                 <div class="meta__item">
-                    <small>Project Document</small>
-                    <a href="404.html" target="_blank"
-                        style="display: inline-flex; align-items: center; gap: 6px; color: var(--text-heading); font-weight: 600; margin-top: 4px; transition: color 0.3s ease;">
-                        <span class="material-symbols-rounded"
-                            style="color: var(--color-primary); font-size: 1.2rem;">description</span>
-                        <span onmouseover="this.style.color='var(--color-primary)'"
-                            onmouseout="this.style.color='var(--text-heading)'">View PRD (PDF)</span>
-                    </a>
+                    <small>Type</small>
+                    <p>UI/UX Concept</p>
+                </div>
+                <div class="meta__item">
+                    <small>Tools</small>
+                    <p>Figma</p>
                 </div>
             </div>
         </header>
 
-        <section class="container">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
-
                 <div class="summary__card reveal">
                     <div>
                         <h4>Overview</h4>
                         <h3>rucas.co Project Overview</h3>
-                        <p>
-                            A conceptual UI/UX design exploration for Rucas, a premium local streetwear brand known for
-                            its exclusive, limited-drop collections. The objective was to design a clean, modern, and
-                            highly scannable digital storefront that prioritizes brand storytelling and a frictionless
-                            purchasing flow.
-                        </p>
+                        <p>A conceptual UI/UX design exploration for Rucas, a premium local streetwear brand known for
+                            its exclusive, limited-drop collections.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="overview" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="overview" aria-label="Read more about overview">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>The Challenge</h4>
                         <h3>The Challenge</h3>
-                        <p>
-                            High-traffic streetwear releases require a fast and intuitive user interface. The challenge
-                            was to design a 3-page e-commerce landing page (Home, About, and Products) that builds
-                            immediate trust, showcases high-quality apparel, and allows users to add items to their cart
-                            without being redirected away from the product catalog. The design needed to be visually
-                            striking yet highly structured for a seamless developer handoff.
-                        </p>
+                        <p>High-traffic streetwear releases require a fast and intuitive user interface to manage
+                            high-demand product drops efficiently.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="the-challenge" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="the-challenge"
+                        aria-label="Read more about the challenge">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>The Outcome</h3>
-                        <p>
-                            The result is a sleek, conversion-focused interface that bridges the gap between elegant
-                            UI/UX design and practical application architecture. It delivers a premium shopping
-                            experience that matches the energy of the Rucas brand while maintaining strict usability
-                            standards.
-                        </p>
+                        <p>The result is a sleek, conversion-focused interface that bridges the gap between elegant
+                            UI/UX design and practical application architecture.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="the-outcome" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="the-outcome"
+                        aria-label="Read more about the outcome">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
                 <div class="summary__card reveal">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>Brand Identity & Minimalism</h3>
-                        <p>
-                            I utilized a monochromatic color palette (black, white, and light grey) to emulate a
-                            high-end fashion editorial feel. This heavy use of negative space ensures the user's focus
-                            is drawn entirely to the product photography and the bold, high-contrast typography.
-                        </p>
+                        <p>I utilized a monochromatic color palette (black, white, and light grey) to emulate a high-end
+                            fashion editorial feel.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="part1.1" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="part1-1"
+                        aria-label="Read more about brand identity">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 100ms;">
+                <div class="summary__card reveal delay-1">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>Frictionless Cart Interaction</h3>
-                        <p>
-                            Instead of forcing users to a separate cart page, I designed a <strong>Dimmed Overlay Cart
-                                Modal</strong>.
-                            This allows users to review their order summary and adjust quantities while maintaining the
-                            context of the product page in the background, significantly reducing friction in the user
-                            journey.
-                        </p>
+                        <p>Instead of forcing users to a separate cart page, I designed a Dimmed Overlay Cart Modal to
+                            reduce friction in the user journey.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="part1.2" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="part1-2"
+                        aria-label="Read more about cart interaction">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
 
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
+                <div class="summary__card reveal delay-2">
                     <div>
                         <h4>The Solution & UX Strategy</h4>
                         <h3>Strategic Scarcity</h3>
-                        <p>
-                            Acknowledging the brand's business model, I integrated clear "Sold Out" badges directly onto
-                            the product grid and added transparent purchase-limit warnings inside the cart to manage
-                            user expectations during high-demand drops.
-                        </p>
+                        <p>I integrated clear "Sold Out" badges directly onto the product grid and added transparent
+                            purchase-limit warnings.</p>
                     </div>
-
-                    <div class="btn-text open-detail" data-target="part1.3" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
+                    <button class="btn-text open-detail" data-target="part1-3"
+                        aria-label="Read more about strategic scarcity">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
                 </div>
-
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
-                    <div>
-                        <h4>Key Features</h4>
-                        <h3>Hero Section</h3>
-                        <p>
-                            A high-impact visual introduction that communicates the brand's exclusive vibe within the
-                            first 5 seconds.
-                        </p>
-                    </div>
-
-                    <div class="btn-text open-detail" data-target="part2.1" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
-                    <div>
-                        <h4>Key Features</h4>
-                        <h3>Bento-Grid Product Layout</h3>
-                        <p>
-                            A clean, symmetrical grid system that enhances scannability and adapts well to modern
-                            responsive web frameworks.
-                        </p>
-                    </div>
-
-                    <div class="btn-text open-detail" data-target="part2.2" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <div class="summary__card reveal" style="transition-delay: 200ms;">
-                    <div>
-                        <h4>Key Features</h4>
-                        <h3>Reusable UI Components</h3>
-                        <p>
-                            Buttons, typography styles, and spacing rules were designed with front-end implementation in
-                            mind, ensuring the UI is ready to be translated into clean code.
-                        </p>
-                    </div>
-
-                    <div class="btn-text open-detail" data-target="part2.3" tabindex="0">
-                        Read More <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <article class="study-container">
-
-            <section class="section-study">
+            <section class="section-study" aria-label="Design Showcase">
                 <h2 class="mb-1">Design Showcase</h2>
-
-                <p class="text-accent mb-3 d-flex align-center gap-2" style="font-size: 0.9rem;">
-                    <i class="fa-solid fa-circle-info"></i>
-                    Click on the design image to enlarge it.
+                <p class="text-accent mb-3 d-flex align-center gap-2">
+                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
+                    enlarge it.
                 </p>
 
                 <div class="design-gallery">
-
-                    <figure class="gallery-item">
-                        <div class="img-wrapper">
-                            <img src="asset/rucas/thumbnail.rucas.png" alt="Camera Permission" loading="lazy">
+                    <figure class="gallery-item reveal">
+                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
+                            <img src="asset/rucas/thumbnail.rucas.png" alt="Rucas UI Interface" width="800" height="600"
+                                loading="lazy" decoding="async">
                         </div>
                     </figure>
-
                 </div>
             </section>
 
-            <section class="section-study text-center"
+            <section class="section-study text-center reveal"
                 style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-
                 <h2 class="mb-2">Try Interactive Prototype</h2>
-
-                <p class="text-muted max-w-md mb-4">
-                    See how this design solution works in real-time. Click the button below to open the
-                    High-Fidelity Prototype directly in Figma.
-                </p>
-
-                <a href="https://www.figma.com/proto/eoIpq1I2FdgTx0UJhlu3HC/Rucas.co?node-id=1-205&viewport=-93%2C147%2C0.13&t=2oAdBW6bSa3v1C5H-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A205"
-                    target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-
-                    <span class="material-symbols-rounded">open_in_new</span>
-                    Open Figma Prototype
+                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
+                    below to open the High-Fidelity Prototype directly in Figma.</p>
+                <a href="https://www.figma.com/proto/eoIpq1I2FdgTx0UJhlu3HC/Rucas.co" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--primary">
+                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
                 </a>
             </section>
-
         </article>
     </main>
 
-    <div class="modal-backdrop" id="study-modal">
-        <div class="modal-card">
+    <!-- HTML5 Templates -->
+    <template id="tpl-overview">
+        <span class="modal-tag">Overview</span>
+        <h2 class="modal-title">Project Overview</h2>
+        <div class="modal-body">
+            <p>A conceptual UI/UX design exploration for <strong>Rucas</strong>, a premium local streetwear brand known
+                for its exclusive, limited-drop collections. The objective was to design a clean, modern, and highly
+                scannable digital storefront that prioritizes brand storytelling and a frictionless purchasing flow.</p>
+        </div>
+    </template>
 
-            <button class="modal-close" id="modal-close" aria-label="Close Detail Modal">
-                <i class="fa-solid fa-xmark"></i>
+    <template id="tpl-the-challenge">
+        <span class="modal-tag">The Challenge</span>
+        <h2 class="modal-title">The Challenge</h2>
+        <div class="modal-body">
+            <p>High-traffic streetwear releases require a fast and intuitive user interface. The challenge was to design
+                a 3-page e-commerce landing page (Home, About, and Products) that builds immediate trust, showcases
+                high-quality apparel, and allows users to add items to their cart without being redirected away from the
+                product catalog. The design needed to be visually striking yet highly structured for a seamless
+                developer handoff.</p>
+        </div>
+    </template>
+
+    <template id="tpl-the-outcome">
+        <span class="modal-tag">The Outcome</span>
+        <h2 class="modal-title">The Outcome</h2>
+        <div class="modal-body">
+            <p>The result is a sleek, conversion-focused interface that bridges the gap between elegant UI/UX design and
+                practical application architecture. It delivers a premium shopping experience that matches the energy of
+                the Rucas brand while maintaining strict usability standards.</p>
+        </div>
+    </template>
+
+    <template id="tpl-part1-1">
+        <span class="modal-tag">The Solution & UX Strategy</span>
+        <h2 class="modal-title">Brand Identity & Minimalism</h2>
+        <div class="modal-body">
+            <p>I utilized a monochromatic color palette (black, white, and light grey) to emulate a high-end fashion
+                editorial feel. This heavy use of negative space ensures the user's focus is drawn entirely to the
+                product photography and the bold, high-contrast typography.</p>
+        </div>
+    </template>
+
+    <template id="tpl-part1-2">
+        <span class="modal-tag">The Solution & UX Strategy</span>
+        <h2 class="modal-title">Frictionless Cart Interaction</h2>
+        <div class="modal-body">
+            <p>Instead of forcing users to a separate cart page, I designed a <strong>Dimmed Overlay Cart
+                    Modal</strong>. This allows users to review their order summary and adjust quantities while
+                maintaining the context of the product page in the background, significantly reducing friction in the
+                user journey.</p>
+        </div>
+    </template>
+
+    <template id="tpl-part1-3">
+        <span class="modal-tag">The Solution & UX Strategy</span>
+        <h2 class="modal-title">Strategic Scarcity</h2>
+        <div class="modal-body">
+            <p>Acknowledging the brand's business model, I integrated clear "Sold Out" badges directly onto the product
+                grid and added transparent purchase-limit warnings inside the cart to manage user expectations during
+                high-demand drops.</p>
+        </div>
+    </template>
+
+    <!-- Native Dialogs -->
+    <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
+        <div class="native-modal__wrapper">
+            <button class="native-modal__close" aria-label="Close Modal">
+                <span class="material-symbols-rounded" aria-hidden="true">close</span>
             </button>
-
             <div class="modal-content" id="modal-content"></div>
         </div>
-    </div>
+    </dialog>
 
-    <div id="modal-data" style="display: none;" aria-hidden="true">
+    <dialog id="lightbox-modal" class="native-modal native-lightbox" aria-label="Image Viewer">
+        <button class="native-modal__close" aria-label="Close Image Viewer">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+    </dialog>
 
-        <div data-id="overview">
-            <span class="modal-tag">Overview</span>
-
-            <h2 class="modal-title">Project Overview</h2>
-
-            <div class="modal-body">
-                <p>
-                    A conceptual UI/UX design exploration for <strong>Rucas</strong>, a premium local streetwear brand
-                    known for its
-                    exclusive, limited-drop collections. The objective was to design a clean, modern, and highly
-                    scannable digital storefront that prioritizes brand storytelling and a frictionless purchasing flow.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="the-challenge">
-            <span class="modal-tag">The Challenge</span>
-
-            <h2 class="modal-title">The Challenge</h2>
-
-            <div class="modal-body">
-                <p>
-                    High-traffic streetwear releases require a fast and intuitive user interface. The challenge was to
-                    design a 3-page e-commerce landing page (Home, About, and Products) that builds immediate trust,
-                    showcases high-quality apparel, and allows users to add items to their cart without being redirected
-                    away from the product catalog. The design needed to be visually striking yet highly structured for a
-                    seamless developer handoff.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="the-outcome">
-            <span class="modal-tag">The Outcome</span>
-
-            <h2 class="modal-title">The Outcome</h2>
-
-            <div class="modal-body">
-                <p>
-                    The result is a sleek, conversion-focused interface that bridges the gap between elegant UI/UX
-                    design and practical application architecture. It delivers a premium shopping experience that
-                    matches the energy of the Rucas brand while maintaining strict usability standards.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part1.1">
-            <span class="modal-tag">The Solution & UX Strategy</span>
-
-            <h2 class="modal-title">Brand Identity & Minimalism</h2>
-
-            <div class="modal-body">
-                <p>
-                    I utilized a monochromatic color palette (black, white, and light grey) to emulate a high-end
-                    fashion editorial feel. This heavy use of negative space ensures the user's focus is drawn entirely
-                    to the product photography and the bold, high-contrast typography.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part1.2">
-            <span class="modal-tag">The Solution & UX Strategy</span>
-
-            <h2 class="modal-title">Frictionless Cart Interaction</h2>
-
-            <div class="modal-body">
-                <p>
-                    Instead of forcing users to a separate cart page, I designed a <strong>Dimmed Overlay Cart
-                        Modal</strong>. This
-                    allows users to review their order summary and adjust quantities while maintaining the context of
-                    the product page in the background, significantly reducing friction in the user journey.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part1.3">
-            <span class="modal-tag">The Solution & UX Strategy</span>
-
-            <h2 class="modal-title">Strategic Scarcity</h2>
-
-            <div class="modal-body">
-                <p>
-                    Acknowledging the brand's business model, I integrated clear "Sold Out" badges directly onto the
-                    product grid and added transparent purchase-limit warnings inside the cart to manage user
-                    expectations during high-demand drops.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part2.1">
-            <span class="modal-tag">Key Features</span>
-
-            <h2 class="modal-title">Hero Section</h2>
-
-            <div class="modal-body">
-                <p>
-                    A high-impact visual introduction that communicates the brand's exclusive vibe within the first 5
-                    seconds.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part2.2">
-            <span class="modal-tag">Key Features</span>
-
-            <h2 class="modal-title">Bento-Grid Product Layout</h2>
-
-            <div class="modal-body">
-                <p>
-                    A clean, symmetrical grid system that enhances scannability and adapts well to modern responsive web
-                    frameworks.
-                </p>
-            </div>
-        </div>
-
-        <div data-id="part2.3">
-            <span class="modal-tag">Key Features</span>
-
-            <h2 class="modal-title">Component-Driven Design</h2>
-
-            <div class="modal-body">
-                <p>
-                    Buttons, typography styles, and spacing rules were designed with front-end implementation in mind,
-                    ensuring the UI is ready to be translated into clean code.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox__close" id="lightbox-close" aria-label="Close Image Viewer">
-            &times;
-        </span>
-
-        <img src="" alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
-    </div>
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container footer__content">
-            <a href="index.html" class="footer__logo">Firman.</a>
-            <p class="footer__text">©2026 Firman Christian Purba.</p>
+            <a href="index.html" class="footer__logo" aria-label="Back to homepage">Firman.</a>
+            <p class="footer__text">&copy; 2026 Firman Christian Purba. All rights reserved.</p>
+            <nav class="footer__links" aria-label="Case studies">
+                <a href="index.html">Home</a>
+                <a href="index.html#work">All Work</a>
+                <a href="mobile-jkn.html">Mobile JKN</a>
+                <a href="linkaja-competition.html">LinkAja</a>
+                <a href="terebistrobar.html">Terre Bistro &amp; Bar</a>
+            </nav>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
