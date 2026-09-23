@@ -39,6 +39,8 @@
     const $ = (id) => document.getElementById(id);
     const pad = (n) => String(n).padStart(2, '0');
     const nowTime = () => new Date().toTimeString().slice(0, 8);
+    const esc = (s) => String(s).replace(/[&<>"']/g,
+        (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
     /* ----------------------------- STATE ------------------------------ */
     const state = {
@@ -48,15 +50,13 @@
         remaining: 0,
         status: 'empty',           // empty | waiting | called | late | done
         waOptIn: false,
-        waSubscribed: false,
         running: true,
         speed: 1,
         travel: 18,
-        lastUpdate: null,
-        lastRule: null,
-        lastEta: null,
+        lastUpdate: null,          // displayed sync time (HH:MM:SS)
+        lastSyncAt: null,          // timestamp of last successful sync
         lastWaRule: null,
-        calledAt: null
+        lateTimer: null
     };
 
     /* --------------------------- ELEMENTS ----------------------------- */
@@ -146,7 +146,7 @@
             await delay(80 + Math.random() * 100);
             if (isOffline()) throw new Error('NETWORK_OFFLINE');
             const depart = predicted - (travel + BUFFER);
-            const name = (els.patientName.value || 'Bapak/Ibu').trim();
+            const name = esc((els.patientName.value || 'Bapak/Ibu').trim());
             let rule, message;
             if (depart > 30) {
                 rule = 'belum';
@@ -276,7 +276,7 @@
         const li = document.createElement('li');
         li.innerHTML =
             `<span class="wa-ico material-symbols-rounded ${sent ? 'is-sent' : 'is-skipped'}">${sent ? 'chat' : 'block'}</span>` +
-            `<div><span class="wa-time">${nowTime()} → ${els.phoneInput.value || 'WhatsApp'}</span>` +
+            `<div><span class="wa-time">${nowTime()} → ${esc(els.phoneInput.value || 'WhatsApp')}</span>` +
             `<span class="wa-msg">${text}</span></div>`;
         els.waLogList.prepend(li);
         while (els.waLogList.children.length > 12) {
@@ -296,17 +296,9 @@
 
     const closeBanner = () => {
         els.connBanner.hidden = true;
-        const now = Date.now();
-        if (state.lastUpdate && now - state.lastUpdate > POLL_MS + 1800) {
-            els.staleHint.hidden = false;
-        } else {
-            els.staleHint.hidden = true;
-        }
     };
 
     /* --------------------------- SYNC (POLL) -------------------------- */
-    const prevEta = { eta: null };
-
     async function refresh() {
         if (!state.running) return;
         if (state.status === 'empty') {
@@ -314,7 +306,7 @@
             return;
         }
         if (state.status === 'done') {
-            state.lastUpdate = nowTime();
+            state.lastSyncAt = Date.now();
             els.lastUpdate.textContent = `Update: ${state.lastUpdate}`;
             closeBanner();
             return;
@@ -326,7 +318,7 @@
             const rule = await api.evaluateRule(pred, travel);
 
             state.lastUpdate = nowTime();
-            state.lastRule = rule.rule;
+            state.lastSyncAt = Date.now();
             els.lastUpdate.textContent = `Update: ${state.lastUpdate}`;
             closeBanner();
 
@@ -341,7 +333,7 @@
             // only send WA on rule transition while waiting, not every poll
             if (state.status === 'waiting' && state.waOptIn && rule.message &&
                 rule.rule !== 'belum' && rule.rule !== state.lastWaRule) {
-                const res = await api.sendWhatsApp(rule.message);
+                await api.sendWhatsApp(rule.message);
                 addWaLog(rule.message, true);
                 addHistory([`WhatsApp terkirim (<span class="rule-tag">${RULE_META[rule.rule].label}</span>)`]);
                 state.lastWaRule = rule.rule;
@@ -352,34 +344,36 @@
     }
 
     /* --------------------------- QUEUE TICK --------------------------- */
-    function tickQueue() {
-        if (!state.running || state.status !== 'waiting') return;
+    function advanceQueue() {
+        if (state.status !== 'waiting') return;
         state.remaining = Math.max(0, state.remaining - state.speed);
         state.servedNumber += state.speed;
 
         if (state.remaining <= 0) {
             state.remaining = 0;
             setStatus('called');
-            state.calledAt = Date.now();
+            els.calledActions.hidden = false;
             renderDashboard(null);
             addHistory([`Nomor <strong>${fmtNumber()}</strong> dipanggil — silakan menuju loket`]);
             if (state.waOptIn) {
                 const msg = `Panggilan: Nomor ${fmtNumber()} Anda dipanggil di ${POLI[state.poli].label}. Silakan menuju loket pendaftaran.`;
-                api.sendWhatsApp(msg).then(() => {
-                    addWaLog(msg, true);
-                    addHistory(['WhatsApp terkirim (nomor Anda dipanggil)']);
-                }).catch(() => openBanner());
+                api.sendWhatsApp(msg)
+                    .then(() => {
+                        addWaLog(msg, true);
+                        addHistory(['WhatsApp terkirim (nomor Anda dipanggil)']);
+                    })
+                    .catch(() => openBanner());
             }
             clearTimeout(state.lateTimer);
             state.lateTimer = setTimeout(() => {
                 if (state.status === 'called') {
                     setStatus('late');
-                    els.calledActions.hidden = false;
                     renderDashboard(null);
                     addHistory([`Giliran <strong>${fmtNumber()}</strong> terlewat (terlambat)`]);
                     if (state.waOptIn) {
-                        api.sendWhatsApp(`Giliran ${fmtNumber()} Anda telah terlewat. Mohon hubungi petugas loket.`)
-                            .then((r) => addWaLog(`Giliran ${fmtNumber()} Anda telah terlewat. Mohon hubungi petugas loket.`, true))
+                        const lateMsg = `Giliran ${fmtNumber()} Anda telah terlewat. Mohon hubungi petugas loket.`;
+                        api.sendWhatsApp(lateMsg)
+                            .then(() => addWaLog(lateMsg, true))
                             .catch(() => openBanner());
                     }
                 }
@@ -389,13 +383,17 @@
         }
     }
 
+    function tickQueue() {
+        if (!state.running) return;
+        advanceQueue();
+    }
+
     /* --------------------------- INTERACTIONS ------------------------- */
     async function takeQueue() {
         const cfg = POLI[state.poli];
         const n = state.servedNumber + Math.ceil(3 + Math.random() * 5);
         state.patientNumber = n;
         state.remaining = n - state.servedNumber;
-        state.lastEta = null;
         setStatus('waiting');
         els.calledActions.hidden = true;
         els.waToggle.disabled = false;
@@ -406,7 +404,6 @@
         addHistory([`Antrean diambil — nomor <strong>${fmtNumber()}</strong> di ${cfg.label}`]);
         els.lastUpdate.textContent = 'Menyinkronkan…';
         refresh();
-        els.travelRange.disabled = false;
         els.poliSelect.disabled = true;
     }
 
@@ -422,25 +419,26 @@
         els.waToggle.disabled = true;
         els.waPhone.hidden = true;
         els.waStatus.hidden = true;
-        if (state.waOptIn) state.lastWaRule = null;
+        state.waOptIn = false;
+        state.lastWaRule = null;
     }
 
     function resetAll() {
         clearTimeout(state.lateTimer);
         state.patientNumber = null;
         state.remaining = 0;
-        state.lastRule = null;
-        state.lastEta = null;
         state.lastWaRule = null;
         state.lastUpdate = null;
+        state.lastSyncAt = null;
+        state.waOptIn = false;
         setStatus('empty');
         els.optinCard.hidden = true;
         els.calledActions.hidden = true;
         els.btnTake.textContent = 'Ambil Antrean';
         els.btnTake.disabled = false;
         els.poliSelect.disabled = false;
-        els.travelRange.disabled = false;
         els.waToggle.checked = false;
+        els.waToggle.disabled = true;
         els.waPhone.hidden = true;
         els.waStatus.hidden = true;
         els.historyList.innerHTML = '<li class="history-empty">Belum ada pembaruan.</li>';
@@ -517,7 +515,7 @@
         els.btnSkip.addEventListener('click', () => {
             clearTimeout(state.lateTimer);
             state.remaining = 0;
-            tickQueue();
+            advanceQueue();
         });
 
         // WhatsApp opt-in
@@ -558,12 +556,12 @@
         setInterval(refresh, POLL_MS);
         setInterval(tickQueue, TICK_MS);
 
-        // Staleness watchdog
+        // Staleness watchdog: warn when a sync is overdue while the demo is live
         setInterval(() => {
-            if (els.netSim.checked) return;
-            if (state.lastUpdate && state.running && state.status !== 'empty') {
-                els.staleHint.hidden = true;
-            }
+            const overdue = state.lastSyncAt &&
+                Date.now() - state.lastSyncAt > POLL_MS + 2500 &&
+                state.running && state.status !== 'empty' && state.status !== 'done';
+            els.staleHint.hidden = !(overdue || els.netSim.checked);
         }, 1000);
 
         addHistory([`Simulasi siap — ambil nomor antrean untuk memulai`]);
