@@ -35,8 +35,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap">
 
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/portfolio.css">
+<link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/mobile-jkn-prototype.css">
 
     <script type="application/ld+json">
     {
@@ -110,9 +111,19 @@
                     </a>
                 </div>
             </div>
-        </header>
+</header>
 
-        <section class="container" aria-label="Project Summary">
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-label="Mobile JKN content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active"
+                    aria-selected="true" aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-ai" class="study-tab"
+                    aria-selected="false" aria-controls="panel-ai" data-panel="ai">02. AI Implementation</button>
+            </div>
+        </div>
+
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+        <section class="container" aria-label="Project Summary">
             <div class="summary__grid">
                 <div class="summary__card reveal">
                     <div>
@@ -178,8 +189,274 @@
                     </figure>
                 </div>
             </section>
-        </article>
-    </main>
+</article>
+        </div>
+
+        <div id="panel-ai" role="tabpanel" aria-labelledby="tab-btn-ai" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Web Prototype &amp; ML Integration</span>
+                    <h2>AI Implementation &amp; Queue Monitoring</h2>
+                    <p>Purwarupa dinamis yang mendemonstrasikan perancangan ulang fitur pemantauan antrean Mobile JKN:
+                        dashboard antrean real-time, opt-in notifikasi WhatsApp, serta prediksi waktu tunggu berbasis
+                        Machine Learning yang memicu notifikasi proaktif melalui rule-based trigger.</p>
+                    <div class="proto-tags">
+                        <span><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span> ML Predict Wait</span>
+                        <span><span class="material-symbols-rounded" aria-hidden="true">map</span> Google Maps (t_travel)</span>
+                        <span><span class="material-symbols-rounded" aria-hidden="true">chat</span> WhatsApp Gateway</span>
+                        <span><span class="material-symbols-rounded" aria-hidden="true">cloud_off</span> Error Handling</span>
+                    </div>
+                </div>
+
+                <div class="milestones" aria-label="Progress implementasi AI">
+                    <div class="milestone reveal">
+                        <div class="milestone__icon"><span class="material-symbols-rounded" aria-hidden="true">format_list_numbered</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>Frontend — Dashboard Antrean Real-time</h4>
+                                <span class="milestone__value" data-level="done">Selesai · 100%</span>
+                            </div>
+                            <p>Nomor antrean, nomor yang dilayani, sisa antrean, estimasi panggil, dan status (menunggu / dipanggil / terlambat / selesai).</p>
+                            <div class="milestone__bar"><span style="width:100%" data-level="done"></span></div>
+                        </div>
+                    </div>
+                    <div class="milestone reveal">
+                        <div class="milestone__icon"><span class="material-symbols-rounded" aria-hidden="true">notifications_active</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>Opt-in Notifikasi WhatsApp</h4>
+                                <span class="milestone__value" data-level="done">Selesai · 100%</span>
+                            </div>
+                            <p>Toggle izin pengguna pada halaman pengambilan antrean sebelum notifikasi proaktif dikirim.</p>
+                            <div class="milestone__bar"><span style="width:100%" data-level="done"></span></div>
+                        </div>
+                    </div>
+                    <div class="milestone reveal">
+                        <div class="milestone__icon"><span class="material-symbols-rounded" aria-hidden="true">dns</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>Backend API — Simulasi Antrean &amp; Rule-based Trigger</h4>
+                                <span class="milestone__value" data-level="done">Selesai · 100%</span>
+                            </div>
+                            <p>Endpoint menerima sisa antrean, menghitung waktu_berangkat = prediksi − (t_travel + 10), dan memicu status berangkat.</p>
+                            <div class="milestone__bar"><span style="width:100%" data-level="done"></span></div>
+                        </div>
+                    </div>
+                    <div class="milestone reveal">
+                        <div class="milestone__icon"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>ML — Prediksi Waktu Tunggu</h4>
+                                <span class="milestone__value" data-level="progress">In Progress · 55%</span>
+                            </div>
+                            <p>Inferensi simulasi (heuristik: sisa × durasi histori × faktor jam) berjalan; pelatihan model regresi dengan dataset rumah sakit masih dalam riset.</p>
+                            <div class="milestone__bar"><span style="width:55%" data-level="progress"></span></div>
+                        </div>
+                    </div>
+                    <div class="milestone reveal">
+                        <div class="milestone__icon is-neutral"><span class="material-symbols-rounded" aria-hidden="true">map</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>Google Maps — Estimasi t_travel</h4>
+                                <span class="milestone__value" data-level="progress">In Progress · 35%</span>
+                            </div>
+                            <p>Nilai waktu tempuh kini dimock pada backend; integrasi Distance Matrix API perlu menyusul.</p>
+                            <div class="milestone__bar"><span style="width:35%" data-level="progress"></span></div>
+                        </div>
+                    </div>
+                    <div class="milestone reveal">
+                        <div class="milestone__icon is-neutral"><span class="material-symbols-rounded" aria-hidden="true">chat</span></div>
+                        <div class="milestone__body">
+                            <div class="milestone__top">
+                                <h4>WhatsApp Gateway (Produksi)</h4>
+                                <span class="milestone__value" data-level="planned">Direncanakan · 0%</span>
+                            </div>
+                            <p>Pengiriman pesan dijalankan sebagai mock; koneksi ke gateway WhatsApp resmi (Meta Cloud API) direncanakan pada tahap berikutnya.</p>
+                            <div class="milestone__bar"><span style="width:0%" data-level="planned"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="proto-section-title reveal">Live Prototype</h2>
+                <p class="proto-section-sub reveal">
+                    Ambil nomor antrean pada simulasi aplikasi, aktifkan toggle WhatsApp, dan amati bagaimana backend
+                    menghitung prediksi waktu tunggu lalu memicu rekomendasi berangkat. Coba juga sakelar
+                    <em>"Simulasi gangguan jaringan"</em> untuk melihat banner error real-time — sistem tidak menampilkan data basi.
+                </p>
+
+                <div class="proto-grid">
+                    <div class="phone-wrap">
+                        <div class="phone-frame" role="region" aria-label="Simulasi aplikasi Mobile JKN">
+                            <div class="phone__screen">
+                                <div class="phone__statusbar">
+                                    <span id="phone-clock">09:41</span>
+                                    <span style="font-size:0.65rem; letter-spacing:0.05em" aria-hidden="true">●●● 4G</span>
+                                </div>
+                                <header class="app-header">
+                                    <div>
+                                        <small>Halo, pasien BPJS</small>
+                                        <h4>Antrean Anda</h4>
+                                    </div>
+                                    <span class="avatar material-symbols-rounded" aria-hidden="true">person</span>
+                                </header>
+
+                                <div class="phone__body">
+                                    <div class="conn-banner" id="conn-banner" role="alert" hidden>
+                                        <span class="material-symbols-rounded" aria-hidden="true">cloud_off</span>
+                                        <div>
+                                            <strong>Koneksi terputus</strong>
+                                            <p>Data antrean tidak diperbarui agar tidak menampilkan data basi (tanpa cache).</p>
+                                        </div>
+                                        <button type="button" id="conn-retry">Coba lagi</button>
+                                    </div>
+
+                                    <div class="stale-hint" id="stale-hint" hidden>
+                                        <span class="pulse" aria-hidden="true"></span> Data mungkin kedaluwarsa — menunggu sinkronisasi…
+                                    </div>
+
+                                    <section class="queue-card" aria-label="Pemantauan antrean">
+                                        <div class="queue-card__top">
+                                            <div>
+                                                <small>Nomor Antrean Anda</small>
+                                                <div class="queue-number" id="patient-number">—</div>
+                                            </div>
+                                            <span class="status-chip" id="queue-status" data-status="empty">Belum Ambil</span>
+                                        </div>
+                                        <div class="queue-metrics">
+                                            <div><small>Sedang Dilayani</small><strong id="served-number">—</strong></div>
+                                            <div><small>Sisa Antrean</small><strong id="remaining-count">—</strong></div>
+                                            <div><small>Estimasi Panggil</small><strong id="eta-minutes">—</strong></div>
+                                        </div>
+                                    </section>
+
+                                    <div class="card-stack">
+                                        <div class="take-card">
+                                            <label for="patient-name">Nama Lengkap</label>
+                                            <input type="text" class="app-input" id="patient-name" value="Budi Santoso" autocomplete="name">
+                                            <button type="button" class="app-btn app-btn--primary" id="btn-take">
+                                                Ambil Antrean <span class="material-symbols-rounded" aria-hidden="true">touch_app</span>
+                                            </button>
+                                        </div>
+
+                                        <div class="optin-card" id="optin-card" hidden>
+                                            <label class="switch-row">
+                                                <span>
+                                                    <strong>Notifikasi WhatsApp</strong>
+                                                    <small>Pembaruan antrean otomatis dikirim ke WA Anda</small>
+                                                </span>
+                                                <input type="checkbox" id="wa-toggle" role="switch"
+                                                    aria-label="Aktifkan notifikasi WhatsApp" disabled>
+                                                <span class="switch" aria-hidden="true"></span>
+                                            </label>
+                                            <div class="wa-phone" id="wa-phone" hidden>
+                                                <label for="phone-input">No. WhatsApp</label>
+                                                <input type="tel" class="app-input" id="phone-input" value="0812 3456 7890" inputmode="tel">
+                                            </div>
+                                            <div class="wa-optin-status" id="wa-status" hidden></div>
+                                        </div>
+
+                                        <div class="called-actions" id="called-actions" hidden>
+                                            <button type="button" class="app-btn app-btn--success" id="btn-confirm-served">Saya Sudah Dilayani</button>
+                                        </div>
+                                    </div>
+
+                                    <section class="history-card" aria-label="Riwayat pembaruan">
+                                        <div class="history-card__head">
+                                            <h4>Riwayat Pembaruan</h4>
+                                            <span class="last-update" id="last-update">Menunggu antrean diambil…</span>
+                                        </div>
+                                        <ul class="history-list" id="history-list">
+                                            <li class="history-empty">Belum ada pembaruan.</li>
+                                        </ul>
+                                    </section>
+                                </div>
+
+                                <nav class="app-bottomnav" aria-hidden="true">
+                                    <span class="material-symbols-rounded">home</span>
+                                    <span class="material-symbols-rounded">event_note</span>
+                                    <span class="material-symbols-rounded active">format_list_numbered</span>
+                                    <span class="material-symbols-rounded">person</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="proto-side">
+                        <section class="panel-card" aria-label="Mesin prediksi AI">
+                            <h4 class="panel-card__title"><span class="material-symbols-rounded" aria-hidden="true">smart_toy</span> AI Prediction Engine (Mock Backend)</h4>
+                            <div class="ai-inputs">
+                                <div class="chip"><small>Poli / Jenis Layanan</small><strong id="ai-poli">Poli Umum</strong></div>
+                                <div class="chip"><small>Jam</small><strong id="ai-hour">09:00</strong></div>
+                                <div class="chip"><small>Histori Durasi</small><strong id="ai-avg">6 mnt</strong></div>
+                                <div class="chip"><small>Sisa Antrean</small><strong id="ai-remaining">0 pasien</strong></div>
+                            </div>
+                            <div class="ai-result">
+                                <div class="metric"><small>Prediksi Tunggu (ML)</small><strong id="pred-minutes">—</strong></div>
+                                <div class="metric"><small>t_travel (Google Maps)</small><strong id="travel-minutes">—</strong></div>
+                            </div>
+                            <div class="formula" id="formula">waktu_berangkat = prediksi − (t_travel + buffer 10)</div>
+                            <div class="rule-card">
+                                <div class="rule-card__head">
+                                    <small>Rule-based Trigger</small>
+                                    <span class="status-chip" id="rule-chip" data-status="empty">—</span>
+                                </div>
+                                <p class="rule-note" id="rule-note">Ambil antrean untuk melihat kalkulasi rekomendasi waktu berangkat.</p>
+                                <div class="wa-preview" id="wa-preview" hidden></div>
+                            </div>
+                        </section>
+
+                        <section class="panel-card" aria-label="Kontrol simulasi">
+                            <h4 class="panel-card__title"><span class="material-symbols-rounded" aria-hidden="true">settings</span> Kontrol Simulasi</h4>
+                            <div class="control-row">
+                                <label for="poli-select">Poli</label>
+                                <select class="select" id="poli-select">
+                                    <option value="umum">Poli Umum</option>
+                                    <option value="anak">Poli Anak</option>
+                                    <option value="gigi">Poli Gigi</option>
+                                    <option value="mata">Poli Mata</option>
+                                    <option value="kandungan">Poli Kandungan</option>
+                                </select>
+                            </div>
+                            <div class="control-row">
+                                <label for="travel-range">t_travel <span class="hint">(Google Maps)</span></label>
+                                <div class="range-wrap">
+                                    <input type="range" id="travel-range" min="5" max="60" step="1" value="18">
+                                    <output id="travel-output">18 mnt</output>
+                                </div>
+                            </div>
+                            <div class="control-row">
+                                <label for="speed-select">Kecepatan Antrean</label>
+                                <select class="select" id="speed-select">
+                                    <option value="1">Normal (1/langkah)</option>
+                                    <option value="2">Cepat (2/langkah)</option>
+                                    <option value="3">Turbo (3/langkah)</option>
+                                </select>
+                            </div>
+                            <div class="control-actions">
+                                <button type="button" class="control-btn" id="btn-toggle-run"><span class="material-symbols-rounded" aria-hidden="true">pause</span> <span id="run-label">Pause</span></button>
+                                <button type="button" class="control-btn" id="btn-skip"><span class="material-symbols-rounded" aria-hidden="true">fast_forward</span> Panggil Sekarang</button>
+                                <button type="button" class="control-btn" id="btn-reset"><span class="material-symbols-rounded" aria-hidden="true">restart_alt</span> Reset</button>
+                            </div>
+                            <div class="control-row" style="margin-top:0.9rem; padding-top:0.9rem; border-top:1px solid var(--border-subtle); margin-bottom:0;">
+                                <label class="minor-switch-label">
+                                    Simulasi gangguan jaringan
+                                    <input type="checkbox" id="net-sim">
+                                    <span class="minor-switch" aria-hidden="true"></span>
+                                </label>
+                            </div>
+                        </section>
+
+                        <section class="panel-card" aria-label="Log WhatsApp Gateway">
+                            <h4 class="panel-card__title"><span class="material-symbols-rounded" aria-hidden="true">chat</span> WhatsApp Gateway — Log</h4>
+                            <ul class="wa-log-list" id="wa-log-list">
+                                <li class="wa-log-empty">Belum ada pesan WhatsApp.</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- =======================================================
          HTML5 DATA TEMPLATES (Replaces duplicate ID structure)
@@ -248,6 +525,7 @@
     </footer>
 
     <script src="js/script.js" defer></script>
+    <script src="js/mobile-jkn-prototype.js" defer></script>
 </body>
 
 </html>
