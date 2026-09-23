@@ -7,7 +7,7 @@
 
     <title>Mobile JKN Redesign | Firman Christian Purba</title>
     <meta name="description"
-        content="Redesigning Indonesia's national health app to bridge the digital gap through better Information Architecture.">
+        content="UI/UX Redesign Mobile JKN dengan fokus pada sistem pemantauan antrean, pendekatan User-Centered Design, dan prediksi waktu tunggu berbasis Machine Learning.">
     <link rel="canonical" href="https://firmanchrstn.github.io/my-portfolio/mobile-jkn.html">
     <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
@@ -18,12 +18,14 @@
     <meta property="og:description"
         content="Redesigning Indonesia's national health app to bridge the digital gap through better Information Architecture.">
     <meta property="og:url" content="https://firmanchrstn.github.io/my-portfolio/mobile-jkn.html">
-    <meta property="og:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-mobileJKN/Home.png">
+    <meta property="og:image"
+        content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-mobileJKN/Home.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mobile JKN Redesign | Firman Christian Purba">
     <meta name="twitter:description"
         content="Redesigning Indonesia's national health app to bridge the digital gap through better Information Architecture.">
-    <meta name="twitter:image" content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-mobileJKN/Home.png">
+    <meta name="twitter:image"
+        content="https://firmanchrstn.github.io/my-portfolio/asset/prototype-figma-mobileJKN/Home.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="asset/pp.jpeg">
@@ -42,16 +44,16 @@
     {
         "@context": "https://schema.org",
         "@type": "CreativeWork",
-        "name": "Mobile JKN Redesign",
-        "headline": "Bridging the digital gap for millions of users facing complex healthcare bureaucracy",
-        "description": "UI/UX redesign of Indonesia's national health app, Mobile JKN, focusing on information architecture and progressive disclosure.",
+        "name": "Mobile JKN Queue System Redesign",
+        "headline": "Mengurai antrean faskes melalui UI/UX yang lebih baik dan prediksi waktu tunggu cerdas",
+        "description": "UI/UX redesign aplikasi Mobile JKN berfokus pada fitur pemantauan antrean, prediksi Machine Learning, dan notifikasi proaktif WhatsApp.",
         "url": "https://firmanchrstn.github.io/my-portfolio/mobile-jkn.html",
         "creator": {
             "@type": "Person",
             "name": "Firman Christian Purba",
             "url": "https://firmanchrstn.github.io/my-portfolio/"
         },
-        "inLanguage": "en"
+        "inLanguage": "id"
     }
     </script>
 
@@ -118,8 +120,8 @@
                     <div>
                         <h4>01. Background</h4>
                         <h3>Context</h3>
-                        <p>Redesigning Indonesia's national health app to bridge the digital gap for millions of users
-                            facing complex bureaucracy.</p>
+                        <p>Ketidakpastian waktu tunggu dan penumpukan antrean fisik di fasilitas kesehatan meskipun
+                            layanan pendaftaran online tersedia.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="background"
                         aria-label="Read more about the background">
@@ -131,8 +133,8 @@
                     <div>
                         <h4>02. Challenge</h4>
                         <h3>Problem Statement</h3>
-                        <p>Information overload and complex navigation patterns causing friction and cognitive overload
-                            in urgent health situations.</p>
+                        <p>Antarmuka pemantauan antrean yang membingungkan bagi pengguna awam dan tidak adanya estimasi
+                            waktu panggil secara real-time.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="problem"
                         aria-label="Read more about the challenge">
@@ -144,11 +146,24 @@
                     <div>
                         <h4>03. Innovation</h4>
                         <h3>The Solution</h3>
-                        <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
-                            administrative access.</p>
+                        <p>Perancangan antarmuka berbasis UCD yang diintegrasikan dengan notifikasi proaktif WhatsApp
+                            dan prediksi Machine Learning.</p>
                     </div>
                     <button class="btn-text open-detail" data-target="solution"
                         aria-label="Read more about the solution">
+                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                    </button>
+                </div>
+
+                <div class="summary__card reveal delay-3">
+                    <div>
+                        <h4>04. Status</h4>
+                        <h3>Current Progress</h3>
+                        <p>Ongoing: Pengumpulan dataset antrean rumah sakit dan tahap awal identifikasi kebutuhan (UCD).
+                        </p>
+                    </div>
+                    <button class="btn-text open-detail" data-target="status"
+                        aria-label="Read more about current progress">
                         Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
                     </button>
                 </div>
@@ -182,14 +197,15 @@
     </main>
 
     <!-- =======================================================
-         HTML5 DATA TEMPLATES (Replaces duplicate ID structure)
+         HTML5 DATA TEMPLATES
          ======================================================= -->
     <template id="tpl-background">
         <span class="modal-tag">01. Background</span>
         <h2 class="modal-title">Context & Background</h2>
         <div class="modal-body">
-            <p>Mobile JKN serves as the digital backbone of Indonesia’s National Health Insurance (BPJS Kesehatan),
-                catering to over 200 million users.</p>
+            <p>Mobile JKN adalah tulang punggung digital BPJS Kesehatan. Namun, di lapangan, pasien sering tetap datang
+                lebih awal dan menunggu lama di fasilitas kesehatan (faskes). Hal ini menyebabkan kepadatan fisik di
+                ruang tunggu yang berpotensi meningkatkan kelelahan pasien dan menurunkan efisiensi faskes.</p>
         </div>
     </template>
 
@@ -197,9 +213,10 @@
         <span class="modal-tag">02. Challenge</span>
         <h2 class="modal-title">Problem Statement</h2>
         <div class="modal-body">
-            <p>The application suffered from information overload, cluttered navigation, and weak visual hierarchy,
-                making it difficult for users to quickly access essential healthcare information during urgent
-                situations.</p>
+            <p>Masalah utama bersumber dari fitur antrean digital yang hanya menampilkan "nomor saat ini" tanpa estimasi
+                waktu panggil yang akurat. Selain itu, antarmuka sering membingungkan bagi pengguna awam karena tidak
+                jelasnya urutan layanan. Pasien tidak memiliki mekanisme yang membantu mereka memutuskan kapan waktu
+                yang tepat untuk berangkat dari rumah.</p>
         </div>
     </template>
 
@@ -207,8 +224,29 @@
         <span class="modal-tag">03. Innovation</span>
         <h2 class="modal-title">The Solution</h2>
         <div class="modal-body">
-            <p>I implemented a card-based information structure, progressive disclosure system, clearer participant card
-                hierarchy, and simplified service navigation to improve readability and usability.</p>
+            <p>Merancang ulang UI/UX pemantauan antrean menggunakan pendekatan <strong>User-Centered Design
+                    (UCD)</strong>. Inovasi utamanya adalah memposisikan sistem prediksi waktu tunggu berbasis
+                <strong>Machine Learning (Regresi)</strong> di backend untuk mengkalkulasi durasi layanan secara
+                dinamis.</p>
+            <p>Hasil kalkulasi ini kemudian menjadi pemicu <em>(trigger)</em> untuk mengirimkan notifikasi proaktif via
+                <strong>WhatsApp Gateway</strong> yang memberitahu pasien kapan mereka harus bersiap dan berangkat,
+                menurunkan beban kognitif pengguna karena tidak perlu terus-menerus menatap layar aplikasi.</p>
+        </div>
+    </template>
+
+    <template id="tpl-status">
+        <span class="modal-tag">04. Status</span>
+        <h2 class="modal-title">Current Progress (September 2026)</h2>
+        <div class="modal-body">
+            <p>Proyek ini sedang berjalan aktif sebagai penelitian Tugas Akhir. Status saat ini mencakup:</p>
+            <ul>
+                <li><strong>Administrasi:</strong> Finalisasi dokumen pendefinisian masalah dan perizinan riset ke
+                    fasilitas kesehatan (Metro Hospital Cikarang).</li>
+                <li><strong>Riset Data (ML):</strong> Eksplorasi akses dataset historis operasional antrean untuk
+                    pelatihan model prediksi.</li>
+                <li><strong>Riset Pengguna (UCD):</strong> Memasuki fase identifikasi kebutuhan pengguna dan analisis
+                    persona pasien faskes.</li>
+            </ul>
         </div>
     </template>
 
