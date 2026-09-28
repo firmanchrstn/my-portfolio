@@ -199,6 +199,19 @@
         els.etaMinutes.classList.toggle('is-stale', stale);
     };
 
+    /** Renders the engine panel when there is nothing to predict. */
+    const renderEngineIdle = (chipText, note, isStale) => {
+        els.predMinutes.textContent = '—';
+        els.travelMinutes.textContent = '—';
+        els.predMinutes.classList.toggle('is-stale', isStale);
+        els.travelMinutes.classList.toggle('is-stale', isStale);
+        els.formula.innerHTML = 'waktu_berangkat = <strong>—</strong>';
+        els.ruleChip.setAttribute('data-status', 'empty');
+        els.ruleChip.textContent = chipText;
+        els.ruleNote.textContent = note;
+        els.waPreview.hidden = true;
+    };
+
     const renderEngine = (pred, travel, rule) => {
         const hour = new Date().getHours();
         els.aiPoli.textContent = POLI[state.poli].label;
@@ -207,28 +220,14 @@
         els.aiRemaining.textContent = `${state.remaining} pasien`;
 
         if (isOffline()) {
-            els.predMinutes.textContent = '—';
-            els.travelMinutes.textContent = '—';
-            els.predMinutes.classList.add('is-stale');
-            els.travelMinutes.classList.add('is-stale');
-            els.formula.innerHTML = 'waktu_berangkat = <strong>—</strong>';
-            els.ruleChip.setAttribute('data-status', 'empty');
-            els.ruleChip.textContent = 'Data offline';
-            els.ruleNote.textContent = 'Koneksi terputus — prediksi tidak diperbarui untuk mencegah data basi.';
-            els.waPreview.hidden = true;
+            renderEngineIdle('Data offline',
+                'Koneksi terputus — prediksi tidak diperbarui untuk mencegah data basi.', true);
             return;
         }
 
         if (state.status === 'empty') {
-            els.predMinutes.textContent = '—';
-            els.travelMinutes.textContent = '—';
-            els.predMinutes.classList.remove('is-stale');
-            els.travelMinutes.classList.remove('is-stale');
-            els.formula.innerHTML = 'waktu_berangkat = <strong>—</strong>';
-            els.ruleChip.setAttribute('data-status', 'empty');
-            els.ruleChip.textContent = 'Menunggu antrean';
-            els.ruleNote.textContent = 'Ambil nomor antrean untuk melihat kalkulasi rekomendasi waktu berangkat.';
-            els.waPreview.hidden = true;
+            renderEngineIdle('Menunggu antrean',
+                'Ambil nomor antrean untuk melihat kalkulasi rekomendasi waktu berangkat.', false);
             return;
         }
 
@@ -284,10 +283,23 @@
         }
     };
 
+    /** Sends one mock WhatsApp message, logs it and surfaces the banner on failure. */
+    const dispatchWa = (message, onSent) => {
+        api.sendWhatsApp(message)
+            .then(() => {
+                addWaLog(message, true);
+                if (onSent) onSent();
+            })
+            .catch(openBanner);
+    };
+
     /* --------------------------- ERROR (BANNER) ----------------------- */
+    /** True while a queue is being tracked — i.e. when data can actually go stale. */
+    const hasLiveQueue = () => state.status !== 'empty' && state.status !== 'done';
+
     const openBanner = () => {
         els.connBanner.hidden = false;
-        els.staleHint.hidden = false;
+        els.staleHint.hidden = !hasLiveQueue();
         renderEngine(null, null, null);
         if (state.lastUpdate) {
             els.lastUpdate.textContent = `Terakhir sinkron: ${state.lastUpdate}`;
@@ -296,12 +308,20 @@
 
     const closeBanner = () => {
         els.connBanner.hidden = true;
+        els.staleHint.hidden = true;
     };
 
     /* --------------------------- SYNC (POLL) -------------------------- */
     async function refresh() {
         if (!state.running) return;
         if (state.status === 'empty') {
+            // No queue yet: there is nothing to sync, but a restored connection must
+            // still clear the offline banner left behind by the previous failure.
+            if (!isOffline()) {
+                state.lastSyncAt = null;
+                closeBanner();
+                renderDashboard(null);
+            }
             els.lastUpdate.textContent = 'Menunggu antrean diambil…';
             return;
         }
@@ -330,13 +350,14 @@
                 `Estimasi ±${pred} mnt · <span class="rule-tag">${RULE_META[rule.rule].label}</span>`
             ]);
 
-            // only send WA on rule transition while waiting, not every poll
+            // only send WA on rule transition while waiting, not every poll.
+            // lastWaRule is set on success so a failed send is retried next poll.
             if (state.status === 'waiting' && state.waOptIn && rule.message &&
                 rule.rule !== 'belum' && rule.rule !== state.lastWaRule) {
-                await api.sendWhatsApp(rule.message);
-                addWaLog(rule.message, true);
-                addHistory([`WhatsApp terkirim (<span class="rule-tag">${RULE_META[rule.rule].label}</span>)`]);
-                state.lastWaRule = rule.rule;
+                dispatchWa(rule.message, () => {
+                    state.lastWaRule = rule.rule;
+                    addHistory([`WhatsApp terkirim (<span class="rule-tag">${RULE_META[rule.rule].label}</span>)`]);
+                });
             }
         } catch (err) {
             openBanner();
@@ -357,12 +378,7 @@
             addHistory([`Nomor <strong>${fmtNumber()}</strong> dipanggil — silakan menuju loket`]);
             if (state.waOptIn) {
                 const msg = `Panggilan: Nomor ${fmtNumber()} Anda dipanggil di ${POLI[state.poli].label}. Silakan menuju loket pendaftaran.`;
-                api.sendWhatsApp(msg)
-                    .then(() => {
-                        addWaLog(msg, true);
-                        addHistory(['WhatsApp terkirim (nomor Anda dipanggil)']);
-                    })
-                    .catch(() => openBanner());
+                dispatchWa(msg, () => addHistory(['WhatsApp terkirim (nomor Anda dipanggil)']));
             }
             clearTimeout(state.lateTimer);
             state.lateTimer = setTimeout(() => {
@@ -371,10 +387,7 @@
                     renderDashboard(null);
                     addHistory([`Giliran <strong>${fmtNumber()}</strong> terlewat (terlambat)`]);
                     if (state.waOptIn) {
-                        const lateMsg = `Giliran ${fmtNumber()} Anda telah terlewat. Mohon hubungi petugas loket.`;
-                        api.sendWhatsApp(lateMsg)
-                            .then(() => addWaLog(lateMsg, true))
-                            .catch(() => openBanner());
+                        dispatchWa(`Giliran ${fmtNumber()} Anda telah terlewat. Mohon hubungi petugas loket.`);
                     }
                 }
             }, LATE_MS);
@@ -556,12 +569,12 @@
         setInterval(refresh, POLL_MS);
         setInterval(tickQueue, TICK_MS);
 
-        // Staleness watchdog: warn when a sync is overdue while the demo is live
+        // Staleness watchdog: warn when a sync is overdue while the demo is live.
+        // Gated on a live queue, otherwise the hint would nag with no data to trust.
         setInterval(() => {
-            const overdue = state.lastSyncAt &&
-                Date.now() - state.lastSyncAt > POLL_MS + 2500 &&
-                state.running && state.status !== 'empty' && state.status !== 'done';
-            els.staleHint.hidden = !(overdue || els.netSim.checked);
+            const overdue = hasLiveQueue() && state.lastSyncAt &&
+                Date.now() - state.lastSyncAt > POLL_MS + 2500 && state.running;
+            els.staleHint.hidden = !(overdue || (els.netSim.checked && hasLiveQueue()));
         }, 1000);
 
         addHistory([`Simulasi siap — ambil nomor antrean untuk memulai`]);

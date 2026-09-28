@@ -13,13 +13,20 @@
         const themeToggle = document.getElementById('theme-toggle');
         const docEl = document.documentElement;
 
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                const next = docEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                docEl.setAttribute('data-theme', next);
-                try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
-            });
-        }
+        if (!themeToggle) return;
+
+        const syncLabel = () => {
+            const dark = docEl.getAttribute('data-theme') === 'dark';
+            themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        };
+
+        syncLabel();
+        themeToggle.addEventListener('click', () => {
+            const next = docEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            docEl.setAttribute('data-theme', next);
+            try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+            syncLabel();
+        });
     };
 
     // --- 2. NAVIGATION & SCROLLSPY MODULE ---
@@ -28,24 +35,39 @@
         const navToggle = document.getElementById('nav-toggle');
         const navClose = document.getElementById('nav-close');
         const navLinks = document.querySelectorAll('.nav__link');
+        const mqMobile = window.matchMedia('(max-width: 768px)');
 
-        const setMenu = (isOpen) => {
+        // Applies the visual/ARIA/scroll state of the menu without moving focus.
+        const applyMenuState = (isOpen) => {
             if (!navMenu) return;
             navMenu.classList.toggle('show-menu', isOpen);
             if (navToggle) navToggle.setAttribute('aria-expanded', String(isOpen));
             document.body.style.overflow = isOpen ? 'hidden' : '';
 
+            // Off-canvas menu: prevent tab/screen-reader reach while closed on mobile
+            if (navMenu.inert !== undefined) {
+                navMenu.inert = !isOpen && mqMobile.matches;
+            }
+        };
+
+        const setMenu = (isOpen) => {
+            if (!navMenu) return;
+            applyMenuState(isOpen);
+
             if (isOpen) {
                 const firstLink = navMenu.querySelector('.nav__link');
                 if (firstLink) firstLink.focus();
-            } else if (navToggle) {
+            } else if (navToggle && mqMobile.matches) {
                 navToggle.focus();
             }
         };
 
+        // Initial state: without this the closed off-canvas menu keeps its links in
+        // the tab order (invisible focus targets) until the first interaction.
+        applyMenuState(false);
+
         if (navToggle) {
             navToggle.addEventListener('click', () => setMenu(true));
-            navToggle.setAttribute('aria-controls', 'nav-menu');
         }
         if (navClose) navClose.addEventListener('click', () => setMenu(false));
         if (navMenu) {
@@ -56,6 +78,35 @@
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') setMenu(false);
         });
+
+        // The open menu covers the viewport, so Tab must cycle inside it instead of
+        // reaching the page content hidden behind it.
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Tab' || !navMenu || !navMenu.classList.contains('show-menu')) return;
+            const focusables = navMenu.querySelectorAll('a[href], button:not([disabled])');
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            const active = document.activeElement;
+            if (e.shiftKey && (active === first || !navMenu.contains(active))) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && (active === last || !navMenu.contains(active))) {
+                e.preventDefault();
+                first.focus();
+            }
+        });
+
+        // Resizing from mobile → desktop while the menu is open must release the
+        // scroll lock and expose the inline (desktop) menu again.
+        const handleBreakpoint = (e) => {
+            if (e.matches === false) setMenu(false);
+        };
+        if (mqMobile.addEventListener) {
+            mqMobile.addEventListener('change', handleBreakpoint);
+        } else if (mqMobile.addListener) {
+            mqMobile.addListener(handleBreakpoint);
+        }
 
         // ScrollSpy (only relevant on pages with in-page sections)
         const sections = document.querySelectorAll('section[id]');
@@ -80,70 +131,78 @@
     const initDialogs = () => {
         const studyModal = document.getElementById('study-modal');
         const lightboxModal = document.getElementById('lightbox-modal');
+        if (!studyModal && !lightboxModal) return;
 
-        const lockBodyScroll = (lock) => { document.body.style.overflow = lock ? 'hidden' : ''; };
+        // Reference-counted: a second dialog (e.g. a lightbox opened from inside the
+        // study modal) must not unlock the page while the first one is still open.
+        let openDialogCount = 0;
+        const lockBodyScroll = (lock) => {
+            openDialogCount = Math.max(0, openDialogCount + (lock ? 1 : -1));
+            document.body.style.overflow = openDialogCount > 0 ? 'hidden' : '';
+        };
 
-        // Study detail modal via HTML5 <template>
-        if (studyModal) {
+        // Shared dialog plumbing: close button, backdrop dismissal, scroll unlock.
+        const closeButtons = new Map();
+        const wireDialog = (dialog) => {
+            const closeBtn = dialog.querySelector('.native-modal__close');
+            closeButtons.set(dialog, closeBtn);
+            if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+            dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+            dialog.addEventListener('close', () => lockBodyScroll(false));
+        };
+
+        const openDialog = (dialog) => {
+            dialog.showModal(); // Native API handles focus trap
+            lockBodyScroll(true);
+            const closeBtn = closeButtons.get(dialog);
+            if (closeBtn) closeBtn.focus();
+        };
+
+        if (studyModal) wireDialog(studyModal);
+        if (lightboxModal) wireDialog(lightboxModal);
+
+        // Study detail modal populated from an HTML5 <template>
+        const openStudyDetail = (trigger) => {
+            const template = document.getElementById(`tpl-${trigger.getAttribute('data-target')}`);
+            if (!template) return;
             const contentArea = document.getElementById('modal-content');
-            const closeBtn = studyModal.querySelector('.native-modal__close');
-
-            document.body.addEventListener('click', (e) => {
-                const trigger = e.target.closest('.open-detail');
-                if (!trigger) return;
-                const template = document.getElementById(`tpl-${trigger.getAttribute('data-target')}`);
-                if (!template) return;
-                contentArea.innerHTML = '';
-                contentArea.appendChild(template.content.cloneNode(true));
-                const wrapper = studyModal.querySelector('.native-modal__wrapper');
-                if (wrapper) wrapper.scrollTop = 0;
-                studyModal.showModal(); // Native API handles focus trap
-                lockBodyScroll(true);
-                if (closeBtn) closeBtn.focus();
-            });
-
-            const closeStudy = () => { studyModal.close(); };
-            if (closeBtn) closeBtn.addEventListener('click', closeStudy);
-            studyModal.addEventListener('click', (e) => { if (e.target === studyModal) closeStudy(); });
-            studyModal.addEventListener('close', () => lockBodyScroll(false));
-        }
+            contentArea.innerHTML = '';
+            contentArea.appendChild(template.content.cloneNode(true));
+            const wrapper = studyModal.querySelector('.native-modal__wrapper');
+            if (wrapper) wrapper.scrollTop = 0;
+            openDialog(studyModal);
+        };
 
         // Image lightbox gallery
-        if (lightboxModal) {
+        const openLightbox = (wrap) => {
+            const img = wrap.querySelector('img');
+            if (!img) return;
             const lightboxImg = document.getElementById('lightbox-img');
-            const closeBtn = lightboxModal.querySelector('.native-modal__close');
+            lightboxImg.src = img.currentSrc || img.src;
+            lightboxImg.alt = img.alt || 'Enlarged design preview';
+            openDialog(lightboxModal);
+        };
 
-            const openLightbox = (wrap) => {
-                const img = wrap.querySelector('img');
-                if (!img) return;
-                lightboxImg.src = img.currentSrc || img.src;
-                lightboxImg.alt = img.alt || 'Enlarged design preview';
-                lightboxModal.showModal();
-                lockBodyScroll(true);
-                if (closeBtn) closeBtn.focus();
-            };
+        // One delegated pair serves both dialogs for mouse, touch and keyboard
+        // (Enter / Space on the role="button" image wrapper).
+        document.body.addEventListener('click', (e) => {
+            const trigger = e.target.closest('.open-detail');
+            if (trigger && studyModal) {
+                openStudyDetail(trigger);
+                return;
+            }
+            const wrap = e.target.closest('.img-wrapper');
+            if (wrap && lightboxModal) openLightbox(wrap);
+        });
 
-            // Mouse / touch
-            document.body.addEventListener('click', (e) => {
-                const wrap = e.target.closest('.img-wrapper');
-                if (wrap) openLightbox(wrap);
-            });
-
-            // Keyboard (Enter / Space on the role="button" wrapper)
-            document.body.addEventListener('keydown', (e) => {
-                if (e.key !== 'Enter' && e.key !== ' ') return;
-                const target = e.target;
-                if (target.classList && target.classList.contains('img-wrapper')) {
-                    e.preventDefault();
-                    openLightbox(target);
-                }
-            });
-
-            const closeLightbox = () => { lightboxModal.close(); };
-            if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-            lightboxModal.addEventListener('click', (e) => { if (e.target === lightboxModal) closeLightbox(); });
-            lightboxModal.addEventListener('close', () => lockBodyScroll(false));
-        }
+        document.body.addEventListener('keydown', (e) => {
+            if (!lightboxModal || (e.key !== 'Enter' && e.key !== ' ')) return;
+            const target = e.target;
+            if (target.classList && target.classList.contains('img-wrapper')) {
+                e.preventDefault();
+                openLightbox(target);
+            }
+        });
     };
 
     // --- 4. SCROLL ANIMATION OBSERVER ---
@@ -201,7 +260,6 @@
 
     // --- INIT ---
     document.addEventListener('DOMContentLoaded', () => {
-        document.documentElement.classList.add('js');
         initTheme();
         initNav();
         initDialogs();
