@@ -39,18 +39,31 @@ The website is completely custom-built from the ground up without heavy JavaScri
 
 The project is organized with a clear separation of concerns to maintain long-term scalability:
 
+Pages (each is a standalone, independently deployable document):
+
 * `/index.html`: The primary landing page and global entry point.
-* `/mobile-jkn.html`: UI/UX case study for the Mobile JKN redesign.
+* `/mobile-jkn.html`: UI/UX case study for the Mobile JKN redesign, including an
+  interactive queue-number simulation.
 * `/linkaja-competition.html`: UX Strategy case study for MIA 2025 ft. LinkAja.
+* `/inDrive.html`: Product/UX case study for the inDrive rider app.
 * `/rucas.html`: Web Design & E-Commerce concept for Rucas.co.
 * `/terebistrobar.html` & `/purirestocafe.html`: Front-End engineering showcases.
-* `/poster*.html`: Graphic design and creative campaign galleries.
+* `/wisata-app-flutter.html`: Flutter travel app case study.
+* `/poster1.html` – `/poster3.html`: Graphic design and creative campaign galleries.
+* `/404.html`: Not-found page. Skipped by the sitemap, exempt from the shared
+  shell check, and excluded from the "every public page is listed" rule.
+
+Shared code, tooling and site files:
+
 * `/css/style.css`: Global design tokens, layout system, and utilities.
 * `/css/portfolio.css`: Project-specific components and case study styling.
-* `/js/script.js`: Centralized interaction logic and modal state management.
+* `/css/mobile-jkn-prototype.css`: Styling for the embedded queue simulation.
+* `/js/script.js`: Theme, navigation, scroll-spy, and shared dialog state.
 * `/js/mobile-jkn-prototype.js`: Queue-simulation logic for the Mobile JKN case study.
 * `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
 * `/tools/verify.js`: Zero-dependency integrity checks (see below).
+* `/favicon.svg`, `/robots.txt`, `/sitemap.xml`: Standard site metadata.
+* `/.github/workflows/deploy.yml`: Verification and GitHub Pages deployment.
 
 The site is intentionally build-free: every page is a plain, hand-maintained HTML file, so
 the repository *is* the deployed artifact and there is no toolchain to keep in sync.
@@ -75,10 +88,62 @@ npm run verify
 | Shell | the shared `<head>`, header/nav and footer invariants are present on every page |
 | Sitemap | every public page is listed, `lastmod` values are valid and not stale |
 
+`verify` is static analysis only. It cannot tell you that a click handler still
+behaves, so the interaction paths below still need a human pass.
+
+## Manual QA
+
+Run through this before publishing a change to `script.js`,
+`mobile-jkn-prototype.js`, or the shared shell. Serve over Live Server rather
+than `file://` so asset and PDF links behave as they do in production.
+
+**Mobile menu (viewport ≤768px)**
+
+* On load, `Tab` skips the closed off-canvas links (they must be `inert`) and
+  reaches the theme toggle instead.
+* Opening the menu moves focus to the first link, and `Tab` / `Shift+Tab` cycle
+  within the menu only, never into the page behind the overlay.
+* `Esc`, the close button, and a nav link each close it, returning focus to the
+  toggle. Resizing to a wider viewport while it is open collapses it inline and
+  releases the scroll lock.
+* `Ctrl+F` finds every nav label. This is what the old non-breaking-space
+  indentation silently broke on one page.
+
+**Study modal and lightbox (any case-study page)**
+
+* A `.open-detail` trigger opens the modal with the close button focused and the
+  background unable to scroll; `Esc`, the ×, and a backdrop click all dismiss it.
+* Open the lightbox from *inside* the study modal, then close only the lightbox:
+  the page must stay scroll-locked. This is the reference-counted scroll lock, and
+  the most likely thing to regress.
+* Clicking an image, or focusing it and pressing `Enter` / `Space`, shows the full
+  uncropped image in the lightbox.
+
+**Mobile JKN queue simulation**
+
+* `Ambil Antrean` moves the status chip off `Belum Ambil`, seeds history, and
+  computes the departure formula; `travel-range` and `poli-select` both update it.
+* Toggle the offline switch on, then off, then press `Coba lagi`: the banner must
+  disappear each time.
+* The staleness hint stays hidden when no queue is live.
+* The WhatsApp opt-in stays disabled until a queue exists, and a delivered rule
+  is not re-sent on the next poll.
+* Arrow keys move between tabs in the tab strip and focus follows the selection.
+
+**Any page**
+
+* The theme toggle's `aria-label` tracks the active theme and the choice survives
+  reload without a flash of the wrong theme.
+* Scroll-spy and anchor links on the landing page land correctly.
+* The contact form is `novalidate` with `action="#"` by design: it has no backend
+  and submits nowhere.
+* From 320px to 1920px there is no horizontal scroll and native modals fit.
+
 ## Deployment
 
-This portfolio is automatically deployed via GitHub Actions. Any changes pushed to the main
-branch are subject to an automated build and deployment process to GitHub Pages.
+This portfolio is deployed to GitHub Pages by GitHub Actions. There is no build
+step — the checked-in HTML is what gets published — so `main` pushes are gated
+only by verification, not by compilation.
 
 The workflow runs `npm run verify` before publishing, so a broken link, a duplicated `id` or
 a page that drifts from the shared shell blocks the deploy instead of shipping. It then
