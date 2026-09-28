@@ -235,6 +235,22 @@ const checkSitemap = () => {
         return;
     }
 
+    // A sitemap may list each URL exactly once. A duplicate is invalid XML per
+    // the protocol, and because the pair scan above stores into a Map it would
+    // also silently shadow a page from the staleness check.
+    const seenLocs = new Set();
+    for (const [, loc] of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+        if (seenLocs.has(loc)) fail('sitemap.xml', `lists "${loc}" more than once`);
+        seenLocs.add(loc);
+    }
+
+    // The pair regex only matches a <lastmod> that immediately follows its <loc>,
+    // so a <url> block missing one would be skipped rather than reported.
+    const urlBlocks = (xml.match(/<url>/g) || []).length;
+    if (urlBlocks !== entries.length) {
+        fail('sitemap.xml', `has ${urlBlocks} <url> block(s) but ${entries.length} <loc>/<lastmod> pair(s)`);
+    }
+
     const listed = new Map();
     for (const [, loc, lastmod] of entries) {
         const rel = loc.replace(BASE_URL, '');
