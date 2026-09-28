@@ -1,0 +1,10 @@
+# Dependencies (the site itself ships none)
+node_modules/
+
+# Staging directory used by the deploy workflow
+_site/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log

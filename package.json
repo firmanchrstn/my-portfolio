@@ -1,0 +1,19 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static UI/UX design and front-end portfolio. Hand-written HTML, CSS and vanilla JavaScript with no runtime dependencies.",
+  "keywords": [
+    "portfolio",
+    "ui-ux",
+    "front-end",
+    "static-site"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "verify": "node tools/verify.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

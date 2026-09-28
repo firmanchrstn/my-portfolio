@@ -25,13 +25,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Verify site integrity
+        run: npm run verify
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - name: Stage publishable site
+        run: |
+          mkdir -p _site
+          cp -R asset css js _site/
+          cp *.html favicon.svg robots.txt sitemap.xml _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

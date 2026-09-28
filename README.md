@@ -48,11 +48,43 @@ The project is organized with a clear separation of concerns to maintain long-te
 * `/css/style.css`: Global design tokens, layout system, and utilities.
 * `/css/portfolio.css`: Project-specific components and case study styling.
 * `/js/script.js`: Centralized interaction logic and modal state management.
+* `/js/mobile-jkn-prototype.js`: Queue-simulation logic for the Mobile JKN case study.
 * `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
+* `/tools/verify.js`: Zero-dependency integrity checks (see below).
+
+The site is intentionally build-free: every page is a plain, hand-maintained HTML file, so
+the repository *is* the deployed artifact and there is no toolchain to keep in sync.
+
+## Local Development
+
+Open `index.html` directly, or serve the folder (Live Server is preconfigured on port 5502
+in `.vscode/settings.json`).
+
+```bash
+npm run verify
+```
+
+`verify` performs static integrity checks with no dependencies:
+
+| Group | Checks |
+| --- | --- |
+| Encoding | valid UTF-8, no BOM, no non-breaking spaces, no tabs, no trailing whitespace, no mixed line endings |
+| Links | every local `href`/`src` resolves, every `#anchor` has a matching `id` |
+| Identifiers | no duplicate `id` within a page |
+| Markup | `lang`, `title`, description, canonical, a single `<h1>`, image `alt`, `label[for]` targets |
+| Shell | the shared `<head>`, header/nav and footer invariants are present on every page |
+| Sitemap | every public page is listed, `lastmod` values are valid and not stale |
 
 ## Deployment
 
-This portfolio is automatically deployed via GitHub Actions. Any changes pushed to the main branch are subject to an automated build and deployment process to GitHub Pages.
+This portfolio is automatically deployed via GitHub Actions. Any changes pushed to the main
+branch are subject to an automated build and deployment process to GitHub Pages.
+
+The workflow runs `npm run verify` before publishing, so a broken link, a duplicated `id` or
+a page that drifts from the shared shell blocks the deploy instead of shipping. It then
+stages only the publishable files (`*.html`, `css/`, `js/`, `asset/`, `favicon.svg`,
+`robots.txt`, `sitemap.xml`) into `_site/`, so tooling and repository metadata are never
+published.
 
 ## Contact and Professional Links
 
