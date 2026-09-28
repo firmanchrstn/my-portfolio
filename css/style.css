@@ -528,6 +528,13 @@ h4 {
     transition: transform 0.5s ease;
 }
 
+/* Poster artwork is portrait (1200x1697). Cropping it to the 16:10 card frame
+   would keep only ~44% of its width and cut the typography out, so fit it
+   whole instead and let the card background act as a mat. */
+.portfolio__card-image--contain img {
+    object-fit: contain;
+}
+
 .portfolio__card-overlay {
     position: absolute;
     inset: 0;
