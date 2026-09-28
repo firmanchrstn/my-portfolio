@@ -97,7 +97,7 @@ Run through this before publishing a change to `script.js`,
 `mobile-jkn-prototype.js`, or the shared shell. Serve over Live Server rather
 than `file://` so asset and PDF links behave as they do in production.
 
-**Mobile menu (viewport ≤768px)**
+### Mobile menu (viewport ≤768px)
 
 * On load, `Tab` skips the closed off-canvas links (they must be `inert`) and
   reaches the theme toggle instead.
@@ -109,7 +109,7 @@ than `file://` so asset and PDF links behave as they do in production.
 * `Ctrl+F` finds every nav label. This is what the old non-breaking-space
   indentation silently broke on one page.
 
-**Study modal and lightbox (any case-study page)**
+### Study modal and lightbox (any case-study page)
 
 * A `.open-detail` trigger opens the modal with the close button focused and the
   background unable to scroll; `Esc`, the ×, and a backdrop click all dismiss it.
@@ -119,7 +119,7 @@ than `file://` so asset and PDF links behave as they do in production.
 * Clicking an image, or focusing it and pressing `Enter` / `Space`, shows the full
   uncropped image in the lightbox.
 
-**Mobile JKN queue simulation**
+### Mobile JKN queue simulation
 
 * `Ambil Antrean` moves the status chip off `Belum Ambil`, seeds history, and
   computes the departure formula; `travel-range` and `poli-select` both update it.
@@ -130,7 +130,7 @@ than `file://` so asset and PDF links behave as they do in production.
   is not re-sent on the next poll.
 * Arrow keys move between tabs in the tab strip and focus follows the selection.
 
-**Any page**
+### Any page
 
 * The theme toggle's `aria-label` tracks the active theme and the choice survives
   reload without a flash of the wrong theme.
