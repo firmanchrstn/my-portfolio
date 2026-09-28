@@ -65,8 +65,8 @@
 }
 
 .summary__card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    background: var(--surface-bg);
+    border: var(--surface-border);
     padding: 2.5rem;
     border-radius: var(--radius-lg);
     display: flex;
@@ -74,7 +74,6 @@
     justify-content: space-between;
     align-items: flex-start;
     transition: var(--transition-smooth);
-    will-change: transform;
 }
 
 @media (hover: hover) {
@@ -159,8 +158,8 @@
 }
 
 .gallery-item {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    background: var(--surface-bg);
+    border: var(--surface-border);
     border-radius: var(--radius-md);
     overflow: hidden;
     transition: var(--transition-smooth);
@@ -212,10 +211,11 @@
 .native-modal {
     margin: auto;
     padding: 0;
-    border: 1px solid var(--border-subtle);
+    border: var(--surface-border);
     border-radius: var(--radius-lg);
-    background: var(--bg-surface);
+    background: var(--surface-bg);
     color: var(--text-body);
+    max-width: 100%;
 }
 
 .native-modal::backdrop {
