@@ -258,6 +258,49 @@
         });
     };
 
+    // --- 6. TABS MODULE ---
+    const initTabs = () => {
+        const tablist = document.querySelector('[role="tablist"]');
+        if (!tablist) return;
+        const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+        const panels = tabs
+            .map((t) => document.getElementById(t.getAttribute('aria-controls')))
+            .filter(Boolean);
+        if (!tabs.length) return;
+
+        const switchTab = (btn) => {
+            const target = btn.getAttribute('aria-controls');
+            tabs.forEach((t) => {
+                const active = t === btn;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', String(active));
+                t.tabIndex = active ? 0 : -1;
+            });
+            panels.forEach((p) => {
+                const show = p.id === target;
+                p.hidden = !show;
+                if (show) {
+                    p.querySelectorAll('.reveal').forEach((el) => el.classList.add('active'));
+                }
+            });
+        };
+
+        tabs.forEach((btn) => {
+            btn.addEventListener('click', () => switchTab(btn));
+            btn.addEventListener('keydown', (e) => {
+                const idx = tabs.indexOf(btn);
+                let next = null;
+                if (e.key === 'ArrowRight') next = tabs[(idx + 1) % tabs.length];
+                if (e.key === 'ArrowLeft') next = tabs[(idx - 1 + tabs.length) % tabs.length];
+                if (next) {
+                    e.preventDefault();
+                    switchTab(next);
+                    next.focus();
+                }
+            });
+        });
+    };
+
     // --- INIT ---
     document.addEventListener('DOMContentLoaded', () => {
         initTheme();
@@ -265,5 +308,6 @@
         initDialogs();
         initReveals();
         initForm();
+        initTabs();
     });
 })();

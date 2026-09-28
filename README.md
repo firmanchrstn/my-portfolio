@@ -57,9 +57,10 @@ Shared code, tooling and site files:
 
 * `/css/style.css`: Global design tokens, layout system, and utilities.
 * `/css/portfolio.css`: Project-specific components and case study styling.
-* `/css/mobile-jkn-prototype.css`: Styling for the embedded queue simulation.
-* `/js/script.js`: Theme, navigation, scroll-spy, and shared dialog state.
-* `/js/mobile-jkn-prototype.js`: Queue-simulation logic for the Mobile JKN case study.
+* `/css/mobile-jkn-prototype.css`: Styling for the Mobile JKN AI panel (intro, milestone progress bars, tags).
+* `/js/script.js`: Theme, navigation, scroll-spy, tabs, and shared dialog state.
+* `/css/mobile-jkn-prototype.css` is retained for the AI panel; the interactive
+  queue simulation it was written for has been removed.
 * `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
 * `/tools/verify.js`: Zero-dependency integrity checks (see below).
 * `/favicon.svg`, `/robots.txt`, `/sitemap.xml`: Standard site metadata.
@@ -93,11 +94,11 @@ behaves, so the interaction paths below still need a human pass.
 
 ## Manual QA
 
-Run through this before publishing a change to `script.js`,
-`mobile-jkn-prototype.js`, or the shared shell. Serve over Live Server rather
-than `file://` so asset and PDF links behave as they do in production.
+Run through this before publishing a change to `script.js` or the shared shell.
+Serve over Live Server rather than `file://` so asset and PDF links behave as
+they do in production.
 
-### Mobile menu (viewport ≤768px)
+**Mobile menu (viewport ≤768px)**
 
 * On load, `Tab` skips the closed off-canvas links (they must be `inert`) and
   reaches the theme toggle instead.
@@ -109,7 +110,7 @@ than `file://` so asset and PDF links behave as they do in production.
 * `Ctrl+F` finds every nav label. This is what the old non-breaking-space
   indentation silently broke on one page.
 
-### Study modal and lightbox (any case-study page)
+**Study modal and lightbox (any case-study page)**
 
 * A `.open-detail` trigger opens the modal with the close button focused and the
   background unable to scroll; `Esc`, the ×, and a backdrop click all dismiss it.
@@ -119,18 +120,18 @@ than `file://` so asset and PDF links behave as they do in production.
 * Clicking an image, or focusing it and pressing `Enter` / `Space`, shows the full
   uncropped image in the lightbox.
 
-### Mobile JKN queue simulation
+**Tabs (`mobile-jkn.html`)**
 
-* `Ambil Antrean` moves the status chip off `Belum Ambil`, seeds history, and
-  computes the departure formula; `travel-range` and `poli-select` both update it.
-* Toggle the offline switch on, then off, then press `Coba lagi`: the banner must
-  disappear each time.
-* The staleness hint stays hidden when no queue is live.
-* The WhatsApp opt-in stays disabled until a queue exists, and a delivered rule
-  is not re-sent on the next poll.
-* Arrow keys move between tabs in the tab strip and focus follows the selection.
+* Only one panel is visible at a time, and the active tab carries `is-active`,
+  `aria-selected="true"` and `tabindex="0"` while the other is `tabindex="-1"`.
+* `←` and `→` move between tabs, wrap around at both ends, and move focus with
+  them.
+* Switching to a panel reveals its scroll-reveal blocks rather than leaving them
+  stuck at opacity 0.
+* The tab module lives in `script.js` and no-ops on pages without a tablist, so
+  adding a tablist to any other page works with no extra wiring.
 
-### Any page
+**Any page**
 
 * The theme toggle's `aria-label` tracks the active theme and the choice survives
   reload without a flash of the wrong theme.
