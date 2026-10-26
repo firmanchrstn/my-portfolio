@@ -8,6 +8,13 @@
     const prefersReducedMotion = () =>
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    const syncBodyLock = () => {
+        const navMenu = document.getElementById('nav-menu');
+        const navOpen = navMenu ? navMenu.classList.contains('show-menu') : false;
+        const dialogOpen = document.querySelectorAll('dialog[open]').length > 0;
+        document.body.style.overflow = navOpen || dialogOpen ? 'hidden' : '';
+    };
+
     // --- 1. THEME MODULE ---
     const initTheme = () => {
         const themeToggle = document.getElementById('theme-toggle');
@@ -42,7 +49,7 @@
             if (!navMenu) return;
             navMenu.classList.toggle('show-menu', isOpen);
             if (navToggle) navToggle.setAttribute('aria-expanded', String(isOpen));
-            document.body.style.overflow = isOpen ? 'hidden' : '';
+            syncBodyLock();
 
             // Off-canvas menu: prevent tab/screen-reader reach while closed on mobile
             if (navMenu.inert !== undefined) {
@@ -131,35 +138,84 @@
     const initDialogs = () => {
         const studyModal = document.getElementById('study-modal');
         const lightboxModal = document.getElementById('lightbox-modal');
-        if (!studyModal && !lightboxModal) return;
+        const dialogs = Array.from(document.querySelectorAll('dialog'));
+        if (!dialogs.length) return;
 
-        // Reference-counted: a second dialog (e.g. a lightbox opened from inside the
-        // study modal) must not unlock the page while the first one is still open.
-        let openDialogCount = 0;
-        const lockBodyScroll = (lock) => {
-            openDialogCount = Math.max(0, openDialogCount + (lock ? 1 : -1));
-            document.body.style.overflow = openDialogCount > 0 ? 'hidden' : '';
-        };
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxCounter = document.getElementById('lightbox-counter');
+        const lightboxPrev = lightboxModal ? lightboxModal.querySelector('.lightbox__nav--prev') : null;
+        const lightboxNext = lightboxModal ? lightboxModal.querySelector('.lightbox__nav--next') : null;
+        let lightboxItems = [];
+        let lightboxIndex = 0;
 
-        // Shared dialog plumbing: close button, backdrop dismissal, scroll unlock.
+        // Shared dialog plumbing: close button, backdrop dismissal, scroll sync.
         const closeButtons = new Map();
         const wireDialog = (dialog) => {
             const closeBtn = dialog.querySelector('.native-modal__close');
             closeButtons.set(dialog, closeBtn);
             if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
             dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
-            dialog.addEventListener('close', () => lockBodyScroll(false));
+            dialog.addEventListener('close', syncBodyLock);
+            new MutationObserver(syncBodyLock).observe(dialog, {
+                attributes: true,
+                attributeFilter: ['open']
+            });
+        };
+
+        const setGalleryFilter = (btn) => {
+            const toolbar = btn.closest('.proto-filter');
+            const wrapper = toolbar ? toolbar.closest('.proto-modal__wrapper') : null;
+            const grid = wrapper ? wrapper.querySelector('[data-gallery-grid]') : null;
+            if (!wrapper || !grid) return;
+
+            const filter = btn.dataset.filter || 'all';
+            toolbar.querySelectorAll('.proto-filter__btn').forEach((item) => {
+                const active = item === btn;
+                item.classList.toggle('is-active', active);
+                item.setAttribute('aria-pressed', String(active));
+            });
+
+            const cards = grid.querySelectorAll('.proto-card');
+            let visible = 0;
+            cards.forEach((card) => {
+                const show = filter === 'all' || card.dataset.category === filter;
+                card.hidden = !show;
+                card.classList.remove('is-filtered-in');
+                if (!show) return;
+                visible += 1;
+                void card.offsetWidth;
+                card.classList.add('is-filtered-in');
+            });
+
+            const status = wrapper.querySelector('.proto-gallery__status');
+            if (status) {
+                status.textContent = filter === 'all'
+                    ? `Showing all ${visible} screens`
+                    : `Showing ${visible} of ${cards.length} screens`;
+            }
+
+            const empty = wrapper.querySelector('.proto-gallery__empty');
+            if (empty) empty.hidden = visible > 0;
+        };
+
+        const resetGalleryFilters = (dialog) => {
+            const allBtn = dialog.querySelector('.proto-filter__btn[data-filter="all"]');
+            if (allBtn) setGalleryFilter(allBtn);
         };
 
         const openDialog = (dialog) => {
+            if (dialog.open) return;
+            const scrollArea = dialog.querySelector('.proto-modal__wrapper');
+            if (scrollArea) scrollArea.scrollTop = 0;
             dialog.showModal(); // Native API handles focus trap
-            lockBodyScroll(true);
+            syncBodyLock();
+            if (dialog.classList.contains('proto-modal')) resetGalleryFilters(dialog);
             const closeBtn = closeButtons.get(dialog);
             if (closeBtn) closeBtn.focus();
         };
 
-        if (studyModal) wireDialog(studyModal);
-        if (lightboxModal) wireDialog(lightboxModal);
+        dialogs.forEach(wireDialog);
 
         // Study detail modal populated from an HTML5 <template>
         const openStudyDetail = (trigger) => {
@@ -174,18 +230,114 @@
         };
 
         // Image lightbox gallery
-        const openLightbox = (wrap) => {
+        const lightboxItemFrom = (wrap) => {
             const img = wrap.querySelector('img');
-            if (!img) return;
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = img.currentSrc || img.src;
-            lightboxImg.alt = img.alt || 'Enlarged design preview';
+            if (!img) return null;
+            const card = wrap.closest('.proto-card');
+            const cardTitle = card ? card.querySelector('.proto-card__body h3') : null;
+            const cardTag = card ? card.querySelector('.proto-card__tag') : null;
+            const captionParts = [cardTag, cardTitle]
+                .filter(Boolean)
+                .map((node) => node.textContent.trim())
+                .filter(Boolean);
+
+            return {
+                src: img.dataset.full || img.currentSrc || img.src,
+                alt: img.alt || 'Enlarged design preview',
+                caption: captionParts.join(' — ')
+            };
+        };
+
+        const galleryItemsFor = (wrap) => {
+            const gallery = wrap.closest('.proto-gallery');
+            if (!gallery) {
+                const single = lightboxItemFrom(wrap);
+                return single ? [single] : [];
+            }
+
+            return Array.from(gallery.querySelectorAll('.img-wrapper'))
+                .filter((item) => {
+                    const card = item.closest('.proto-card');
+                    return !card || !card.hidden;
+                })
+                .map(lightboxItemFrom)
+                .filter(Boolean);
+        };
+
+        const renderLightboxItem = (index) => {
+            const item = lightboxItems[index];
+            if (!item || !lightboxImg) return;
+
+            lightboxIndex = index;
+            lightboxImg.src = item.src;
+            lightboxImg.alt = item.alt;
+
+            if (lightboxCaption) {
+                lightboxCaption.textContent = item.caption;
+                lightboxCaption.hidden = !item.caption;
+            }
+
+            const hasMany = lightboxItems.length > 1;
+            if (lightboxCounter) {
+                const current = String(index + 1).padStart(2, '0');
+                const total = String(lightboxItems.length).padStart(2, '0');
+                lightboxCounter.textContent = `${current} / ${total}`;
+                lightboxCounter.hidden = !hasMany;
+            }
+            if (lightboxPrev) lightboxPrev.disabled = !hasMany;
+            if (lightboxNext) lightboxNext.disabled = !hasMany;
+        };
+
+        const stepLightbox = (direction) => {
+            if (lightboxItems.length < 2) return;
+            const next = (lightboxIndex + direction + lightboxItems.length) % lightboxItems.length;
+            renderLightboxItem(next);
+        };
+
+        const openLightbox = (wrap) => {
+            if (!lightboxModal) return;
+            const items = galleryItemsFor(wrap);
+            if (!items.length) return;
+
+            const current = lightboxItemFrom(wrap);
+            lightboxItems = items;
+            const currentIndex = current
+                ? items.findIndex((item) => item.src === current.src && item.alt === current.alt)
+                : 0;
+            renderLightboxItem(currentIndex < 0 ? 0 : currentIndex);
             openDialog(lightboxModal);
         };
+
+        if (lightboxPrev) lightboxPrev.addEventListener('click', () => stepLightbox(-1));
+        if (lightboxNext) lightboxNext.addEventListener('click', () => stepLightbox(1));
+
+        if (lightboxModal) {
+            let touchStartX = 0;
+            lightboxModal.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].clientX;
+            }, { passive: true });
+            lightboxModal.addEventListener('touchend', (e) => {
+                const delta = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(delta) > 45) stepLightbox(delta < 0 ? 1 : -1);
+            }, { passive: true });
+        }
 
         // One delegated pair serves both dialogs for mouse, touch and keyboard
         // (Enter / Space on the role="button" image wrapper).
         document.body.addEventListener('click', (e) => {
+            const opener = e.target.closest('[data-dialog-open]');
+            if (opener) {
+                const dialog = document.getElementById(opener.getAttribute('data-dialog-open'));
+                if (dialog) {
+                    openDialog(dialog);
+                    return;
+                }
+            }
+            const filterBtn = e.target.closest('.proto-filter__btn');
+            if (filterBtn) {
+                setGalleryFilter(filterBtn);
+                return;
+            }
             const trigger = e.target.closest('.open-detail');
             if (trigger && studyModal) {
                 openStudyDetail(trigger);
@@ -201,6 +353,17 @@
             if (target.classList && target.classList.contains('img-wrapper')) {
                 e.preventDefault();
                 openLightbox(target);
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightboxModal || !lightboxModal.open) return;
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                stepLightbox(-1);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                stepLightbox(1);
             }
         });
     };
