@@ -39,6 +39,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -119,84 +120,110 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>Project Context</h3>
-                        <p>Terre Bistro & Bar is a premium restaurant in Cikarang needing an exclusive digital identity
-                            to boost table reservations and brand awareness.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about project context">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Challenge</h4>
-                        <h3>Core Problem</h3>
-                        <p>Presenting extensive menu information and complete facilities without making the website
-                            interface feel rigid, boring, or cluttered.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Innovation</h4>
-                        <h3>Design Solution</h3>
-                        <p>Crafting a "Cinematic Luxury" experience using buttery-smooth scroll animations, full-screen
-                            navigation, and a modern Bento Grid layout.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="solution"
-                        aria-label="Read more about the solution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="Terre content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the image to enlarge
-                    it.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Web Development & UI/UX</span>
+                    <h2>A Cinematic Luxury Experience</h2>
+                    <p>A front-end case study translating the warm, elegant atmosphere of Terre Bistro & Bar into a
+                        smooth, immersive website built to drive reservations and showcase the full dining experience.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
-                                alt="Hero Section Terre Bistro" width="800" height="533" loading="lazy"
-                                decoding="async">
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>Project Context</h3>
+                            <p>Terre Bistro & Bar is a premium restaurant in Cikarang needing an exclusive digital
+                                identity to boost table reservations and brand awareness.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Cinematic Hero Section</h3>
-                            <p>An immersive initial view featuring a subtle film grain noise texture and elegant text
-                                animations to provide an instant luxurious feel.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about project context">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
 
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
-                                alt="Amenities Bento Grid" width="800" height="533" loading="lazy" decoding="async">
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Challenge</h4>
+                            <h3>Core Problem</h3>
+                            <p>Presenting extensive menu information and complete facilities without making the website
+                                interface feel rigid, boring, or cluttered.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Bento Grid Layout</h3>
-                            <p>Presenting complex facility information (such as parking areas, VIP rooms, and halal
-                                options) into a neat, structured, and highly readable grid system.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="problem"
+                            aria-label="Read more about the problem">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Innovation</h4>
+                            <h3>Design Solution</h3>
+                            <p>Crafting a "Cinematic Luxury" experience using buttery-smooth scroll animations,
+                                full-screen navigation, and a modern Bento Grid layout.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="solution"
+                            aria-label="Read more about the solution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the Terre Web Experience</h2>
+                    <p>An immersive hero and a structured Bento grid that keeps menus, facilities, and reservations
+                        readable without losing the restaurant's sophisticated mood.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="terre-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> Web
+                                Development
+                            </span>
+                            <h2 id="terre-showcase-title">Motion That Feels Like the Room</h2>
+                            <p>Lenis smooth scrolling and GSAP ScrollTrigger animations turn a content-heavy restaurant
+                                site into an elegant, cinematic journey from hero to reservation.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-terre">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View Design Showcase
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click any image in the gallery to enlarge it
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+                                    alt="" width="800" height="533" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- HTML5 Templates -->
@@ -258,7 +285,96 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
+        </button>
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+            <span class="lightbox__counter" id="lightbox-counter" aria-live="polite" aria-atomic="true"
+                hidden></span>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
+        </button>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-terre" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-terre-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close Terre Bistro gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="terre">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-terre-title">Terre Bistro & Bar — Web Experience</h2>
+                <p>Two defining views of the site: a cinematic hero that sets the mood, and a Bento grid that makes
+                    complex venue information effortless to scan.</p>
+                <div class="proto-modal__stats" aria-label="Terre Bistro prototype summary">
+                    <span><strong>02</strong><small>Views</small></span>
+                    <span><strong>2</strong><small>Sections</small></span>
+                    <span><strong>GSAP</strong><small>Motion</small></span>
+                </div>
+            </header>
+
+            <div class="proto-filter" role="group" aria-label="Filter Terre views by section">
+                <button type="button" class="proto-filter__btn is-active" data-filter="all"
+                    aria-pressed="true">All <span>2</span></button>
+                <button type="button" class="proto-filter__btn" data-filter="hero"
+                    aria-pressed="false">Hero <span>1</span></button>
+                <button type="button" class="proto-filter__btn" data-filter="facilities"
+                    aria-pressed="false">Facilities <span>1</span></button>
+            </div>
+            <p class="proto-gallery__status" aria-live="polite">Showing all 2 views</p>
+
+            <div class="proto-gallery" data-gallery-grid>
+                <figure class="proto-card proto-card--landscape" data-category="hero">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the cinematic hero section">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop"
+                            alt="Hero Section Terre Bistro" width="800" height="533" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Hero</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Cinematic Hero Section</h3>
+                        <p>An immersive initial view featuring a subtle film grain noise texture and elegant text
+                            animations to provide an instant luxurious feel.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card proto-card--landscape" data-category="facilities">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the amenities Bento grid">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop"
+                            alt="Amenities Bento Grid" width="800" height="533" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Facilities</span>
+                            <span class="proto-card__index" aria-hidden="true">02</span>
+                        </div>
+                        <h3>Bento Grid Layout</h3>
+                        <p>Presenting complex facility information (such as parking areas, VIP rooms, and halal
+                            options) into a neat, structured, and highly readable grid system.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

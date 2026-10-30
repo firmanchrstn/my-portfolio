@@ -34,6 +34,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -115,71 +116,109 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>The Context</h3>
-                        <p>Creating a strong, dynamic visual identity for the DOMIN8 campus group to establish a bold
-                            and assertive presence.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about the context">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Concept</h4>
-                        <h3>Art Direction</h3>
-                        <p>Utilizing a raw, grunge typography aesthetic combined with high-contrast elements to break
-                            away from traditional corporate designs.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="concept"
-                        aria-label="Read more about art direction">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Execution</h4>
-                        <h3>Delivery</h3>
-                        <p>Designing cohesive assets across digital and print media, ensuring the brand identity remains
-                            consistent and impactful.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="execution" aria-label="Read more about execution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="DOMIN8 content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Visual Assets">
-                <h2 class="mb-1 text-center">Visual Assets</h2>
-                <p class="text-accent mb-4 d-flex align-center justify-center gap-2" style="font-size: 0.95rem;">
-                    <span class="material-symbols-rounded" aria-hidden="true">search</span> Click any poster to view in
-                    high resolution.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Branding & Visual Design</span>
+                    <h2>Domination Through Design</h2>
+                    <p>A bold visual identity for the DOMIN8 campus group, built on grunge typography, high contrast,
+                        and layered textures that break away from traditional corporate design.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged poster">
-                            <img src="asset/poster/Poster1.webp" alt="DOMIN8 Main Identity Poster" width="800"
-                                height="1131" loading="lazy" decoding="async">
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>The Context</h3>
+                            <p>Creating a strong, dynamic visual identity for the DOMIN8 campus group to establish a
+                                bold and assertive presence.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Main Identity Poster</h3>
-                            <p>The primary design representing the aggressive and dynamic character of the DOMIN8 team.
-                            </p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about the context">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Concept</h4>
+                            <h3>Art Direction</h3>
+                            <p>Utilizing a raw, grunge typography aesthetic combined with high-contrast elements to
+                                break away from traditional corporate designs.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="concept"
+                            aria-label="Read more about art direction">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Execution</h4>
+                            <h3>Delivery</h3>
+                            <p>Designing cohesive assets across digital and print media, ensuring the brand identity
+                                remains consistent and impactful.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="execution"
+                            aria-label="Read more about execution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the DOMIN8 Visual Assets</h2>
+                    <p>The main identity poster, presented in full resolution. Click the artwork to open the lightbox
+                        and inspect the details up close.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="domin8-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> Visual Design
+                            </span>
+                            <h2 id="domin8-showcase-title">Raw, Loud, and Unmistakable</h2>
+                            <p>Rough textured type, deep monochromatic tones, and sharp accents give DOMIN8 an
+                                immediately recognizable presence across digital and print.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-domin8">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View Design Showcase
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click the poster to view it in high resolution
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="asset/poster/Poster1.webp" alt="" width="800" height="1131" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- Templates Dialog Content -->
@@ -239,7 +278,59 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+        </figure>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-domin8" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-domin8-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close DOMIN8 gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="domin8">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-domin8-title">DOMIN8 — Brand Identity</h2>
+                <p>The primary identity artwork representing the aggressive, energetic character of the DOMIN8 campus
+                    group.</p>
+                <div class="proto-modal__stats" aria-label="DOMIN8 prototype summary">
+                    <span><strong>01</strong><small>Poster</small></span>
+                    <span><strong>Print</strong><small>Medium</small></span>
+                    <span><strong>Hi-Res</strong><small>Asset</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 poster</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--portrait" data-category="poster">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the DOMIN8 main identity poster">
+                        <img src="asset/poster/Poster1.webp" alt="DOMIN8 Main Identity Poster" width="800"
+                            height="1131" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Poster</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Main Identity Poster</h3>
+                        <p>The primary design representing the aggressive and dynamic character of the DOMIN8 team.
+                        </p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

@@ -34,6 +34,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -115,71 +116,110 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>The Context</h3>
-                        <p>Designing visual communication media to create a more inspiring and emotionally engaging
-                            campus environment.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about the context">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Concept</h4>
-                        <h3>Creative Direction</h3>
-                        <p>Applying scrapbook and mood-board inspired visuals to establish emotional storytelling and
-                            relatable messaging.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="concept"
-                        aria-label="Read more about creative direction">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Execution</h4>
-                        <h3>Visual Delivery</h3>
-                        <p>Developing cohesive educational posters with balanced typography, hierarchy, and relaxed
-                            visual aesthetics.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="execution" aria-label="Read more about execution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal"
+                aria-label="Educational poster content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Visual Assets">
-                <h2 class="mb-1 text-center">Visual Assets</h2>
-                <p class="text-accent mb-4 d-flex align-center justify-center gap-2" style="font-size: 0.95rem;">
-                    <span class="material-symbols-rounded" aria-hidden="true">search</span> Click the poster to view in
-                    high resolution.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Visual Design & Campaign</span>
+                    <h2>Stories Worth Pinning Up</h2>
+                    <p>A scrapbook-inspired educational campaign that turns motivational messages into warm, relatable
+                        visual stories for university students.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged poster">
-                            <img src="asset/poster/Poster2.webp" alt="Educational Poster Design" width="800"
-                                height="1131" loading="lazy" decoding="async">
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>The Context</h3>
+                            <p>Designing visual communication media to create a more inspiring and emotionally engaging
+                                campus environment.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Educational Poster Campaign</h3>
-                            <p>A scrapbook-inspired visual campaign designed to deliver motivational and educational
-                                messages for university students.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about the context">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Concept</h4>
+                            <h3>Creative Direction</h3>
+                            <p>Applying scrapbook and mood-board inspired visuals to establish emotional storytelling
+                                and relatable messaging.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="concept"
+                            aria-label="Read more about creative direction">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Execution</h4>
+                            <h3>Visual Delivery</h3>
+                            <p>Developing cohesive educational posters with balanced typography, hierarchy, and relaxed
+                                visual aesthetics.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="execution"
+                            aria-label="Read more about execution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the Educational Campaign</h2>
+                    <p>The full poster artwork, presented at high resolution. Click the design to open the lightbox and
+                        read the composition up close.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="educational-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> Visual Design
+                            </span>
+                            <h2 id="educational-showcase-title">A Softer Kind of Campus Message</h2>
+                            <p>Layered scraps, handwritten energy, and a calm palette make the campaign feel personal
+                                rather than institutional, helping the message land emotionally.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-educational">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View Design Showcase
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click the poster to view it in high resolution
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="asset/poster/Poster2.webp" alt="" width="800" height="1131" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- Templates Dialog Content -->
@@ -236,7 +276,59 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+        </figure>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-educational" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-educational-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close educational poster gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="educational">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-educational-title">Educational Poster — Campaign</h2>
+                <p>A scrapbook-inspired poster designed to deliver motivational and educational messages for university
+                    students.</p>
+                <div class="proto-modal__stats" aria-label="Educational poster summary">
+                    <span><strong>01</strong><small>Poster</small></span>
+                    <span><strong>Print</strong><small>Medium</small></span>
+                    <span><strong>Hi-Res</strong><small>Asset</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 poster</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--portrait" data-category="poster">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the educational poster">
+                        <img src="asset/poster/Poster2.webp" alt="Educational Poster Design" width="800" height="1131"
+                            loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Poster</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Educational Poster Campaign</h3>
+                        <p>A scrapbook-inspired visual campaign designed to deliver motivational and educational
+                            messages for university students.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

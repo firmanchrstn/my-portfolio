@@ -37,6 +37,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -113,71 +114,109 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>Context</h3>
-                        <p>Redesigning a mobile application structure to bridge the digital gap for tourism users, making
-                            travel information easier to access and navigate.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about project context">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Challenge</h4>
-                        <h3>Problem Statement</h3>
-                        <p>Information overload and complex navigation patterns causing friction and cognitive overload
-                            when users look for tourism services.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Innovation</h4>
-                        <h3>The Solution</h3>
-                        <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and simplified
-                            navigation built as a Flutter application.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="solution"
-                        aria-label="Read more about the solution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="Wisata content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Visuals for this project are
-                    in progress.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">UI/UX & Flutter Mobile App</span>
+                    <h2>Bridging the Digital Gap for Travelers</h2>
+                    <p>A Flutter mobile concept that restructures tourism information around clear hierarchy and
+                        progressive disclosure, so travelers can find what they need in fewer steps.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/ComingSoon.jpg" alt="Wisata App Showcase (coming soon)" width="800"
-                                height="450" loading="lazy" decoding="async">
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>Context</h3>
+                            <p>Redesigning a mobile application structure to bridge the digital gap for tourism users,
+                                making travel information easier to access and navigate.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Coming Soon</h3>
-                            <p>Detailed screenshots and design documentation for the Wisata App will be published here
-                                once the project is finalized.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about project context">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Challenge</h4>
+                            <h3>Problem Statement</h3>
+                            <p>Information overload and complex navigation patterns causing friction and cognitive
+                                overload when users look for tourism services.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="problem"
+                            aria-label="Read more about the problem">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Innovation</h4>
+                            <h3>The Solution</h3>
+                            <p>A streamlined interface with clear visual hierarchy, progressive disclosure, and
+                                simplified navigation built as a Flutter application.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="solution"
+                            aria-label="Read more about the solution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the Wisata App</h2>
+                    <p>Detailed screenshots and design documentation are being finalized. The showcase will open here
+                        as soon as the project visuals are ready.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="wisata-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> Mobile App
+                            </span>
+                            <h2 id="wisata-showcase-title">A Calmer Way to Plan a Trip</h2>
+                            <p>Important tourism information is prioritized, complex details appear only when needed,
+                                and Flutter-powered flows cut the distance between intent and completion.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-wisata">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View Design Showcase
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">schedule</span>
+                                    Full prototype screens coming soon
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="asset/ComingSoon.jpg" alt="" width="800" height="450" loading="lazy"
+                                    decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- HTML5 Templates -->
@@ -232,7 +271,59 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+        </figure>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-wisata" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-wisata-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close Wisata App gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="wisata">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-wisata-title">Wisata App — In Progress</h2>
+                <p>The app structure and Flutter flows are defined, while the final high-fidelity screens are still
+                    being prepared for publication.</p>
+                <div class="proto-modal__stats" aria-label="Wisata App prototype summary">
+                    <span><strong>01</strong><small>Preview</small></span>
+                    <span><strong>Flutter</strong><small>Stack</small></span>
+                    <span><strong>WIP</strong><small>Status</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 preview</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--landscape" data-category="preview">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the Wisata App coming soon preview">
+                        <img src="asset/ComingSoon.jpg" alt="Wisata App Showcase (coming soon)" width="800"
+                            height="450" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Coming Soon</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Showcase In Progress</h3>
+                        <p>Detailed screenshots and design documentation for the Wisata App will be published here once
+                            the project is finalized.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

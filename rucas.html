@@ -37,6 +37,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -113,116 +114,155 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>Overview</h4>
-                        <h3>rucas.co Project Overview</h3>
-                        <p>A conceptual UI/UX design exploration for Rucas, a premium local streetwear brand known for
-                            its exclusive, limited-drop collections.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="overview" aria-label="Read more about overview">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="Rucas content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
+            </div>
+        </div>
+
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Web Design</span>
+                    <h2>A Premium Streetwear Storefront</h2>
+                    <p>A conceptual UI/UX exploration for Rucas, translating limited-drop streetwear culture into a
+                        clean, editorial digital storefront built around brand storytelling and a frictionless purchase
+                        flow.</p>
                 </div>
 
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>The Challenge</h4>
-                        <h3>The Challenge</h3>
-                        <p>High-traffic streetwear releases require a fast and intuitive user interface to manage
-                            high-demand product drops efficiently.</p>
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>Overview</h4>
+                            <h3>rucas.co Project Overview</h3>
+                            <p>A conceptual UI/UX design exploration for Rucas, a premium local streetwear brand known
+                                for its exclusive, limited-drop collections.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="overview"
+                            aria-label="Read more about overview">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="the-challenge"
-                        aria-label="Read more about the challenge">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>The Solution & UX Strategy</h4>
-                        <h3>The Outcome</h3>
-                        <p>The result is a sleek, conversion-focused interface that bridges the gap between elegant
-                            UI/UX design and practical application architecture.</p>
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>The Challenge</h4>
+                            <h3>The Challenge</h3>
+                            <p>High-traffic streetwear releases require a fast and intuitive user interface to manage
+                                high-demand product drops efficiently.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="the-challenge"
+                            aria-label="Read more about the challenge">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="the-outcome"
-                        aria-label="Read more about the outcome">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>The Solution & UX Strategy</h4>
-                        <h3>Brand Identity & Minimalism</h3>
-                        <p>I utilized a monochromatic color palette (black, white, and light grey) to emulate a high-end
-                            fashion editorial feel.</p>
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>The Solution & UX Strategy</h4>
+                            <h3>The Outcome</h3>
+                            <p>The result is a sleek, conversion-focused interface that bridges the gap between elegant
+                                UI/UX design and practical application architecture.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="the-outcome"
+                            aria-label="Read more about the outcome">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="part1-1"
-                        aria-label="Read more about brand identity">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>The Solution & UX Strategy</h4>
-                        <h3>Frictionless Cart Interaction</h3>
-                        <p>Instead of forcing users to a separate cart page, I designed a Dimmed Overlay Cart Modal to
-                            reduce friction in the user journey.</p>
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>The Solution & UX Strategy</h4>
+                            <h3>Brand Identity & Minimalism</h3>
+                            <p>I utilized a monochromatic color palette (black, white, and light grey) to emulate a
+                                high-end fashion editorial feel.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="part1-1"
+                            aria-label="Read more about brand identity">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="part1-2"
-                        aria-label="Read more about cart interaction">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>The Solution & UX Strategy</h4>
-                        <h3>Strategic Scarcity</h3>
-                        <p>I integrated clear "Sold Out" badges directly onto the product grid and added transparent
-                            purchase-limit warnings.</p>
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>The Solution & UX Strategy</h4>
+                            <h3>Frictionless Cart Interaction</h3>
+                            <p>Instead of forcing users to a separate cart page, I designed a Dimmed Overlay Cart Modal
+                                to reduce friction in the user journey.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="part1-2"
+                            aria-label="Read more about cart interaction">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="part1-3"
-                        aria-label="Read more about strategic scarcity">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>The Solution & UX Strategy</h4>
+                            <h3>Strategic Scarcity</h3>
+                            <p>I integrated clear "Sold Out" badges directly onto the product grid and added transparent
+                                purchase-limit warnings.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="part1-3"
+                            aria-label="Read more about strategic scarcity">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the Rucas Storefront</h2>
+                    <p>A conversion-focused landing experience that puts product photography and bold typography first,
+                        supported by a cart flow designed to keep shoppers in context.</p>
                 </div>
             </div>
-        </section>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
-                    enlarge it.
-                </p>
-
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/rucas/thumbnail.rucas.webp" alt="Rucas UI Interface" width="800" height="600"
-                                loading="lazy" decoding="async">
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="rucas-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> UI/UX
+                                Prototype
+                            </span>
+                            <h2 id="rucas-showcase-title">Editorial Design, Built to Convert</h2>
+                            <p>A monochromatic storefront with generous negative space, high-contrast typography, and an
+                                overlay cart that keeps the product catalog in view.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-rucas">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View UI/UX Prototype
+                                </button>
+                                <a href="https://www.figma.com/proto/eoIpq1I2FdgTx0UJhlu3HC/Rucas.co" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn--outline">
+                                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span>
+                                    Open Figma Prototype
+                                </a>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click the preview to enlarge it
+                                </span>
+                            </div>
                         </div>
-                    </figure>
-                </div>
-            </section>
-
-            <section class="section-study text-center reveal"
-                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 class="mb-2">Try Interactive Prototype</h2>
-                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
-                    below to open the High-Fidelity Prototype directly in Figma.</p>
-                <a href="https://www.figma.com/proto/eoIpq1I2FdgTx0UJhlu3HC/Rucas.co" target="_blank"
-                    rel="noopener noreferrer" class="btn btn--primary">
-                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
-                </a>
-            </section>
-        </article>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="asset/rucas/thumbnail.rucas.webp" alt="" width="800" height="600"
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- HTML5 Templates -->
@@ -303,7 +343,59 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+        </figure>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-rucas" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-rucas-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close Rucas prototype gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="rucas">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-rucas-title">Rucas.co — Digital Storefront</h2>
+                <p>A conceptual storefront preview built around editorial minimalism, exclusive drops, and a
+                    frictionless cart interaction.</p>
+                <div class="proto-modal__stats" aria-label="Rucas prototype summary">
+                    <span><strong>01</strong><small>Preview</small></span>
+                    <span><strong>3</strong><small>Pages</small></span>
+                    <span><strong>Hi-Fi</strong><small>Prototype</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 screen</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--landscape" data-category="web">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the Rucas storefront preview">
+                        <img src="asset/rucas/thumbnail.rucas.webp" alt="Rucas UI Interface" width="800" height="600"
+                            loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Web Design</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Storefront Interface</h3>
+                        <p>A monochromatic, editorial landing experience designed for high-demand product drops and a
+                            seamless path to checkout.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

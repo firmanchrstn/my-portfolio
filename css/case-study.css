@@ -2,9 +2,7 @@
    MOBILE JKN — AI IMPLEMENTATION PROTOTYPE
    Split tabs (Case Study / AI Implementation) + live queue monitoring demo
    ========================================================================== */
-
-/* Author display rules must not override the `hidden` attribute.
-   Elements show/hide via the hidden flag (banner, opt-in card, etc.). */
+   
 [hidden] {
     display: none !important;
 }
@@ -2269,5 +2267,117 @@
 
     .proto-cta__phone--front {
         width: 110px;
+    }
+}
+
+/* --- Prototype CTA visual variants -------------------------------------- */
+/* Web and poster projects reuse the same CTA composition as the mobile
+   prototypes, but with framed screenshots that suit their own shape. */
+.proto-cta__visual--web .proto-cta__phone,
+.proto-cta__visual--poster .proto-cta__phone {
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+}
+
+.proto-cta__visual--web .proto-cta__phone {
+    width: clamp(180px, 16vw, 250px);
+}
+
+.proto-cta__visual--web .proto-cta__phone--front {
+    width: clamp(200px, 18vw, 280px);
+}
+
+.proto-cta__visual--poster .proto-cta__phone {
+    width: clamp(120px, 12vw, 160px);
+}
+
+.proto-cta__visual--web .proto-cta__phone img,
+.proto-cta__visual--poster .proto-cta__phone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.proto-cta__visual--poster .proto-cta__phone img {
+    object-fit: contain;
+    background: var(--bg-base);
+}
+
+.proto-cta__visual--single {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proto-cta__visual--single .proto-cta__phone {
+    position: relative;
+    inset: auto;
+    width: min(100%, 420px);
+    transform: none;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.28));
+}
+
+.proto-cta__visual--single .proto-cta__phone img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 960px) {
+    .proto-cta__visual--web .proto-cta__phone {
+        width: clamp(150px, 24vw, 210px);
+    }
+
+    .proto-cta__visual--web .proto-cta__phone--front {
+        width: clamp(170px, 27vw, 240px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .proto-cta__visual--web .proto-cta__phone {
+        width: 150px;
+    }
+
+    .proto-cta__visual--web .proto-cta__phone--front {
+        width: 170px;
+    }
+
+    .proto-cta__visual--poster .proto-cta__phone {
+        width: 120px;
+    }
+
+    .proto-cta__visual--single .proto-cta__phone {
+        width: min(100%, 300px);
+    }
+}
+
+/* --- Gallery card shape variants ---------------------------------------- */
+.proto-card--landscape .img-wrapper {
+    aspect-ratio: 16 / 10;
+}
+
+.proto-card--portrait .img-wrapper {
+    aspect-ratio: 3 / 4;
+}
+
+.proto-card--square .img-wrapper {
+    aspect-ratio: 1 / 1;
+}
+
+.proto-gallery--single {
+    grid-template-columns: minmax(0, 520px);
+    justify-content: center;
+}
+
+@media screen and (max-width: 520px) {
+    .proto-gallery--single {
+        grid-template-columns: minmax(0, 1fr);
     }
 }

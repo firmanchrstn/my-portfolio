@@ -57,10 +57,9 @@ Shared code, tooling and site files:
 
 * `/css/style.css`: Global design tokens, layout system, and utilities.
 * `/css/portfolio.css`: Project-specific components and case study styling.
-* `/css/mobile-jkn-prototype.css`: Styling for the Mobile JKN AI panel (intro, milestone progress bars, tags).
+* `/css/case-study.css`: Shared case-study styling: tabs, intros, summary grid,
+  prototype CTAs, gallery cards, modals, and the lightbox.
 * `/js/script.js`: Theme, navigation, scroll-spy, tabs, and shared dialog state.
-* `/css/mobile-jkn-prototype.css` is retained for the AI panel; the interactive
-  queue simulation it was written for has been removed.
 * `/asset/`: Centralized storage for project assets, documentation (PDFs), and optimized media.
 * `/tools/verify.js`: Zero-dependency integrity checks (see below).
 * `/favicon.svg`, `/robots.txt`, `/sitemap.xml`: Standard site metadata.

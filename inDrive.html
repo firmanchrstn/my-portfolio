@@ -38,6 +38,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -112,85 +113,120 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>Context</h3>
-                        <p>A UI/UX case study on improving the inDrive ride-hailing experience through clearer
-                            navigation and more intuitive user flows.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about the background">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Challenge</h4>
-                        <h3>Problem Statement</h3>
-                        <p>Identifying the primary user experience friction points and interface challenges within the
-                            existing application.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="problem"
-                        aria-label="Read more about the challenge">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Innovation</h4>
-                        <h3>The Solution</h3>
-                        <p>A strategic redesign focusing on clearer visual hierarchy, streamlined booking flows, and
-                            enhanced trust signals.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="solution"
-                        aria-label="Read more about the solution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="inDrive content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
-                    enlarge it.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">UI/UX Case Study</span>
+                    <h2>Rethinking the Ride-Hailing Experience</h2>
+                    <p>A focused redesign of the inDrive application, improving how riders discover, compare, and book
+                        a ride through clearer navigation and calmer visual hierarchy.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.webp"
-                                alt="inDrive Redesign Interface Preview" width="400" height="800" loading="lazy"
-                                decoding="async">
+                <div class="summary__grid">
+
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>Context</h3>
+                            <p>A UI/UX case study on improving the inDrive ride-hailing experience through clearer
+                                navigation and more intuitive user flows.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Interface Preview</h3>
-                            <p>Streamlined layout aimed at faster navigation and clearer user intent. Additional case
-                                study screenshots are being prepared.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about the background">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Challenge</h4>
+                            <h3>Problem Statement</h3>
+                            <p>Identifying the primary user experience friction points and interface challenges within
+                                the existing application.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="problem"
+                            aria-label="Read more about the challenge">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Innovation</h4>
+                            <h3>The Solution</h3>
+                            <p>A strategic redesign focusing on clearer visual hierarchy, streamlined booking flows,
+                                and enhanced trust signals.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="solution"
+                            aria-label="Read more about the solution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the inDrive Redesign</h2>
+                    <p>An interface preview documenting the streamlined layout built for faster navigation, clearer
+                        user intent, and a calmer booking experience.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="indrive-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> UI/UX
+                                Prototype
+                            </span>
+                            <h2 id="indrive-showcase-title">A Cleaner Path Through the App</h2>
+                            <p>The redesigned interface prioritizes clarity at every step—clearer hierarchy, focused
+                                booking flows, and trust signals that help riders act with confidence.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-indrive">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View UI/UX Prototype
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click the preview to enlarge it
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.webp"
+                                    alt="" width="2084" height="2084" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
-    <!-- =======================================================
-         HTML5 DATA TEMPLATES (MODAL CONTENT)
-         ======================================================= -->
+    <!-- Dialog Content Templates -->
     <template id="tpl-background">
         <span class="modal-tag">01. Background</span>
         <h2 class="modal-title">Context & Background</h2>
         <div class="modal-body">
-            <p>This case study explores how the inDrive ride-hailing application user experience can be improved through
-                clearer information architecture, more intuitive navigation, and a calmer visual hierarchy.</p>
+            <p>This case study explores how the inDrive ride-hailing application user experience can be improved
+                through clearer information architecture, more intuitive navigation, and a calmer visual hierarchy.</p>
         </div>
     </template>
 
@@ -212,17 +248,13 @@
         </div>
     </template>
 
-    <!-- =======================================================
-         NATIVE HTML5 DIALOGS
-         ======================================================= -->
+    <!-- Dialog Native HTML5 -->
     <dialog id="study-modal" class="native-modal" aria-label="Case Study Details">
         <div class="native-modal__wrapper">
             <button class="native-modal__close" aria-label="Close Modal">
                 <span class="material-symbols-rounded" aria-hidden="true">close</span>
             </button>
-            <div class="modal-content" id="modal-content">
-                <!-- Content injected via JS Template -->
-            </div>
+            <div class="modal-content" id="modal-content"></div>
         </div>
     </dialog>
 
@@ -230,7 +262,68 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
+        </button>
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+            <span class="lightbox__counter" id="lightbox-counter" aria-live="polite" aria-atomic="true"
+                hidden></span>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
+        </button>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-indrive" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-indrive-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close inDrive prototype gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="indrive">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-indrive-title">inDrive — Interface Preview</h2>
+                <p>The redesigned ride-hailing experience, presented as a single high-fidelity preview. More case study
+                    screens are being prepared.</p>
+                <div class="proto-modal__stats" aria-label="inDrive prototype summary">
+                    <span><strong>01</strong><small>Preview</small></span>
+                    <span><strong>1</strong><small>Flow</small></span>
+                    <span><strong>Hi-Fi</strong><small>Prototype</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 screen</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--square" data-category="preview">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the inDrive interface preview">
+                        <img src="asset/prototype-figma-inDrive/Thumbnail - inDrive.webp"
+                            alt="inDrive Redesign Interface Preview" width="2084" height="2084" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Interface</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Interface Preview</h3>
+                        <p>Streamlined layout aimed at faster navigation and clearer user intent. Additional case study
+                            screenshots are being prepared.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

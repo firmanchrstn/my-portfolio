@@ -36,6 +36,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -111,219 +112,150 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>Overview</h4>
-                        <h3>Project Overview</h3>
-                        <p>The rebirth of LinkAja was initially conceived as a competition project developed by our
-                            team, UXORA, through the MIA 2025 competition.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background" aria-label="Read more about overview">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal" aria-label="LinkAja content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
+            </div>
+        </div>
+
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">MIA 2025 Competition</span>
+                    <h2>The Rebirth of LinkAja</h2>
+                    <p>A competition-driven UX strategy project developed with team UXORA for the Multimedia In Action
+                        (MIA) 2025 competition, rethinking how LinkAja creates value for everyday users.</p>
                 </div>
 
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>The Problem</h4>
-                        <h3>Problem Statement</h3>
-                        <p>Despite being a strategic collaboration of State-Owned Enterprises (BUMN), LinkAja faced
-                            significant user experience hurdles.</p>
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>Overview</h4>
+                            <h3>Project Overview</h3>
+                            <p>The rebirth of LinkAja was initially conceived as a competition project developed by our
+                                team, UXORA, through the MIA 2025 competition.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about overview">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>The Solution</h4>
-                        <h3>Four Pillars of Innovation</h3>
-                        <p>We introduced four key features to increase both the pragmatic and hedonic value of the
-                            application.</p>
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>The Problem</h4>
+                            <h3>Problem Statement</h3>
+                            <p>Despite being a strategic collaboration of State-Owned Enterprises (BUMN), LinkAja faced
+                                significant user experience hurdles.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="problem"
+                            aria-label="Read more about the problem">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="solution"
-                        aria-label="Read more about the solution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>Key Takeaways</h4>
-                        <h3>Key Takeaways</h3>
-                        <p>This project highlighted the importance of balancing functionality with a "delightful" user
-                            experience through simplified IA and gamification.</p>
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>The Solution</h4>
+                            <h3>Four Pillars of Innovation</h3>
+                            <p>We introduced four key features to increase both the pragmatic and hedonic value of the
+                                application.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="solution"
+                            aria-label="Read more about the solution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="takeaways"
-                        aria-label="Read more about key takeaways">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
 
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>Design Focus</h4>
-                        <h3>Disclaimer/Role Focus</h3>
-                        <p>My primary focus and contribution in the prototyping phase centered on the ChatAja feature,
-                            showcasing end-to-end user journeys for the AI-powered assistant.</p>
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>Key Takeaways</h4>
+                            <h3>Key Takeaways</h3>
+                            <p>This project highlighted the importance of balancing functionality with a "delightful"
+                                user experience through simplified IA and gamification.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="takeaways"
+                            aria-label="Read more about key takeaways">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
                     </div>
-                    <button class="btn-text open-detail" data-target="focus" aria-label="Read more about role focus">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>Design Focus</h4>
+                            <h3>Disclaimer/Role Focus</h3>
+                            <p>My primary focus and contribution in the prototyping phase centered on the ChatAja
+                                feature, showcasing end-to-end user journeys for the AI-powered assistant.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="focus"
+                            aria-label="Read more about role focus">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the LinkAja Experience</h2>
+                    <p>Ten high-fidelity screens documenting the new visual identity and the complete ChatAja
+                        assistant journey, from the first splashscreen to a resolved conversation.</p>
                 </div>
             </div>
-        </section>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
-                    enlarge it.
-                </p>
-
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/Splashscreen 1.webp"
-                                alt="Brand Identity & Security Intro" width="400" height="800" loading="lazy"
-                                decoding="async">
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="linkaja-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> UI/UX
+                                Prototype
+                            </span>
+                            <h2 id="linkaja-showcase-title">A Full Look at the Redesigned Interface</h2>
+                            <p>Ten key screens that define the new LinkAja experience—brand identity, secure onboarding,
+                                and a clearer path through the AI-powered ChatAja assistant. Every screen is presented
+                                exactly as exported.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-linkaja">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View UI/UX Prototype
+                                </button>
+                                <a href="https://www.figma.com/proto/owamxNCRrQu01uSa2cUEnX/MIA-2025-ChatAja?node-id=28-1690&p=f&viewport=238%2C36%2C0.06&t=XX8dujzac3F7tnWs-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=95%3A863&show-proto-sidebar=1"
+                                    target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+                                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span>
+                                    Open Figma Prototype
+                                </a>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click any screen in the gallery to enlarge it
+                                </span>
+                            </div>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Brand Identity & Security Intro</h3>
-                            <p>Initial touchpoint introducing the modern brand visual identity and core biometric
-                                security protocols.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/Splashscreen 2.webp" alt="Real-Time Alert Engagement"
-                                width="400" height="800" loading="lazy" decoding="async">
+                        <div class="proto-cta__visual" aria-hidden="true">
+                            <div class="proto-cta__phone proto-cta__phone--back">
+                                <img src="asset/prototype-figma-linkaja/Splashscreen 1.webp"
+                                    alt="" width="400" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="proto-cta__phone proto-cta__phone--mid">
+                                <img src="asset/prototype-figma-linkaja/ChatAja - Lobby.webp"
+                                    alt="" width="400" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="proto-cta__phone proto-cta__phone--front">
+                                <img src="asset/prototype-figma-linkaja/ChatAja - ChatAja.webp"
+                                    alt="" width="400" height="800" loading="lazy" decoding="async">
+                            </div>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Real-Time Alert Engagement</h3>
-                            <p>Strategy-led notification onboarding to ensure timely billing reminders and critical
-                                medical alerts.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/Splashscreen 3.webp"
-                                alt="Visual Onboarding Experience" width="400" height="800" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>Visual Onboarding Experience</h3>
-                            <p>Establishing brand trust through a clean, modern aesthetic and welcoming visual
-                                introduction.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - Lobby.webp" alt="ChatAja Main Dashboard"
-                                width="400" height="800" loading="lazy" decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>ChatAja Main Dashboard</h3>
-                            <p>A centralized lobby interface designed to streamline user navigation with quick access to
-                                key services.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - Voice.webp" alt="ChatAja Voice Mode"
-                                width="400" height="800" loading="lazy" decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>ChatAja Voice Mode</h3>
-                            <p>Voice-enabled interaction system that improves accessibility through natural speech
-                                communication.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - ChatAja.webp" alt="ChatAja Main Chat"
-                                width="400" height="800" loading="lazy" decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>ChatAja Main Chat</h3>
-                            <p>Structured conversational interface designed for clearer communication and faster issue
-                                resolution.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - FAQ (Home).webp"
-                                alt="Intelligent Knowledge Hub" width="400" height="800" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>Intelligent Knowledge Hub</h3>
-                            <p>Category-based FAQ and information system built for faster content discovery and
-                                accessibility.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat.webp" alt="ChatAja Chat History"
-                                width="400" height="800" loading="lazy" decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>ChatAja Chat History</h3>
-                            <p>Conversation history interface allowing users to revisit previous interactions
-                                efficiently.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 1.webp"
-                                alt="Frictionless Authentication" width="400" height="800" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>Frictionless Authentication</h3>
-                            <p>Minimal and focused login experience designed to reduce entry errors and user drop-off.
-                            </p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 2.webp"
-                                alt="Guided Registration Flow" width="400" height="800" loading="lazy"
-                                decoding="async">
-                        </div>
-                        <figcaption class="gallery-label">
-                            <h3>Guided Registration Flow</h3>
-                            <p>Simplified onboarding process using progressive disclosure to manage complex user inputs.
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section class="section-study text-center reveal"
-                style="background: var(--bg-surface); padding: 5rem 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-sm);">
-                <h2 class="mb-2">Try Interactive Prototype</h2>
-                <p class="text-muted max-w-md mb-4">See how this design solution works in real-time. Click the button
-                    below to open the High-Fidelity Prototype directly in Figma.</p>
-                <a href="https://www.figma.com/proto/owamxNCRrQu01uSa2cUEnX/MIA-2025-ChatAja?node-id=28-1690&p=f&viewport=238%2C36%2C0.06&t=XX8dujzac3F7tnWs-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=95%3A863&show-proto-sidebar=1"
-                    target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-                    <span class="material-symbols-rounded" aria-hidden="true">open_in_new</span> Open Figma Prototype
-                </a>
-            </section>
-        </article>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- Dialog Content Templates -->
@@ -396,7 +328,261 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Previous screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
+        </button>
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+            <span class="lightbox__counter" id="lightbox-counter" aria-live="polite" aria-atomic="true"
+                hidden></span>
+        </figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Next screen" disabled>
+            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
+        </button>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-linkaja" class="native-modal proto-modal"
+        aria-labelledby="prototype-modal-linkaja-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close LinkAja prototype gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="linkaja">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-linkaja-title">LinkAja — Reborn Experience</h2>
+                <p>Ten high-fidelity screens documenting the new brand identity, streamlined onboarding, and the
+                    ChatAja assistant that makes financial services easier to reach.</p>
+                <div class="proto-modal__stats" aria-label="LinkAja prototype summary">
+                    <span><strong>10</strong><small>Screens</small></span>
+                    <span><strong>3</strong><small>Categories</small></span>
+                    <span><strong>Hi-Fi</strong><small>Prototype</small></span>
+                </div>
+            </header>
+
+            <div class="proto-filter" role="group" aria-label="Filter LinkAja screens by category">
+                <button type="button" class="proto-filter__btn is-active" data-filter="all"
+                    aria-pressed="true">All <span>10</span></button>
+                <button type="button" class="proto-filter__btn" data-filter="onboarding"
+                    aria-pressed="false">Onboarding <span>3</span></button>
+                <button type="button" class="proto-filter__btn" data-filter="chataja"
+                    aria-pressed="false">ChatAja <span>5</span></button>
+                <button type="button" class="proto-filter__btn" data-filter="account"
+                    aria-pressed="false">Account <span>2</span></button>
+            </div>
+            <p class="proto-gallery__status" aria-live="polite">Showing all 10 screens</p>
+
+            <div class="proto-gallery" data-gallery-grid>
+                <figure class="proto-card" data-category="onboarding">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the brand identity and security intro screen">
+                        <img src="asset/prototype-figma-linkaja/Splashscreen 1.webp"
+                            alt="Brand Identity & Security Intro" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Onboarding</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Brand Identity & Security Intro</h3>
+                        <p>Initial touchpoint introducing the modern brand visual identity and core biometric security
+                            protocols.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="onboarding">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the real-time alert engagement screen">
+                        <img src="asset/prototype-figma-linkaja/Splashscreen 2.webp"
+                            alt="Real-Time Alert Engagement" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Onboarding</span>
+                            <span class="proto-card__index" aria-hidden="true">02</span>
+                        </div>
+                        <h3>Real-Time Alert Engagement</h3>
+                        <p>Strategy-led notification onboarding to ensure timely billing reminders and critical medical
+                            alerts.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="onboarding">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the visual onboarding experience screen">
+                        <img src="asset/prototype-figma-linkaja/Splashscreen 3.webp"
+                            alt="Visual Onboarding Experience" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Onboarding</span>
+                            <span class="proto-card__index" aria-hidden="true">03</span>
+                        </div>
+                        <h3>Visual Onboarding Experience</h3>
+                        <p>Establishing brand trust through a clean, modern aesthetic and welcoming visual
+                            introduction.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="chataja">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the ChatAja main dashboard screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - Lobby.webp" alt="ChatAja Main Dashboard"
+                            width="400" height="800" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">ChatAja</span>
+                            <span class="proto-card__index" aria-hidden="true">04</span>
+                        </div>
+                        <h3>ChatAja Main Dashboard</h3>
+                        <p>A centralized lobby interface designed to streamline user navigation with quick access to
+                            key services.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="chataja">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the ChatAja voice mode screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - Voice.webp" alt="ChatAja Voice Mode"
+                            width="400" height="800" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">ChatAja</span>
+                            <span class="proto-card__index" aria-hidden="true">05</span>
+                        </div>
+                        <h3>ChatAja Voice Mode</h3>
+                        <p>Voice-enabled interaction system that improves accessibility through natural speech
+                            communication.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="chataja">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the ChatAja main chat screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - ChatAja.webp" alt="ChatAja Main Chat"
+                            width="400" height="800" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">ChatAja</span>
+                            <span class="proto-card__index" aria-hidden="true">06</span>
+                        </div>
+                        <h3>ChatAja Main Chat</h3>
+                        <p>Structured conversational interface designed for clearer communication and faster issue
+                            resolution.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="chataja">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the intelligent knowledge hub screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - FAQ (Home).webp"
+                            alt="Intelligent Knowledge Hub" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">ChatAja</span>
+                            <span class="proto-card__index" aria-hidden="true">07</span>
+                        </div>
+                        <h3>Intelligent Knowledge Hub</h3>
+                        <p>Category-based FAQ and information system built for faster content discovery and
+                            accessibility.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="chataja">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the ChatAja chat history screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat.webp" alt="ChatAja Chat History"
+                            width="400" height="800" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">ChatAja</span>
+                            <span class="proto-card__index" aria-hidden="true">08</span>
+                        </div>
+                        <h3>ChatAja Chat History</h3>
+                        <p>Conversation history interface allowing users to revisit previous interactions
+                            efficiently.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="account">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the frictionless authentication screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 1.webp"
+                            alt="Frictionless Authentication" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Account</span>
+                            <span class="proto-card__index" aria-hidden="true">09</span>
+                        </div>
+                        <h3>Frictionless Authentication</h3>
+                        <p>Minimal and focused login experience designed to reduce entry errors and user drop-off.</p>
+                    </figcaption>
+                </figure>
+
+                <figure class="proto-card" data-category="account">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the guided registration flow screen">
+                        <img src="asset/prototype-figma-linkaja/ChatAja - Riwayat Chat 2.webp"
+                            alt="Guided Registration Flow" width="400" height="800" loading="lazy"
+                            decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Account</span>
+                            <span class="proto-card__index" aria-hidden="true">10</span>
+                        </div>
+                        <h3>Guided Registration Flow</h3>
+                        <p>Simplified onboarding process using progressive disclosure to manage complex user inputs.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">

@@ -39,6 +39,7 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/portfolio.css">
+    <link rel="stylesheet" href="./css/case-study.css">
 
     <script type="application/ld+json">
     {
@@ -119,71 +120,111 @@
             </div>
         </header>
 
-        <section class="container" aria-label="Project Summary">
-            <div class="summary__grid">
-                <div class="summary__card reveal">
-                    <div>
-                        <h4>01. Background</h4>
-                        <h3>Context</h3>
-                        <p>Building a digital identity for Puri Resto & Cafe, a cozy culinary spot in Central Cikarang,
-                            to make it more accessible to customers.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="background"
-                        aria-label="Read more about project context">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-1">
-                    <div>
-                        <h4>02. Challenge</h4>
-                        <h3>Problem Statement</h3>
-                        <p>The restaurant lacked an official website, making it difficult for potential customers to
-                            view the menu, explore the ambiance, and make online reservations.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="problem" aria-label="Read more about the problem">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
-
-                <div class="summary__card reveal delay-2">
-                    <div>
-                        <h4>03. Innovation</h4>
-                        <h3>The Solution</h3>
-                        <p>A responsive landing page featuring an earthy design, digital menu integration, and direct
-                            booking access via WhatsApp.</p>
-                    </div>
-                    <button class="btn-text open-detail" data-target="solution"
-                        aria-label="Read more about the solution">
-                        Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-                    </button>
-                </div>
+        <div class="container">
+            <div class="study-tabs" role="tablist" aria-orientation="horizontal"
+                aria-label="Puri Resto content sections">
+                <button type="button" role="tab" id="tab-btn-study" class="study-tab is-active" aria-selected="true"
+                    aria-controls="panel-study" data-panel="study">01. Case Study</button>
+                <button type="button" role="tab" id="tab-btn-showcase" class="study-tab" aria-selected="false"
+                    aria-controls="panel-showcase" data-panel="showcase" tabindex="-1">02. Design Showcase</button>
             </div>
-        </section>
+        </div>
 
-        <article class="study-container">
-            <section class="section-study" aria-label="Design Showcase">
-                <h2 class="mb-1">Design Showcase</h2>
-                <p class="text-accent mb-3 d-flex align-center gap-2">
-                    <span class="material-symbols-rounded" aria-hidden="true">info</span> Click on the design image to
-                    enlarge it.
-                </p>
+        <div id="panel-study" role="tabpanel" aria-labelledby="tab-btn-study" class="tab-panel">
+            <section class="container" aria-label="Project Summary">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Front-End Web Development</span>
+                    <h2>A Cozy Digital Home for Puri</h2>
+                    <p>A responsive landing page giving Puri Resto & Cafe a warm, earthy online identity with an
+                        accessible digital menu and a direct WhatsApp reservation flow.</p>
+                </div>
 
-                <div class="design-gallery">
-                    <figure class="gallery-item reveal">
-                        <div class="img-wrapper" role="button" tabindex="0" aria-label="View enlarged image">
-                            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop"
-                                alt="Puri Resto Hero Section" width="800" height="533" loading="lazy" decoding="async">
+                <div class="summary__grid">
+                    <div class="summary__card reveal">
+                        <div>
+                            <h4>01. Background</h4>
+                            <h3>Context</h3>
+                            <p>Building a digital identity for Puri Resto & Cafe, a cozy culinary spot in Central
+                                Cikarang, to make it more accessible to customers.</p>
                         </div>
-                        <figcaption class="gallery-label">
-                            <h3>Modern & Cozy Interface</h3>
-                            <p>Utilizing a Coffee Brown and Sage Green color palette to highlight the cafe's warm and
-                                family-friendly visual identity.</p>
-                        </figcaption>
-                    </figure>
+                        <button class="btn-text open-detail" data-target="background"
+                            aria-label="Read more about project context">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-1">
+                        <div>
+                            <h4>02. Challenge</h4>
+                            <h3>Problem Statement</h3>
+                            <p>The restaurant lacked an official website, making it difficult for potential customers
+                                to view the menu, explore the ambiance, and make online reservations.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="problem"
+                            aria-label="Read more about the problem">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
+
+                    <div class="summary__card reveal delay-2">
+                        <div>
+                            <h4>03. Innovation</h4>
+                            <h3>The Solution</h3>
+                            <p>A responsive landing page featuring an earthy design, digital menu integration, and
+                                direct booking access via WhatsApp.</p>
+                        </div>
+                        <button class="btn-text open-detail" data-target="solution"
+                            aria-label="Read more about the solution">
+                            Read More <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </section>
-        </article>
+        </div>
+
+        <div id="panel-showcase" role="tabpanel" aria-labelledby="tab-btn-showcase" class="tab-panel" hidden>
+            <div class="container">
+                <div class="proto-intro reveal">
+                    <span class="section__subtitle">Design Showcase</span>
+                    <h2>Explore the Puri Landing Page</h2>
+                    <p>A warm, family-friendly interface that brings rooftop vibes, live music, and the menu catalog
+                        into a single approachable web experience.</p>
+                </div>
+            </div>
+
+            <article class="study-container">
+                <section class="section-study" aria-labelledby="puri-showcase-title">
+                    <div class="proto-cta proto-cta--uiux reveal">
+                        <div class="proto-cta__copy">
+                            <span class="ai-story__eyebrow">
+                                <span class="material-symbols-rounded" aria-hidden="true">palette</span> Web
+                                Development
+                            </span>
+                            <h2 id="puri-showcase-title">Modern, Cozy, and Easy to Book</h2>
+                            <p>A coffee-brown and sage-green palette highlights the cafe's warm identity, while the
+                                digital menu and WhatsApp booking remove friction for first-time visitors.</p>
+                            <div class="proto-cta__actions">
+                                <button type="button" class="btn btn--primary"
+                                    data-dialog-open="prototype-modal-puri">
+                                    <span class="material-symbols-rounded" aria-hidden="true">view_carousel</span>
+                                    View Design Showcase
+                                </button>
+                                <span class="proto-cta__hint">
+                                    <span class="material-symbols-rounded" aria-hidden="true">zoom_in</span>
+                                    Click the preview to enlarge it
+                                </span>
+                            </div>
+                        </div>
+                        <div class="proto-cta__visual proto-cta__visual--single" aria-hidden="true">
+                            <div class="proto-cta__phone">
+                                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop"
+                                    alt="" width="800" height="533" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </div>
     </main>
 
     <!-- HTML5 Templates -->
@@ -243,7 +284,58 @@
         <button class="native-modal__close" aria-label="Close Image Viewer">
             <span class="material-symbols-rounded" aria-hidden="true">close</span>
         </button>
-        <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+        <figure class="lightbox__figure">
+            <img alt="Zoomed Interface" class="lightbox__img" id="lightbox-img">
+            <figcaption class="lightbox__caption" id="lightbox-caption" aria-live="polite"
+                aria-atomic="true"></figcaption>
+        </figure>
+    </dialog>
+
+    <!-- =======================================================
+         DESIGN SHOWCASE PROTOTYPE GALLERY
+         ======================================================= -->
+    <dialog id="prototype-modal-puri" class="native-modal proto-modal" aria-labelledby="prototype-modal-puri-title">
+        <button class="native-modal__close proto-modal__close" aria-label="Close Puri Resto gallery">
+            <span class="material-symbols-rounded" aria-hidden="true">close</span>
+        </button>
+        <div class="proto-modal__wrapper" data-gallery="puri">
+            <header class="proto-modal__head">
+                <span class="modal-tag">Design Showcase</span>
+                <h2 class="modal-title" id="prototype-modal-puri-title">Puri Resto & Cafe — Landing Page</h2>
+                <p>A warm restaurant landing page built around an earthy palette, a browsable digital menu, and a
+                    booking flow that goes straight to WhatsApp.</p>
+                <div class="proto-modal__stats" aria-label="Puri Resto prototype summary">
+                    <span><strong>01</strong><small>Preview</small></span>
+                    <span><strong>1</strong><small>Landing Page</small></span>
+                    <span><strong>Responsive</strong><small>Layout</small></span>
+                </div>
+            </header>
+
+            <p class="proto-gallery__status" aria-live="polite">Showing 1 screen</p>
+
+            <div class="proto-gallery proto-gallery--single" data-gallery-grid>
+                <figure class="proto-card proto-card--landscape" data-category="web">
+                    <div class="img-wrapper" role="button" tabindex="0"
+                        aria-label="Enlarge the Puri Resto hero preview">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop"
+                            alt="Puri Resto Hero Section" width="800" height="533" loading="lazy" decoding="async">
+                        <span class="proto-card__zoom" aria-hidden="true">
+                            <span class="material-symbols-rounded" aria-hidden="true">open_in_full</span>
+                        </span>
+                    </div>
+                    <figcaption class="proto-card__body">
+                        <div class="proto-card__meta">
+                            <span class="proto-card__tag">Web Design</span>
+                            <span class="proto-card__index" aria-hidden="true">01</span>
+                        </div>
+                        <h3>Modern & Cozy Interface</h3>
+                        <p>Utilizing a Coffee Brown and Sage Green color palette to highlight the cafe's warm and
+                            family-friendly visual identity.</p>
+                    </figcaption>
+                </figure>
+            </div>
+            <p class="proto-gallery__empty" hidden>No screens match this filter yet.</p>
+        </div>
     </dialog>
 
     <footer class="footer" role="contentinfo">
